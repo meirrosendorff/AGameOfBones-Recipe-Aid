@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  AGameOfBones-Recipe-Aid
+//  Recipe-Aid
 //
 //  Created by Meir Rosendorff on 2019/05/12.
 //  Copyright © 2019 Meir Rosendorff. All rights reserved.
