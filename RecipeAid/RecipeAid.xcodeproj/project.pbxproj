@@ -15,7 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5009277D22889DE500FB2CE6 /* AGameOfBones-Recipe-Aid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AGameOfBones-Recipe-Aid.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5009277D22889DE500FB2CE6 /* RecipeAid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecipeAid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5009278022889DE500FB2CE6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5009278222889DE500FB2CE6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5009278522889DE500FB2CE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -38,7 +38,7 @@
 		5009277422889DE500FB2CE6 = {
 			isa = PBXGroup;
 			children = (
-				5009277F22889DE500FB2CE6 /* AGameOfBones-Recipe-Aid */,
+				5009277F22889DE500FB2CE6 /* RecipeAid */,
 				5009277E22889DE500FB2CE6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -46,12 +46,12 @@
 		5009277E22889DE500FB2CE6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5009277D22889DE500FB2CE6 /* AGameOfBones-Recipe-Aid.app */,
+				5009277D22889DE500FB2CE6 /* RecipeAid.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		5009277F22889DE500FB2CE6 /* AGameOfBones-Recipe-Aid */ = {
+		5009277F22889DE500FB2CE6 /* RecipeAid */ = {
 			isa = PBXGroup;
 			children = (
 				5009278022889DE500FB2CE6 /* AppDelegate.swift */,
@@ -61,15 +61,15 @@
 				5009278922889DE600FB2CE6 /* LaunchScreen.storyboard */,
 				5009278C22889DE600FB2CE6 /* Info.plist */,
 			);
-			path = "AGameOfBones-Recipe-Aid";
+			path = RecipeAid;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5009277C22889DE500FB2CE6 /* AGameOfBones-Recipe-Aid */ = {
+		5009277C22889DE500FB2CE6 /* RecipeAid */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5009278F22889DE700FB2CE6 /* Build configuration list for PBXNativeTarget "AGameOfBones-Recipe-Aid" */;
+			buildConfigurationList = 5009278F22889DE700FB2CE6 /* Build configuration list for PBXNativeTarget "RecipeAid" */;
 			buildPhases = (
 				5009277922889DE500FB2CE6 /* Sources */,
 				5009277A22889DE500FB2CE6 /* Frameworks */,
@@ -79,9 +79,9 @@
 			);
 			dependencies = (
 			);
-			name = "AGameOfBones-Recipe-Aid";
+			name = RecipeAid;
 			productName = "AGameOfBones-Recipe-Aid";
-			productReference = 5009277D22889DE500FB2CE6 /* AGameOfBones-Recipe-Aid.app */;
+			productReference = 5009277D22889DE500FB2CE6 /* RecipeAid.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -99,7 +99,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 5009277822889DE500FB2CE6 /* Build configuration list for PBXProject "AGameOfBones-Recipe-Aid" */;
+			buildConfigurationList = 5009277822889DE500FB2CE6 /* Build configuration list for PBXProject "RecipeAid" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -112,7 +112,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5009277C22889DE500FB2CE6 /* AGameOfBones-Recipe-Aid */,
+				5009277C22889DE500FB2CE6 /* RecipeAid */,
 			);
 		};
 /* End PBXProject section */
@@ -283,12 +283,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "AGameOfBones-Recipe-Aid/Info.plist";
+				DEVELOPMENT_TEAM = 248XUAAJP7;
+				INFOPLIST_FILE = RecipeAid/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "mrosendorfff.AGameOfBones-Recipe-Aid";
+				PRODUCT_BUNDLE_IDENTIFIER = mrosendorfff.RecipeAid;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -300,12 +301,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "AGameOfBones-Recipe-Aid/Info.plist";
+				DEVELOPMENT_TEAM = 248XUAAJP7;
+				INFOPLIST_FILE = RecipeAid/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "mrosendorfff.AGameOfBones-Recipe-Aid";
+				PRODUCT_BUNDLE_IDENTIFIER = mrosendorfff.RecipeAid;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -315,7 +317,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5009277822889DE500FB2CE6 /* Build configuration list for PBXProject "AGameOfBones-Recipe-Aid" */ = {
+		5009277822889DE500FB2CE6 /* Build configuration list for PBXProject "RecipeAid" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5009278D22889DE700FB2CE6 /* Debug */,
@@ -324,7 +326,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5009278F22889DE700FB2CE6 /* Build configuration list for PBXNativeTarget "AGameOfBones-Recipe-Aid" */ = {
+		5009278F22889DE700FB2CE6 /* Build configuration list for PBXNativeTarget "RecipeAid" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5009279022889DE700FB2CE6 /* Debug */,
