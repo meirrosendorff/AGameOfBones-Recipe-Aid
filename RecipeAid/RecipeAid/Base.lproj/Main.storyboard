@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,224 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RecipeAid" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="Gdt-41-zis" userLabel="backgroundImagreView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="95Z-lJ-jxz" userLabel="ingredientsBackdropView">
+                                <rect key="frame" x="0.0" y="139" width="375" height="383"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Ah-6N-HR5" userLabel="ingredientsScrollView">
+                                <rect key="frame" x="0.0" y="139" width="375" height="383"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredients" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LOb-aJ-11j">
+                                        <rect key="frame" x="0.0" y="5" width="375" height="28"/>
+                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="25"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ePS-vb-j0h" userLabel="ingredientsStackView">
+                                        <rect key="frame" x="10" y="43" width="355" height="270"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredient 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Baz-X2-wC3">
+                                                <rect key="frame" x="0.0" y="0.0" width="106" height="22.5"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredient 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ook-cI-ldy">
+                                                <rect key="frame" x="0.0" y="27.5" width="106" height="22.5"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredient 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HoP-qP-iuP">
+                                                <rect key="frame" x="0.0" y="55" width="106" height="22.5"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredient 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ow-mg-ymt">
+                                                <rect key="frame" x="0.0" y="82.5" width="106" height="22.5"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredient 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wnZ-rh-A5v">
+                                                <rect key="frame" x="0.0" y="110" width="106" height="22.5"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredient 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fVU-A3-pzb">
+                                                <rect key="frame" x="0.0" y="137.5" width="106" height="22.5"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredient 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0wX-Od-C1N">
+                                                <rect key="frame" x="0.0" y="165" width="106" height="22.5"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredient 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lG0-mW-4lx">
+                                                <rect key="frame" x="0.0" y="192.5" width="106" height="22.5"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredient 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fnb-lE-UQN">
+                                                <rect key="frame" x="0.0" y="220" width="106" height="22.5"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredient 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZGW-vN-Qfx">
+                                                <rect key="frame" x="0.0" y="247.5" width="106" height="22.5"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="50"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </stackView>
+                                    <button opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" placeholderIntrinsicWidth="375" placeholderIntrinsicHeight="35" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hs0-8A-1Q8" userLabel="seeInstructionsButton">
+                                        <rect key="frame" x="0.0" y="323" width="375" height="35"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="20"/>
+                                        <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                        <state key="normal" title="See Full Instructions">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="LOb-aJ-11j" firstAttribute="leading" secondItem="3Ah-6N-HR5" secondAttribute="leading" id="33x-ug-vur"/>
+                                    <constraint firstItem="ePS-vb-j0h" firstAttribute="top" secondItem="LOb-aJ-11j" secondAttribute="bottom" constant="10" id="3Lb-6T-NMi"/>
+                                    <constraint firstAttribute="trailing" secondItem="ePS-vb-j0h" secondAttribute="trailing" constant="10" id="4ad-CT-cjM"/>
+                                    <constraint firstItem="ePS-vb-j0h" firstAttribute="leading" secondItem="3Ah-6N-HR5" secondAttribute="leading" constant="10" id="GfL-eb-s5b"/>
+                                    <constraint firstItem="LOb-aJ-11j" firstAttribute="top" secondItem="3Ah-6N-HR5" secondAttribute="top" constant="5" id="dBl-YJ-6GX"/>
+                                    <constraint firstItem="Hs0-8A-1Q8" firstAttribute="top" secondItem="ePS-vb-j0h" secondAttribute="bottom" constant="10" id="qBE-zd-uE9"/>
+                                    <constraint firstAttribute="bottom" secondItem="Hs0-8A-1Q8" secondAttribute="bottom" constant="5" id="tua-kT-ozy"/>
+                                    <constraint firstAttribute="trailing" secondItem="LOb-aJ-11j" secondAttribute="trailing" id="vdP-P1-yvI"/>
+                                    <constraint firstItem="Hs0-8A-1Q8" firstAttribute="centerX" secondItem="3Ah-6N-HR5" secondAttribute="centerX" id="w1o-Mo-SZu"/>
+                                </constraints>
+                            </scrollView>
+                            <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T0Y-51-sjR" userLabel="recipeNameBackdropView">
+                                <rect key="frame" x="0.0" y="20" width="375" height="89"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="7Zw-xP-k9e" userLabel="RecipeNameStackView">
+                                <rect key="frame" x="0.0" y="20" width="375" height="89"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipe Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Adw-Gg-xHa" userLabel="recipeNameLabel">
+                                        <rect key="frame" x="93.5" y="0.0" width="188.5" height="34"/>
+                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="30"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Ti5-E8-gfz" userLabel="mealValuesStackView">
+                                        <rect key="frame" x="137.5" y="39" width="100.5" height="50"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Servings: 3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Srx-jC-ahM" userLabel="servingsLabel">
+                                                <rect key="frame" x="0.0" y="0.0" width="100.5" height="22.5"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calories: 3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Rt-MP-YSV" userLabel="caloriesLabel">
+                                                <rect key="frame" x="0.0" y="27.5" width="100.5" height="22.5"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <variation key="heightClass=compact" axis="horizontal"/>
+                            </stackView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Ig-wd-cCR">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                            </navigationBar>
+                            <button opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iDL-Yo-Xaj" userLabel="addMenuItemButton">
+                                <rect key="frame" x="147" y="532" width="81" height="81"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="81" id="PXx-yr-aWe"/>
+                                    <constraint firstAttribute="height" constant="81" id="fsB-jp-6ac"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="plus"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="40"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="95Z-lJ-jxz" firstAttribute="bottom" secondItem="3Ah-6N-HR5" secondAttribute="bottom" id="0Ul-Di-xSL"/>
+                            <constraint firstAttribute="bottom" secondItem="Gdt-41-zis" secondAttribute="bottom" id="1IZ-tN-w4U"/>
+                            <constraint firstItem="95Z-lJ-jxz" firstAttribute="leading" secondItem="3Ah-6N-HR5" secondAttribute="leading" id="4AX-ya-0PG"/>
+                            <constraint firstItem="Gdt-41-zis" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="9dS-xe-6fT"/>
+                            <constraint firstItem="LOb-aJ-11j" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" id="9t1-jM-dnB"/>
+                            <constraint firstItem="4Ig-wd-cCR" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="9yD-6p-CA3"/>
+                            <constraint firstItem="4Ig-wd-cCR" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="AIS-sf-Oau"/>
+                            <constraint firstItem="4Ig-wd-cCR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="IDN-Ze-Gkz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7Zw-xP-k9e" secondAttribute="trailing" id="Ist-NZ-VSc"/>
+                            <constraint firstItem="iDL-Yo-Xaj" firstAttribute="top" secondItem="3Ah-6N-HR5" secondAttribute="bottom" constant="10" id="KC0-Xz-pRs"/>
+                            <constraint firstItem="95Z-lJ-jxz" firstAttribute="top" secondItem="3Ah-6N-HR5" secondAttribute="top" id="L2G-yp-LAo"/>
+                            <constraint firstItem="iDL-Yo-Xaj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ooz-yf-9RR"/>
+                            <constraint firstItem="T0Y-51-sjR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="XMm-jU-plW"/>
+                            <constraint firstItem="7Zw-xP-k9e" firstAttribute="bottom" secondItem="T0Y-51-sjR" secondAttribute="bottom" id="XYs-nh-z5P"/>
+                            <constraint firstItem="7Zw-xP-k9e" firstAttribute="top" secondItem="T0Y-51-sjR" secondAttribute="top" id="Z0G-tf-BeC"/>
+                            <constraint firstAttribute="trailing" secondItem="T0Y-51-sjR" secondAttribute="trailing" id="cTB-6q-fH8"/>
+                            <constraint firstItem="T0Y-51-sjR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="dOu-BR-Fup"/>
+                            <constraint firstItem="3Ah-6N-HR5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="du4-YR-51n"/>
+                            <constraint firstAttribute="trailing" secondItem="Gdt-41-zis" secondAttribute="trailing" id="fYB-ol-MET"/>
+                            <constraint firstItem="95Z-lJ-jxz" firstAttribute="trailing" secondItem="3Ah-6N-HR5" secondAttribute="trailing" id="k4P-Nx-hma"/>
+                            <constraint firstItem="7Zw-xP-k9e" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="oph-hc-qbp"/>
+                            <constraint firstItem="4Ig-wd-cCR" firstAttribute="top" secondItem="iDL-Yo-Xaj" secondAttribute="bottom" constant="10" id="pfK-NF-fkz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3Ah-6N-HR5" secondAttribute="trailing" id="uDO-4L-YRD"/>
+                            <constraint firstItem="3Ah-6N-HR5" firstAttribute="top" secondItem="T0Y-51-sjR" secondAttribute="bottom" constant="30" id="vKg-OL-Kdx"/>
+                            <constraint firstItem="Gdt-41-zis" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="y94-1w-pen"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="48.799999999999997" y="24.7376311844078"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="background" width="616" height="463"/>
+        <image name="plus" width="160" height="160"/>
+    </resources>
 </document>
