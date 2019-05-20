@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5009278122889DE500FB2CE6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5009278022889DE500FB2CE6 /* AppDelegate.swift */; };
-		5009278322889DE500FB2CE6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5009278222889DE500FB2CE6 /* ViewController.swift */; };
+		5009278322889DE500FB2CE6 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5009278222889DE500FB2CE6 /* SearchResultsViewController.swift */; };
 		5009278622889DE500FB2CE6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5009278422889DE500FB2CE6 /* Main.storyboard */; };
 		5009278B22889DE600FB2CE6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5009278922889DE600FB2CE6 /* LaunchScreen.storyboard */; };
 		500FE37D228EE76200157F77 /* RecipeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500FE37C228EE76200157F77 /* RecipeDetailsViewController.swift */; };
@@ -19,7 +19,7 @@
 /* Begin PBXFileReference section */
 		5009277D22889DE500FB2CE6 /* RecipeAid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecipeAid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5009278022889DE500FB2CE6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5009278222889DE500FB2CE6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5009278222889DE500FB2CE6 /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 		5009278522889DE500FB2CE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5009278A22889DE600FB2CE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5009278C22889DE600FB2CE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -60,7 +60,7 @@
 			children = (
 				504FF7EE228DFF2D00681272 /* Assets.xcassets */,
 				5009278022889DE500FB2CE6 /* AppDelegate.swift */,
-				5009278222889DE500FB2CE6 /* ViewController.swift */,
+				5009278222889DE500FB2CE6 /* SearchResultsViewController.swift */,
 				5009278422889DE500FB2CE6 /* Main.storyboard */,
 				5009278922889DE600FB2CE6 /* LaunchScreen.storyboard */,
 				5009278C22889DE600FB2CE6 /* Info.plist */,
@@ -141,7 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5009278322889DE500FB2CE6 /* ViewController.swift in Sources */,
+				5009278322889DE500FB2CE6 /* SearchResultsViewController.swift in Sources */,
 				500FE37D228EE76200157F77 /* RecipeDetailsViewController.swift in Sources */,
 				5009278122889DE500FB2CE6 /* AppDelegate.swift in Sources */,
 				500FE37F228EEE8B00157F77 /* RecipeListTableViewCell.swift in Sources */,

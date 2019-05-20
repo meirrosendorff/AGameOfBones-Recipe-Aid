@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSource{
+class SearchResultsViewController: UIViewController , UITableViewDelegate, UITableViewDataSource{
 
   struct MyData {
     var name: String

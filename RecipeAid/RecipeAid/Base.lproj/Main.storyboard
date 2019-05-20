@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--SearchResultsViewController-->
         <scene sceneID="eNa-cw-sXG">
             <objects>
-                <viewController id="yWy-ie-VVS" customClass="ViewController" customModule="RecipeAid" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="yWy-ie-VVS" userLabel="SearchResultsViewController" customClass="SearchResultsViewController" customModule="RecipeAid" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mgh-nk-Dqu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -120,7 +120,7 @@
                                 <rect key="frame" x="5" y="188" width="365" height="368"/>
                                 <subviews>
                                     <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nCR-i6-Z9w" userLabel="ingredientsBackdropView">
-                                        <rect key="frame" x="0.0" y="5" width="365" height="434"/>
+                                        <rect key="frame" x="0.0" y="5" width="365" height="422"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -129,16 +129,16 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="fn6-PB-ZIQ" userLabel="ingredientsOuterStackView">
-                                        <rect key="frame" x="0.0" y="5" width="365" height="429"/>
+                                        <rect key="frame" x="0.0" y="5" width="365" height="417"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredients" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LOb-aJ-11j">
-                                                <rect key="frame" x="0.0" y="0.0" width="365" height="35"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="365" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ePS-vb-j0h" userLabel="ingredientsStackView">
-                                                <rect key="frame" x="0.0" y="40" width="365" height="343"/>
+                                                <rect key="frame" x="0.0" y="35" width="365" height="343"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Mra-08-fKA" userLabel="ingredient">
                                                         <rect key="frame" x="15" y="0.0" width="300" height="25"/>
@@ -339,10 +339,10 @@
                                                 </userDefinedRuntimeAttributes>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="3bi-SC-jkI">
-                                                <rect key="frame" x="0.0" y="388" width="365" height="41"/>
+                                                <rect key="frame" x="0.0" y="383" width="365" height="34"/>
                                                 <subviews>
                                                     <button opaque="NO" alpha="0.90000000000000002" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hs0-8A-1Q8" userLabel="seeInstructionsButton">
-                                                        <rect key="frame" x="87" y="0.0" width="191" height="41"/>
+                                                        <rect key="frame" x="87" y="0.0" width="191" height="34"/>
                                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                                         <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
