@@ -744,11 +744,11 @@
             </objects>
             <point key="canvasLocation" x="925.60000000000002" y="1806.7466266866568"/>
         </scene>
-        <!--Shopping-->
+        <!--Shopping List-->
         <scene sceneID="5Lb-qY-l9j">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1ua-qq-9cF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Shopping" id="N97-yg-1Eg"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1ua-qq-9cF" userLabel="Shopping List" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Shopping List" image="shopping-icon" id="N97-yg-1Eg"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8pv-Ff-3go">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -768,5 +768,6 @@
         <image name="background" width="616" height="463"/>
         <image name="checkbox" width="33" height="33"/>
         <image name="plus" width="160" height="160"/>
+        <image name="shopping-icon" width="30" height="30"/>
     </resources>
 </document>
