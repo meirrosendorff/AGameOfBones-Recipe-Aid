@@ -12,14 +12,15 @@ class AddViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
   
   
   @IBOutlet weak var weekPicker: UIPickerView!
-  
-  
 
   @IBOutlet weak var dayPicker: UIPickerView!
   
   
+  @IBOutlet weak var mealPicker: UIPickerView!
+  
   let weeks: [String] = ["Christmas Break", "Jan Week 1"]
   let days: [String] = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saterday", "Sunday"]
+  let mealTypes: [String] = ["Breakfast", "Lunch", "Supper"]
   
   func numberOfComponents(in pickerView: UIPickerView) -> Int {
     return 1
@@ -30,18 +31,20 @@ class AddViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
       return weeks.count
     }else if pickerView.tag == 2{ //Day picker
       return days.count
+    }else if pickerView.tag == 3{ //MealType picker
+      return mealTypes.count
     }
     return 0
   }
   
-  func pickerView(_ pickerView: UIPickerView,
-                  titleForRow row: Int,
-                  forComponent component: Int) -> String? {
+  func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
 
     if pickerView.tag == 1 { //Week picker
       return weeks[row]
-    }else if pickerView.tag == 2{
+    }else if pickerView.tag == 2{ //Day Picker
       return days[row]
+    }else if pickerView.tag == 3{ //Meal Picker
+      return mealTypes[row]
     }
     return ""
 
@@ -57,6 +60,9 @@ class AddViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
       
       weekPicker.dataSource = self
       weekPicker.delegate = self
+      
+      mealPicker.dataSource = self
+      mealPicker.delegate = self
     }
     
 
