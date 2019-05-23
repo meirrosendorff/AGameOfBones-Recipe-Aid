@@ -8,13 +8,13 @@
 
 import UIKit
 
-extension weeksMenueViewController: UITableViewDelegate, UITableViewDataSource{
+extension weeksMenuViewController: UITableViewDelegate, UITableViewDataSource{
 }
 
-extension weeksMenueViewController: UISearchResultsUpdating{
+extension weeksMenuViewController: UISearchResultsUpdating{
 }
 
-class weeksMenueViewController: UIViewController {
+class weeksMenuViewController: UIViewController {
   
   
   @IBOutlet weak var tableOnSCreen: UITableView!
@@ -65,7 +65,7 @@ class weeksMenueViewController: UIViewController {
   override func viewDidLoad() {
       super.viewDidLoad()
 
-      self.title = "Menue"
+      self.title = "Menu"
     
     resultSearchController = ({
       let controller = UISearchController(searchResultsController: nil)

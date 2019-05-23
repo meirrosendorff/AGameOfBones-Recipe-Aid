@@ -122,7 +122,7 @@
                                 <rect key="frame" x="5" y="188" width="365" height="319"/>
                                 <subviews>
                                     <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nCR-i6-Z9w" userLabel="ingredientsBackdropView">
-                                        <rect key="frame" x="0.0" y="5" width="365" height="434"/>
+                                        <rect key="frame" x="0.0" y="5" width="365" height="422"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -131,16 +131,16 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="fn6-PB-ZIQ" userLabel="ingredientsOuterStackView">
-                                        <rect key="frame" x="0.0" y="5" width="365" height="429"/>
+                                        <rect key="frame" x="0.0" y="5" width="365" height="417"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredients" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LOb-aJ-11j">
-                                                <rect key="frame" x="0.0" y="0.0" width="365" height="35"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="365" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ePS-vb-j0h" userLabel="ingredientsStackView">
-                                                <rect key="frame" x="0.0" y="40" width="365" height="343"/>
+                                                <rect key="frame" x="0.0" y="35" width="365" height="343"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Mra-08-fKA" userLabel="ingredient">
                                                         <rect key="frame" x="15" y="0.0" width="300" height="25"/>
@@ -341,10 +341,10 @@
                                                 </userDefinedRuntimeAttributes>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="3bi-SC-jkI">
-                                                <rect key="frame" x="0.0" y="388" width="365" height="41"/>
+                                                <rect key="frame" x="0.0" y="383" width="365" height="34"/>
                                                 <subviews>
                                                     <button opaque="NO" alpha="0.90000000000000002" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hs0-8A-1Q8" userLabel="seeInstructionsButton">
-                                                        <rect key="frame" x="87" y="0.0" width="191" height="41"/>
+                                                        <rect key="frame" x="87" y="0.0" width="191" height="34"/>
                                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                                         <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
@@ -638,10 +638,10 @@
             </objects>
             <point key="canvasLocation" x="7.2000000000000002" y="24.7376311844078"/>
         </scene>
-        <!--MenueViewController-->
+        <!--MenuViewController-->
         <scene sceneID="izJ-Xf-h3f">
             <objects>
-                <viewController id="w5k-sv-346" userLabel="MenueViewController" customClass="weeksMenueViewController" customModule="RecipeAid" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="w5k-sv-346" userLabel="MenuViewController" customClass="weeksMenuViewController" customModule="RecipeAid" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NJi-Z2-35f">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -701,10 +701,10 @@
             </objects>
             <point key="canvasLocation" x="943.20000000000005" y="909.89505247376314"/>
         </scene>
-        <!--MenueDisplay View Controller-->
+        <!--MenuDisplay View Controller-->
         <scene sceneID="eKw-Gj-R6j">
             <objects>
-                <viewController id="U0D-sU-GV6" userLabel="MenueDisplay View Controller" customClass="MenueDisplayViewController" customModule="RecipeAid" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="U0D-sU-GV6" userLabel="MenuDisplay View Controller" customClass="MenuDisplayViewController" customModule="RecipeAid" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qts-Vg-qYa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1045,11 +1045,11 @@
             </objects>
             <point key="canvasLocation" x="-13.6" y="1806.7466266866568"/>
         </scene>
-        <!--Menue-->
+        <!--Menu-->
         <scene sceneID="Wjj-OR-gN9">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dyA-T2-KXe" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Menue" image="menue" id="fEg-sb-fxv"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dyA-T2-KXe" userLabel="Menu" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Menu" image="menu" id="fEg-sb-fxv"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eNr-mU-Gdi">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -1068,7 +1068,7 @@
     <resources>
         <image name="background" width="616" height="463"/>
         <image name="checkbox" width="33" height="33"/>
-        <image name="menue" width="33" height="33"/>
+        <image name="menu" width="33" height="33"/>
         <image name="plus" width="160" height="160"/>
         <image name="shopping-icon" width="30" height="30"/>
     </resources>

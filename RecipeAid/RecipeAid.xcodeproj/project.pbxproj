@@ -18,8 +18,8 @@
 		504FF7EF228DFF2D00681272 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 504FF7EE228DFF2D00681272 /* Assets.xcassets */; };
 		50AE4C5A2295865900467ADE /* shoppingListItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AE4C592295865900467ADE /* shoppingListItemTableViewCell.swift */; };
 		50AE4C5D2296743500467ADE /* weekListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AE4C5C2296743500467ADE /* weekListTableViewCell.swift */; };
-		50AE4C5F229675BC00467ADE /* weeksMenueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AE4C5E229675BC00467ADE /* weeksMenueViewController.swift */; };
-		50AE4C6122968F2F00467ADE /* MenueDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AE4C6022968F2F00467ADE /* MenueDisplayViewController.swift */; };
+		50AE4C5F229675BC00467ADE /* weeksMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AE4C5E229675BC00467ADE /* weeksMenuViewController.swift */; };
+		50AE4C6122968F2F00467ADE /* MenuDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AE4C6022968F2F00467ADE /* MenuDisplayViewController.swift */; };
 		50AE4C6D2296D4F600467ADE /* DayMealPlanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AE4C6C2296D4F600467ADE /* DayMealPlanTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,8 +37,8 @@
 		504FF7EE228DFF2D00681272 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50AE4C592295865900467ADE /* shoppingListItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shoppingListItemTableViewCell.swift; sourceTree = "<group>"; };
 		50AE4C5C2296743500467ADE /* weekListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weekListTableViewCell.swift; sourceTree = "<group>"; };
-		50AE4C5E229675BC00467ADE /* weeksMenueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weeksMenueViewController.swift; sourceTree = "<group>"; };
-		50AE4C6022968F2F00467ADE /* MenueDisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenueDisplayViewController.swift; sourceTree = "<group>"; };
+		50AE4C5E229675BC00467ADE /* weeksMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weeksMenuViewController.swift; sourceTree = "<group>"; };
+		50AE4C6022968F2F00467ADE /* MenuDisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDisplayViewController.swift; sourceTree = "<group>"; };
 		50AE4C6C2296D4F600467ADE /* DayMealPlanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayMealPlanTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,8 +108,8 @@
 			isa = PBXGroup;
 			children = (
 				50AE4C5C2296743500467ADE /* weekListTableViewCell.swift */,
-				50AE4C5E229675BC00467ADE /* weeksMenueViewController.swift */,
-				50AE4C6022968F2F00467ADE /* MenueDisplayViewController.swift */,
+				50AE4C5E229675BC00467ADE /* weeksMenuViewController.swift */,
+				50AE4C6022968F2F00467ADE /* MenuDisplayViewController.swift */,
 				50AE4C6C2296D4F600467ADE /* DayMealPlanTableViewCell.swift */,
 			);
 			path = Menue;
@@ -190,9 +190,9 @@
 				50AE4C5D2296743500467ADE /* weekListTableViewCell.swift in Sources */,
 				5009278322889DE500FB2CE6 /* SearchResultsViewController.swift in Sources */,
 				50AE4C5A2295865900467ADE /* shoppingListItemTableViewCell.swift in Sources */,
-				50AE4C5F229675BC00467ADE /* weeksMenueViewController.swift in Sources */,
+				50AE4C5F229675BC00467ADE /* weeksMenuViewController.swift in Sources */,
 				500D8D1D2295621D007E85A6 /* ShoppingListViewController.swift in Sources */,
-				50AE4C6122968F2F00467ADE /* MenueDisplayViewController.swift in Sources */,
+				50AE4C6122968F2F00467ADE /* MenuDisplayViewController.swift in Sources */,
 				500FE37D228EE76200157F77 /* RecipeDetailsViewController.swift in Sources */,
 				50AE4C6D2296D4F600467ADE /* DayMealPlanTableViewCell.swift in Sources */,
 				5009278122889DE500FB2CE6 /* AppDelegate.swift in Sources */,

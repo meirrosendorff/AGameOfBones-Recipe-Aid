@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MenueDisplayViewController: UIViewController {
+class MenuDisplayViewController: UIViewController {
   
   var myMeals = ["Sunday","Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saterday"]
   
@@ -21,7 +21,7 @@ class MenueDisplayViewController: UIViewController {
     }
 }
 
-extension MenueDisplayViewController: UITableViewDataSource, UITableViewDelegate{
+extension MenuDisplayViewController: UITableViewDataSource, UITableViewDelegate{
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return myMeals.count
