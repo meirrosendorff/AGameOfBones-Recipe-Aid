@@ -38,6 +38,9 @@ class WeeksMenuViewController: UIViewController {
       return cell
     }
   }
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    tableView.deselectRow(at: indexPath, animated: true)
+  }
   func updateSearchResults(for searchController: UISearchController) {
     filteredTableData.removeAll(keepingCapacity: false)
     let searchPredicate = NSPredicate(format: "SELF CONTAINS[c] %@", searchController.searchBar.text!)

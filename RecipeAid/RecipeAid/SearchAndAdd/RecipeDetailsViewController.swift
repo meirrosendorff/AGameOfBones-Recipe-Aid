@@ -9,9 +9,12 @@
 import UIKit
 
 class RecipeDetailsViewController: UIViewController {
+  @IBOutlet var addButton: UIBarButtonItem!
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view.
     self.title = "Details"
+    let barButtonArray: [UIBarButtonItem] = [addButton]
+    navigationItem.setRightBarButtonItems(barButtonArray, animated: false)
   }
 }
