@@ -75,7 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				5017CE612297BEE200163163 /* Settings */,
-				50AE4C5B229673FC00467ADE /* Menue */,
+				50AE4C5B229673FC00467ADE /* Menu */,
 				500D8D1B229561EC007E85A6 /* ShoppingList */,
 				500FE3842292A5E100157F77 /* SearchAndAdd */,
 				504FF7EE228DFF2D00681272 /* Assets.xcassets */,
@@ -115,7 +115,7 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
-		50AE4C5B229673FC00467ADE /* Menue */ = {
+		50AE4C5B229673FC00467ADE /* Menu */ = {
 			isa = PBXGroup;
 			children = (
 				50AE4C5C2296743500467ADE /* WeekListTableViewCell.swift */,
@@ -123,7 +123,7 @@
 				50AE4C6022968F2F00467ADE /* MenuDisplayViewController.swift */,
 				50AE4C6C2296D4F600467ADE /* DayMealPlanTableViewCell.swift */,
 			);
-			path = Menue;
+			path = Menu;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
