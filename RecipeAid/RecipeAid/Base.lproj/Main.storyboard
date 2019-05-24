@@ -120,7 +120,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Ah-6N-HR5" userLabel="ingredientsScrollView">
-                                <rect key="frame" x="5" y="188" width="365" height="319"/>
+                                <rect key="frame" x="5" y="188" width="365" height="400"/>
                                 <subviews>
                                     <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nCR-i6-Z9w" userLabel="ingredientsBackdropView">
                                         <rect key="frame" x="0.0" y="5" width="365" height="434"/>
@@ -413,31 +413,13 @@
                                 </subviews>
                                 <variation key="heightClass=compact" axis="horizontal" distribution="fillEqually"/>
                             </stackView>
-                            <button opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iDL-Yo-Xaj" userLabel="addMenuItemButton">
-                                <rect key="frame" x="147" y="517" width="81" height="81"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="81" id="PXx-yr-aWe"/>
-                                    <constraint firstAttribute="height" constant="81" id="fsB-jp-6ac"/>
-                                </constraints>
-                                <state key="normal" backgroundImage="plus"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="40"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <segue destination="KZY-JF-5F4" kind="show" id="jPD-es-fge"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="Gdt-41-zis" secondAttribute="bottom" id="1IZ-tN-w4U"/>
                             <constraint firstItem="Gdt-41-zis" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="9dS-xe-6fT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="3Ah-6N-HR5" secondAttribute="bottom" constant="30" id="G75-KU-tCU"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7Zw-xP-k9e" secondAttribute="trailing" id="Ist-NZ-VSc"/>
-                            <constraint firstItem="iDL-Yo-Xaj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ooz-yf-9RR"/>
                             <constraint firstItem="T0Y-51-sjR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="XMm-jU-plW"/>
                             <constraint firstItem="7Zw-xP-k9e" firstAttribute="bottom" secondItem="T0Y-51-sjR" secondAttribute="bottom" id="XYs-nh-z5P"/>
                             <constraint firstItem="7Zw-xP-k9e" firstAttribute="top" secondItem="T0Y-51-sjR" secondAttribute="top" id="Z0G-tf-BeC"/>
@@ -447,16 +429,22 @@
                             <constraint firstItem="3Ah-6N-HR5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="du4-YR-51n"/>
                             <constraint firstAttribute="trailing" secondItem="Gdt-41-zis" secondAttribute="trailing" id="fYB-ol-MET"/>
                             <constraint firstItem="7Zw-xP-k9e" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="oph-hc-qbp"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="iDL-Yo-Xaj" secondAttribute="bottom" constant="20" id="r5W-Wq-oUL"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3Ah-6N-HR5" secondAttribute="trailing" constant="5" id="uDO-4L-YRD"/>
                             <constraint firstItem="3Ah-6N-HR5" firstAttribute="top" secondItem="T0Y-51-sjR" secondAttribute="bottom" constant="30" id="vKg-OL-Kdx"/>
-                            <constraint firstItem="iDL-Yo-Xaj" firstAttribute="top" secondItem="3Ah-6N-HR5" secondAttribute="bottom" constant="10" id="vtW-rn-SUL"/>
                             <constraint firstItem="Gdt-41-zis" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="y94-1w-pen"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="addButton" destination="faP-sk-Do0" id="a9p-vm-eEH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <barButtonItem systemItem="add" id="faP-sk-Do0">
+                    <connections>
+                        <segue destination="KZY-JF-5F4" kind="show" id="8vq-wR-y2f"/>
+                    </connections>
+                </barButtonItem>
             </objects>
             <point key="canvasLocation" x="1927.2" y="24.7376311844078"/>
         </scene>
@@ -1193,7 +1181,6 @@
         <image name="background" width="616" height="463"/>
         <image name="checkbox" width="33" height="33"/>
         <image name="menu" width="33" height="33"/>
-        <image name="plus" width="160" height="160"/>
         <image name="settings" width="33" height="33"/>
         <image name="shopping-icon" width="30" height="30"/>
     </resources>
