@@ -17,9 +17,9 @@
 		500FE3862292A63900157F77 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500FE3852292A63900157F77 /* AddViewController.swift */; };
 		5017CE632297BEFC00163163 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5017CE622297BEFC00163163 /* SettingsViewController.swift */; };
 		504FF7EF228DFF2D00681272 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 504FF7EE228DFF2D00681272 /* Assets.xcassets */; };
-		50AE4C5A2295865900467ADE /* shoppingListItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AE4C592295865900467ADE /* shoppingListItemTableViewCell.swift */; };
-		50AE4C5D2296743500467ADE /* weekListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AE4C5C2296743500467ADE /* weekListTableViewCell.swift */; };
-		50AE4C5F229675BC00467ADE /* weeksMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AE4C5E229675BC00467ADE /* weeksMenuViewController.swift */; };
+		50AE4C5A2295865900467ADE /* ShoppingListItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AE4C592295865900467ADE /* ShoppingListItemTableViewCell.swift */; };
+		50AE4C5D2296743500467ADE /* WeekListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AE4C5C2296743500467ADE /* WeekListTableViewCell.swift */; };
+		50AE4C5F229675BC00467ADE /* WeeksMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AE4C5E229675BC00467ADE /* WeeksMenuViewController.swift */; };
 		50AE4C6122968F2F00467ADE /* MenuDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AE4C6022968F2F00467ADE /* MenuDisplayViewController.swift */; };
 		50AE4C6D2296D4F600467ADE /* DayMealPlanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AE4C6C2296D4F600467ADE /* DayMealPlanTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -37,9 +37,9 @@
 		500FE3852292A63900157F77 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		5017CE622297BEFC00163163 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		504FF7EE228DFF2D00681272 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		50AE4C592295865900467ADE /* shoppingListItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shoppingListItemTableViewCell.swift; sourceTree = "<group>"; };
-		50AE4C5C2296743500467ADE /* weekListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weekListTableViewCell.swift; sourceTree = "<group>"; };
-		50AE4C5E229675BC00467ADE /* weeksMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weeksMenuViewController.swift; sourceTree = "<group>"; };
+		50AE4C592295865900467ADE /* ShoppingListItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListItemTableViewCell.swift; sourceTree = "<group>"; };
+		50AE4C5C2296743500467ADE /* WeekListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekListTableViewCell.swift; sourceTree = "<group>"; };
+		50AE4C5E229675BC00467ADE /* WeeksMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeksMenuViewController.swift; sourceTree = "<group>"; };
 		50AE4C6022968F2F00467ADE /* MenuDisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDisplayViewController.swift; sourceTree = "<group>"; };
 		50AE4C6C2296D4F600467ADE /* DayMealPlanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayMealPlanTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,7 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				500D8D1C2295621D007E85A6 /* ShoppingListViewController.swift */,
-				50AE4C592295865900467ADE /* shoppingListItemTableViewCell.swift */,
+				50AE4C592295865900467ADE /* ShoppingListItemTableViewCell.swift */,
 			);
 			path = ShoppingList;
 			sourceTree = "<group>";
@@ -118,8 +118,8 @@
 		50AE4C5B229673FC00467ADE /* Menue */ = {
 			isa = PBXGroup;
 			children = (
-				50AE4C5C2296743500467ADE /* weekListTableViewCell.swift */,
-				50AE4C5E229675BC00467ADE /* weeksMenuViewController.swift */,
+				50AE4C5C2296743500467ADE /* WeekListTableViewCell.swift */,
+				50AE4C5E229675BC00467ADE /* WeeksMenuViewController.swift */,
 				50AE4C6022968F2F00467ADE /* MenuDisplayViewController.swift */,
 				50AE4C6C2296D4F600467ADE /* DayMealPlanTableViewCell.swift */,
 			);
@@ -136,6 +136,7 @@
 				5009277922889DE500FB2CE6 /* Sources */,
 				5009277A22889DE500FB2CE6 /* Frameworks */,
 				5009277B22889DE500FB2CE6 /* Resources */,
+				5017CE642297DC7D00163163 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -192,16 +193,36 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5017CE642297DC7D00163163 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5009277922889DE500FB2CE6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				500FE3862292A63900157F77 /* AddViewController.swift in Sources */,
-				50AE4C5D2296743500467ADE /* weekListTableViewCell.swift in Sources */,
+				50AE4C5D2296743500467ADE /* WeekListTableViewCell.swift in Sources */,
 				5009278322889DE500FB2CE6 /* SearchResultsViewController.swift in Sources */,
-				50AE4C5A2295865900467ADE /* shoppingListItemTableViewCell.swift in Sources */,
-				50AE4C5F229675BC00467ADE /* weeksMenuViewController.swift in Sources */,
+				50AE4C5A2295865900467ADE /* ShoppingListItemTableViewCell.swift in Sources */,
+				50AE4C5F229675BC00467ADE /* WeeksMenuViewController.swift in Sources */,
 				500D8D1D2295621D007E85A6 /* ShoppingListViewController.swift in Sources */,
 				50AE4C6122968F2F00467ADE /* MenuDisplayViewController.swift in Sources */,
 				500FE37D228EE76200157F77 /* RecipeDetailsViewController.swift in Sources */,
