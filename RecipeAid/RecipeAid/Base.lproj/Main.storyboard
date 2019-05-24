@@ -596,7 +596,7 @@
                         <segue destination="0Cg-q9-CnZ" kind="relationship" relationship="viewControllers" id="dWL-o7-gP0"/>
                         <segue destination="dyA-T2-KXe" kind="relationship" relationship="viewControllers" id="lBI-PJ-FjF"/>
                         <segue destination="1ua-qq-9cF" kind="relationship" relationship="viewControllers" id="KN4-d0-owD"/>
-                        <segue destination="Hfq-ak-lmi" kind="relationship" relationship="viewControllers" id="Jmz-Uf-96e"/>
+                        <segue destination="nwc-Ji-EyQ" kind="relationship" relationship="viewControllers" id="Jmz-Uf-96e"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p6Q-D8-s1E" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -606,18 +606,55 @@
         <!--SettingsViewController-->
         <scene sceneID="6Is-vl-Xkn">
             <objects>
-                <viewController id="Hfq-ak-lmi" userLabel="SettingsViewController" sceneMemberID="viewController">
+                <viewController id="Hfq-ak-lmi" userLabel="SettingsViewController" customClass="SettingsViewController" customModule="RecipeAid" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="z6w-Cl-VzN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" text="Username:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tbX-Ni-s8B">
+                                <rect key="frame" x="10" y="74" width="108.5" height="27.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="500" text="MRosendorff@jhb.dvt.co.za" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="avr-bk-OW2">
+                                <rect key="frame" x="126.5" y="77.5" width="238.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hka-SQ-sG3">
+                                <rect key="frame" x="149" y="564" width="77" height="44"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                <state key="normal" title="logout">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="avr-bk-OW2" firstAttribute="leading" secondItem="tbX-Ni-s8B" secondAttribute="trailing" constant="8" symbolic="YES" id="MIM-K9-HYw"/>
+                            <constraint firstItem="tbX-Ni-s8B" firstAttribute="leading" secondItem="9H9-4a-s4Y" secondAttribute="leading" constant="10" id="bZp-yz-KfA"/>
+                            <constraint firstItem="tbX-Ni-s8B" firstAttribute="top" secondItem="9H9-4a-s4Y" secondAttribute="top" constant="10" id="cFL-Bk-RNN"/>
+                            <constraint firstItem="hka-SQ-sG3" firstAttribute="centerX" secondItem="9H9-4a-s4Y" secondAttribute="centerX" id="ebW-dw-SSf"/>
+                            <constraint firstItem="avr-bk-OW2" firstAttribute="centerY" secondItem="tbX-Ni-s8B" secondAttribute="centerY" id="hSv-Rg-ZgH"/>
+                            <constraint firstItem="hka-SQ-sG3" firstAttribute="bottom" secondItem="9H9-4a-s4Y" secondAttribute="bottom" constant="-10" id="lON-uC-f2R"/>
+                            <constraint firstItem="9H9-4a-s4Y" firstAttribute="trailing" secondItem="avr-bk-OW2" secondAttribute="trailing" constant="10" id="reS-vr-Dhm"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="9H9-4a-s4Y"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" id="Ke0-Ia-fJY"/>
+                    <navigationItem key="navigationItem" id="Vpq-NO-AQP"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2ka-p4-pkY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-14" y="2667"/>
+            <point key="canvasLocation" x="924" y="2666.7166416791606"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="YGj-oD-nyE">
@@ -1064,12 +1101,32 @@
             </objects>
             <point key="canvasLocation" x="4" y="909.89505247376314"/>
         </scene>
+        <!--Settings-->
+        <scene sceneID="X53-ih-lE8">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nwc-Ji-EyQ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Settings" image="settings" id="Ke0-Ia-fJY"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="d0l-v5-Z4x">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Hfq-ak-lmi" kind="relationship" relationship="rootViewController" id="lvw-0p-zOM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x78-MU-oTs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-15.199999999999999" y="2666.7166416791606"/>
+        </scene>
     </scenes>
     <resources>
         <image name="background" width="616" height="463"/>
         <image name="checkbox" width="33" height="33"/>
         <image name="menu" width="33" height="33"/>
         <image name="plus" width="160" height="160"/>
+        <image name="settings" width="33" height="33"/>
         <image name="shopping-icon" width="30" height="30"/>
     </resources>
 </document>
