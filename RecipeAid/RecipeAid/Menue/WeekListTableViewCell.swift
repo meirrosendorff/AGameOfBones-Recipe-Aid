@@ -8,11 +8,9 @@
 
 import UIKit
 
-class weekListTableViewCell: UITableViewCell {
-
+class WeekListTableViewCell: UITableViewCell {
   @IBOutlet weak var weekName: UILabel!
-
-  func setName(_ name: String) -> (){
+  func setName(_ name: String) {
     weekName.text = name
   }
 }

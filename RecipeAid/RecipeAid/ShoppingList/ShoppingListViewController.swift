@@ -9,54 +9,35 @@
 import UIKit
 
 class ShoppingListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-  
-  struct shoppingItem{
-    
+  struct ShoppingItem {
     var item: String
     var isBought: Bool
-    
     init(_ isBought: Bool, _ item: String) {
       self.isBought = isBought
       self.item = item
     }
-    
   }
-  
-  var shoppingList: [shoppingItem] = []
-  
+  var shoppingList: [ShoppingItem] = []
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return shoppingList.count
   }
-  
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    
-    let cell = tableView.dequeueReusableCell(withIdentifier: "shoppingItemProto") as! shoppingListItemTableViewCell
-    
-    cell.Item.text = shoppingList[indexPath.row].item
-    cell.SetState(shoppingList[indexPath.row].isBought)
-    
+    guard let cell = tableView.dequeueReusableCell(withIdentifier: "shoppingItemProto")
+      as? ShoppingListItemTableViewCell else {
+      return UITableViewCell()
+    }
+    cell.item.text = shoppingList[indexPath.row].item
+    cell.setState(shoppingList[indexPath.row].isBought)
     return cell
-    
   }
-  
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        self.title = "Shopping List"
-      
-        shoppingList = [shoppingItem(false, "Lettuce"), shoppingItem(true, "Tomatos"), shoppingItem(false, "Beef"), shoppingItem(false, "Beans"), shoppingItem(false, "Milk"), shoppingItem(false, "Cheese")]
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    self.title = "Shopping List"
+    shoppingList = [ShoppingItem(false, "Lettuce"),
+                    ShoppingItem(true, "Tomatos"),
+                    ShoppingItem(false, "Beef"),
+                    ShoppingItem(false, "Beans"),
+                    ShoppingItem(false, "Milk"),
+                    ShoppingItem(false, "Cheese")]
+  }
 }

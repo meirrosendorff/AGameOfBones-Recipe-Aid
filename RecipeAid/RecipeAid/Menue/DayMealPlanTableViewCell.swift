@@ -9,68 +9,45 @@
 import UIKit
 
 class DayMealPlanTableViewCell: UITableViewCell {
-  
-  struct meal{
-
+  struct Meal {
     var meal: UILabel
     var mealLink: String
-
-    init(_ meal: UILabel, _ mealLink: String){
+    init(_ meal: UILabel, _ mealLink: String) {
       self.meal = meal
       self.mealLink = mealLink
     }
-
   }
-  
   @IBOutlet weak var breakfastDescriptionLabel: UILabel!
-  
   @IBOutlet weak var lunchDescriptionLabel: UILabel!
-  
   @IBOutlet weak var dinnerDescriptionLabel: UILabel!
-  
   @IBAction func linkClicked(_ sender: UIButton) {
-    
-    if sender.tag == 1{//breakfast
-      
-    }else if sender.tag == 2{//lunch
-      
-    }else if sender.tag == 3{//dinner
-      
+    if sender.tag == 1 {//breakfast
+    } else if sender.tag == 2 {//lunch
+    } else if sender.tag == 3 {//dinner
     }
-    
   }
-  
-  
-  var meals = [String : meal]()
-  
+  var meals = [String: Meal]()
   @IBOutlet weak var dayName: UILabel!
-  
-    override func awakeFromNib() {
-        super.awakeFromNib()
-      
-        self.dayName.transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 2)
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-  
-  func SetMeals(breakfast: (description: String, link: String), lunch: (description: String, link: String), dinner: (description: String, link: String)) -> (){
-
+  override func awakeFromNib() {
+    super.awakeFromNib()
+    self.dayName.transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 2)
+  }
+  override func setSelected(_ selected: Bool, animated: Bool) {
+    super.setSelected(selected, animated: animated)
+    // Configure the view for the selected state
+  }
+  func setMeals(breakfast: (
+    description: String, link: String),
+                lunch: (description: String, link: String),
+                dinner: (description: String, link: String)) {
     breakfastDescriptionLabel.text = breakfast.description
     lunchDescriptionLabel.text = lunch.description
     dinnerDescriptionLabel.text = dinner.description
-    
-    meals["breakfast"] = meal(breakfastDescriptionLabel, breakfast.link)
-    meals["lunch"] = meal(lunchDescriptionLabel, lunch.link)
-    meals["dinner"] = meal(dinnerDescriptionLabel, dinner.link)
-
+    meals["breakfast"] = Meal(breakfastDescriptionLabel, breakfast.link)
+    meals["lunch"] = Meal(lunchDescriptionLabel, lunch.link)
+    meals["dinner"] = Meal(dinnerDescriptionLabel, dinner.link)
   }
-  
-  func setName(_ dayName: String){
+  func setName(_ dayName: String) {
     self.dayName.text = dayName
   }
-
 }
