@@ -17,7 +17,7 @@ class ShoppingListItemTableViewCell: UITableViewCell {
       boughtCheckBox.backgroundColor = UIColor.black
       alreadyBought = false
     } else {
-      boughtCheckBox.backgroundColor = UIColor.clear
+      boughtCheckBox.backgroundColor = UIColor.white
       alreadyBought = true
     }
   }
@@ -30,7 +30,7 @@ class ShoppingListItemTableViewCell: UITableViewCell {
   }
   func setState(_ bought: Bool) {
     if bought {
-      boughtCheckBox.backgroundColor = UIColor.clear
+      boughtCheckBox.backgroundColor = UIColor.white
       alreadyBought = true
     } else {
       boughtCheckBox.backgroundColor = UIColor.black
