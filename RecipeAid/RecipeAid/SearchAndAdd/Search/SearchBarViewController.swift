@@ -25,6 +25,7 @@ class SearchBarViewController: UIViewController, UISearchBarDelegate {
     }
   }
   func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+    view.endEditing(true)
     performSegue(withIdentifier: "goToSearchResults", sender: self)
   }
 }
