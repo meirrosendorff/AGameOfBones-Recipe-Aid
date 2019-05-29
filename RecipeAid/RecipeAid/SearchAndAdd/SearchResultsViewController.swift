@@ -17,16 +17,18 @@ class SearchResultsViewController: UIViewController, UITableViewDelegate, UITabl
     var calories: Int
   }
   var tableData: [MyData] = []
+  var gradientLayer: GradientLayer?
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view.
+    gradientLayer = GradientLayer(view: view)
+    gradientLayer?.addGradientToView()
     tableData = [
       MyData(name: "Recipe Name", source: "Food Chanel", num: 4,
              picture: UIImage(named: "background")!, calories: 600),
       MyData(name: "Recipe Name", source: "Food Chanel", num: 4,
              picture: UIImage(named: "background")!, calories: 600)
     ]
-    self.title = "Search"
+    self.title = "Search Results"
   }
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return tableData.count
@@ -44,5 +46,11 @@ class SearchResultsViewController: UIViewController, UITableViewDelegate, UITabl
   }
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
+  }
+  override func viewWillLayoutSubviews() {
+    super.viewWillLayoutSubviews()
+    if let gradientLayer = gradientLayer {
+      gradientLayer.updateBounds()
+    }
   }
 }
