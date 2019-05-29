@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension SearchResultsViewController: UITableViewDelegate, UITableViewDataSource{
+extension SearchResultsViewController: UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return tableData.count
   }
