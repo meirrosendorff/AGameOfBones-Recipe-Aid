@@ -11,6 +11,7 @@ import UIKit
 class AddViewController: UIViewController {
   @IBOutlet weak var mealSegmentControll: UISegmentedControl!
   @IBOutlet weak var confirmButton: UIButton!
+  @IBOutlet weak var datePicker: UIDatePicker!
   var gradientLayer: GradientLayer?
   let colors = Colors()
   override func viewDidLoad() {
@@ -19,8 +20,12 @@ class AddViewController: UIViewController {
     gradientLayer?.addGradientToView()
     title = "Add Recipe"
     setUpSegmentControll()
+    datePicker.layer.cornerRadius = 20
+    datePicker.layer.masksToBounds = true
     confirmButton.layer.borderColor = colors.navy.cgColor
     confirmButton.layer.borderWidth = 2
+    datePicker.setValue(colors.white, forKeyPath: "textColor")
+    datePicker.backgroundColor = colors.navy
   }
   func setUpSegmentControll() {
     let selectedAtributes = [NSAttributedString.Key.foregroundColor: colors.yellow,
