@@ -9,15 +9,18 @@
 import UIKit
 
 class ShoppingListItemTableViewCell: UITableViewCell {
-  @IBOutlet weak var boughtCheckBox: UIButton!
+  @IBOutlet weak var blackoutForeground: UIView!
   @IBOutlet weak var item: UILabel!
   private var alreadyBought = false
+  let colors = Colors()
   @IBAction func itemBought(_ sender: UIButton) {
     if alreadyBought {
-      boughtCheckBox.backgroundColor = UIColor.black
+      blackoutForeground.backgroundColor = UIColor.black
+      item.textColor = colors.yellow
       alreadyBought = false
     } else {
-      boughtCheckBox.backgroundColor = UIColor.white
+      blackoutForeground.backgroundColor = UIColor.clear
+      item.textColor = colors.yellow.withAlphaComponent(0.5)
       alreadyBought = true
     }
   }
@@ -30,10 +33,12 @@ class ShoppingListItemTableViewCell: UITableViewCell {
   }
   func setState(_ bought: Bool) {
     if bought {
-      boughtCheckBox.backgroundColor = UIColor.white
+      blackoutForeground.backgroundColor = UIColor.clear
+      item.textColor = colors.yellow.withAlphaComponent(0.5)
       alreadyBought = true
     } else {
-      boughtCheckBox.backgroundColor = UIColor.black
+      blackoutForeground.backgroundColor = UIColor.black
+      item.textColor = colors.yellow
       alreadyBought = false
     }
   }
