@@ -23,6 +23,7 @@
 		508D1CDF229EB0CC008DA723 /* IngredientsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508D1CDE229EB0CC008DA723 /* IngredientsTableViewCell.swift */; };
 		508D1CE4229FA358008DA723 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508D1CE3229FA358008DA723 /* WebViewController.swift */; };
 		508D1CE7229FCB41008DA723 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 508D1CE6229FCB41008DA723 /* WebKit.framework */; };
+		508D1CE922A10944008DA723 /* MenuIngredientsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508D1CE822A10944008DA723 /* MenuIngredientsTableViewCell.swift */; };
 		50AE4C5A2295865900467ADE /* ShoppingListItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AE4C592295865900467ADE /* ShoppingListItemTableViewCell.swift */; };
 		50AE4C5F229675BC00467ADE /* MenuDatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AE4C5E229675BC00467ADE /* MenuDatePickerViewController.swift */; };
 		50AE4C6122968F2F00467ADE /* MenuDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AE4C6022968F2F00467ADE /* MenuDisplayViewController.swift */; };
@@ -47,6 +48,7 @@
 		508D1CDE229EB0CC008DA723 /* IngredientsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsTableViewCell.swift; sourceTree = "<group>"; };
 		508D1CE3229FA358008DA723 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		508D1CE6229FCB41008DA723 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		508D1CE822A10944008DA723 /* MenuIngredientsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuIngredientsTableViewCell.swift; sourceTree = "<group>"; };
 		50AE4C592295865900467ADE /* ShoppingListItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListItemTableViewCell.swift; sourceTree = "<group>"; };
 		50AE4C5E229675BC00467ADE /* MenuDatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDatePickerViewController.swift; sourceTree = "<group>"; };
 		50AE4C6022968F2F00467ADE /* MenuDisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDisplayViewController.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 			children = (
 				50AE4C5E229675BC00467ADE /* MenuDatePickerViewController.swift */,
 				50AE4C6022968F2F00467ADE /* MenuDisplayViewController.swift */,
+				508D1CE822A10944008DA723 /* MenuIngredientsTableViewCell.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 				508D1CDD229E5799008DA723 /* Colors.swift in Sources */,
 				5009278322889DE500FB2CE6 /* SearchResultsViewController.swift in Sources */,
 				508D1CE4229FA358008DA723 /* WebViewController.swift in Sources */,
+				508D1CE922A10944008DA723 /* MenuIngredientsTableViewCell.swift in Sources */,
 				508D1CDB229D6E24008DA723 /* GradientLayer.swift in Sources */,
 				50AE4C5A2295865900467ADE /* ShoppingListItemTableViewCell.swift in Sources */,
 				508D1CD8229D6D4A008DA723 /* SearchBarViewController.swift in Sources */,
