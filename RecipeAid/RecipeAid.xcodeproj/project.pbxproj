@@ -24,10 +24,8 @@
 		508D1CE4229FA358008DA723 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508D1CE3229FA358008DA723 /* WebViewController.swift */; };
 		508D1CE7229FCB41008DA723 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 508D1CE6229FCB41008DA723 /* WebKit.framework */; };
 		50AE4C5A2295865900467ADE /* ShoppingListItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AE4C592295865900467ADE /* ShoppingListItemTableViewCell.swift */; };
-		50AE4C5D2296743500467ADE /* WeekListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AE4C5C2296743500467ADE /* WeekListTableViewCell.swift */; };
-		50AE4C5F229675BC00467ADE /* WeeksMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AE4C5E229675BC00467ADE /* WeeksMenuViewController.swift */; };
+		50AE4C5F229675BC00467ADE /* MenuDatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AE4C5E229675BC00467ADE /* MenuDatePickerViewController.swift */; };
 		50AE4C6122968F2F00467ADE /* MenuDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AE4C6022968F2F00467ADE /* MenuDisplayViewController.swift */; };
-		50AE4C6D2296D4F600467ADE /* DayMealPlanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AE4C6C2296D4F600467ADE /* DayMealPlanTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,10 +48,8 @@
 		508D1CE3229FA358008DA723 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		508D1CE6229FCB41008DA723 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		50AE4C592295865900467ADE /* ShoppingListItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListItemTableViewCell.swift; sourceTree = "<group>"; };
-		50AE4C5C2296743500467ADE /* WeekListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekListTableViewCell.swift; sourceTree = "<group>"; };
-		50AE4C5E229675BC00467ADE /* WeeksMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeksMenuViewController.swift; sourceTree = "<group>"; };
+		50AE4C5E229675BC00467ADE /* MenuDatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDatePickerViewController.swift; sourceTree = "<group>"; };
 		50AE4C6022968F2F00467ADE /* MenuDisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDisplayViewController.swift; sourceTree = "<group>"; };
-		50AE4C6C2296D4F600467ADE /* DayMealPlanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayMealPlanTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,10 +173,8 @@
 		50AE4C5B229673FC00467ADE /* Menu */ = {
 			isa = PBXGroup;
 			children = (
-				50AE4C5C2296743500467ADE /* WeekListTableViewCell.swift */,
-				50AE4C5E229675BC00467ADE /* WeeksMenuViewController.swift */,
+				50AE4C5E229675BC00467ADE /* MenuDatePickerViewController.swift */,
 				50AE4C6022968F2F00467ADE /* MenuDisplayViewController.swift */,
-				50AE4C6C2296D4F600467ADE /* DayMealPlanTableViewCell.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -278,19 +272,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				500FE3862292A63900157F77 /* AddViewController.swift in Sources */,
-				50AE4C5D2296743500467ADE /* WeekListTableViewCell.swift in Sources */,
 				508D1CDD229E5799008DA723 /* Colors.swift in Sources */,
 				5009278322889DE500FB2CE6 /* SearchResultsViewController.swift in Sources */,
 				508D1CE4229FA358008DA723 /* WebViewController.swift in Sources */,
 				508D1CDB229D6E24008DA723 /* GradientLayer.swift in Sources */,
 				50AE4C5A2295865900467ADE /* ShoppingListItemTableViewCell.swift in Sources */,
 				508D1CD8229D6D4A008DA723 /* SearchBarViewController.swift in Sources */,
-				50AE4C5F229675BC00467ADE /* WeeksMenuViewController.swift in Sources */,
+				50AE4C5F229675BC00467ADE /* MenuDatePickerViewController.swift in Sources */,
 				508D1CDF229EB0CC008DA723 /* IngredientsTableViewCell.swift in Sources */,
 				500D8D1D2295621D007E85A6 /* ShoppingListViewController.swift in Sources */,
 				50AE4C6122968F2F00467ADE /* MenuDisplayViewController.swift in Sources */,
 				500FE37D228EE76200157F77 /* RecipeDetailsViewController.swift in Sources */,
-				50AE4C6D2296D4F600467ADE /* DayMealPlanTableViewCell.swift in Sources */,
 				5009278122889DE500FB2CE6 /* AppDelegate.swift in Sources */,
 				500FE37F228EEE8B00157F77 /* RecipeListTableViewCell.swift in Sources */,
 				5017CE632297BEFC00163163 /* SettingsViewController.swift in Sources */,
