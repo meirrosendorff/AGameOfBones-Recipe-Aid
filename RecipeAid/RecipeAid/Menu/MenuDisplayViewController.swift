@@ -8,28 +8,92 @@
 
 import UIKit
 
+typealias TableViewInheritance = UITableViewDelegate & UITableViewDataSource
+
 class MenuDisplayViewController: UIViewController {
-  var myMeals = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saterday"]
-  var meals = ["Cereal with Eggs And Maybe Some long name", "Braai and Pap + Gravy", "Chicken Soup"]
+  var currMealSegment = ""
+  let ingredients = ["Breakfast": [
+    "Ingredient",
+    "Another ingredient",
+    "An ingredient with a stupidly long name that would be multiline",
+    "Salt",
+    "Pepper",
+    "suger, cos who doesn't want suger",
+    "Ingredient",
+    "Another ingredient",
+    "An ingredient with a stupidly long name that would be multiline",
+    "Salt",
+    "Pepper",
+    "suger, cos who doesn't want suger",
+    "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    ],
+    "Lunch": [],
+    "Dinner": []]
+  @IBOutlet weak var mealSegmentControll: UISegmentedControl!
+  @IBOutlet weak var recipeDetailsContainer: UIView!
+  @IBOutlet weak var recipeNameLabel: UILabel!
+  @IBOutlet weak var ingredientsTableView: UITableView!
+  @IBOutlet weak var noMealChosenLabel: UILabel!
+  var gradientLayer: GradientLayer?
+  let colors = Colors()
   override func viewDidLoad() {
     super.viewDidLoad()
-    self.title = "Week's Name"
+    gradientLayer = GradientLayer(view: view)
+    gradientLayer?.addGradientToView()
+    setUpSegmentControll()
+    self.title = "18 Sept 2018"
+    currMealSegment = mealSegmentControll.titleForSegment(at: mealSegmentControll.selectedSegmentIndex) ?? ""
+    if ingredients[currMealSegment]?.count == 0 {
+      recipeDetailsContainer.isHidden = true
+      noMealChosenLabel.isHidden = false
+      noMealChosenLabel.text = "No Meal Chose for \(currMealSegment)"
+    } else {
+      recipeDetailsContainer.isHidden = false
+      recipeNameLabel.text = "Recipe Name for \(currMealSegment)"
+      noMealChosenLabel.isHidden = true
+    }
+  }
+  override func viewWillLayoutSubviews() {
+    super.viewWillLayoutSubviews()
+    if let gradientLayer = gradientLayer {
+      gradientLayer.updateBounds()
+    }
+  }
+  func setUpSegmentControll() {
+    let selectedAtributes = [NSAttributedString.Key.foregroundColor: colors.yellow,
+                             NSAttributedString.Key.font: UIFont.systemFont(
+                              ofSize: 17, weight: .medium)]
+    mealSegmentControll.setTitleTextAttributes(selectedAtributes, for: .selected)
+    let unselectedAtributes = [NSAttributedString.Key.foregroundColor: colors.white,
+                               NSAttributedString.Key.font: UIFont.systemFont(
+                                ofSize: 17, weight: .regular)]
+    mealSegmentControll.setTitleTextAttributes(unselectedAtributes, for: .normal)
+  }
+  @IBAction func mealChosen(_ sender: UISegmentedControl) {
+    currMealSegment = mealSegmentControll.titleForSegment(at: mealSegmentControll.selectedSegmentIndex) ?? ""
+    if ingredients[currMealSegment]?.count == 0 {
+      recipeDetailsContainer.isHidden = true
+      noMealChosenLabel.isHidden = false
+      noMealChosenLabel.text = "No Meal Chose for \(currMealSegment)"
+    } else {
+      recipeDetailsContainer.isHidden = false
+      recipeNameLabel.text = "Recipe Name for \(currMealSegment)"
+      noMealChosenLabel.isHidden = true
+      ingredientsTableView.reloadData()
+    }
   }
 }
 
-extension MenuDisplayViewController: UITableViewDataSource, UITableViewDelegate {
+extension MenuDisplayViewController: TableViewInheritance {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return myMeals.count
+    return ingredients[currMealSegment]?.count ?? 0
   }
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    guard let cell = tableView.dequeueReusableCell(withIdentifier: "DayMealPlan") as? DayMealPlanTableViewCell else {
+    guard let cell = tableView.dequeueReusableCell(
+      withIdentifier: "menuIngredientCell") as? MenuIngredientsTableViewCell else {
       return UITableViewCell()
     }
-    cell.setName(myMeals[indexPath.row])
-    //The following is done for testing purposes to randomize when meals are set
-    cell.setMeals(breakfast: (description: indexPath.row % 2 != 0 ? meals[0] : "", link: ""),
-                  lunch: (indexPath.row % 3 != 0 ? meals[1] : "", link: ""),
-                  dinner: (indexPath.row % 5 != 0 ? meals[2] : "", link: ""))
+    cell.setIngredient(ingredients[currMealSegment]?[indexPath.row] ?? "")
     return cell
   }
 }
