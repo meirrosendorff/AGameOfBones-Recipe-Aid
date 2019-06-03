@@ -36,7 +36,7 @@ class Formatter: FormatterProtocal {
     textFieldFillColor = colors.white
     textFieldTextColor = colors.navy
     containerFillColor = colors.navy
-    borderWeight = 1
+    borderWeight = 1.5
     textFieldCornerRadius = 10
     textFont = "HelveticaNeue"
   }
@@ -72,6 +72,7 @@ class Formatter: FormatterProtocal {
     textBox.layer.borderWidth = borderWeight
     textBox.layer.masksToBounds = true
     textBox.backgroundColor = textFieldFillColor
+    textBox.font = UIFont(name: textFont, size: ofSize)
   }
   func getButtonBorderColor() -> UIColor {
     return buttonBorderColor
@@ -81,5 +82,15 @@ class Formatter: FormatterProtocal {
   }
   func getMainTextColor() -> UIColor {
     return mainTextColor
+  }
+  func getSubtextColor() -> UIColor {
+    return subtextColor
+  }
+  func getFont(ofSize: CGFloat, ofWeight: String) -> UIFont? {
+    var weight = ""
+    if ofWeight != "" {
+      weight = "-\(ofWeight)"
+    }
+    return UIFont(name: textFont + weight, size: ofSize)
   }
 }

@@ -966,6 +966,7 @@
                     <navigationItem key="navigationItem" id="TbV-QV-5gL"/>
                     <connections>
                         <outlet property="datePicker" destination="gKq-Bf-NP0" id="sl8-US-2li"/>
+                        <outlet property="instructionsLabel" destination="lWN-OO-F4J" id="uCX-Yv-hmB"/>
                         <outlet property="viewMenuButton" destination="Ixp-4U-qh4" id="f1j-bQ-rXg"/>
                     </connections>
                 </viewController>
@@ -1153,6 +1154,8 @@
                         <viewLayoutGuide key="safeArea" id="NoR-QZ-Snt"/>
                     </view>
                     <connections>
+                        <outlet property="fullInstructionsButton" destination="pob-Ku-GFu" id="HNw-9J-b4S"/>
+                        <outlet property="ingredientsLabel" destination="xdr-2x-3uT" id="n1b-qO-vxo"/>
                         <outlet property="ingredientsTableView" destination="vyd-Qh-VSj" id="Av2-nR-TnG"/>
                         <outlet property="mealSegmentControll" destination="qOG-eH-HzO" id="Nsb-8Y-fUA"/>
                         <outlet property="noMealChosenLabel" destination="dbu-mb-mF5" id="A3V-uw-p88"/>

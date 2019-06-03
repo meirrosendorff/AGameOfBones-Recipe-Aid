@@ -63,8 +63,8 @@ class SettingsViewController: UIViewController {
     formatter.formatTextField(maxTimeTextBox, ofSize: 14)
     formatter.formatTextField(minTimeTextBox, ofSize: 14)
     formatter.formatTextField(dietryRestrictionsTextBox, ofSize: 14)
-    formatter.formatButton(saveButton, ofSize: 25)
-    formatter.formatButton(logoutButton, ofSize: 25)
+    formatter.formatButton(saveButton, ofSize: 22)
+    formatter.formatButton(logoutButton, ofSize: 22)
     caloriesDashLabel.textColor = formatter.getButtonBorderColor()
     timeDashLabel.textColor = formatter.getButtonBorderColor()
   }

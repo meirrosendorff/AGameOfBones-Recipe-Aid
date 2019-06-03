@@ -16,4 +16,6 @@ protocol FormatterProtocal {
   func getButtonBorderColor() -> UIColor
   func getFillColor() -> UIColor
   func getMainTextColor() -> UIColor
+  func getSubtextColor() -> UIColor
+  func getFont(ofSize: CGFloat, ofWeight: String) -> UIFont?
 }

@@ -12,8 +12,9 @@ class MenuIngredientsTableViewCell: UITableViewCell {
   @IBOutlet weak var ingredientLabel: UILabel!
   override func awakeFromNib() {
     super.awakeFromNib()
-    let colors = Colors()
-    ingredientLabel.textColor = colors.white
+    let formatter = Formatter()
+    formatter.formateLabelAsSubtext(ingredientLabel, ofSize: 20)
+    self.backgroundColor = formatter.getFillColor()
   }
   func setIngredient(_ name: String) {
     ingredientLabel.text = name
