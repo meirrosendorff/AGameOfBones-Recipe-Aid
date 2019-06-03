@@ -37,12 +37,19 @@ class SettingsViewController: UIViewController {
   }
 }
 
-extension SettingsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+typealias CollectionView = UICollectionViewDelegate
+  & UICollectionViewDataSource
+  & UICollectionViewDelegateFlowLayout
+
+extension SettingsViewController: CollectionView {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return settings.count
   }
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "dietryRestrictions", for: indexPath) as? DietryRestrictionsCollectionViewCell else{
+    guard let cell = collectionView.dequeueReusableCell(
+      withReuseIdentifier: "dietryRestrictions",
+      for: indexPath)
+      as? DietryRestrictionsCollectionViewCell else {
       return UICollectionViewCell()
     }
     let (name, isChosen) = settings[indexPath.row]
@@ -51,7 +58,10 @@ extension SettingsViewController: UICollectionViewDelegate, UICollectionViewData
     cell.layer.borderWidth = 2
     return cell
   }
-  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+  func collectionView(
+    _ collectionView: UICollectionView,
+    layout collectionViewLayout: UICollectionViewLayout,
+    sizeForItemAt indexPath: IndexPath) -> CGSize {
     return CGSize(width: (view.frame.width - 20) / 2, height: 60)
   }
   override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {

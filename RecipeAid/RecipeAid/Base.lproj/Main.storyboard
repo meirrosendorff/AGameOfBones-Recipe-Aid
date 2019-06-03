@@ -643,6 +643,11 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4mo-vI-U8E">
                                                             <rect key="frame" x="12" y="5" width="40" height="40"/>
                                                             <subviews>
+                                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ig4-Ob-2QW" userLabel="whiteBackground">
+                                                                    <rect key="frame" x="10" y="10" width="20" height="20"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                    <color key="backgroundColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                </view>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZAL-c1-1oO">
                                                                     <rect key="frame" x="-2" y="-2" width="44" height="44"/>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -654,10 +659,6 @@
                                                                             <integer key="value" value="2"/>
                                                                         </userDefinedRuntimeAttribute>
                                                                     </userDefinedRuntimeAttributes>
-                                                                </view>
-                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ig4-Ob-2QW" userLabel="whiteBackground">
-                                                                    <rect key="frame" x="10" y="10" width="20" height="20"/>
-                                                                    <color key="backgroundColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </view>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkbox" translatesAutoresizingMaskIntoConstraints="NO" id="c8z-XI-Va0">
                                                                     <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
@@ -682,14 +683,10 @@
                                                                 <constraint firstItem="ZAL-c1-1oO" firstAttribute="trailing" secondItem="c8z-XI-Va0" secondAttribute="trailing" constant="2" id="1Zm-Bb-Opm"/>
                                                                 <constraint firstAttribute="height" constant="40" id="2IM-en-q6j"/>
                                                                 <constraint firstItem="ZAL-c1-1oO" firstAttribute="bottom" secondItem="c8z-XI-Va0" secondAttribute="bottom" constant="2" id="3FR-ul-mXf"/>
-                                                                <constraint firstItem="Ig4-Ob-2QW" firstAttribute="leading" secondItem="c8z-XI-Va0" secondAttribute="leading" constant="10" id="550-p4-CcC"/>
                                                                 <constraint firstItem="ZAL-c1-1oO" firstAttribute="leading" secondItem="c8z-XI-Va0" secondAttribute="leading" constant="-2" id="A3i-fx-L8n"/>
                                                                 <constraint firstItem="c8z-XI-Va0" firstAttribute="centerX" secondItem="4mo-vI-U8E" secondAttribute="centerX" id="E4X-Dy-DOM"/>
                                                                 <constraint firstAttribute="width" constant="40" id="iDi-7j-QXp"/>
-                                                                <constraint firstItem="Ig4-Ob-2QW" firstAttribute="trailing" secondItem="c8z-XI-Va0" secondAttribute="trailing" constant="-10" id="iVb-xD-1ud"/>
-                                                                <constraint firstItem="Ig4-Ob-2QW" firstAttribute="top" secondItem="c8z-XI-Va0" secondAttribute="top" constant="10" id="kxv-wW-Iqj"/>
                                                                 <constraint firstItem="ZAL-c1-1oO" firstAttribute="top" secondItem="c8z-XI-Va0" secondAttribute="top" constant="-2" id="t2I-CV-Ilu"/>
-                                                                <constraint firstItem="Ig4-Ob-2QW" firstAttribute="bottom" secondItem="c8z-XI-Va0" secondAttribute="bottom" constant="-10" id="xhs-hp-2Mo"/>
                                                             </constraints>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bag-E5-vuo">
