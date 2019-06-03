@@ -12,27 +12,28 @@ class DietryRestrictionsCollectionViewCell: UICollectionViewCell {
   @IBOutlet weak var blackoutView: UIView!
   @IBOutlet weak var settingLabel: UILabel!
   var isChosen = false
-  var colors = Colors()
+  var formatter = Formatter()
   func setup(_ name: String, _ isChosen: Bool) {
     settingLabel.text = name
+    formatter.formateLabelAsMainText(settingLabel, ofSize: 17)
     if isChosen {
       blackoutView.backgroundColor = UIColor.clear
-      settingLabel.textColor = colors.yellow
+      settingLabel.textColor = formatter.getMainTextColor()
       self.isChosen = true
     } else {
       blackoutView.backgroundColor = UIColor.black
-      settingLabel.textColor = colors.yellow.withAlphaComponent(0.5)
+      settingLabel.textColor = formatter.getMainTextColor().withAlphaComponent(0.5)
       self.isChosen = false
     }
   }
   @IBAction func cellSelectionButton(_ sender: UIButton) {
     if self.isChosen {
       blackoutView.backgroundColor = UIColor.black
-      settingLabel.textColor = colors.yellow.withAlphaComponent(0.5)
+      settingLabel.textColor = formatter.getMainTextColor().withAlphaComponent(0.5)
       self.isChosen = false
     } else {
       blackoutView.backgroundColor = UIColor.clear
-      settingLabel.textColor = colors.yellow
+      settingLabel.textColor = formatter.getMainTextColor()
       self.isChosen = true
     }
   }
