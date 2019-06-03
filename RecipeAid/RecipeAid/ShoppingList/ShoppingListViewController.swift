@@ -10,7 +10,9 @@ import UIKit
 
 class ShoppingListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
   var gradientLayer: GradientLayer?
+  @IBOutlet weak var dateLabel: UILabel!
   @IBOutlet weak var noShoppingLabel: UILabel!
+  let formatter = Formatter()
   struct ShoppingItem {
     var item: String
     var isBought: Bool
@@ -48,6 +50,11 @@ class ShoppingListViewController: UIViewController, UITableViewDelegate, UITable
     } else {
       noShoppingLabel.isHidden = true
     }
+    formatViews()
+  }
+  func formatViews() {
+    formatter.formateLabelAsMainText(dateLabel, ofSize: 17)
+    formatter.formateLabelAsMainText(noShoppingLabel, ofSize: 22, ofWeight: "Bold")
   }
   override func viewWillLayoutSubviews() {
     gradientLayer?.updateBounds()

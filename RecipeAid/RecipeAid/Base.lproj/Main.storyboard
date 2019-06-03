@@ -1322,6 +1322,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="dsx-77-07e"/>
                     <connections>
+                        <outlet property="dateLabel" destination="hOU-uq-rdo" id="6u1-f6-i0H"/>
                         <outlet property="noShoppingLabel" destination="jl7-XP-boY" id="nIf-qF-3P3"/>
                     </connections>
                 </viewController>
