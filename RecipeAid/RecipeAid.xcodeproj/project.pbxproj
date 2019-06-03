@@ -25,6 +25,8 @@
 		508D1CE922A10944008DA723 /* MenuIngredientsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508D1CE822A10944008DA723 /* MenuIngredientsTableViewCell.swift */; };
 		508D1CEB22A123FD008DA723 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508D1CEA22A123FD008DA723 /* SettingsViewController.swift */; };
 		508D1CED22A1383A008DA723 /* DietryRestrictionsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508D1CEC22A1383A008DA723 /* DietryRestrictionsCollectionViewCell.swift */; };
+		509CD61922A4F025008FCFAC /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509CD61822A4F025008FCFAC /* Formatter.swift */; };
+		509CD61B22A4F041008FCFAC /* FormatterProtocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509CD61A22A4F041008FCFAC /* FormatterProtocal.swift */; };
 		50AE4C5A2295865900467ADE /* ShoppingListItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AE4C592295865900467ADE /* ShoppingListItemTableViewCell.swift */; };
 		50AE4C5F229675BC00467ADE /* MenuDatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AE4C5E229675BC00467ADE /* MenuDatePickerViewController.swift */; };
 		50AE4C6122968F2F00467ADE /* MenuDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AE4C6022968F2F00467ADE /* MenuDisplayViewController.swift */; };
@@ -51,6 +53,8 @@
 		508D1CE822A10944008DA723 /* MenuIngredientsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuIngredientsTableViewCell.swift; sourceTree = "<group>"; };
 		508D1CEA22A123FD008DA723 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		508D1CEC22A1383A008DA723 /* DietryRestrictionsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietryRestrictionsCollectionViewCell.swift; sourceTree = "<group>"; };
+		509CD61822A4F025008FCFAC /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
+		509CD61A22A4F041008FCFAC /* FormatterProtocal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatterProtocal.swift; sourceTree = "<group>"; };
 		50AE4C592295865900467ADE /* ShoppingListItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListItemTableViewCell.swift; sourceTree = "<group>"; };
 		50AE4C5E229675BC00467ADE /* MenuDatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDatePickerViewController.swift; sourceTree = "<group>"; };
 		50AE4C6022968F2F00467ADE /* MenuDisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDisplayViewController.swift; sourceTree = "<group>"; };
@@ -135,6 +139,8 @@
 			children = (
 				508D1CDA229D6E24008DA723 /* GradientLayer.swift */,
 				508D1CDC229E5799008DA723 /* Colors.swift */,
+				509CD61822A4F025008FCFAC /* Formatter.swift */,
+				509CD61A22A4F041008FCFAC /* FormatterProtocal.swift */,
 			);
 			path = UIFunctions;
 			sourceTree = "<group>";
@@ -289,10 +295,12 @@
 				508D1CD8229D6D4A008DA723 /* SearchBarViewController.swift in Sources */,
 				50AE4C5F229675BC00467ADE /* MenuDatePickerViewController.swift in Sources */,
 				508D1CDF229EB0CC008DA723 /* IngredientsTableViewCell.swift in Sources */,
+				509CD61922A4F025008FCFAC /* Formatter.swift in Sources */,
 				500D8D1D2295621D007E85A6 /* ShoppingListViewController.swift in Sources */,
 				50AE4C6122968F2F00467ADE /* MenuDisplayViewController.swift in Sources */,
 				500FE37D228EE76200157F77 /* RecipeDetailsViewController.swift in Sources */,
 				5009278122889DE500FB2CE6 /* AppDelegate.swift in Sources */,
+				509CD61B22A4F041008FCFAC /* FormatterProtocal.swift in Sources */,
 				500FE37F228EEE8B00157F77 /* RecipeListTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,10 +9,11 @@
 import UIKit
 
 class MenuDatePickerViewController: UIViewController {
+  @IBOutlet weak var instructionsLabel: UILabel!
   @IBOutlet weak var viewMenuButton: UIButton!
   @IBOutlet weak var datePicker: UIDatePicker!
   var gradientLayer: GradientLayer?
-  let colors = Colors()
+  let formatter = Formatter()
   override func viewDidLoad() {
     super.viewDidLoad()
     gradientLayer = GradientLayer(view: view)
@@ -20,10 +21,10 @@ class MenuDatePickerViewController: UIViewController {
     self.title = "Menu"
     datePicker.layer.cornerRadius = 20
     datePicker.layer.masksToBounds = true
-    datePicker.setValue(colors.white, forKeyPath: "textColor")
-    datePicker.backgroundColor = colors.navy
-    viewMenuButton.layer.borderColor = colors.navy.cgColor
-    viewMenuButton.layer.borderWidth = 2
+    datePicker.setValue(formatter.getSubtextColor(), forKeyPath: "textColor")
+    datePicker.backgroundColor = formatter.getFillColor()
+    formatter.formatButton(viewMenuButton, ofSize: 22)
+    formatter.formateLabelAsMainText(instructionsLabel, ofSize: 22)
   }
   override func viewWillLayoutSubviews() {
     super.viewWillLayoutSubviews()

@@ -10,9 +10,10 @@ import UIKit
 
 class IngredientsTableViewCell: UITableViewCell {
   @IBOutlet weak var ingredient: UILabel!
+  let formatter = Formatter()
   override func awakeFromNib() {
     super.awakeFromNib()
-    let colors = Colors()
-    ingredient.textColor = colors.white
+    formatter.formateLabelAsSubtext(ingredient, ofSize: 18)
+    self.backgroundColor = formatter.getFillColor()
   }
 }

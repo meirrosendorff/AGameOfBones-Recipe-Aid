@@ -31,17 +31,21 @@ class MenuDisplayViewController: UIViewController {
     "Dinner": []]
   @IBOutlet weak var mealSegmentControll: UISegmentedControl!
   @IBOutlet weak var recipeDetailsContainer: UIView!
+  @IBOutlet weak var fullInstructionsButton: UIButton!
+  @IBOutlet weak var ingredientsLabel: UILabel!
   @IBOutlet weak var recipeNameLabel: UILabel!
   @IBOutlet weak var ingredientsTableView: UITableView!
   @IBOutlet weak var noMealChosenLabel: UILabel!
+  @IBOutlet weak var ingredientContainerView: UIView!
   var gradientLayer: GradientLayer?
-  let colors = Colors()
+  let formatter = Formatter()
   override func viewDidLoad() {
     super.viewDidLoad()
     gradientLayer = GradientLayer(view: view)
     gradientLayer?.addGradientToView()
     setUpSegmentControll()
     self.title = "18 Sept 2018"
+    formatViews()
     currMealSegment = mealSegmentControll.titleForSegment(at: mealSegmentControll.selectedSegmentIndex) ?? ""
     if ingredients[currMealSegment]?.count == 0 {
       recipeDetailsContainer.isHidden = true
@@ -60,14 +64,17 @@ class MenuDisplayViewController: UIViewController {
     }
   }
   func setUpSegmentControll() {
-    let selectedAtributes = [NSAttributedString.Key.foregroundColor: colors.yellow,
-                             NSAttributedString.Key.font: UIFont.systemFont(
-                              ofSize: 17, weight: .medium)]
-    mealSegmentControll.setTitleTextAttributes(selectedAtributes, for: .selected)
-    let unselectedAtributes = [NSAttributedString.Key.foregroundColor: colors.white,
-                               NSAttributedString.Key.font: UIFont.systemFont(
-                                ofSize: 17, weight: .regular)]
-    mealSegmentControll.setTitleTextAttributes(unselectedAtributes, for: .normal)
+    let selectedAtributes = [NSAttributedString.Key.foregroundColor: formatter.getMainTextColor(),
+                             NSAttributedString.Key.font: formatter.getFont(
+                              ofSize: 17, ofWeight: "Medium")]
+    mealSegmentControll.setTitleTextAttributes(
+      selectedAtributes as [NSAttributedString.Key: Any], for: .selected)
+    let unselectedAtributes = [NSAttributedString.Key.foregroundColor: formatter.getSubtextColor(),
+                               NSAttributedString.Key.font: formatter.getFont(
+                                ofSize: 17, ofWeight: "Medium")]
+    mealSegmentControll.setTitleTextAttributes(
+      unselectedAtributes as [NSAttributedString.Key: Any], for: .normal)
+    mealSegmentControll.tintColor = formatter.getFillColor()
   }
   @IBAction func mealChosen(_ sender: UISegmentedControl) {
     currMealSegment = mealSegmentControll.titleForSegment(at: mealSegmentControll.selectedSegmentIndex) ?? ""
@@ -81,6 +88,13 @@ class MenuDisplayViewController: UIViewController {
       noMealChosenLabel.isHidden = true
       ingredientsTableView.reloadData()
     }
+  }
+  func formatViews() {
+    formatter.formateLabelAsMainText(recipeNameLabel, ofSize: 22, ofWeight: "Bold")
+    formatter.formateLabelAsMainText(ingredientsLabel, ofSize: 20, ofWeight: "Medium")
+    formatter.formatButton(fullInstructionsButton, ofSize: 22)
+    ingredientsTableView.backgroundColor = formatter.getFillColor()
+    ingredientContainerView.backgroundColor = formatter.getFillColor()
   }
 }
 

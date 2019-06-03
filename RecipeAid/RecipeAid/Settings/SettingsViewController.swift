@@ -16,9 +16,21 @@ class SettingsViewController: UIViewController {
   @IBOutlet weak var minCaloriesTextBox: UITextField!
   @IBOutlet weak var emailAdressLabel: UILabel!
   @IBOutlet weak var usernameLabel: UILabel!
+  @IBOutlet weak var caloriesLabel: UILabel!
+  @IBOutlet weak var caloriesColonLabel: UILabel!
+  @IBOutlet weak var caloriesDashLabel: UILabel!
+  @IBOutlet weak var timeLabel: UILabel!
+  @IBOutlet weak var timeMinLabel: UILabel!
+  @IBOutlet weak var timeColonLabel: UILabel!
+  @IBOutlet weak var timeDashLabel: UILabel!
   @IBOutlet weak var profilePicImageView: UIImageView!
+  @IBOutlet weak var dietryRestrictionsLabel: UILabel!
+  @IBOutlet weak var dietryRestrictionsInstructionLabel: UILabel!
+  @IBOutlet weak var dietryRestrictionsTextBox: UITextField!
+  @IBOutlet weak var saveButton: UIButton!
+  @IBOutlet weak var logoutButton: UIButton!
   var gradientLayer: GradientLayer?
-  let colors = Colors()
+  let formatter = Formatter()
   let settings = [("High Protein", false), ("Low Fat", false),
                   ("Low Carb", false), ("Low Suger", false),
                   ("Vegetarian", false), ("Vegan", false),
@@ -27,6 +39,7 @@ class SettingsViewController: UIViewController {
     super.viewDidLoad()
     gradientLayer = GradientLayer(view: view)
     gradientLayer?.addGradientToView()
+    formatViews()
     self.title = "Settings"
   }
   override func viewWillLayoutSubviews() {
@@ -34,6 +47,26 @@ class SettingsViewController: UIViewController {
     if let gradientLayer = gradientLayer {
       gradientLayer.updateBounds()
     }
+  }
+  func formatViews() {
+    formatter.formateLabelAsMainText(usernameLabel, ofSize: 20)
+    formatter.formateLabelAsMainText(caloriesLabel, ofSize: 17)
+    formatter.formateLabelAsMainText(caloriesColonLabel, ofSize: 17)
+    formatter.formateLabelAsMainText(timeLabel, ofSize: 17)
+    formatter.formateLabelAsMainText(timeMinLabel, ofSize: 12)
+    formatter.formateLabelAsMainText(timeColonLabel, ofSize: 17)
+    formatter.formateLabelAsMainText(dietryRestrictionsLabel, ofSize: 17)
+    formatter.formateLabelAsMainText(dietryRestrictionsInstructionLabel, ofSize: 12)
+    formatter.formateLabelAsSubtext(emailAdressLabel, ofSize: 17)
+    formatter.formatTextField(maxCaloriesTextBox, ofSize: 14)
+    formatter.formatTextField(minCaloriesTextBox, ofSize: 14)
+    formatter.formatTextField(maxTimeTextBox, ofSize: 14)
+    formatter.formatTextField(minTimeTextBox, ofSize: 14)
+    formatter.formatTextField(dietryRestrictionsTextBox, ofSize: 14)
+    formatter.formatButton(saveButton, ofSize: 22)
+    formatter.formatButton(logoutButton, ofSize: 22)
+    caloriesDashLabel.textColor = formatter.getButtonBorderColor()
+    timeDashLabel.textColor = formatter.getButtonBorderColor()
   }
 }
 
@@ -54,8 +87,9 @@ extension SettingsViewController: CollectionView {
     }
     let (name, isChosen) = settings[indexPath.row]
     cell.setup(name, isChosen)
-    cell.layer.borderColor = colors.navy.cgColor
+    cell.layer.borderColor = formatter.getFillColor().cgColor
     cell.layer.borderWidth = 2
+    cell.backgroundColor = formatter.getFillColor().withAlphaComponent(0.8)
     return cell
   }
   func collectionView(

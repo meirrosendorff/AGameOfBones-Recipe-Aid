@@ -12,20 +12,22 @@ class ShoppingListItemTableViewCell: UITableViewCell {
   @IBOutlet weak var blackoutForeground: UIView!
   @IBOutlet weak var item: UILabel!
   private var alreadyBought = false
-  let colors = Colors()
+  let formatter = Formatter()
   @IBAction func itemBought(_ sender: UIButton) {
     if alreadyBought {
       blackoutForeground.backgroundColor = UIColor.black
-      item.textColor = colors.yellow
+      item.textColor = formatter.getMainTextColor()
       alreadyBought = false
     } else {
       blackoutForeground.backgroundColor = UIColor.clear
-      item.textColor = colors.yellow.withAlphaComponent(0.5)
+      item.textColor = formatter.getMainTextColor().withAlphaComponent(0.5)
       alreadyBought = true
     }
   }
   override func awakeFromNib() {
     super.awakeFromNib()
+    formatter.formateLabelAsMainText(item, ofSize: 20)
+    self.backgroundColor = formatter.getFillColor()
   }
   override func setSelected(_ selected: Bool, animated: Bool) {
     super.setSelected(selected, animated: animated)
@@ -34,11 +36,11 @@ class ShoppingListItemTableViewCell: UITableViewCell {
   func setState(_ bought: Bool) {
     if bought {
       blackoutForeground.backgroundColor = UIColor.clear
-      item.textColor = colors.yellow.withAlphaComponent(0.5)
+      item.textColor = formatter.getMainTextColor().withAlphaComponent(0.5)
       alreadyBought = true
     } else {
       blackoutForeground.backgroundColor = UIColor.black
-      item.textColor = colors.yellow
+      item.textColor = formatter.getMainTextColor()
       alreadyBought = false
     }
   }

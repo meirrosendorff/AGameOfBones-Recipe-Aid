@@ -10,32 +10,44 @@ import UIKit
 
 class AddViewController: UIViewController {
   @IBOutlet weak var mealSegmentControll: UISegmentedControl!
+  @IBOutlet weak var selectMealLabel: UILabel!
+  @IBOutlet weak var selectDateLabel: UILabel!
   @IBOutlet weak var confirmButton: UIButton!
   @IBOutlet weak var datePicker: UIDatePicker!
   var gradientLayer: GradientLayer?
-  let colors = Colors()
+  let formatter = Formatter()
   override func viewDidLoad() {
     super.viewDidLoad()
     gradientLayer = GradientLayer(view: view)
     gradientLayer?.addGradientToView()
     title = "Add Recipe"
     setUpSegmentControll()
+    formatDatePicker()
+    formatViews()
+  }
+  func formatViews() {
+    formatter.formateLabelAsMainText(selectDateLabel, ofSize: 20)
+    formatter.formateLabelAsMainText(selectMealLabel, ofSize: 20)
+    formatter.formatButton(confirmButton, ofSize: 22)
+  }
+  func formatDatePicker() {
     datePicker.layer.cornerRadius = 20
     datePicker.layer.masksToBounds = true
-    confirmButton.layer.borderColor = colors.navy.cgColor
-    confirmButton.layer.borderWidth = 2
-    datePicker.setValue(colors.white, forKeyPath: "textColor")
-    datePicker.backgroundColor = colors.navy
+    datePicker.setValue(formatter.getSubtextColor(), forKeyPath: "textColor")
+    datePicker.backgroundColor = formatter.getFillColor()
   }
   func setUpSegmentControll() {
-    let selectedAtributes = [NSAttributedString.Key.foregroundColor: colors.yellow,
-                             NSAttributedString.Key.font: UIFont.systemFont(
-                              ofSize: 17, weight: .medium)]
-    mealSegmentControll.setTitleTextAttributes(selectedAtributes, for: .selected)
-    let unselectedAtributes = [NSAttributedString.Key.foregroundColor: colors.white,
-                             NSAttributedString.Key.font: UIFont.systemFont(
-                              ofSize: 17, weight: .regular)]
-    mealSegmentControll.setTitleTextAttributes(unselectedAtributes, for: .normal)
+    let selectedAtributes = [NSAttributedString.Key.foregroundColor: formatter.getMainTextColor(),
+                             NSAttributedString.Key.font: formatter.getFont(
+                              ofSize: 17, ofWeight: "Medium")]
+    mealSegmentControll.setTitleTextAttributes(
+      selectedAtributes as [NSAttributedString.Key: Any], for: .selected)
+    let unselectedAtributes = [NSAttributedString.Key.foregroundColor: formatter.getSubtextColor(),
+                               NSAttributedString.Key.font: formatter.getFont(
+                                ofSize: 17, ofWeight: "Medium")]
+    mealSegmentControll.setTitleTextAttributes(
+      unselectedAtributes as [NSAttributedString.Key: Any], for: .normal)
+    mealSegmentControll.tintColor = formatter.getFillColor()
   }
   override func viewWillLayoutSubviews() {
     super.viewWillLayoutSubviews()
