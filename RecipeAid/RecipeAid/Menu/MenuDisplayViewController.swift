@@ -36,6 +36,7 @@ class MenuDisplayViewController: UIViewController {
   @IBOutlet weak var recipeNameLabel: UILabel!
   @IBOutlet weak var ingredientsTableView: UITableView!
   @IBOutlet weak var noMealChosenLabel: UILabel!
+  @IBOutlet weak var ingredientContainerView: UIView!
   var gradientLayer: GradientLayer?
   let formatter = Formatter()
   override func viewDidLoad() {
@@ -73,6 +74,7 @@ class MenuDisplayViewController: UIViewController {
                                 ofSize: 17, ofWeight: "Medium")]
     mealSegmentControll.setTitleTextAttributes(
       unselectedAtributes as [NSAttributedString.Key: Any], for: .normal)
+    mealSegmentControll.tintColor = formatter.getFillColor()
   }
   @IBAction func mealChosen(_ sender: UISegmentedControl) {
     currMealSegment = mealSegmentControll.titleForSegment(at: mealSegmentControll.selectedSegmentIndex) ?? ""
@@ -92,6 +94,7 @@ class MenuDisplayViewController: UIViewController {
     formatter.formateLabelAsMainText(ingredientsLabel, ofSize: 20, ofWeight: "Medium")
     formatter.formatButton(fullInstructionsButton, ofSize: 22)
     ingredientsTableView.backgroundColor = formatter.getFillColor()
+    ingredientContainerView.backgroundColor = formatter.getFillColor()
   }
 }
 

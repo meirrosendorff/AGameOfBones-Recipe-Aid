@@ -10,8 +10,14 @@ import UIKit
 
 class RecipeDetailsViewController: UIViewController {
   @IBOutlet var addButton: UIBarButtonItem!
+  @IBOutlet weak var recipeNameLabel: UILabel!
+  @IBOutlet weak var servingsLabel: UILabel!
+  @IBOutlet weak var caloriesLabel: UILabel!
+  @IBOutlet weak var ingredientsTableView: UIView!
+  @IBOutlet weak var ingredientsLabel: UILabel!
   @IBOutlet weak var seeFullInstructionsButton: UIButton!
-  var colors = Colors()
+  @IBOutlet weak var recipeNameBackdrop: UIView!
+  let formatter = Formatter()
   let ingredients = [
     "Ingredient",
     "Another ingredient",
@@ -34,6 +40,16 @@ seeFullInstructionsButton.layer.borderWidth = 1
     self.title = "Details"
     let barButtonArray: [UIBarButtonItem] = [addButton]
     navigationItem.setRightBarButtonItems(barButtonArray, animated: false)
+    formatViews()
+  }
+  func formatViews() {
+    ingredientsTableView.backgroundColor = formatter.getFillColor()
+    recipeNameBackdrop.backgroundColor = formatter.getFillColor()
+    formatter.formateLabelAsMainText(recipeNameLabel, ofSize: 25, ofWeight: "Bold")
+    formatter.formateLabelAsMainText(ingredientsLabel, ofSize: 20, ofWeight: "Bold")
+    formatter.formateLabelAsSubtext(servingsLabel, ofSize: 18)
+    formatter.formateLabelAsSubtext(caloriesLabel, ofSize: 18)
+    formatter.formatButton(seeFullInstructionsButton, ofSize: 22)
   }
 }
 

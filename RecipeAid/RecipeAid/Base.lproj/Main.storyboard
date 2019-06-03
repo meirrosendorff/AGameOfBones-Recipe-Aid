@@ -219,7 +219,7 @@
                                         <color key="separatorColor" red="0.53496788179999999" green="0.58355517180000005" blue="0.77011626050000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <inset key="separatorInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ingredientCell" id="WUL-0y-rbO" customClass="IngredientsTableViewCell" customModule="RecipeAid" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ingredientCell" id="WUL-0y-rbO" customClass="IngredientsTableViewCell" customModule="RecipeAid" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="335" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WUL-0y-rbO" id="xbe-GU-kqw">
@@ -319,7 +319,13 @@
                     </view>
                     <connections>
                         <outlet property="addButton" destination="faP-sk-Do0" id="a9p-vm-eEH"/>
+                        <outlet property="caloriesLabel" destination="2Rt-MP-YSV" id="sF9-Zy-sVZ"/>
+                        <outlet property="ingredientsLabel" destination="B1B-3w-hrS" id="e3k-Sd-B4d"/>
+                        <outlet property="ingredientsTableView" destination="Fzn-Vy-L1i" id="hEa-l6-FQc"/>
+                        <outlet property="recipeNameBackdrop" destination="T0Y-51-sjR" id="Fpc-6t-h9h"/>
+                        <outlet property="recipeNameLabel" destination="Adw-Gg-xHa" id="ksi-w4-cAP"/>
                         <outlet property="seeFullInstructionsButton" destination="j7M-al-Kvq" id="REg-rj-RNw"/>
+                        <outlet property="servingsLabel" destination="Srx-jC-ahM" id="DiT-ei-bNt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -391,7 +397,7 @@
                                         <color key="textColor" red="0.85098039219999999" green="0.84705882349999995" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Please select a date:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aRj-Nf-eBh">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Please select a meal:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aRj-Nf-eBh">
                                         <rect key="frame" x="37.5" y="299.5" width="315" height="25.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
                                         <color key="textColor" red="0.85098039219999999" green="0.84705882349999995" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -481,6 +487,8 @@
                         <outlet property="confirmButton" destination="BB1-pH-JyX" id="FnQ-Pb-tlp"/>
                         <outlet property="datePicker" destination="p2h-T5-Uld" id="cqm-Ce-FtP"/>
                         <outlet property="mealSegmentControll" destination="aG8-XR-oi4" id="8yn-ci-5tI"/>
+                        <outlet property="selectDateLabel" destination="a0F-d3-uTo" id="rsC-Qf-VNn"/>
+                        <outlet property="selectMealLabel" destination="aRj-Nf-eBh" id="2qF-gz-KWa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G4Q-JB-Aza" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1048,7 +1056,7 @@
                                                         <color key="separatorColor" red="0.53496788179999999" green="0.58355517180000005" blue="0.77011626050000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <inset key="separatorInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                                         <prototypes>
-                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="menuIngredientCell" id="Uno-Qh-pAr" customClass="MenuIngredientsTableViewCell" customModule="RecipeAid" customModuleProvider="target">
+                                                            <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="menuIngredientCell" id="Uno-Qh-pAr" customClass="MenuIngredientsTableViewCell" customModule="RecipeAid" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="28" width="345" height="44"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Uno-Qh-pAr" id="TZp-IG-344">
@@ -1155,6 +1163,7 @@
                     </view>
                     <connections>
                         <outlet property="fullInstructionsButton" destination="pob-Ku-GFu" id="HNw-9J-b4S"/>
+                        <outlet property="ingredientContainerView" destination="iAk-Uj-lgh" id="PX0-7y-Yfl"/>
                         <outlet property="ingredientsLabel" destination="xdr-2x-3uT" id="n1b-qO-vxo"/>
                         <outlet property="ingredientsTableView" destination="vyd-Qh-VSj" id="Av2-nR-TnG"/>
                         <outlet property="mealSegmentControll" destination="qOG-eH-HzO" id="Nsb-8Y-fUA"/>
