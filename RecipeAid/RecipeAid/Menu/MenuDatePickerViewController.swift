@@ -19,10 +19,10 @@ class MenuDatePickerViewController: UIViewController {
     gradientLayer = GradientLayer(view: view)
     gradientLayer?.addGradientToView()
     self.title = "Menu"
-    datePicker.layer.cornerRadius = 20
-    datePicker.layer.masksToBounds = true
-    datePicker.setValue(formatter.getSubtextColor(), forKeyPath: "textColor")
-    datePicker.backgroundColor = formatter.getFillColor()
+    formatViews()
+  }
+  func formatViews() {
+    formatter.formatDatePicker(datePicker)
     formatter.formatButton(viewMenuButton, ofSize: 22)
     formatter.formateLabelAsMainText(instructionsLabel, ofSize: 22)
   }

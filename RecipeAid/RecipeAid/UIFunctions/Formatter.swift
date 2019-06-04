@@ -18,6 +18,9 @@ class Formatter: FormatterProtocal {
   private let textFieldFillColor: UIColor
   private let textFieldTextColor: UIColor
   private let textFieldBorderColor: UIColor
+  private let segmentControllTextWeight: String
+  private let segmentControllTextSize: CGFloat
+  private let pickerCornerRadius: CGFloat
   private let containerFillColor: UIColor
   private let borderWeight: CGFloat
   private let buttonCornerRadius: CGFloat
@@ -35,6 +38,9 @@ class Formatter: FormatterProtocal {
     textFieldBorderColor = colors.navy
     textFieldFillColor = colors.white
     textFieldTextColor = colors.navy
+    segmentControllTextWeight = "Medium"
+    segmentControllTextSize = 17
+    pickerCornerRadius = 20
     containerFillColor = colors.navy
     borderWeight = 1.5
     textFieldCornerRadius = 10
@@ -42,19 +48,11 @@ class Formatter: FormatterProtocal {
   }
   func formateLabelAsMainText(_ label: UILabel, ofSize: CGFloat, ofWeight: String = "") {
     label.textColor = mainTextColor
-    var weight = ""
-    if ofWeight != "" {
-      weight = "-\(ofWeight)"
-    }
-    label.font = UIFont(name: textFont + weight, size: ofSize)
+    label.font = self.getFont(ofSize: ofSize, ofWeight: ofWeight)
   }
   func formateLabelAsSubtext(_ label: UILabel, ofSize: CGFloat, ofWeight: String = "") {
     label.textColor = subtextColor
-    var weight = ""
-    if ofWeight != "" {
-      weight = "-\(ofWeight)"
-    }
-    label.font = UIFont(name: textFont + weight, size: ofSize)
+    label.font = self.getFont(ofSize: ofSize, ofWeight: ofWeight)
   }
   func formatButton(_ button: UIButton, ofSize: CGFloat) {
     button.backgroundColor = buttonFillColor
@@ -73,6 +71,24 @@ class Formatter: FormatterProtocal {
     textBox.layer.masksToBounds = true
     textBox.backgroundColor = textFieldFillColor
     textBox.font = UIFont(name: textFont, size: ofSize)
+  }
+  func formatSegmentControll(_ segementControll: UISegmentedControl) {
+    let font = self.getFont(ofSize: segmentControllTextSize, ofWeight: segmentControllTextWeight)
+    let selectedAtributes = [NSAttributedString.Key.foregroundColor: mainTextColor,
+                             NSAttributedString.Key.font: font]
+    segementControll.setTitleTextAttributes(
+      selectedAtributes as [NSAttributedString.Key: Any], for: .selected)
+    let unselectedAtributes = [NSAttributedString.Key.foregroundColor: subtextColor,
+                               NSAttributedString.Key.font: font]
+    segementControll.setTitleTextAttributes(
+      unselectedAtributes as [NSAttributedString.Key: Any], for: .normal)
+    segementControll.tintColor = containerFillColor
+  }
+  func formatDatePicker(_ picker: UIDatePicker) {
+    picker.layer.cornerRadius = pickerCornerRadius
+    picker.layer.masksToBounds = true
+    picker.setValue(subtextColor, forKeyPath: "textColor")
+    picker.backgroundColor = containerFillColor
   }
   func getButtonBorderColor() -> UIColor {
     return buttonBorderColor

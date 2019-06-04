@@ -13,6 +13,8 @@ protocol FormatterProtocal {
   func formateLabelAsSubtext(_ label: UILabel, ofSize: CGFloat, ofWeight: String)
   func formatButton(_ button: UIButton, ofSize: CGFloat)
   func formatTextField(_ textBox: UITextField, ofSize: CGFloat)
+  func formatSegmentControll(_ segementControll: UISegmentedControl)
+  func formatDatePicker(_ picker: UIDatePicker)
   func getButtonBorderColor() -> UIColor
   func getFillColor() -> UIColor
   func getMainTextColor() -> UIColor

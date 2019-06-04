@@ -92,16 +92,16 @@
 		5009277F22889DE500FB2CE6 /* RecipeAid */ = {
 			isa = PBXGroup;
 			children = (
-				508D1CD9229D6E02008DA723 /* UIFunctions */,
-				5017CE612297BEE200163163 /* Settings */,
-				50AE4C5B229673FC00467ADE /* Menu */,
-				500D8D1B229561EC007E85A6 /* ShoppingList */,
-				500FE3842292A5E100157F77 /* SearchAndAdd */,
-				504FF7EE228DFF2D00681272 /* Assets.xcassets */,
 				5009278022889DE500FB2CE6 /* AppDelegate.swift */,
-				5009278422889DE500FB2CE6 /* Main.storyboard */,
-				5009278922889DE600FB2CE6 /* LaunchScreen.storyboard */,
+				504FF7EE228DFF2D00681272 /* Assets.xcassets */,
 				5009278C22889DE600FB2CE6 /* Info.plist */,
+				5009278922889DE600FB2CE6 /* LaunchScreen.storyboard */,
+				5009278422889DE500FB2CE6 /* Main.storyboard */,
+				50AE4C5B229673FC00467ADE /* Menu */,
+				500FE3842292A5E100157F77 /* SearchAndAdd */,
+				5017CE612297BEE200163163 /* Settings */,
+				500D8D1B229561EC007E85A6 /* ShoppingList */,
+				508D1CD9229D6E02008DA723 /* UIFunctions */,
 			);
 			path = RecipeAid;
 			sourceTree = "<group>";
