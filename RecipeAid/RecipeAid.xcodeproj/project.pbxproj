@@ -92,16 +92,14 @@
 		5009277F22889DE500FB2CE6 /* RecipeAid */ = {
 			isa = PBXGroup;
 			children = (
+				5009278C22889DE600FB2CE6 /* Info.plist */,
 				5009278022889DE500FB2CE6 /* AppDelegate.swift */,
 				504FF7EE228DFF2D00681272 /* Assets.xcassets */,
-				5009278C22889DE600FB2CE6 /* Info.plist */,
 				5009278922889DE600FB2CE6 /* LaunchScreen.storyboard */,
 				5009278422889DE500FB2CE6 /* Main.storyboard */,
-				50AE4C5B229673FC00467ADE /* Menu */,
-				500FE3842292A5E100157F77 /* SearchAndAdd */,
-				5017CE612297BEE200163163 /* Settings */,
-				500D8D1B229561EC007E85A6 /* ShoppingList */,
-				508D1CD9229D6E02008DA723 /* UIFunctions */,
+				509CD61C22A65BE4008FCFAC /* Models */,
+				509CD61D22A65C7F008FCFAC /* ViewControllers */,
+				509CD61E22A65D42008FCFAC /* ViewModels */,
 			);
 			path = RecipeAid;
 			sourceTree = "<group>";
@@ -134,7 +132,7 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
-		508D1CD9229D6E02008DA723 /* UIFunctions */ = {
+		508D1CD9229D6E02008DA723 /* FormatHelpers */ = {
 			isa = PBXGroup;
 			children = (
 				508D1CDA229D6E24008DA723 /* GradientLayer.swift */,
@@ -142,7 +140,7 @@
 				509CD61822A4F025008FCFAC /* Formatter.swift */,
 				509CD61A22A4F041008FCFAC /* FormatterProtocal.swift */,
 			);
-			path = UIFunctions;
+			path = FormatHelpers;
 			sourceTree = "<group>";
 		};
 		508D1CE0229EB669008DA723 /* Search */ = {
@@ -179,6 +177,32 @@
 				508D1CE6229FCB41008DA723 /* WebKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		509CD61C22A65BE4008FCFAC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		509CD61D22A65C7F008FCFAC /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				508D1CD9229D6E02008DA723 /* FormatHelpers */,
+				50AE4C5B229673FC00467ADE /* Menu */,
+				500FE3842292A5E100157F77 /* SearchAndAdd */,
+				5017CE612297BEE200163163 /* Settings */,
+				500D8D1B229561EC007E85A6 /* ShoppingList */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		509CD61E22A65D42008FCFAC /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		50AE4C5B229673FC00467ADE /* Menu */ = {
