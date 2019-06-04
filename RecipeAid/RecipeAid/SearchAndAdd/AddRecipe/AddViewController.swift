@@ -21,33 +21,14 @@ class AddViewController: UIViewController {
     gradientLayer = GradientLayer(view: view)
     gradientLayer?.addGradientToView()
     title = "Add Recipe"
-    setUpSegmentControll()
-    formatDatePicker()
     formatViews()
   }
   func formatViews() {
-    formatter.formateLabelAsMainText(selectDateLabel, ofSize: 20)
-    formatter.formateLabelAsMainText(selectMealLabel, ofSize: 20)
+    formatter.formatLabelAsMainText(selectDateLabel, ofSize: 20)
+    formatter.formatLabelAsMainText(selectMealLabel, ofSize: 20)
     formatter.formatButton(confirmButton, ofSize: 22)
-  }
-  func formatDatePicker() {
-    datePicker.layer.cornerRadius = 20
-    datePicker.layer.masksToBounds = true
-    datePicker.setValue(formatter.getSubtextColor(), forKeyPath: "textColor")
-    datePicker.backgroundColor = formatter.getFillColor()
-  }
-  func setUpSegmentControll() {
-    let selectedAtributes = [NSAttributedString.Key.foregroundColor: formatter.getMainTextColor(),
-                             NSAttributedString.Key.font: formatter.getFont(
-                              ofSize: 17, ofWeight: "Medium")]
-    mealSegmentControll.setTitleTextAttributes(
-      selectedAtributes as [NSAttributedString.Key: Any], for: .selected)
-    let unselectedAtributes = [NSAttributedString.Key.foregroundColor: formatter.getSubtextColor(),
-                               NSAttributedString.Key.font: formatter.getFont(
-                                ofSize: 17, ofWeight: "Medium")]
-    mealSegmentControll.setTitleTextAttributes(
-      unselectedAtributes as [NSAttributedString.Key: Any], for: .normal)
-    mealSegmentControll.tintColor = formatter.getFillColor()
+    formatter.formatSegmentControll(mealSegmentControll)
+    formatter.formatDatePicker(datePicker)
   }
   override func viewWillLayoutSubviews() {
     super.viewWillLayoutSubviews()

@@ -43,7 +43,6 @@ class MenuDisplayViewController: UIViewController {
     super.viewDidLoad()
     gradientLayer = GradientLayer(view: view)
     gradientLayer?.addGradientToView()
-    setUpSegmentControll()
     self.title = "18 Sept 2018"
     formatViews()
     currMealSegment = mealSegmentControll.titleForSegment(at: mealSegmentControll.selectedSegmentIndex) ?? ""
@@ -63,19 +62,6 @@ class MenuDisplayViewController: UIViewController {
       gradientLayer.updateBounds()
     }
   }
-  func setUpSegmentControll() {
-    let selectedAtributes = [NSAttributedString.Key.foregroundColor: formatter.getMainTextColor(),
-                             NSAttributedString.Key.font: formatter.getFont(
-                              ofSize: 17, ofWeight: "Medium")]
-    mealSegmentControll.setTitleTextAttributes(
-      selectedAtributes as [NSAttributedString.Key: Any], for: .selected)
-    let unselectedAtributes = [NSAttributedString.Key.foregroundColor: formatter.getSubtextColor(),
-                               NSAttributedString.Key.font: formatter.getFont(
-                                ofSize: 17, ofWeight: "Medium")]
-    mealSegmentControll.setTitleTextAttributes(
-      unselectedAtributes as [NSAttributedString.Key: Any], for: .normal)
-    mealSegmentControll.tintColor = formatter.getFillColor()
-  }
   @IBAction func mealChosen(_ sender: UISegmentedControl) {
     currMealSegment = mealSegmentControll.titleForSegment(at: mealSegmentControll.selectedSegmentIndex) ?? ""
     if ingredients[currMealSegment]?.count == 0 {
@@ -90,9 +76,10 @@ class MenuDisplayViewController: UIViewController {
     }
   }
   func formatViews() {
-    formatter.formateLabelAsMainText(recipeNameLabel, ofSize: 22, ofWeight: "Bold")
-    formatter.formateLabelAsMainText(ingredientsLabel, ofSize: 20, ofWeight: "Medium")
+    formatter.formatLabelAsMainText(recipeNameLabel, ofSize: 22, ofWeight: "Bold")
+    formatter.formatLabelAsMainText(ingredientsLabel, ofSize: 20, ofWeight: "Medium")
     formatter.formatButton(fullInstructionsButton, ofSize: 22)
+    formatter.formatSegmentControll(mealSegmentControll)
     ingredientsTableView.backgroundColor = formatter.getFillColor()
     ingredientContainerView.backgroundColor = formatter.getFillColor()
   }

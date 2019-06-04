@@ -15,7 +15,7 @@ class DietryRestrictionsCollectionViewCell: UICollectionViewCell {
   var formatter = Formatter()
   func setup(_ name: String, _ isChosen: Bool) {
     settingLabel.text = name
-    formatter.formateLabelAsMainText(settingLabel, ofSize: 17)
+    formatter.formatLabelAsMainText(settingLabel, ofSize: 17)
     if isChosen {
       blackoutView.backgroundColor = UIColor.clear
       settingLabel.textColor = formatter.getMainTextColor()

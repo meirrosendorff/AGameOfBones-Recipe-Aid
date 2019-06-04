@@ -53,8 +53,8 @@ class ShoppingListViewController: UIViewController, UITableViewDelegate, UITable
     formatViews()
   }
   func formatViews() {
-    formatter.formateLabelAsMainText(dateLabel, ofSize: 17)
-    formatter.formateLabelAsMainText(noShoppingLabel, ofSize: 22, ofWeight: "Bold")
+    formatter.formatLabelAsMainText(dateLabel, ofSize: 17)
+    formatter.formatLabelAsMainText(noShoppingLabel, ofSize: 22, ofWeight: "Bold")
   }
   override func viewWillLayoutSubviews() {
     gradientLayer?.updateBounds()

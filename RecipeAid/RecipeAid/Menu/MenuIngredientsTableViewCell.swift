@@ -13,7 +13,7 @@ class MenuIngredientsTableViewCell: UITableViewCell {
   override func awakeFromNib() {
     super.awakeFromNib()
     let formatter = Formatter()
-    formatter.formateLabelAsSubtext(ingredientLabel, ofSize: 20)
+    formatter.formatLabelAsSubtext(ingredientLabel, ofSize: 20)
     self.backgroundColor = formatter.getFillColor()
   }
   func setIngredient(_ name: String) {
