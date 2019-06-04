@@ -9,8 +9,8 @@
 import UIKit
 
 protocol FormatterProtocal {
-  func formateLabelAsMainText(_ label: UILabel, ofSize: CGFloat, ofWeight: String)
-  func formateLabelAsSubtext(_ label: UILabel, ofSize: CGFloat, ofWeight: String)
+  func formatLabelAsMainText(_ label: UILabel, ofSize: CGFloat, ofWeight: String)
+  func formatLabelAsSubtext(_ label: UILabel, ofSize: CGFloat, ofWeight: String)
   func formatButton(_ button: UIButton, ofSize: CGFloat)
   func formatTextField(_ textBox: UITextField, ofSize: CGFloat)
   func formatSegmentControll(_ segementControll: UISegmentedControl)

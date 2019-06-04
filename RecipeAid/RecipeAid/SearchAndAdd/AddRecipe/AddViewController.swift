@@ -24,8 +24,8 @@ class AddViewController: UIViewController {
     formatViews()
   }
   func formatViews() {
-    formatter.formateLabelAsMainText(selectDateLabel, ofSize: 20)
-    formatter.formateLabelAsMainText(selectMealLabel, ofSize: 20)
+    formatter.formatLabelAsMainText(selectDateLabel, ofSize: 20)
+    formatter.formatLabelAsMainText(selectMealLabel, ofSize: 20)
     formatter.formatButton(confirmButton, ofSize: 22)
     formatter.formatSegmentControll(mealSegmentControll)
     formatter.formatDatePicker(datePicker)

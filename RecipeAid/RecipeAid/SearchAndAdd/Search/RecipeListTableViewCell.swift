@@ -32,10 +32,10 @@ class RecipeListTableViewCell: UITableViewCell {
     foodImage.addConstraints([imageViewWidthConstraint, imageViewHeightConstraint])
     foodImage.layer.borderColor = formatter.getFillColor().cgColor
     foodImage.layer.borderWidth = 2
-    formatter.formateLabelAsMainText(name, ofSize: 17, ofWeight: "Bold")
-    formatter.formateLabelAsSubtext(servings, ofSize: 17)
-    formatter.formateLabelAsSubtext(calories, ofSize: 17)
-    formatter.formateLabelAsSubtext(source, ofSize: 17, ofWeight: "Italic")
+    formatter.formatLabelAsMainText(name, ofSize: 17, ofWeight: "Bold")
+    formatter.formatLabelAsSubtext(servings, ofSize: 17)
+    formatter.formatLabelAsSubtext(calories, ofSize: 17)
+    formatter.formatLabelAsSubtext(source, ofSize: 17, ofWeight: "Italic")
   }
   override func setSelected(_ selected: Bool, animated: Bool) {
     super.setSelected(selected, animated: animated)

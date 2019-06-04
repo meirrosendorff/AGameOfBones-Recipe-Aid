@@ -45,10 +45,10 @@ seeFullInstructionsButton.layer.borderWidth = 1
   func formatViews() {
     ingredientsTableView.backgroundColor = formatter.getFillColor()
     recipeNameBackdrop.backgroundColor = formatter.getFillColor()
-    formatter.formateLabelAsMainText(recipeNameLabel, ofSize: 25, ofWeight: "Bold")
-    formatter.formateLabelAsMainText(ingredientsLabel, ofSize: 20, ofWeight: "Bold")
-    formatter.formateLabelAsSubtext(servingsLabel, ofSize: 18)
-    formatter.formateLabelAsSubtext(caloriesLabel, ofSize: 18)
+    formatter.formatLabelAsMainText(recipeNameLabel, ofSize: 25, ofWeight: "Bold")
+    formatter.formatLabelAsMainText(ingredientsLabel, ofSize: 20, ofWeight: "Bold")
+    formatter.formatLabelAsSubtext(servingsLabel, ofSize: 18)
+    formatter.formatLabelAsSubtext(caloriesLabel, ofSize: 18)
     formatter.formatButton(seeFullInstructionsButton, ofSize: 22)
   }
 }

@@ -26,7 +26,7 @@ class ShoppingListItemTableViewCell: UITableViewCell {
   }
   override func awakeFromNib() {
     super.awakeFromNib()
-    formatter.formateLabelAsMainText(item, ofSize: 20)
+    formatter.formatLabelAsMainText(item, ofSize: 20)
     self.backgroundColor = formatter.getFillColor()
   }
   override func setSelected(_ selected: Bool, animated: Bool) {

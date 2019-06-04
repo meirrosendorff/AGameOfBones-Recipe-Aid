@@ -76,8 +76,8 @@ class MenuDisplayViewController: UIViewController {
     }
   }
   func formatViews() {
-    formatter.formateLabelAsMainText(recipeNameLabel, ofSize: 22, ofWeight: "Bold")
-    formatter.formateLabelAsMainText(ingredientsLabel, ofSize: 20, ofWeight: "Medium")
+    formatter.formatLabelAsMainText(recipeNameLabel, ofSize: 22, ofWeight: "Bold")
+    formatter.formatLabelAsMainText(ingredientsLabel, ofSize: 20, ofWeight: "Medium")
     formatter.formatButton(fullInstructionsButton, ofSize: 22)
     formatter.formatSegmentControll(mealSegmentControll)
     ingredientsTableView.backgroundColor = formatter.getFillColor()

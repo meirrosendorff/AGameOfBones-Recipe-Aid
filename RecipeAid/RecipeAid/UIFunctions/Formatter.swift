@@ -46,11 +46,11 @@ class Formatter: FormatterProtocal {
     textFieldCornerRadius = 10
     textFont = "HelveticaNeue"
   }
-  func formateLabelAsMainText(_ label: UILabel, ofSize: CGFloat, ofWeight: String = "") {
+  func formatLabelAsMainText(_ label: UILabel, ofSize: CGFloat, ofWeight: String = "") {
     label.textColor = mainTextColor
     label.font = self.getFont(ofSize: ofSize, ofWeight: ofWeight)
   }
-  func formateLabelAsSubtext(_ label: UILabel, ofSize: CGFloat, ofWeight: String = "") {
+  func formatLabelAsSubtext(_ label: UILabel, ofSize: CGFloat, ofWeight: String = "") {
     label.textColor = subtextColor
     label.font = self.getFont(ofSize: ofSize, ofWeight: ofWeight)
   }

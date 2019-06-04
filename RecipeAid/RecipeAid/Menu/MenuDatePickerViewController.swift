@@ -24,7 +24,7 @@ class MenuDatePickerViewController: UIViewController {
   func formatViews() {
     formatter.formatDatePicker(datePicker)
     formatter.formatButton(viewMenuButton, ofSize: 22)
-    formatter.formateLabelAsMainText(instructionsLabel, ofSize: 22)
+    formatter.formatLabelAsMainText(instructionsLabel, ofSize: 22)
   }
   override func viewWillLayoutSubviews() {
     super.viewWillLayoutSubviews()
