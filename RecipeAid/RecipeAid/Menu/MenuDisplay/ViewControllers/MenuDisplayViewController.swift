@@ -11,24 +11,10 @@ import UIKit
 typealias TableViewInheritance = UITableViewDelegate & UITableViewDataSource
 
 class MenuDisplayViewController: UIViewController {
+
   var currMealSegment = ""
-  let ingredients = ["Breakfast": [
-    "Ingredient",
-    "Another ingredient",
-    "An ingredient with a stupidly long name that would be multiline",
-    "Salt",
-    "Pepper",
-    "suger, cos who doesn't want suger",
-    "Ingredient",
-    "Another ingredient",
-    "An ingredient with a stupidly long name that would be multiline",
-    "Salt",
-    "Pepper",
-    "suger, cos who doesn't want suger",
-    "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
-    ],
-    "Lunch": [],
-    "Dinner": []]
+  var ingredients = [String]()
+  @IBOutlet weak var recipeImage: UIImageView!
   @IBOutlet weak var mealSegmentControll: UISegmentedControl!
   @IBOutlet weak var recipeDetailsContainer: UIView!
   @IBOutlet weak var fullInstructionsButton: UIButton!
@@ -39,62 +25,115 @@ class MenuDisplayViewController: UIViewController {
   @IBOutlet weak var ingredientContainerView: UIView!
   var gradientLayer: GradientLayer?
   let formatter = Formatter()
+  var date = Date()
+  var menueDisplayViewModel: MenueDisplayViewModel?
+
   override func viewDidLoad() {
+
     super.viewDidLoad()
     gradientLayer = GradientLayer(view: view)
     gradientLayer?.addGradientToView()
-    self.title = "18 Sept 2018"
+    menueDisplayViewModel = MenueDisplayViewModel(forDate: date)
+    self.title = menueDisplayViewModel?.dateString
+    configureSegmentControll(segments: menueDisplayViewModel?.getMealOptions() ?? [])
     formatViews()
-    currMealSegment = mealSegmentControll.titleForSegment(at: mealSegmentControll.selectedSegmentIndex) ?? ""
-    if ingredients[currMealSegment]?.count == 0 {
-      recipeDetailsContainer.isHidden = true
-      noMealChosenLabel.isHidden = false
-      noMealChosenLabel.text = "No Meal Chose for \(currMealSegment)"
-    } else {
-      recipeDetailsContainer.isHidden = false
-      recipeNameLabel.text = "Recipe Name for \(currMealSegment)"
-      noMealChosenLabel.isHidden = true
-    }
+    setupPageFromSelectedSegment()
+
   }
+
   override func viewWillLayoutSubviews() {
+
     super.viewWillLayoutSubviews()
     if let gradientLayer = gradientLayer {
       gradientLayer.updateBounds()
     }
+
   }
-  @IBAction func mealChosen(_ sender: UISegmentedControl) {
-    currMealSegment = mealSegmentControll.titleForSegment(at: mealSegmentControll.selectedSegmentIndex) ?? ""
-    if ingredients[currMealSegment]?.count == 0 {
-      recipeDetailsContainer.isHidden = true
-      noMealChosenLabel.isHidden = false
-      noMealChosenLabel.text = "No Meal Chose for \(currMealSegment)"
-    } else {
-      recipeDetailsContainer.isHidden = false
-      recipeNameLabel.text = "Recipe Name for \(currMealSegment)"
-      noMealChosenLabel.isHidden = true
-      ingredientsTableView.reloadData()
+
+  func configureSegmentControll(segments: [String]) {
+
+    mealSegmentControll.removeAllSegments()
+    for segment in segments {
+      mealSegmentControll.insertSegment(withTitle: segment, at: mealSegmentControll.numberOfSegments, animated: false)
     }
+
+    if !segments.isEmpty {
+
+      mealSegmentControll.selectedSegmentIndex = 0
+    }
+
   }
+
+  @IBAction func mealChosen(_ sender: UISegmentedControl) {
+
+    setupPageFromSelectedSegment()
+
+  }
+
   func formatViews() {
+
     formatter.formatLabelAsMainText(recipeNameLabel, ofSize: 22, ofWeight: "Bold")
     formatter.formatLabelAsMainText(ingredientsLabel, ofSize: 20, ofWeight: "Medium")
     formatter.formatButton(fullInstructionsButton, ofSize: 22)
     formatter.formatSegmentControll(mealSegmentControll)
     ingredientsTableView.backgroundColor = formatter.getFillColor()
     ingredientContainerView.backgroundColor = formatter.getFillColor()
+
   }
+
+  func setupPageFromSelectedSegment() {
+
+    recipeDetailsContainer.isHidden = true
+    noMealChosenLabel.isHidden = true
+    recipeImage.image = nil
+
+    currMealSegment = mealSegmentControll.titleForSegment(at: mealSegmentControll.selectedSegmentIndex) ?? ""
+
+    menueDisplayViewModel?.updateMeal(meal: currMealSegment, onComplete: { viewModel, hasMeal in
+
+      if hasMeal {
+
+        self.recipeDetailsContainer.isHidden = false
+        self.recipeNameLabel.text = viewModel.recipeName
+        self.ingredients = viewModel.ingredients
+        self.ingredientsTableView.reloadData()
+
+        self.menueDisplayViewModel?.getImageFromURL(viewModel.recipeImageURL, onComplete: { data in
+
+          DispatchQueue.main.async {
+            self.recipeImage.image = UIImage(data: data)
+          }
+        })
+
+      } else {
+
+        self.noMealChosenLabel.text = "No meal chosen for \(self.currMealSegment)"
+        self.noMealChosenLabel.isHidden = false
+      }
+    })
+  }
+
 }
 
 extension MenuDisplayViewController: TableViewInheritance {
+
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return ingredients[currMealSegment]?.count ?? 0
+
+    return ingredients.count
+
   }
+
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
     guard let cell = tableView.dequeueReusableCell(
+
       withIdentifier: "menuIngredientCell") as? MenuIngredientsTableViewCell else {
       return UITableViewCell()
     }
-    cell.setIngredient(ingredients[currMealSegment]?[indexPath.row] ?? "")
+
+    cell.setIngredient(ingredients[indexPath.row])
+
     return cell
   }
+
 }

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,8 @@
 		500FE37F228EEE8B00157F77 /* RecipeListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500FE37E228EEE8B00157F77 /* RecipeListTableViewCell.swift */; };
 		500FE3862292A63900157F77 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500FE3852292A63900157F77 /* AddViewController.swift */; };
 		504FF7EF228DFF2D00681272 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 504FF7EE228DFF2D00681272 /* Assets.xcassets */; };
+		507BA4D222A939C30064B415 /* MenuForDayProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507BA4D122A939C30064B415 /* MenuForDayProtocol.swift */; };
+		507BA4D622A93B780064B415 /* EdamamRecipeAPIRepositoryProtocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507BA4D522A93B780064B415 /* EdamamRecipeAPIRepositoryProtocal.swift */; };
 		508D1CD8229D6D4A008DA723 /* SearchBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508D1CD7229D6D4A008DA723 /* SearchBarViewController.swift */; };
 		508D1CDB229D6E24008DA723 /* GradientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508D1CDA229D6E24008DA723 /* GradientLayer.swift */; };
 		508D1CDD229E5799008DA723 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508D1CDC229E5799008DA723 /* Colors.swift */; };
@@ -27,12 +29,22 @@
 		508D1CED22A1383A008DA723 /* DietryRestrictionsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508D1CEC22A1383A008DA723 /* DietryRestrictionsCollectionViewCell.swift */; };
 		509CD61922A4F025008FCFAC /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509CD61822A4F025008FCFAC /* Formatter.swift */; };
 		509CD61B22A4F041008FCFAC /* FormatterProtocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509CD61A22A4F041008FCFAC /* FormatterProtocal.swift */; };
+		509CD62222A6702E008FCFAC /* RecipeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509CD62122A6702E008FCFAC /* RecipeItem.swift */; };
+		509CD62422A67250008FCFAC /* MenuForDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509CD62322A67250008FCFAC /* MenuForDay.swift */; };
+		509CD62922A674EC008FCFAC /* MenuDisplayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509CD62822A674EC008FCFAC /* MenuDisplayViewModel.swift */; };
+		509CD62D22A67EDA008FCFAC /* MenuDisplayViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509CD62C22A67EDA008FCFAC /* MenuDisplayViewModelProtocol.swift */; };
+		509CD62F22A78C1C008FCFAC /* exampleObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509CD62E22A78C1C008FCFAC /* exampleObjects.swift */; };
+		50A1120D22A7E402003AD301 /* EdamamRecipeAPIRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A1120C22A7E402003AD301 /* EdamamRecipeAPIRepository.swift */; };
+		50A1120F22A80FF6003AD301 /* ImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A1120E22A80FF6003AD301 /* ImageFetcher.swift */; };
+		50A1121622A90CC1003AD301 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A1121522A90CC1003AD301 /* Errors.swift */; };
 		50AE4C5A2295865900467ADE /* ShoppingListItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AE4C592295865900467ADE /* ShoppingListItemTableViewCell.swift */; };
 		50AE4C5F229675BC00467ADE /* MenuDatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AE4C5E229675BC00467ADE /* MenuDatePickerViewController.swift */; };
 		50AE4C6122968F2F00467ADE /* MenuDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AE4C6022968F2F00467ADE /* MenuDisplayViewController.swift */; };
+		54FFD6AE334A643E1A4D9AA3 /* Pods_RecipeAid.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1728F1401FB924B1AD76EC36 /* Pods_RecipeAid.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1728F1401FB924B1AD76EC36 /* Pods_RecipeAid.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecipeAid.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5009277D22889DE500FB2CE6 /* RecipeAid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecipeAid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5009278022889DE500FB2CE6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5009278222889DE500FB2CE6 /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
@@ -44,6 +56,8 @@
 		500FE37E228EEE8B00157F77 /* RecipeListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListTableViewCell.swift; sourceTree = "<group>"; };
 		500FE3852292A63900157F77 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		504FF7EE228DFF2D00681272 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		507BA4D122A939C30064B415 /* MenuForDayProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuForDayProtocol.swift; sourceTree = "<group>"; };
+		507BA4D522A93B780064B415 /* EdamamRecipeAPIRepositoryProtocal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdamamRecipeAPIRepositoryProtocal.swift; sourceTree = "<group>"; };
 		508D1CD7229D6D4A008DA723 /* SearchBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarViewController.swift; sourceTree = "<group>"; };
 		508D1CDA229D6E24008DA723 /* GradientLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientLayer.swift; sourceTree = "<group>"; };
 		508D1CDC229E5799008DA723 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
@@ -55,9 +69,19 @@
 		508D1CEC22A1383A008DA723 /* DietryRestrictionsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietryRestrictionsCollectionViewCell.swift; sourceTree = "<group>"; };
 		509CD61822A4F025008FCFAC /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 		509CD61A22A4F041008FCFAC /* FormatterProtocal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatterProtocal.swift; sourceTree = "<group>"; };
+		509CD62122A6702E008FCFAC /* RecipeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeItem.swift; sourceTree = "<group>"; };
+		509CD62322A67250008FCFAC /* MenuForDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuForDay.swift; sourceTree = "<group>"; };
+		509CD62822A674EC008FCFAC /* MenuDisplayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDisplayViewModel.swift; sourceTree = "<group>"; };
+		509CD62C22A67EDA008FCFAC /* MenuDisplayViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDisplayViewModelProtocol.swift; sourceTree = "<group>"; };
+		509CD62E22A78C1C008FCFAC /* exampleObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = exampleObjects.swift; sourceTree = "<group>"; };
+		50A1120C22A7E402003AD301 /* EdamamRecipeAPIRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdamamRecipeAPIRepository.swift; sourceTree = "<group>"; };
+		50A1120E22A80FF6003AD301 /* ImageFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFetcher.swift; sourceTree = "<group>"; };
+		50A1121522A90CC1003AD301 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		50AE4C592295865900467ADE /* ShoppingListItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListItemTableViewCell.swift; sourceTree = "<group>"; };
 		50AE4C5E229675BC00467ADE /* MenuDatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDatePickerViewController.swift; sourceTree = "<group>"; };
 		50AE4C6022968F2F00467ADE /* MenuDisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDisplayViewController.swift; sourceTree = "<group>"; };
+		C9541CFAB080918AB2F39D34 /* Pods-RecipeAid.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipeAid.release.xcconfig"; path = "Target Support Files/Pods-RecipeAid/Pods-RecipeAid.release.xcconfig"; sourceTree = "<group>"; };
+		EAB7936D8D01C7043306D87B /* Pods-RecipeAid.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipeAid.debug.xcconfig"; path = "Target Support Files/Pods-RecipeAid/Pods-RecipeAid.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +90,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				508D1CE7229FCB41008DA723 /* WebKit.framework in Frameworks */,
+				54FFD6AE334A643E1A4D9AA3 /* Pods_RecipeAid.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +103,7 @@
 				5009277F22889DE500FB2CE6 /* RecipeAid */,
 				5009277E22889DE500FB2CE6 /* Products */,
 				508D1CE5229FCB40008DA723 /* Frameworks */,
+				96CA57D0C589358D316FA704 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -92,14 +118,20 @@
 		5009277F22889DE500FB2CE6 /* RecipeAid */ = {
 			isa = PBXGroup;
 			children = (
-				5009278C22889DE600FB2CE6 /* Info.plist */,
+				50A1121722A90D11003AD301 /* Enums */,
 				5009278022889DE500FB2CE6 /* AppDelegate.swift */,
 				504FF7EE228DFF2D00681272 /* Assets.xcassets */,
+				509CD62E22A78C1C008FCFAC /* exampleObjects.swift */,
+				5009278C22889DE600FB2CE6 /* Info.plist */,
 				5009278922889DE600FB2CE6 /* LaunchScreen.storyboard */,
 				5009278422889DE500FB2CE6 /* Main.storyboard */,
 				509CD61C22A65BE4008FCFAC /* Models */,
-				509CD61D22A65C7F008FCFAC /* ViewControllers */,
-				509CD61E22A65D42008FCFAC /* ViewModels */,
+				50A1120B22A7E3DD003AD301 /* Services */,
+				508D1CD9229D6E02008DA723 /* FormatHelpers */,
+				50AE4C5B229673FC00467ADE /* Menu */,
+				500FE3842292A5E100157F77 /* SearchAndAdd */,
+				5017CE612297BEE200163163 /* Settings */,
+				500D8D1B229561EC007E85A6 /* ShoppingList */,
 			);
 			path = RecipeAid;
 			sourceTree = "<group>";
@@ -130,6 +162,40 @@
 				508D1CEC22A1383A008DA723 /* DietryRestrictionsCollectionViewCell.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		507BA4CF22A939910064B415 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				507BA4D122A939C30064B415 /* MenuForDayProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		507BA4D022A939AD0064B415 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				509CD62122A6702E008FCFAC /* RecipeItem.swift */,
+				509CD62322A67250008FCFAC /* MenuForDay.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		507BA4D322A93B3F0064B415 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				50A1120C22A7E402003AD301 /* EdamamRecipeAPIRepository.swift */,
+				50A1120E22A80FF6003AD301 /* ImageFetcher.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		507BA4D422A93B4C0064B415 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				507BA4D522A93B780064B415 /* EdamamRecipeAPIRepositoryProtocal.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		508D1CD9229D6E02008DA723 /* FormatHelpers */ = {
@@ -175,6 +241,7 @@
 			isa = PBXGroup;
 			children = (
 				508D1CE6229FCB41008DA723 /* WebKit.framework */,
+				1728F1401FB924B1AD76EC36 /* Pods_RecipeAid.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -182,37 +249,88 @@
 		509CD61C22A65BE4008FCFAC /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				507BA4D022A939AD0064B415 /* Models */,
+				507BA4CF22A939910064B415 /* Protocols */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		509CD61D22A65C7F008FCFAC /* ViewControllers */ = {
+		509CD62722A674CF008FCFAC /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				508D1CD9229D6E02008DA723 /* FormatHelpers */,
-				50AE4C5B229673FC00467ADE /* Menu */,
-				500FE3842292A5E100157F77 /* SearchAndAdd */,
-				5017CE612297BEE200163163 /* Settings */,
-				500D8D1B229561EC007E85A6 /* ShoppingList */,
+				509CD62822A674EC008FCFAC /* MenuDisplayViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		509CD62A22A67EBC008FCFAC /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				509CD62C22A67EDA008FCFAC /* MenuDisplayViewModelProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		50A1120B22A7E3DD003AD301 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				507BA4D422A93B4C0064B415 /* Protocols */,
+				507BA4D322A93B3F0064B415 /* Services */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		50A1121222A90706003AD301 /* MenuDisplay */ = {
+			isa = PBXGroup;
+			children = (
+				50A1121322A90722003AD301 /* ViewControllers */,
+				509CD62A22A67EBC008FCFAC /* Protocols */,
+				509CD62722A674CF008FCFAC /* ViewModels */,
+			);
+			path = MenuDisplay;
+			sourceTree = "<group>";
+		};
+		50A1121322A90722003AD301 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				50AE4C6022968F2F00467ADE /* MenuDisplayViewController.swift */,
+				508D1CE822A10944008DA723 /* MenuIngredientsTableViewCell.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		509CD61E22A65D42008FCFAC /* ViewModels */ = {
+		50A1121422A90867003AD301 /* MenuDatePicker */ = {
 			isa = PBXGroup;
 			children = (
+				50AE4C5E229675BC00467ADE /* MenuDatePickerViewController.swift */,
 			);
-			path = ViewModels;
+			path = MenuDatePicker;
+			sourceTree = "<group>";
+		};
+		50A1121722A90D11003AD301 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				50A1121522A90CC1003AD301 /* Errors.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 		50AE4C5B229673FC00467ADE /* Menu */ = {
 			isa = PBXGroup;
 			children = (
-				50AE4C5E229675BC00467ADE /* MenuDatePickerViewController.swift */,
-				50AE4C6022968F2F00467ADE /* MenuDisplayViewController.swift */,
-				508D1CE822A10944008DA723 /* MenuIngredientsTableViewCell.swift */,
+				50A1121422A90867003AD301 /* MenuDatePicker */,
+				50A1121222A90706003AD301 /* MenuDisplay */,
 			);
 			path = Menu;
+			sourceTree = "<group>";
+		};
+		96CA57D0C589358D316FA704 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EAB7936D8D01C7043306D87B /* Pods-RecipeAid.debug.xcconfig */,
+				C9541CFAB080918AB2F39D34 /* Pods-RecipeAid.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,10 +340,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5009278F22889DE700FB2CE6 /* Build configuration list for PBXNativeTarget "RecipeAid" */;
 			buildPhases = (
+				CD35449DE2BFBB6F73185283 /* [CP] Check Pods Manifest.lock */,
 				5009277922889DE500FB2CE6 /* Sources */,
 				5009277A22889DE500FB2CE6 /* Frameworks */,
 				5009277B22889DE500FB2CE6 /* Resources */,
 				5017CE642297DC7D00163163 /* ShellScript */,
+				7B89FC9226D1D45EB67FC1F7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -300,6 +420,45 @@
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
+		7B89FC9226D1D45EB67FC1F7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RecipeAid/Pods-RecipeAid-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RecipeAid/Pods-RecipeAid-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RecipeAid/Pods-RecipeAid-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CD35449DE2BFBB6F73185283 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RecipeAid-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -307,17 +466,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				509CD62F22A78C1C008FCFAC /* exampleObjects.swift in Sources */,
 				500FE3862292A63900157F77 /* AddViewController.swift in Sources */,
 				508D1CED22A1383A008DA723 /* DietryRestrictionsCollectionViewCell.swift in Sources */,
 				508D1CDD229E5799008DA723 /* Colors.swift in Sources */,
 				5009278322889DE500FB2CE6 /* SearchResultsViewController.swift in Sources */,
 				508D1CE4229FA358008DA723 /* WebViewController.swift in Sources */,
+				509CD62222A6702E008FCFAC /* RecipeItem.swift in Sources */,
+				50A1121622A90CC1003AD301 /* Errors.swift in Sources */,
+				50A1120D22A7E402003AD301 /* EdamamRecipeAPIRepository.swift in Sources */,
+				507BA4D222A939C30064B415 /* MenuForDayProtocol.swift in Sources */,
+				509CD62D22A67EDA008FCFAC /* MenuDisplayViewModelProtocol.swift in Sources */,
 				508D1CE922A10944008DA723 /* MenuIngredientsTableViewCell.swift in Sources */,
 				508D1CDB229D6E24008DA723 /* GradientLayer.swift in Sources */,
 				50AE4C5A2295865900467ADE /* ShoppingListItemTableViewCell.swift in Sources */,
 				508D1CEB22A123FD008DA723 /* SettingsViewController.swift in Sources */,
 				508D1CD8229D6D4A008DA723 /* SearchBarViewController.swift in Sources */,
+				509CD62922A674EC008FCFAC /* MenuDisplayViewModel.swift in Sources */,
+				507BA4D622A93B780064B415 /* EdamamRecipeAPIRepositoryProtocal.swift in Sources */,
+				509CD62422A67250008FCFAC /* MenuForDay.swift in Sources */,
 				50AE4C5F229675BC00467ADE /* MenuDatePickerViewController.swift in Sources */,
+				50A1120F22A80FF6003AD301 /* ImageFetcher.swift in Sources */,
 				508D1CDF229EB0CC008DA723 /* IngredientsTableViewCell.swift in Sources */,
 				509CD61922A4F025008FCFAC /* Formatter.swift in Sources */,
 				500D8D1D2295621D007E85A6 /* ShoppingListViewController.swift in Sources */,
@@ -469,6 +638,7 @@
 		};
 		5009279022889DE700FB2CE6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EAB7936D8D01C7043306D87B /* Pods-RecipeAid.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -487,6 +657,7 @@
 		};
 		5009279122889DE700FB2CE6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9541CFAB080918AB2F39D34 /* Pods-RecipeAid.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
