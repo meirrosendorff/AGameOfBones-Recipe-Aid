@@ -99,6 +99,8 @@ extension SettingsViewController: CollectionView {
     return CGSize(width: (view.frame.width - 20) / 2, height: 60)
   }
   override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-    self.collectionView.collectionViewLayout.invalidateLayout()
+    //Ask PJ about why the app crashes on rotation if this is not optionally accessed
+    //it only crashes before the view is innialized
+    self.collectionView?.collectionViewLayout.invalidateLayout()
   }
 }

@@ -866,7 +866,7 @@
                         <outlet property="caloriesColonLabel" destination="NZm-EP-D4i" id="NPU-Ky-SeM"/>
                         <outlet property="caloriesDashLabel" destination="waF-mz-suy" id="u7X-cg-sAd"/>
                         <outlet property="caloriesLabel" destination="3oK-Ui-MTU" id="wqi-v2-Hft"/>
-                        <outlet property="collectionView" destination="11x-AH-gCM" id="zfB-WM-4PW"/>
+                        <outlet property="collectionView" destination="11x-AH-gCM" id="Hz6-nx-lOQ"/>
                         <outlet property="dietryRestrictionsInstructionLabel" destination="2L8-Jw-Zx6" id="3mh-dB-UY5"/>
                         <outlet property="dietryRestrictionsLabel" destination="XUr-Yr-iis" id="zez-0E-CEJ"/>
                         <outlet property="dietryRestrictionsTextBox" destination="u1C-nt-7QY" id="eyw-E2-taF"/>
@@ -1024,7 +1024,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="250" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="mlh-QN-7Pe">
                                         <rect key="frame" x="0.0" y="52.5" width="345" height="428.5"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="B8D-KZ-bfr" userLabel="recipeImage">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="B8D-KZ-bfr" userLabel="recipeImage">
                                                 <rect key="frame" x="0.0" y="0.0" width="345" height="131.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" priority="750" constant="150" id="Acj-4U-U00">
@@ -1169,6 +1169,7 @@
                         <outlet property="mealSegmentControll" destination="qOG-eH-HzO" id="Nsb-8Y-fUA"/>
                         <outlet property="noMealChosenLabel" destination="dbu-mb-mF5" id="A3V-uw-p88"/>
                         <outlet property="recipeDetailsContainer" destination="Yka-yY-ev4" id="wcR-Se-jYX"/>
+                        <outlet property="recipeImage" destination="B8D-KZ-bfr" id="SKs-tM-sed"/>
                         <outlet property="recipeNameLabel" destination="lbq-NP-LKf" id="ooP-lU-drs"/>
                     </connections>
                 </viewController>

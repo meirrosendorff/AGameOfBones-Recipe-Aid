@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:/Users/MRosendorff/DVT_Grad_Program/RecipeAid-IOS/AGameOfBones-Recipe-Aid/RecipeAid.xcodeproj">
+      location = "self:">
    </FileRef>
 </Workspace>
