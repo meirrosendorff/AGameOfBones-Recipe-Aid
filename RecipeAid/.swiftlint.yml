@@ -1,0 +1,18 @@
+excluded:
+- /Pods/Alamofire/Source/MultipartFormData.swift
+- /Pods/Alamofire/Source/TaskDelegate.swift
+- /Pods/Alamofire/Source/MultipartFormData.swift
+- /Pods/Alamofire/Source/Validation.swift
+- /Pods/Alamofire/Source/Notifications.swift
+- /Pods/Alamofire/Source/Alamofire.swift
+- /Pods/Alamofire/Source/Request.swift
+- /Pods/Alamofire/Source/Response.swift
+- /Pods/Alamofire/Source/SessionManager.swift
+- /Pods/Alamofire/Source/ServerTrustPolicy.swift
+- /Pods/Alamofire/Source/ResponseSerialization.swift
+- /Pods/Alamofire/Source/SessionDelegate.swift
+- /Pods/Alamofire/Source/NetworkReachabilityManager.swift
+- /Pods/Alamofire/Source/ParameterEncoding.swift
+- /Pods/Alamofire/Source/AFError.swift
+- /Pods/Alamofire/Source/Timeline.swift
+- /Pods/SwiftyJSON/Source/SwiftyJSON/SwiftyJSON.swift
