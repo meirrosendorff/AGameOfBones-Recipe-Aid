@@ -52,36 +52,44 @@ class MenueDisplayViewModel: MenuDisplayViewModelProtocol {
 
       switch error {
       case .noMealExistsForGivenIdentifier:
-
-        let repo = EdamamRecipeAPIRepository()
-        //this access a fake recipe ID for now
-        if let recipeID = dates[date.timeIntervalSince1970]?[meal], recipeID != "" {
-
-          repo.getRecipe(forID: recipeID, onComplete: { result in
-
-            switch result {
-
-            case .success(let recipe):
-
-              self.menu.addRecipe(recipe, for: meal)
-              self.updateCurRecipe(with: recipe)
-              onComplete(self, true)
-
-            case .failure(let error):
-              print(String(describing: error))
-              onComplete(self, false)
-            }
+        
+        getRecipeFromRepo(meal: meal, onComplete: { recipeIsPulledAndUpdated in
+          
+          onComplete(self, recipeIsPulledAndUpdated)
           })
-        } else {
-          print(String(describing: RecipeError.noMealExistsForGivenIdentifier(
-            "in MenuDisplayViewModel.updateMeal for meal \(meal) on date \(dateString)")))
-          onComplete(self, false)
-        }
 
       default:
         print(String(describing: error))
         onComplete(self, false)
       }
+    }
+  }
+  
+  private func getRecipeFromRepo(meal: String, onComplete: @escaping (Bool) -> Void){
+
+    let repo = EdamamRecipeAPIRepository()
+    //this access a fake recipe ID for now
+    if let recipeID = dates[date.timeIntervalSince1970]?[meal], recipeID != "" {
+      
+      repo.getRecipe(forID: recipeID, onComplete: { result in
+        
+        switch result {
+          
+        case .success(let recipe):
+          
+          self.menu.addRecipe(recipe, for: meal)
+          self.updateCurRecipe(with: recipe)
+          onComplete(true)
+          
+        case .failure(let error):
+          print(String(describing: error))
+          onComplete(false)
+        }
+      })
+    } else {
+      print(String(describing: RecipeError.noMealExistsForGivenIdentifier(
+        "in MenuDisplayViewModel.updateMeal for meal \(meal) on date \(dateString)")))
+      onComplete(false)
     }
   }
 
