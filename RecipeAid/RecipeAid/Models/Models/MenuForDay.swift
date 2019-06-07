@@ -10,25 +10,13 @@ import  Foundation
 class MenuForDay: MenuForDayProtocol {
 
   private var meals: [String: Recipe?]
-  private var date: Date
-  var dateString: String {
-
-      let dateFormatter = DateFormatter()
-      dateFormatter.dateFormat = "d MMM yyyy"
-      return dateFormatter.string(from: date)
-
-  }
-  private let edamamRecipeAPI: EdamamRecipeAPIRepository
   private let validMealTypes: [String]
 
-  init(_ date: Date) {
+  init() {
 
     meals = [:]
-    self.date = date
-    edamamRecipeAPI = EdamamRecipeAPIRepository()
     validMealTypes = ["Breakfast", "Lunch", "Dinner"]
     setupMeals()
-
   }
 
   private func setupMeals() {
@@ -42,38 +30,36 @@ class MenuForDay: MenuForDayProtocol {
     return validMealTypes
   }
 
-  func getRecipe(forMeal meal: String, onComplete: @escaping (Result<Recipe, RecipeError>) -> Void) {
+  func addRecipe(_ recipe: Recipe, for meal: String) {
 
-    if !validMealTypes.contains(meal) {
-
-      onComplete(.failure(.invalidMealTypeIdentifier("in MenuForDay.getRecipe with mealtype: \(meal)")))
+    if !isValidMealType(meal: meal) {
+      print (String( describing:
+        RecipeError.invalidMealTypeIdentifier("in MenuForDay.addRecipe with mealtype: \(meal)")))
       return
+    }
+
+    meals[meal] = recipe
+  }
+
+  private func isValidMealType(meal: String) -> Bool {
+    return validMealTypes.contains(meal)
+  }
+
+  func getRecipe(forMeal meal: String) -> Result<Recipe, RecipeError> {
+
+    if !isValidMealType(meal: meal) {
+
+      return .failure(.invalidMealTypeIdentifier("in MenuForDay.getRecipe with mealtype: \(meal)"))
     }
 
     if let recipeInDictionary = meals[meal], let recipe = recipeInDictionary {
 
-      onComplete(.success(recipe))
-
-    } else if let recipeID = dates[date.timeIntervalSince1970]?[meal], recipeID != "" {
-
-      edamamRecipeAPI.getRecipe(forID: recipeID, onComplete: { result in
-
-        switch result {
-        case .success(let recipe):
-          self.meals[meal] = recipe
-          onComplete(result)
-        default:
-          onComplete(result)
-        }
-
-      })
-      return
+      return .success(recipe)
 
     } else {
 
-      onComplete(.failure(
-        .noMealExistsForGivenIdentifier("in MenuForDay.getRecipe with mealType \(meal) on \(dateString)")))
-
+      return .failure(
+        .noMealExistsForGivenIdentifier("in MenuForDay.getRecipe with mealType \(meal)"))
     }
   }
 }

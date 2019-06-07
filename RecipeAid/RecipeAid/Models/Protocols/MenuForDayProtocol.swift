@@ -10,7 +10,7 @@ import Foundation
 
 protocol MenuForDayProtocol {
 
-  var dateString: String { get }
-  func getRecipe(forMeal meal: String, onComplete: @escaping (Result<Recipe, RecipeError>) -> Void)
+  func getRecipe(forMeal meal: String) -> Result<Recipe, RecipeError>
+  func addRecipe(_ recipe: Recipe, for meal: String)
   func getMealOptions() -> [String]
 }

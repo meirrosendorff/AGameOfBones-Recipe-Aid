@@ -15,12 +15,18 @@ class MenueDisplayViewModel: MenuDisplayViewModelProtocol {
   var ingredients: [String]
   var recipeSource: String
   var recipeImageURL: String
-  var dateString: String { return menu.dateString }
+  var dateString: String {
+
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "d MMM yyyy"
+    return dateFormatter.string(from: date)
+
+  }
 
   init (forDate date: Date) {
 
     self.date = date
-    menu = MenuForDay(date)
+    menu = MenuForDay()
     recipeName = ""
     ingredients = []
     recipeSource = ""
@@ -34,24 +40,57 @@ class MenueDisplayViewModel: MenuDisplayViewModelProtocol {
 
   func updateMeal(meal: String, onComplete: @escaping (MenueDisplayViewModel, Bool) -> Void) {
 
-    menu.getRecipe(forMeal: meal, onComplete: { result in
+    let result = menu.getRecipe(forMeal: meal)
 
-      switch result {
-      case .success(let recipe):
+    switch result {
+    case .success(let recipe):
 
-        self.recipeName = recipe.label
-        self.ingredients = recipe.ingredientLines
-        self.recipeSource = recipe.source
-        self.recipeImageURL = recipe.image
-        onComplete(self, true)
+      updateCurRecipe(with: recipe)
+      onComplete(self, true)
 
-      case .failure(let error):
+    case .failure(let error):
 
+      switch error {
+      case .noMealExistsForGivenIdentifier:
+
+        let repo = EdamamRecipeAPIRepository()
+        //this access a fake recipe ID for now
+        if let recipeID = dates[date.timeIntervalSince1970]?[meal], recipeID != "" {
+
+          repo.getRecipe(forID: recipeID, onComplete: { result in
+
+            switch result {
+
+            case .success(let recipe):
+
+              self.menu.addRecipe(recipe, for: meal)
+              self.updateCurRecipe(with: recipe)
+              onComplete(self, true)
+
+            case .failure(let error):
+              print(String(describing: error))
+              onComplete(self, false)
+            }
+          })
+        } else {
+          print(String(describing: RecipeError.noMealExistsForGivenIdentifier(
+            "in MenuDisplayViewModel.updateMeal for meal \(meal) on date \(dateString)")))
+          onComplete(self, false)
+        }
+
+      default:
         print(String(describing: error))
         onComplete(self, false)
       }
-    })
+    }
+  }
 
+  private func updateCurRecipe(with recipe: Recipe) {
+
+    self.recipeName = recipe.label
+    self.ingredients = recipe.ingredientLines
+    self.recipeSource = recipe.source
+    self.recipeImageURL = recipe.image
   }
 
   func getImageFromURL(_ url: String, onComplete: @escaping (Data) -> Void) {
