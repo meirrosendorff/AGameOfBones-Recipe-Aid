@@ -42,6 +42,9 @@
 		50AE4C5A2295865900467ADE /* ShoppingListItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AE4C592295865900467ADE /* ShoppingListItemTableViewCell.swift */; };
 		50AE4C5F229675BC00467ADE /* MenuDatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AE4C5E229675BC00467ADE /* MenuDatePickerViewController.swift */; };
 		50AE4C6122968F2F00467ADE /* MenuDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AE4C6022968F2F00467ADE /* MenuDisplayViewController.swift */; };
+		50DB7A0222AF870400DEEB7B /* MenuForDayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DB7A0122AF870400DEEB7B /* MenuForDayTests.swift */; };
+		50DB7A0522AF94DB00DEEB7B /* MenuDisplayViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DB7A0422AF94DA00DEEB7B /* MenuDisplayViewModelTests.swift */; };
+		50DB7A0722AFA2A700DEEB7B /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DB7A0622AFA2A700DEEB7B /* Mocks.swift */; };
 		54FFD6AE334A643E1A4D9AA3 /* Pods_RecipeAid.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1728F1401FB924B1AD76EC36 /* Pods_RecipeAid.framework */; };
 		93FD462DEA75F78F755014B0 /* libPods-RecipeAidTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F95FA70E7FEB70EE01549B8 /* libPods-RecipeAidTests.a */; };
 /* End PBXBuildFile section */
@@ -99,6 +102,9 @@
 		50AE4C592295865900467ADE /* ShoppingListItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListItemTableViewCell.swift; sourceTree = "<group>"; };
 		50AE4C5E229675BC00467ADE /* MenuDatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDatePickerViewController.swift; sourceTree = "<group>"; };
 		50AE4C6022968F2F00467ADE /* MenuDisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDisplayViewController.swift; sourceTree = "<group>"; };
+		50DB7A0122AF870400DEEB7B /* MenuForDayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuForDayTests.swift; sourceTree = "<group>"; };
+		50DB7A0422AF94DA00DEEB7B /* MenuDisplayViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDisplayViewModelTests.swift; sourceTree = "<group>"; };
+		50DB7A0622AFA2A700DEEB7B /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
 		986BEC955316262F104143CE /* Pods-RecipeAidTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipeAidTests.debug.xcconfig"; path = "Target Support Files/Pods-RecipeAidTests/Pods-RecipeAidTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C9541CFAB080918AB2F39D34 /* Pods-RecipeAid.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipeAid.release.xcconfig"; path = "Target Support Files/Pods-RecipeAid/Pods-RecipeAid.release.xcconfig"; sourceTree = "<group>"; };
 		EAB7936D8D01C7043306D87B /* Pods-RecipeAid.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipeAid.debug.xcconfig"; path = "Target Support Files/Pods-RecipeAid/Pods-RecipeAid.debug.xcconfig"; sourceTree = "<group>"; };
@@ -128,6 +134,7 @@
 		50022D3422AA6D970001B2D1 /* RecipeAidTests */ = {
 			isa = PBXGroup;
 			children = (
+				50DB79FF22AF86C300DEEB7B /* Menu */,
 				50022D3F22AA81080001B2D1 /* exampleJson */,
 				50022D3522AA6D970001B2D1 /* EdamamRecipeAPIRepositoryTests.swift */,
 				50022D3722AA6D970001B2D1 /* Info.plist */,
@@ -220,14 +227,6 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
-		507BA4CF22A939910064B415 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				507BA4D122A939C30064B415 /* MenuForDayProtocol.swift */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
 		507BA4D022A939AD0064B415 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -306,7 +305,6 @@
 			isa = PBXGroup;
 			children = (
 				507BA4D022A939AD0064B415 /* Models */,
-				507BA4CF22A939910064B415 /* Protocols */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -323,6 +321,7 @@
 			isa = PBXGroup;
 			children = (
 				509CD62C22A67EDA008FCFAC /* MenuDisplayViewModelProtocol.swift */,
+				507BA4D122A939C30064B415 /* MenuForDayProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -379,6 +378,32 @@
 				50A1121222A90706003AD301 /* MenuDisplay */,
 			);
 			path = Menu;
+			sourceTree = "<group>";
+		};
+		50DB79FF22AF86C300DEEB7B /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				50DB7A0322AF94B800DEEB7B /* ModelViews */,
+				50DB7A0022AF86D800DEEB7B /* Models */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		50DB7A0022AF86D800DEEB7B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				50DB7A0122AF870400DEEB7B /* MenuForDayTests.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		50DB7A0322AF94B800DEEB7B /* ModelViews */ = {
+			isa = PBXGroup;
+			children = (
+				50DB7A0422AF94DA00DEEB7B /* MenuDisplayViewModelTests.swift */,
+				50DB7A0622AFA2A700DEEB7B /* Mocks.swift */,
+			);
+			path = ModelViews;
 			sourceTree = "<group>";
 		};
 		96CA57D0C589358D316FA704 /* Pods */ = {
@@ -580,6 +605,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				50022D3622AA6D970001B2D1 /* EdamamRecipeAPIRepositoryTests.swift in Sources */,
+				50DB7A0522AF94DB00DEEB7B /* MenuDisplayViewModelTests.swift in Sources */,
+				50DB7A0222AF870400DEEB7B /* MenuForDayTests.swift in Sources */,
+				50DB7A0722AFA2A700DEEB7B /* Mocks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
