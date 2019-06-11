@@ -16,3 +16,9 @@ excluded:
 - /Pods/Alamofire/Source/AFError.swift
 - /Pods/Alamofire/Source/Timeline.swift
 - /Pods/SwiftyJSON/Source/SwiftyJSON/SwiftyJSON.swift
+- /Pods/Hippolyte/Hippolyte/HTTPStubURLProtocol.swift
+- /Pods/Hippolyte/Hippolyte/StubResponse.swift
+- /Pods/Hippolyte/Hippolyte/HTTPRequest.swift
+- /Pods/Hippolyte/Hippolyte/HTTPClientHook.swift
+- /Pods/Hippolyte/Hippolyte/StubRequest.swift
+- /Pods/Hippolyte/Hippolyte/Matcher.swift

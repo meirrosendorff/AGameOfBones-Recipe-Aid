@@ -52,9 +52,9 @@ class MenueDisplayViewModel: MenuDisplayViewModelProtocol {
 
       switch error {
       case .noMealExistsForGivenIdentifier:
-        
+
         getRecipeFromRepo(meal: meal, onComplete: { recipeIsPulledAndUpdated in
-          
+
           onComplete(self, recipeIsPulledAndUpdated)
           })
 
@@ -64,23 +64,23 @@ class MenueDisplayViewModel: MenuDisplayViewModelProtocol {
       }
     }
   }
-  
-  private func getRecipeFromRepo(meal: String, onComplete: @escaping (Bool) -> Void){
+
+  private func getRecipeFromRepo(meal: String, onComplete: @escaping (Bool) -> Void) {
 
     let repo = EdamamRecipeAPIRepository()
     //this access a fake recipe ID for now
     if let recipeID = dates[date.timeIntervalSince1970]?[meal], recipeID != "" {
-      
+
       repo.getRecipe(forID: recipeID, onComplete: { result in
-        
+
         switch result {
-          
+
         case .success(let recipe):
-          
+
           self.menu.addRecipe(recipe, for: meal)
           self.updateCurRecipe(with: recipe)
           onComplete(true)
-          
+
         case .failure(let error):
           print(String(describing: error))
           onComplete(false)
