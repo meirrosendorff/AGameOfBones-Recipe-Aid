@@ -11,6 +11,6 @@ import Foundation
 protocol MenuForDayProtocol {
 
   func getRecipe(forMeal meal: String) -> Result<Recipe, RecipeError>
-  func addRecipe(_ recipe: Recipe, for meal: String)
+  func addRecipe(_ recipe: Recipe, for meal: String) throws
   func getMealOptions() -> [String]
 }

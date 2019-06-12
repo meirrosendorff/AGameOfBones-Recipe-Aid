@@ -30,14 +30,11 @@ class MenuForDay: MenuForDayProtocol {
     return validMealTypes
   }
 
-  func addRecipe(_ recipe: Recipe, for meal: String) {
+  func addRecipe(_ recipe: Recipe, for meal: String) throws {
 
     if !isValidMealType(meal: meal) {
-      print (String( describing:
-        RecipeError.invalidMealTypeIdentifier("in MenuForDay.addRecipe with mealtype: \(meal)")))
-      return
+      throw RecipeError.invalidMealTypeIdentifier("in MenuForDay.addRecipe with mealtype: \(meal)")
     }
-
     meals[meal] = recipe
   }
 

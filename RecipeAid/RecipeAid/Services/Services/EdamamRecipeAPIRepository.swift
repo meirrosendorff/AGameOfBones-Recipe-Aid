@@ -51,6 +51,12 @@ class EdamamRecipeAPIRepository: EdamamRecipeAPIRepositoryProtocol {
           return
         }
 
+        if jsonArray.isEmpty {
+
+          return onComplete(.failure(.emptyJSONRecieved(
+            "in EdamamRecipeAPIRepository.buildRecipe,You have run out of requests to the API or invalid RecipeID")))
+        }
+
         let result = self.buildRecipe(jsonArray)
         onComplete(result)
 
@@ -66,12 +72,6 @@ class EdamamRecipeAPIRepository: EdamamRecipeAPIRepositoryProtocol {
   }
 
   func buildRecipe(_ jsonArr: [[String: Any]]) -> Swift.Result<Recipe, RecipeError> {
-
-    if jsonArr.isEmpty {
-
-    return .failure(.emptyJSONRecieved(
-      "in EdamamRecipeAPIRepository.buildRecipe, Consider you may have run out of requests to the API"))
-    }
 
     guard let label = jsonArr[0]["label"] as? String else {
       return .failure(.unableToBuildRecipeMissingValues("label"))
