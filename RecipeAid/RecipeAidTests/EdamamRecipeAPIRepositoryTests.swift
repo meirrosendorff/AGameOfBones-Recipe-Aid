@@ -50,7 +50,8 @@ class EdamamRecipeAPIRepositoryTests: XCTestCase {
   override func tearDown() {
     repo = nil
     jsonArray = nil
-
+    Hippolyte.shared.stop()
+    super.tearDown()
   }
 
   func testBuildRecipeReturnsCorrectRecipeWhenGivenValidJSON() {

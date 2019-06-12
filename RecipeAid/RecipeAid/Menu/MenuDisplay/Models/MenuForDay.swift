@@ -35,7 +35,6 @@ class MenuForDay: MenuForDayProtocol {
     if !isValidMealType(meal: meal) {
       throw RecipeError.invalidMealTypeIdentifier("in MenuForDay.addRecipe with mealtype: \(meal)")
     }
-
     meals[meal] = recipe
   }
 
