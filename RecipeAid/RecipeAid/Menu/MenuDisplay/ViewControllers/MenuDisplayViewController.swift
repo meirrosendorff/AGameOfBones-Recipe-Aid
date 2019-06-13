@@ -38,7 +38,7 @@ class MenuDisplayViewController: UIViewController {
     configureSegmentControll(segments: menueDisplayViewModel?.getMealOptions() ?? [])
     formatViews()
     setupPageFromSelectedSegment()
-
+    addAccessibilityIdentifiers()
   }
 
   override func viewWillLayoutSubviews() {
@@ -48,6 +48,14 @@ class MenuDisplayViewController: UIViewController {
       gradientLayer.updateBounds()
     }
 
+  }
+
+  func addAccessibilityIdentifiers() {
+    recipeNameLabel.accessibilityIdentifier = Identifiers.recipeName.rawValue
+    recipeDetailsContainer.accessibilityIdentifier = Identifiers.recipeDetailsContainer.rawValue
+    ingredientsLabel.accessibilityIdentifier = Identifiers.ingredientsLabel.rawValue
+    ingredientsTableView.accessibilityIdentifier = Identifiers.ingredientTableView.rawValue
+    noMealChosenLabel.accessibilityIdentifier = Identifiers.noRecipeLabel.rawValue
   }
 
   func configureSegmentControll(segments: [String]) {

@@ -8,8 +8,12 @@ target 'RecipeAid' do
   # Pods for RecipeAid
   pod 'Alamofire'
   pod 'SwiftyJSON'
+  pod 'Hippolyte'
+
 end
 
 target 'RecipeAidTests' do
+
   pod 'Hippolyte'
+
 end
