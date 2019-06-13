@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Hippolyte
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(
       _ application: UIApplication,
       didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+      stubNetworkCallsIfNeeded()
         // Override point for customization after application launch.
         return true
     }
@@ -49,4 +51,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate.
       //See also applicationDidEnterBackground:.
     }
+}
+
+extension AppDelegate {
+  func stubNetworkCallsIfNeeded() {
+    guard let networkStubs = UserDefaults.standard.string(forKey: "networkStubs") else { return }
+    let stubSet = networkStubs.components(separatedBy: " ")
+    if stubSet.count % 2 != 0 { return }
+
+    for iterator in 0..<stubSet.count / 2 {
+
+      let urlString = stubSet[2 * iterator]
+      print(urlString)
+      let responseFileName = stubSet[2 * iterator + 1]
+      print(responseFileName)
+      let bundle = Bundle(for: type(of: self))
+      let path = bundle.path(forResource: responseFileName, ofType: "json")!
+      guard let responseData = try? Data(contentsOf: URL(fileURLWithPath: path), options: .alwaysMapped) else { return }
+      guard let url = URL(string: urlString) else { return }
+
+      var stub = StubRequest(method: .GET, url: url)
+      var response = StubResponse()
+      response.body = responseData
+      stub.response = response
+      Hippolyte.shared.add(stubbedRequest: stub)
+    }
+    Hippolyte.shared.start()
+  }
 }
