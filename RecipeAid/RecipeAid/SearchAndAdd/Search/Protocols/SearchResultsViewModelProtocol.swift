@@ -17,4 +17,5 @@ protocol SearchResultsViewModelProtocol {
   func getResultCalories(forPos: Int) -> String
   func getResultImage(forPos: Int, onComplete: @escaping (Data) -> Void)
   func getNextSearchResults(for: String, onComplete: @escaping (Bool) -> Void)
+  func getViewModelForRecipe(at pos: Int) -> RecipeDetailsViewModelProtocol
 }

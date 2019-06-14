@@ -335,6 +335,7 @@
                     </view>
                     <connections>
                         <outlet property="addButton" destination="faP-sk-Do0" id="a9p-vm-eEH"/>
+                        <outlet property="backgroundImageView" destination="Gdt-41-zis" id="pd8-fC-9sp"/>
                         <outlet property="caloriesLabel" destination="2Rt-MP-YSV" id="sF9-Zy-sVZ"/>
                         <outlet property="ingredientsLabel" destination="B1B-3w-hrS" id="e3k-Sd-B4d"/>
                         <outlet property="ingredientsTableView" destination="Fzn-Vy-L1i" id="hEa-l6-FQc"/>

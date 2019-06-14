@@ -91,6 +91,28 @@ class SearchResultsViewController: UIViewController {
       loadingSpinner.stopAnimating()
     }
   }
+
+  override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+
+    self.view.endEditing(true)
+  }
+
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    
+    if segue.destination is RecipeDetailsViewController {
+      
+      let next = segue.destination as? RecipeDetailsViewController
+      
+      if let indexPath = self.tableView.indexPathForSelectedRow {
+        
+        next?.viewModel = self.viewModel.getViewModelForRecipe(at: indexPath.row)
+
+        if let cell = tableView.cellForRow(at: indexPath) as? RecipeListTableViewCell {
+          next?.backgroundImage = cell.foodImage.image
+        }
+      }
+    }
+  }
 }
 
 extension SearchResultsViewController: UITableViewDelegate, UITableViewDataSource {

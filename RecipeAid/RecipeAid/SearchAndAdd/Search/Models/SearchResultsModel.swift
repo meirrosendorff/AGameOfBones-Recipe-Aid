@@ -67,4 +67,8 @@ class SearchResultsModel: SearchResultsModelProtocol {
   func addMoreResultsToSet(newResults: [Recipe]) {
     resultSet += newResults
   }
+  
+  func getRecipe(at pos: Int) -> Recipe {
+    return resultSet[pos]
+  }
 }

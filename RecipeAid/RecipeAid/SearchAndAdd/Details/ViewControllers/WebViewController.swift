@@ -10,30 +10,39 @@ import UIKit
 import WebKit
 
 class WebViewController: UIViewController {
-  @IBOutlet var refresh: UIBarButtonItem!
 
+  @IBOutlet var refresh: UIBarButtonItem!
   @IBOutlet weak var spinner: UIActivityIndicatorView!
   @IBOutlet weak var webView: WKWebView!
+  var sourceURL: String!
   override func viewDidLoad() {
+
     super.viewDidLoad()
     webView.navigationDelegate = self
-    let url = URL(string: "https://www.tasteofhome.com/recipes/quick-chicken-piccata/")!
+    let url = URL(string: sourceURL)!
     webView.load(URLRequest(url: url))
     refresh = UIBarButtonItem(barButtonSystemItem: .refresh, target: webView, action: #selector(webView.reload))
     let barButtonArray: [UIBarButtonItem] = [refresh]
     navigationItem.setRightBarButtonItems(barButtonArray, animated: false)
   }
 }
+
 extension WebViewController: WKNavigationDelegate {
+
   func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+
     spinner.stopAnimating()
     title = webView.title
   }
+
   func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+
     spinner.startAnimating()
     title = ""
   }
+
   func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+
     spinner.stopAnimating()
   }
 }

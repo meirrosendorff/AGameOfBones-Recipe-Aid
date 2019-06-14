@@ -111,4 +111,7 @@ class SearchResultsViewModel: SearchResultsViewModelProtocol {
     })
   }
 
+  func getViewModelForRecipe(at pos: Int) -> RecipeDetailsViewModelProtocol {
+    return RecipeDetailsViewModel(recipe: model.getRecipe(at: pos))
+  }
 }

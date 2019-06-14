@@ -18,4 +18,5 @@ protocol  SearchResultsModelProtocol {
   func getResultImageUrl(forPos: Int) -> String
   func addNewSearchResults(results: [Recipe])
   func addMoreResultsToSet(newResults: [Recipe])
+  func getRecipe(at pos: Int) -> Recipe
 }
