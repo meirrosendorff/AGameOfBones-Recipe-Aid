@@ -17,32 +17,32 @@ class RecipeDetailsViewController: UIViewController {
   @IBOutlet weak var ingredientsLabel: UILabel!
   @IBOutlet weak var seeFullInstructionsButton: UIButton!
   @IBOutlet weak var recipeNameBackdrop: UIView!
+  @IBOutlet weak var backgroundImageView: UIImageView!
+  var backgroundImage: UIImage!
+  var viewModel: RecipeDetailsViewModelProtocol!
   let formatter = Formatter()
-  let ingredients = [
-    "Ingredient",
-    "Another ingredient",
-    "An ingredient with a stupidly long name that would be multiline",
-    "Salt",
-    "Pepper",
-    "suger, cos who doesn't want suger",
-    "Ingredient",
-    "Another ingredient",
-    "An ingredient with a stupidly long name that would be multiline",
-    "Salt",
-    "Pepper",
-    "suger, cos who doesn't want suger",
-    "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
-  ]
+
   override func viewDidLoad() {
+
     super.viewDidLoad()
-    // Do any additional setup after loading the view.
-seeFullInstructionsButton.layer.borderWidth = 1
     self.title = "Details"
     let barButtonArray: [UIBarButtonItem] = [addButton]
     navigationItem.setRightBarButtonItems(barButtonArray, animated: false)
     formatViews()
+    setTextFromViewModel()
   }
+
+  func setTextFromViewModel() {
+
+    self.recipeNameLabel.text = viewModel.name
+    self.servingsLabel.text = viewModel.servings
+    self.caloriesLabel.text = viewModel.calories
+    self.backgroundImageView.image = backgroundImage
+
+  }
+
   func formatViews() {
+
     ingredientsTableView.backgroundColor = formatter.getFillColor()
     recipeNameBackdrop.backgroundColor = formatter.getFillColor()
     formatter.formatLabelAsMainText(recipeNameLabel, ofSize: 25, ofWeight: "Bold")
@@ -51,17 +51,33 @@ seeFullInstructionsButton.layer.borderWidth = 1
     formatter.formatLabelAsSubtext(caloriesLabel, ofSize: 18)
     formatter.formatButton(seeFullInstructionsButton, ofSize: 22)
   }
+
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+    if segue.destination is WebViewController {
+
+      let next = segue.destination as? WebViewController
+      next?.sourceURL = viewModel.sourceURL
+
+    } else if segue.destination is AddViewController {
+
+      let next = segue.destination as? AddViewController
+      next?.recipeID = self.viewModel.recipeID
+    }
+  }
 }
 
 extension RecipeDetailsViewController: UITableViewDelegate, UITableViewDataSource {
+
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return ingredients.count
+
+    return viewModel.numIngredients
   }
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     guard let cell = tableView.dequeueReusableCell(withIdentifier: "ingredientCell") as? IngredientsTableViewCell else {
       return UITableViewCell()
     }
-    cell.ingredient.text = ingredients[indexPath.row]
+    cell.ingredient.text = viewModel.getIngredient(at: indexPath.row)
     return cell
   }
 }

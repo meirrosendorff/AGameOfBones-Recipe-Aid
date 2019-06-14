@@ -99,6 +99,13 @@ class EdamamRecipeAPIRepositoryMock: EdamamRecipeAPIRepositoryProtocol {
       return .failure(.errorFetchingRecipe(""))
     }
   }
+
+  func performSearch(
+    forQuery query: String,
+    resultRange: (Int, Int),
+    onComplete: @escaping (Result<[Recipe], RecipeError>) -> Void) {
+    return
+  }
 }
 
 class MenuDisplayViewModelMock: MenueDisplayViewModel {
