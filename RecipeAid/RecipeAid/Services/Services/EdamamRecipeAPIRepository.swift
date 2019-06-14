@@ -16,6 +16,51 @@ class EdamamRecipeAPIRepository: EdamamRecipeAPIRepositoryProtocol {
   private let appId = "7eaa9edb"
   private let appKey = "7b82a875c1c90b7f360a2356f54f2dc1"
 
+  func performSearch(
+    forQuery query: String,
+    resultRange: (Int, Int),
+    onComplete: @escaping (Swift.Result<[Recipe], RecipeError>) -> Void) {
+
+    if query == "" {
+      onComplete(.success([]))
+    }
+
+    let requestURL = "\(baseURL)?app_id=\(appId)&app_key=\(appKey)&q=\(query)&from=\(resultRange.0)&to=\(resultRange.1)"
+
+    getJsonResponse(for: requestURL, onComplete: { result in
+
+      switch result {
+
+      case .success(let jsonArray):
+        var toReturn = [Recipe]()
+
+        guard let results = jsonArray[0]["hits"] as? [[String: Any]] else {
+          return
+        }
+
+        for result in results {
+          guard let recipe = result["recipe"] as? [String: Any] else {
+            continue
+          }
+          let attemptToParse = self.buildRecipe([recipe])
+
+          switch attemptToParse {
+
+          case .success(let parsedRecipe):
+            toReturn.append(parsedRecipe)
+
+          case .failure(let error):
+            print(String(describing: error))
+          }
+        }
+
+        onComplete(.success(toReturn))
+      case .failure(let error):
+        onComplete(.failure(error))
+      }
+    })
+  }
+
   func getRecipe(forID recipeID: String, onComplete: @escaping (Swift.Result<Recipe, RecipeError>) -> Void) {
 
     if recipeID == "" {
@@ -26,8 +71,24 @@ class EdamamRecipeAPIRepository: EdamamRecipeAPIRepositoryProtocol {
     let recipeID = "http%3A%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl%23recipe_\(recipeID)"
     let requestURL = "\(baseURL)?app_id=\(appId)&app_key=\(appKey)&r=\(recipeID)"
 
-    guard let url = URL(string: requestURL) else {
-      onComplete(.failure(.urlBuildError("in EdamamRecipeAPIRepository.getRecipe for url: \(requestURL)")))
+    getJsonResponse(for: requestURL, onComplete: { result in
+
+      switch result {
+      case .success(let jsonArray):
+        let result = self.buildRecipe(jsonArray)
+        onComplete(result)
+      case .failure(let error):
+        onComplete(.failure(error))
+      }
+      })
+  }
+
+  private func getJsonResponse(
+    for urlString: String,
+    onComplete: @escaping (Swift.Result<[[String: Any]], RecipeError>) -> Void) {
+
+    guard let url = URL(string: urlString) else {
+      onComplete(.failure(.urlBuildError("in EdamamRecipeAPIRepository.getJsonResponse for url: \(urlString)")))
       return
     }
 
@@ -36,7 +97,7 @@ class EdamamRecipeAPIRepository: EdamamRecipeAPIRepositoryProtocol {
       guard let data = response.data else {
         onComplete(.failure(
           .errorFetchingRecipe("""
-            in EdamamRecipeAPIRepository.getRecipe for url: \(requestURL)
+            in EdamamRecipeAPIRepository.getJsonResponse for url: \(urlString)
             with error \(String(describing: response.result.error))
             """)))
         return
@@ -45,26 +106,31 @@ class EdamamRecipeAPIRepository: EdamamRecipeAPIRepositoryProtocol {
       do {
         let jsonResponse = try JSONSerialization.jsonObject(with: data, options: [])
 
-        guard let jsonArray = jsonResponse as? [[String: Any]] else {
+        var jsonArray = [[String: Any]]()
+
+        if let attempToParse = jsonResponse as? [String: Any] {
+          jsonArray = [attempToParse]
+        } else if let attempToParse = jsonResponse as? [[String: Any]] {
+          jsonArray = attempToParse
+        } else {
           onComplete(.failure(
-            .invalidJsonObjectRecieved("in EdamamRecipeAPIRepository.getRecipe for url: \(requestURL)")))
+            .invalidJsonObjectRecieved("in EdamamRecipeAPIRepository.getJsonResponse for url: \(urlString)")))
           return
         }
 
         if jsonArray.isEmpty {
 
           return onComplete(.failure(.emptyJSONRecieved(
-            "in EdamamRecipeAPIRepository.buildRecipe,You have run out of requests to the API or invalid RecipeID")))
+            "in EdamamRecipeAPIRepository.getJsonResponse,You have run out of requests to the API")))
         }
 
-        let result = self.buildRecipe(jsonArray)
-        onComplete(result)
+        onComplete(.success(jsonArray))
 
       } catch {
 
         onComplete(.failure(
           .invalidJsonObjectRecieved("""
-            in EdamamRecipeAPIRepository.getRecipe for url: \(requestURL)
+            in EdamamRecipeAPIRepository.getRecipe for url: \(urlString)
             with error \(String(describing: response.result.error))
             """)))
       }

@@ -11,4 +11,9 @@ import Foundation
 protocol EdamamRecipeAPIRepositoryProtocol {
   func getRecipe(forID recipeID: String, onComplete: @escaping (Swift.Result<Recipe, RecipeError>) -> Void)
   func buildRecipe(_ jsonArr: [[String: Any]]) -> Swift.Result<Recipe, RecipeError>
+  func performSearch(
+    forQuery query: String,
+    resultRange: (Int, Int),
+    onComplete: @escaping (Result<[Recipe], RecipeError>) -> Void
+  )
 }

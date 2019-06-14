@@ -9,17 +9,22 @@
 import UIKit
 
 class RecipeListTableViewCell: UITableViewCell {
+
   @IBOutlet weak var foodImage: UIImageView!
   @IBOutlet weak var name: UILabel!
   @IBOutlet weak var servings: UILabel!
   @IBOutlet weak var source: UILabel!
   @IBOutlet weak var calories: UILabel!
   let formatter = Formatter()
+
   override func awakeFromNib() {
+
   super.awakeFromNib()
     formatViews()
   }
+
   func formatViews() {
+
     self.backgroundColor = formatter.getFillColor()
     let width: CGFloat = 120
     let height: CGFloat = 100
@@ -37,7 +42,9 @@ class RecipeListTableViewCell: UITableViewCell {
     formatter.formatLabelAsSubtext(calories, ofSize: 17)
     formatter.formatLabelAsSubtext(source, ofSize: 17, ofWeight: "Italic")
   }
+
   override func setSelected(_ selected: Bool, animated: Bool) {
+
     super.setSelected(selected, animated: animated)
   }
 }
