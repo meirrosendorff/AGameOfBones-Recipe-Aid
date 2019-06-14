@@ -58,6 +58,11 @@ class RecipeDetailsViewController: UIViewController {
 
       let next = segue.destination as? WebViewController
       next?.sourceURL = viewModel.sourceURL
+
+    } else if segue.destination is AddViewController {
+
+      let next = segue.destination as? AddViewController
+      next?.recipeID = self.viewModel.recipeID
     }
   }
 }

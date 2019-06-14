@@ -60,6 +60,8 @@
 		50DB7A3222B365D500DEEB7B /* SearchResultsModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DB7A3122B365D500DEEB7B /* SearchResultsModelProtocol.swift */; };
 		50DB7A3722B3BA6300DEEB7B /* RecipeDetailsViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DB7A3622B3BA6200DEEB7B /* RecipeDetailsViewModelProtocol.swift */; };
 		50DB7A3922B3BA9F00DEEB7B /* RecipeDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DB7A3822B3BA9F00DEEB7B /* RecipeDetailsViewModel.swift */; };
+		50DB7A3E22B3CB5D00DEEB7B /* AddViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DB7A3D22B3CB5D00DEEB7B /* AddViewModelProtocol.swift */; };
+		50DB7A4022B3CB6B00DEEB7B /* AddViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DB7A3F22B3CB6B00DEEB7B /* AddViewModel.swift */; };
 		54FFD6AE334A643E1A4D9AA3 /* Pods_RecipeAid.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1728F1401FB924B1AD76EC36 /* Pods_RecipeAid.framework */; };
 /* End PBXBuildFile section */
 
@@ -137,6 +139,8 @@
 		50DB7A3122B365D500DEEB7B /* SearchResultsModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsModelProtocol.swift; sourceTree = "<group>"; };
 		50DB7A3622B3BA6200DEEB7B /* RecipeDetailsViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsViewModelProtocol.swift; sourceTree = "<group>"; };
 		50DB7A3822B3BA9F00DEEB7B /* RecipeDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsViewModel.swift; sourceTree = "<group>"; };
+		50DB7A3D22B3CB5D00DEEB7B /* AddViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewModelProtocol.swift; sourceTree = "<group>"; };
+		50DB7A3F22B3CB6B00DEEB7B /* AddViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewModel.swift; sourceTree = "<group>"; };
 		5BDF91A9CD25C6712CF25C97 /* libPods-RecipeAidTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RecipeAidTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9541CFAB080918AB2F39D34 /* Pods-RecipeAid.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipeAid.release.xcconfig"; path = "Target Support Files/Pods-RecipeAid/Pods-RecipeAid.release.xcconfig"; sourceTree = "<group>"; };
 		D599D712E2655A12B513CB8B /* Pods-RecipeAidTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipeAidTests.release.xcconfig"; path = "Target Support Files/Pods-RecipeAidTests/Pods-RecipeAidTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -201,12 +205,12 @@
 		5009277422889DE500FB2CE6 = {
 			isa = PBXGroup;
 			children = (
+				508D1CE5229FCB40008DA723 /* Frameworks */,
+				96CA57D0C589358D316FA704 /* Pods */,
+				5009277E22889DE500FB2CE6 /* Products */,
 				5009277F22889DE500FB2CE6 /* RecipeAid */,
 				50022D3422AA6D970001B2D1 /* RecipeAidTests */,
 				50DB7A0D22B0DD5400DEEB7B /* RecipeAidUITests */,
-				5009277E22889DE500FB2CE6 /* Products */,
-				508D1CE5229FCB40008DA723 /* Frameworks */,
-				96CA57D0C589358D316FA704 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -328,6 +332,7 @@
 		508D1CE2229EB6B3008DA723 /* AddRecipe */ = {
 			isa = PBXGroup;
 			children = (
+				50DB7A3C22B3CB2C00DEEB7B /* Protocol */,
 				50DB7A3B22B3C87E00DEEB7B /* ViewModels */,
 				50DB7A3A22B3C86300DEEB7B /* ViewControllers */,
 			);
@@ -534,8 +539,17 @@
 		50DB7A3B22B3C87E00DEEB7B /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				50DB7A3F22B3CB6B00DEEB7B /* AddViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		50DB7A3C22B3CB2C00DEEB7B /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				50DB7A3D22B3CB5D00DEEB7B /* AddViewModelProtocol.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 		96CA57D0C589358D316FA704 /* Pods */ = {
@@ -803,6 +817,7 @@
 				50DB7A3222B365D500DEEB7B /* SearchResultsModelProtocol.swift in Sources */,
 				507BA4D622A93B780064B415 /* EdamamRecipeAPIRepositoryProtocal.swift in Sources */,
 				509CD62422A67250008FCFAC /* MenuForDay.swift in Sources */,
+				50DB7A4022B3CB6B00DEEB7B /* AddViewModel.swift in Sources */,
 				50DB7A2E22B2852300DEEB7B /* SearchResultsViewModelProtocol.swift in Sources */,
 				50AE4C5F229675BC00467ADE /* MenuDatePickerViewController.swift in Sources */,
 				50A1120F22A80FF6003AD301 /* ImageFetcher.swift in Sources */,
@@ -815,6 +830,7 @@
 				5009278122889DE500FB2CE6 /* AppDelegate.swift in Sources */,
 				50DB7A1C22B238D600DEEB7B /* Identifiers.swift in Sources */,
 				509CD61B22A4F041008FCFAC /* FormatterProtocal.swift in Sources */,
+				50DB7A3E22B3CB5D00DEEB7B /* AddViewModelProtocol.swift in Sources */,
 				50DB7A3722B3BA6300DEEB7B /* RecipeDetailsViewModelProtocol.swift in Sources */,
 				500FE37F228EEE8B00157F77 /* RecipeListTableViewCell.swift in Sources */,
 				50DB7A2B22B284B400DEEB7B /* SearchResultsViewModel.swift in Sources */,

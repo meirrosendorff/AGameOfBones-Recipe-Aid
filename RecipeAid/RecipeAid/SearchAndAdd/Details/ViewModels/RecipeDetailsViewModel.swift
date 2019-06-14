@@ -16,6 +16,7 @@ class RecipeDetailsViewModel: RecipeDetailsViewModelProtocol {
   var servings: String { return "Servings: \(Int(recipe.yield.rounded()))" }
   var calories: String {  return "Calories: \(Int(recipe.calories.rounded()))" }
   var sourceURL: String { return recipe.url }
+  var recipeID: String { return recipe.uri }
 
   required init(recipe: Recipe) {
     self.recipe = recipe

@@ -98,13 +98,13 @@ class SearchResultsViewController: UIViewController {
   }
 
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    
+
     if segue.destination is RecipeDetailsViewController {
-      
+
       let next = segue.destination as? RecipeDetailsViewController
-      
+
       if let indexPath = self.tableView.indexPathForSelectedRow {
-        
+
         next?.viewModel = self.viewModel.getViewModelForRecipe(at: indexPath.row)
 
         if let cell = tableView.cellForRow(at: indexPath) as? RecipeListTableViewCell {
