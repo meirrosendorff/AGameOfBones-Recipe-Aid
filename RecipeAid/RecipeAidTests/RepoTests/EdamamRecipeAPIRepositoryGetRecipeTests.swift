@@ -10,7 +10,19 @@ import XCTest
 
 @testable import RecipeAid
 import Hippolyte
-class EdamamRecipeAPIRepositoryTests: XCTestCase {
+
+class EdamamRecipeAPIRepositoryGetRecipeTests: XCTestCase {
+
+  func stub(url: URL, result: Data) {
+
+    var stub = StubRequest(method: .GET, url: url)
+    var response = StubResponse()
+    let body = result
+    response.body = body
+    stub.response = response
+    Hippolyte.shared.add(stubbedRequest: stub)
+    Hippolyte.shared.start()
+  }
 
   var repo: EdamamRecipeAPIRepository!
   var jsonArray: [[String: Any]]!
@@ -28,29 +40,12 @@ class EdamamRecipeAPIRepositoryTests: XCTestCase {
     repo = EdamamRecipeAPIRepository()
     jsonArray = jsonResponse as? [[String: Any]]
 
-    correctRecipe = Recipe(
-      uri: "http://www.edamam.com/ontologies/edamam.owl#recipe_dc0bd9f18c68a5710d0fc3fda6512b7b",
-      label: "Mont Blanc Ice-Cream Squares",
-      image: "https://www.edamam.com/web-img/266/2661363453d5be1fba4af484b956829c.jpg",
-      source: "BBC Good Food",
-      url: "http://www.bbcgoodfood.com/recipes/8235/",
-      yield: 14.0,
-      ingredientLines: [ "FOR THE PURÉE",
-                         "4 egg whites",
-                         "50.0ml double cream",
-                         "2 x 1-litre tubs good-quality vanilla icecream (we used Waitrose Seriously Creamy)",
-                         "Ingredients FOR THE MERINGUE",
-                         "50.0g walnuts",
-                         "5 marrons glaces or candied chestnuts , halved",
-                         "FOR THE ICE CREAM", "250.0g golden caster sugar",
-                         "435.0g can chestnut purée (we used Merchant Gourmet)" ],
-      calories: 7586.821023526832)
+    correctRecipe = iceCreamRecipe
   }
 
   override func tearDown() {
     repo = nil
     jsonArray = nil
-    Hippolyte.shared.stop()
     super.tearDown()
   }
 
@@ -202,6 +197,10 @@ class EdamamRecipeAPIRepositoryTests: XCTestCase {
     })
 
     waitForExpectations(timeout: 5, handler: nil)
+
+    addTeardownBlock {
+      Hippolyte.shared.stop()
+    }
   }
 
   func testGetRecipeReturnsValidRecipeWhenGivenValidRecipeID() {
@@ -210,13 +209,8 @@ class EdamamRecipeAPIRepositoryTests: XCTestCase {
       "?app_id=7eaa9edb&app_key=7b82a875c1c90b7f360a2356f54f2dc1" +
       "&r=http%3A%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl%23" +
       "recipe_dc0bd9f18c68a5710d0fc3fda6512b7b") else { return }
-    var stub = StubRequest(method: .GET, url: url)
-    var response = StubResponse()
-    let body = data
-    response.body = body
-    stub.response = response
-    Hippolyte.shared.add(stubbedRequest: stub)
-    Hippolyte.shared.start()
+
+    stub(url: url, result: data)
 
     let validID = "dc0bd9f18c68a5710d0fc3fda6512b7b"
 
@@ -234,6 +228,10 @@ class EdamamRecipeAPIRepositoryTests: XCTestCase {
     })
 
     waitForExpectations(timeout: 5, handler: nil)
+
+    addTeardownBlock {
+      Hippolyte.shared.stop()
+    }
   }
 
   func testGetRecipeReturnsEmptyJsonRecievedErrorWhenRecievingEmptyJsonResponse () {
@@ -242,26 +240,22 @@ class EdamamRecipeAPIRepositoryTests: XCTestCase {
       "?app_id=7eaa9edb&app_key=7b82a875c1c90b7f360a2356f54f2dc1" +
       "&r=http%3A%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl%23" +
       "recipe_invalidID") else { return }
-    var stub = StubRequest(method: .GET, url: url)
-    var response = StubResponse()
-    let body = "[]".data(using: .utf8)!
-    response.body = body
-    stub.response = response
-    Hippolyte.shared.add(stubbedRequest: stub)
-    Hippolyte.shared.start()
+
+    stub(url: url, result: "[]".data(using: .utf8)!)
 
     let invalidID = "invalidID"
 
     let expectation = self.expectation(description: "Feching Recipe Details should fail")
 
     repo.getRecipe(forID: invalidID, onComplete: { result in
+
       expectation.fulfill()
 
       switch result {
       case .failure(let error):
         switch error {
-        case .emptyJSONRecieved:
-          return
+        case .emptyJSONRecieved (let error):
+          XCTAssertNotNil(error)
         default:
           XCTFail("Returned error other than RecipeError.emptyJSONRecieved when recieving empty JSON")
         }
@@ -271,6 +265,10 @@ class EdamamRecipeAPIRepositoryTests: XCTestCase {
     })
 
     waitForExpectations(timeout: 5, handler: nil)
+
+    addTeardownBlock {
+      Hippolyte.shared.stop()
+    }
   }
 
   func testGetRecipeReturnsInavlidJsonRecievedErrorWhenRecievingInvalidJsonResponse () {
@@ -279,13 +277,8 @@ class EdamamRecipeAPIRepositoryTests: XCTestCase {
       "?app_id=7eaa9edb&app_key=7b82a875c1c90b7f360a2356f54f2dc1" +
       "&r=http%3A%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl%23" +
       "recipe_invalidID") else { return }
-    var stub = StubRequest(method: .GET, url: url)
-    var response = StubResponse()
-    let body = "invalid json response".data(using: .utf8)!
-    response.body = body
-    stub.response = response
-    Hippolyte.shared.add(stubbedRequest: stub)
-    Hippolyte.shared.start()
+
+    stub(url: url, result: "invalid json response".data(using: .utf8)!)
 
     let invalidID = "invalidID"
 
@@ -308,5 +301,9 @@ class EdamamRecipeAPIRepositoryTests: XCTestCase {
     })
 
     waitForExpectations(timeout: 5, handler: nil)
+
+    addTeardownBlock {
+      Hippolyte.shared.stop()
+    }
   }
 }

@@ -23,6 +23,7 @@ class EdamamRecipeAPIRepository: EdamamRecipeAPIRepositoryProtocol {
 
     if query == "" {
       onComplete(.success([]))
+      return
     }
 
     let requestURL = "\(baseURL)?app_id=\(appId)&app_key=\(appKey)&q=\(query)&from=\(resultRange.0)&to=\(resultRange.1)"
@@ -55,8 +56,10 @@ class EdamamRecipeAPIRepository: EdamamRecipeAPIRepositoryProtocol {
         }
 
         onComplete(.success(toReturn))
+        return
       case .failure(let error):
         onComplete(.failure(error))
+        return
       }
     })
   }
@@ -77,8 +80,10 @@ class EdamamRecipeAPIRepository: EdamamRecipeAPIRepositoryProtocol {
       case .success(let jsonArray):
         let result = self.buildRecipe(jsonArray)
         onComplete(result)
+        return
       case .failure(let error):
         onComplete(.failure(error))
+        return
       }
       })
   }
@@ -120,12 +125,13 @@ class EdamamRecipeAPIRepository: EdamamRecipeAPIRepositoryProtocol {
 
         if jsonArray.isEmpty {
 
-          return onComplete(.failure(.emptyJSONRecieved(
+          onComplete(.failure(.emptyJSONRecieved(
             "in EdamamRecipeAPIRepository.getJsonResponse,You have run out of requests to the API")))
+          return
         }
 
         onComplete(.success(jsonArray))
-
+        return
       } catch {
 
         onComplete(.failure(
@@ -133,6 +139,7 @@ class EdamamRecipeAPIRepository: EdamamRecipeAPIRepositoryProtocol {
             in EdamamRecipeAPIRepository.getRecipe for url: \(urlString)
             with error \(String(describing: response.result.error))
             """)))
+        return
       }
     }
   }
