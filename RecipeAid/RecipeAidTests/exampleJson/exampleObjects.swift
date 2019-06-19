@@ -45,6 +45,6 @@ let dummyRecipe = Recipe(
   image: "imageUrl",
   source: "source",
   url: "sourceURL",
-  yield: 42,
-  ingredientLines: [ "Ingredient" ],
-  calories: 42)
+  yield: 42.01,
+  ingredientLines: [ "Ingredient 0", "Ingredient 1", "Ingredient 2", "Ingredient 3", "Ingredient 4", "Ingredient 5", "Ingredient 6", "Ingredient 7", "Ingredient 8", "Ingredient 9" ],
+  calories: 42.01)

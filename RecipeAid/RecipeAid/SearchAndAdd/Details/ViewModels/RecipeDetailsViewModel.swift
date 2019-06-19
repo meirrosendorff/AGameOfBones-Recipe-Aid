@@ -10,7 +10,7 @@ import Foundation
 
 class RecipeDetailsViewModel: RecipeDetailsViewModelProtocol {
 
-  var recipe: Recipe
+  private var recipe: Recipe
   var numIngredients: Int { return recipe.ingredientLines.count }
   var name: String { return recipe.label }
   var servings: String { return "Servings: \(Int(recipe.yield.rounded()))" }
