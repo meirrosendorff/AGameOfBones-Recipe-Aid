@@ -24,7 +24,6 @@
 		5038051A22B910AA00C6B456 /* SearchResultsModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038051922B910AA00C6B456 /* SearchResultsModelTests.swift */; };
 		5038051D22B917FC00C6B456 /* EdamamAPIRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038051C22B917FC00C6B456 /* EdamamAPIRepositoryMock.swift */; };
 		5038052022B91BDB00C6B456 /* SearchResultsModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038051F22B91BDB00C6B456 /* SearchResultsModelMock.swift */; };
-		5038052222B91E2C00C6B456 /* SearchResultsViewModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038052122B91E2C00C6B456 /* SearchResultsViewModelMock.swift */; };
 		5038052422B9FE0800C6B456 /* SearchResultsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038052322B9FE0800C6B456 /* SearchResultsViewModelTests.swift */; };
 		504FF7EF228DFF2D00681272 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 504FF7EE228DFF2D00681272 /* Assets.xcassets */; };
 		507BA4D222A939C30064B415 /* MenuForDayProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507BA4D122A939C30064B415 /* MenuForDayProtocol.swift */; };
@@ -156,7 +155,6 @@
 		5038051922B910AA00C6B456 /* SearchResultsModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsModelTests.swift; sourceTree = "<group>"; };
 		5038051C22B917FC00C6B456 /* EdamamAPIRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdamamAPIRepositoryMock.swift; sourceTree = "<group>"; };
 		5038051F22B91BDB00C6B456 /* SearchResultsModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsModelMock.swift; sourceTree = "<group>"; };
-		5038052122B91E2C00C6B456 /* SearchResultsViewModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewModelMock.swift; sourceTree = "<group>"; };
 		5038052322B9FE0800C6B456 /* SearchResultsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewModelTests.swift; sourceTree = "<group>"; };
 		504FF7EE228DFF2D00681272 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		507BA4D122A939C30064B415 /* MenuForDayProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuForDayProtocol.swift; sourceTree = "<group>"; };
@@ -395,7 +393,6 @@
 			isa = PBXGroup;
 			children = (
 				5038051F22B91BDB00C6B456 /* SearchResultsModelMock.swift */,
-				5038052122B91E2C00C6B456 /* SearchResultsViewModelMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -976,7 +973,6 @@
 				50DB7A0522AF94DB00DEEB7B /* MenuDisplayViewModelTests.swift in Sources */,
 				5038050E22B8ED3C00C6B456 /* EdamamRecipeAPIRepositorySearchTests.swift in Sources */,
 				50DB7A0222AF870400DEEB7B /* MenuForDayTests.swift in Sources */,
-				5038052222B91E2C00C6B456 /* SearchResultsViewModelMock.swift in Sources */,
 				50DB7A0722AFA2A700DEEB7B /* Mocks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
