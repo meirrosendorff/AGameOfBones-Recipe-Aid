@@ -26,6 +26,7 @@
 		5038052022B91BDB00C6B456 /* SearchResultsModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038051F22B91BDB00C6B456 /* SearchResultsModelMock.swift */; };
 		5038052422B9FE0800C6B456 /* SearchResultsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038052322B9FE0800C6B456 /* SearchResultsViewModelTests.swift */; };
 		5038053022BA38A800C6B456 /* RecipeDetailsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038052F22BA38A800C6B456 /* RecipeDetailsViewModelTests.swift */; };
+		5038053422BA42C800C6B456 /* AddRecipeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038053322BA42C800C6B456 /* AddRecipeTests.swift */; };
 		504FF7EF228DFF2D00681272 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 504FF7EE228DFF2D00681272 /* Assets.xcassets */; };
 		507BA4D222A939C30064B415 /* MenuForDayProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507BA4D122A939C30064B415 /* MenuForDayProtocol.swift */; };
 		507BA4D622A93B780064B415 /* EdamamRecipeAPIRepositoryProtocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507BA4D522A93B780064B415 /* EdamamRecipeAPIRepositoryProtocal.swift */; };
@@ -158,6 +159,7 @@
 		5038051F22B91BDB00C6B456 /* SearchResultsModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsModelMock.swift; sourceTree = "<group>"; };
 		5038052322B9FE0800C6B456 /* SearchResultsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewModelTests.swift; sourceTree = "<group>"; };
 		5038052F22BA38A800C6B456 /* RecipeDetailsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsViewModelTests.swift; sourceTree = "<group>"; };
+		5038053322BA42C800C6B456 /* AddRecipeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipeTests.swift; sourceTree = "<group>"; };
 		504FF7EE228DFF2D00681272 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		507BA4D122A939C30064B415 /* MenuForDayProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuForDayProtocol.swift; sourceTree = "<group>"; };
 		507BA4D522A93B780064B415 /* EdamamRecipeAPIRepositoryProtocal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdamamRecipeAPIRepositoryProtocal.swift; sourceTree = "<group>"; };
@@ -410,6 +412,7 @@
 		5038052D22BA386D00C6B456 /* SearchAndAdd */ = {
 			isa = PBXGroup;
 			children = (
+				5038053122BA429D00C6B456 /* AddRecipe */,
 				5038050F22B8EFB900C6B456 /* Search */,
 				5038052622BA385C00C6B456 /* RecipeDetails */,
 			);
@@ -422,6 +425,22 @@
 				5038052F22BA38A800C6B456 /* RecipeDetailsViewModelTests.swift */,
 			);
 			path = viewModels;
+			sourceTree = "<group>";
+		};
+		5038053122BA429D00C6B456 /* AddRecipe */ = {
+			isa = PBXGroup;
+			children = (
+				5038053222BA42A800C6B456 /* ViewModels */,
+			);
+			path = AddRecipe;
+			sourceTree = "<group>";
+		};
+		5038053222BA42A800C6B456 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				5038053322BA42C800C6B456 /* AddRecipeTests.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		507BA4D022A939AD0064B415 /* Models */ = {
@@ -1002,6 +1021,7 @@
 				50DB7A0222AF870400DEEB7B /* MenuForDayTests.swift in Sources */,
 				50DB7A0722AFA2A700DEEB7B /* Mocks.swift in Sources */,
 				5038053022BA38A800C6B456 /* RecipeDetailsViewModelTests.swift in Sources */,
+				5038053422BA42C800C6B456 /* AddRecipeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
