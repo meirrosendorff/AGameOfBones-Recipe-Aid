@@ -58,4 +58,8 @@ class RecipeDetailsViewModelTests: XCTestCase {
 
     XCTAssertEqual(viewModel.sourceURL, "sourceURL")
   }
+
+  func testRecipeIDReturnsCorrectID() {
+    XCTAssertEqual(viewModel.recipeID, "uri")
+  }
 }
