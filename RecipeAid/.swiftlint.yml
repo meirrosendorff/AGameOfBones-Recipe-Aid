@@ -22,3 +22,4 @@ excluded:
 - /Pods/Hippolyte/Hippolyte/HTTPClientHook.swift
 - /Pods/Hippolyte/Hippolyte/StubRequest.swift
 - /Pods/Hippolyte/Hippolyte/Matcher.swift
+- /RecipeAidTests/exampleJson/exampleObjects.swift 

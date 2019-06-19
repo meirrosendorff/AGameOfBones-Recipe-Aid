@@ -75,12 +75,23 @@ class SearchResultsViewModel: SearchResultsViewModelProtocol {
   }
 
   private func getNextResultRange() -> (Int, Int) {
-    let nextRange = (lastResultIndex, lastResultIndex + resultSetSize)
-    self.lastResultIndex += resultSetSize + 1
+    let nextRange = (lastResultIndex + 1, lastResultIndex + resultSetSize)
+    self.lastResultIndex += resultSetSize
     return nextRange
   }
 
+  private func resetSearchRange() {
+    lastResultIndex = 0
+  }
+
   func getNextSearchResults(for query: String, onComplete: @escaping (Bool) -> Void) {
+
+    var isNewSearch = false
+
+    if query != lastQuery {
+      isNewSearch = true
+      self.resetSearchRange()
+    }
 
     repo.performSearch(forQuery: query, resultRange: getNextResultRange(), onComplete: { result in
 
@@ -93,11 +104,11 @@ class SearchResultsViewModel: SearchResultsViewModelProtocol {
           return
         }
 
-        if query == self.lastQuery {
-          self.model.addMoreResultsToSet(newResults: recipeSet)
-        } else {
+        if isNewSearch {
           self.model.addNewSearchResults(results: recipeSet)
           self.lastQuery = query
+        } else {
+          self.model.addMoreResultsToSet(newResults: recipeSet)
         }
 
         onComplete(true)

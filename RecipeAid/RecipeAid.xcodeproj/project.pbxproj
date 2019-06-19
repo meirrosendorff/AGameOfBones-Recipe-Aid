@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		28D7647F9DDBC8F937085F13 /* libPods-RecipeAidTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BDF91A9CD25C6712CF25C97 /* libPods-RecipeAidTests.a */; };
-		50022D3622AA6D970001B2D1 /* EdamamRecipeAPIRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50022D3522AA6D970001B2D1 /* EdamamRecipeAPIRepositoryTests.swift */; };
+		50022D3622AA6D970001B2D1 /* EdamamRecipeAPIRepositoryGetRecipeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50022D3522AA6D970001B2D1 /* EdamamRecipeAPIRepositoryGetRecipeTests.swift */; };
 		50022D3E22AA81000001B2D1 /* exampleRecipeRequest.json in Resources */ = {isa = PBXBuildFile; fileRef = 50022D3D22AA81000001B2D1 /* exampleRecipeRequest.json */; };
 		5009278122889DE500FB2CE6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5009278022889DE500FB2CE6 /* AppDelegate.swift */; };
 		5009278322889DE500FB2CE6 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5009278222889DE500FB2CE6 /* SearchResultsViewController.swift */; };
@@ -18,6 +18,13 @@
 		500FE37D228EE76200157F77 /* RecipeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500FE37C228EE76200157F77 /* RecipeDetailsViewController.swift */; };
 		500FE37F228EEE8B00157F77 /* RecipeListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500FE37E228EEE8B00157F77 /* RecipeListTableViewCell.swift */; };
 		500FE3862292A63900157F77 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500FE3852292A63900157F77 /* AddViewController.swift */; };
+		503804F422B8B30400C6B456 /* exampleSearchResult.json in Resources */ = {isa = PBXBuildFile; fileRef = 503804F322B8B30400C6B456 /* exampleSearchResult.json */; };
+		503804F722B8B71200C6B456 /* exampleObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503804F622B8B71200C6B456 /* exampleObjects.swift */; };
+		5038050E22B8ED3C00C6B456 /* EdamamRecipeAPIRepositorySearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038050D22B8ED3C00C6B456 /* EdamamRecipeAPIRepositorySearchTests.swift */; };
+		5038051A22B910AA00C6B456 /* SearchResultsModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038051922B910AA00C6B456 /* SearchResultsModelTests.swift */; };
+		5038051D22B917FC00C6B456 /* EdamamAPIRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038051C22B917FC00C6B456 /* EdamamAPIRepositoryMock.swift */; };
+		5038052022B91BDB00C6B456 /* SearchResultsModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038051F22B91BDB00C6B456 /* SearchResultsModelMock.swift */; };
+		5038052422B9FE0800C6B456 /* SearchResultsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038052322B9FE0800C6B456 /* SearchResultsViewModelTests.swift */; };
 		504FF7EF228DFF2D00681272 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 504FF7EE228DFF2D00681272 /* Assets.xcassets */; };
 		507BA4D222A939C30064B415 /* MenuForDayProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507BA4D122A939C30064B415 /* MenuForDayProtocol.swift */; };
 		507BA4D622A93B780064B415 /* EdamamRecipeAPIRepositoryProtocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507BA4D522A93B780064B415 /* EdamamRecipeAPIRepositoryProtocal.swift */; };
@@ -73,6 +80,48 @@
 			remoteGlobalIDString = 5009277C22889DE500FB2CE6;
 			remoteInfo = RecipeAid;
 		};
+		5038050122B8D89300C6B456 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 503804F822B8D89300C6B456 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C772D3A4CC9B877B927592092259F161;
+			remoteInfo = Alamofire;
+		};
+		5038050322B8D89300C6B456 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 503804F822B8D89300C6B456 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7E12FE1A846B7994EA6364CB83B4794B;
+			remoteInfo = "Hippolyte-framework";
+		};
+		5038050522B8D89300C6B456 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 503804F822B8D89300C6B456 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6243758F53E5DC9953536B0EDB6AEE1D;
+			remoteInfo = "Hippolyte-library";
+		};
+		5038050722B8D89300C6B456 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 503804F822B8D89300C6B456 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 81D986E4D25F47902FB5EC87003D7046;
+			remoteInfo = "Pods-RecipeAid";
+		};
+		5038050922B8D89300C6B456 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 503804F822B8D89300C6B456 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 467230C1ACCE510060756A8245FE1816;
+			remoteInfo = "Pods-RecipeAidTests";
+		};
+		5038050B22B8D89300C6B456 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 503804F822B8D89300C6B456 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6535CD4A8663BD71D60C7B196901F458;
+			remoteInfo = SwiftyJSON;
+		};
 		50DB7A1122B0DD5400DEEB7B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5009277522889DE500FB2CE6 /* Project object */;
@@ -86,7 +135,7 @@
 		1728F1401FB924B1AD76EC36 /* Pods_RecipeAid.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecipeAid.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3573C11FB7596CCD33676812 /* Pods-RecipeAidTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipeAidTests.debug.xcconfig"; path = "Target Support Files/Pods-RecipeAidTests/Pods-RecipeAidTests.debug.xcconfig"; sourceTree = "<group>"; };
 		50022D3322AA6D970001B2D1 /* RecipeAidTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecipeAidTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		50022D3522AA6D970001B2D1 /* EdamamRecipeAPIRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdamamRecipeAPIRepositoryTests.swift; sourceTree = "<group>"; };
+		50022D3522AA6D970001B2D1 /* EdamamRecipeAPIRepositoryGetRecipeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdamamRecipeAPIRepositoryGetRecipeTests.swift; sourceTree = "<group>"; };
 		50022D3722AA6D970001B2D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50022D3D22AA81000001B2D1 /* exampleRecipeRequest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = exampleRecipeRequest.json; sourceTree = "<group>"; };
 		5009277D22889DE500FB2CE6 /* RecipeAid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecipeAid.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,6 +148,14 @@
 		500FE37C228EE76200157F77 /* RecipeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsViewController.swift; sourceTree = "<group>"; };
 		500FE37E228EEE8B00157F77 /* RecipeListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListTableViewCell.swift; sourceTree = "<group>"; };
 		500FE3852292A63900157F77 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		503804F322B8B30400C6B456 /* exampleSearchResult.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = exampleSearchResult.json; sourceTree = "<group>"; };
+		503804F622B8B71200C6B456 /* exampleObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = exampleObjects.swift; sourceTree = "<group>"; };
+		503804F822B8D89300C6B456 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = ../Pods/Pods.xcodeproj; sourceTree = "<group>"; };
+		5038050D22B8ED3C00C6B456 /* EdamamRecipeAPIRepositorySearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdamamRecipeAPIRepositorySearchTests.swift; sourceTree = "<group>"; };
+		5038051922B910AA00C6B456 /* SearchResultsModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsModelTests.swift; sourceTree = "<group>"; };
+		5038051C22B917FC00C6B456 /* EdamamAPIRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdamamAPIRepositoryMock.swift; sourceTree = "<group>"; };
+		5038051F22B91BDB00C6B456 /* SearchResultsModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsModelMock.swift; sourceTree = "<group>"; };
+		5038052322B9FE0800C6B456 /* SearchResultsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewModelTests.swift; sourceTree = "<group>"; };
 		504FF7EE228DFF2D00681272 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		507BA4D122A939C30064B415 /* MenuForDayProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuForDayProtocol.swift; sourceTree = "<group>"; };
 		507BA4D522A93B780064B415 /* EdamamRecipeAPIRepositoryProtocal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdamamRecipeAPIRepositoryProtocal.swift; sourceTree = "<group>"; };
@@ -178,9 +235,11 @@
 		50022D3422AA6D970001B2D1 /* RecipeAidTests */ = {
 			isa = PBXGroup;
 			children = (
-				50DB79FF22AF86C300DEEB7B /* Menu */,
+				5038051B22B917E000C6B456 /* repoMocks */,
 				50022D3F22AA81080001B2D1 /* exampleJson */,
-				50022D3522AA6D970001B2D1 /* EdamamRecipeAPIRepositoryTests.swift */,
+				5038050F22B8EFB900C6B456 /* Search */,
+				503804F522B8B33100C6B456 /* RepoTests */,
+				50DB79FF22AF86C300DEEB7B /* Menu */,
 				50022D3722AA6D970001B2D1 /* Info.plist */,
 			);
 			path = RecipeAidTests;
@@ -190,6 +249,8 @@
 			isa = PBXGroup;
 			children = (
 				50022D3D22AA81000001B2D1 /* exampleRecipeRequest.json */,
+				503804F322B8B30400C6B456 /* exampleSearchResult.json */,
+				503804F622B8B71200C6B456 /* exampleObjects.swift */,
 			);
 			path = exampleJson;
 			sourceTree = "<group>";
@@ -270,6 +331,70 @@
 				508D1CEC22A1383A008DA723 /* DietryRestrictionsCollectionViewCell.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		503804F522B8B33100C6B456 /* RepoTests */ = {
+			isa = PBXGroup;
+			children = (
+				50022D3522AA6D970001B2D1 /* EdamamRecipeAPIRepositoryGetRecipeTests.swift */,
+				5038050D22B8ED3C00C6B456 /* EdamamRecipeAPIRepositorySearchTests.swift */,
+			);
+			path = RepoTests;
+			sourceTree = "<group>";
+		};
+		503804F922B8D89300C6B456 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5038050222B8D89300C6B456 /* Alamofire.framework */,
+				5038050422B8D89300C6B456 /* Hippolyte.framework */,
+				5038050622B8D89300C6B456 /* libHippolyte-library.a */,
+				5038050822B8D89300C6B456 /* Pods_RecipeAid.framework */,
+				5038050A22B8D89300C6B456 /* libPods-RecipeAidTests.a */,
+				5038050C22B8D89300C6B456 /* SwiftyJSON.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5038050F22B8EFB900C6B456 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				5038051E22B91BC500C6B456 /* Mocks */,
+				5038051822B9107B00C6B456 /* ViewModels */,
+				5038051122B9107400C6B456 /* Models */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		5038051122B9107400C6B456 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5038051922B910AA00C6B456 /* SearchResultsModelTests.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5038051822B9107B00C6B456 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				5038052322B9FE0800C6B456 /* SearchResultsViewModelTests.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		5038051B22B917E000C6B456 /* repoMocks */ = {
+			isa = PBXGroup;
+			children = (
+				5038051C22B917FC00C6B456 /* EdamamAPIRepositoryMock.swift */,
+			);
+			path = repoMocks;
+			sourceTree = "<group>";
+		};
+		5038051E22B91BC500C6B456 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				5038051F22B91BDB00C6B456 /* SearchResultsModelMock.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		507BA4D022A939AD0064B415 /* Models */ = {
@@ -442,6 +567,7 @@
 		50DB7A0D22B0DD5400DEEB7B /* RecipeAidUITests */ = {
 			isa = PBXGroup;
 			children = (
+				503804F822B8D89300C6B456 /* Pods.xcodeproj */,
 				50DB7A2022B2453600DEEB7B /* Menu */,
 				50DB7A1922B2365D00DEEB7B /* exampleJson */,
 				50DB7A0E22B0DD5400DEEB7B /* MenuUITests.swift */,
@@ -657,6 +783,12 @@
 			mainGroup = 5009277422889DE500FB2CE6;
 			productRefGroup = 5009277E22889DE500FB2CE6 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 503804F922B8D89300C6B456 /* Products */;
+					ProjectRef = 503804F822B8D89300C6B456 /* Pods.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				5009277C22889DE500FB2CE6 /* RecipeAid */,
@@ -666,12 +798,58 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		5038050222B8D89300C6B456 /* Alamofire.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Alamofire.framework;
+			remoteRef = 5038050122B8D89300C6B456 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5038050422B8D89300C6B456 /* Hippolyte.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Hippolyte.framework;
+			remoteRef = 5038050322B8D89300C6B456 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5038050622B8D89300C6B456 /* libHippolyte-library.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libHippolyte-library.a";
+			remoteRef = 5038050522B8D89300C6B456 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5038050822B8D89300C6B456 /* Pods_RecipeAid.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Pods_RecipeAid.framework;
+			remoteRef = 5038050722B8D89300C6B456 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5038050A22B8D89300C6B456 /* libPods-RecipeAidTests.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libPods-RecipeAidTests.a";
+			remoteRef = 5038050922B8D89300C6B456 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5038050C22B8D89300C6B456 /* SwiftyJSON.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftyJSON.framework;
+			remoteRef = 5038050B22B8D89300C6B456 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		50022D3122AA6D970001B2D1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				50022D3E22AA81000001B2D1 /* exampleRecipeRequest.json in Resources */,
+				503804F422B8B30400C6B456 /* exampleSearchResult.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -786,8 +964,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50022D3622AA6D970001B2D1 /* EdamamRecipeAPIRepositoryTests.swift in Sources */,
+				5038051A22B910AA00C6B456 /* SearchResultsModelTests.swift in Sources */,
+				5038052022B91BDB00C6B456 /* SearchResultsModelMock.swift in Sources */,
+				5038051D22B917FC00C6B456 /* EdamamAPIRepositoryMock.swift in Sources */,
+				503804F722B8B71200C6B456 /* exampleObjects.swift in Sources */,
+				5038052422B9FE0800C6B456 /* SearchResultsViewModelTests.swift in Sources */,
+				50022D3622AA6D970001B2D1 /* EdamamRecipeAPIRepositoryGetRecipeTests.swift in Sources */,
 				50DB7A0522AF94DB00DEEB7B /* MenuDisplayViewModelTests.swift in Sources */,
+				5038050E22B8ED3C00C6B456 /* EdamamRecipeAPIRepositorySearchTests.swift in Sources */,
 				50DB7A0222AF870400DEEB7B /* MenuForDayTests.swift in Sources */,
 				50DB7A0722AFA2A700DEEB7B /* Mocks.swift in Sources */,
 			);
