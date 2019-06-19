@@ -38,3 +38,13 @@ let iceCreamRecipe = Recipe(
                      "FOR THE ICE CREAM", "250.0g golden caster sugar",
                      "435.0g can chestnut purée (we used Merchant Gourmet)" ],
   calories: 7586.821023526832)
+
+let dummyRecipe = Recipe(
+  uri: "uri",
+  label: "name",
+  image: "imageUrl",
+  source: "source",
+  url: "sourceURL",
+  yield: 42,
+  ingredientLines: [ "Ingredient" ],
+  calories: 42)

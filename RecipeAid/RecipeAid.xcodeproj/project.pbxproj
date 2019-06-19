@@ -21,6 +21,11 @@
 		503804F422B8B30400C6B456 /* exampleSearchResult.json in Resources */ = {isa = PBXBuildFile; fileRef = 503804F322B8B30400C6B456 /* exampleSearchResult.json */; };
 		503804F722B8B71200C6B456 /* exampleObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503804F622B8B71200C6B456 /* exampleObjects.swift */; };
 		5038050E22B8ED3C00C6B456 /* EdamamRecipeAPIRepositorySearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038050D22B8ED3C00C6B456 /* EdamamRecipeAPIRepositorySearchTests.swift */; };
+		5038051A22B910AA00C6B456 /* SearchResultsModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038051922B910AA00C6B456 /* SearchResultsModelTests.swift */; };
+		5038051D22B917FC00C6B456 /* EdamamAPIRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038051C22B917FC00C6B456 /* EdamamAPIRepositoryMock.swift */; };
+		5038052022B91BDB00C6B456 /* SearchResultsModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038051F22B91BDB00C6B456 /* SearchResultsModelMock.swift */; };
+		5038052222B91E2C00C6B456 /* SearchResultsViewModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038052122B91E2C00C6B456 /* SearchResultsViewModelMock.swift */; };
+		5038052422B9FE0800C6B456 /* SearchResultsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038052322B9FE0800C6B456 /* SearchResultsViewModelTests.swift */; };
 		504FF7EF228DFF2D00681272 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 504FF7EE228DFF2D00681272 /* Assets.xcassets */; };
 		507BA4D222A939C30064B415 /* MenuForDayProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507BA4D122A939C30064B415 /* MenuForDayProtocol.swift */; };
 		507BA4D622A93B780064B415 /* EdamamRecipeAPIRepositoryProtocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507BA4D522A93B780064B415 /* EdamamRecipeAPIRepositoryProtocal.swift */; };
@@ -148,6 +153,11 @@
 		503804F622B8B71200C6B456 /* exampleObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = exampleObjects.swift; sourceTree = "<group>"; };
 		503804F822B8D89300C6B456 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = ../Pods/Pods.xcodeproj; sourceTree = "<group>"; };
 		5038050D22B8ED3C00C6B456 /* EdamamRecipeAPIRepositorySearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdamamRecipeAPIRepositorySearchTests.swift; sourceTree = "<group>"; };
+		5038051922B910AA00C6B456 /* SearchResultsModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsModelTests.swift; sourceTree = "<group>"; };
+		5038051C22B917FC00C6B456 /* EdamamAPIRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdamamAPIRepositoryMock.swift; sourceTree = "<group>"; };
+		5038051F22B91BDB00C6B456 /* SearchResultsModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsModelMock.swift; sourceTree = "<group>"; };
+		5038052122B91E2C00C6B456 /* SearchResultsViewModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewModelMock.swift; sourceTree = "<group>"; };
+		5038052322B9FE0800C6B456 /* SearchResultsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewModelTests.swift; sourceTree = "<group>"; };
 		504FF7EE228DFF2D00681272 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		507BA4D122A939C30064B415 /* MenuForDayProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuForDayProtocol.swift; sourceTree = "<group>"; };
 		507BA4D522A93B780064B415 /* EdamamRecipeAPIRepositoryProtocal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdamamRecipeAPIRepositoryProtocal.swift; sourceTree = "<group>"; };
@@ -227,6 +237,9 @@
 		50022D3422AA6D970001B2D1 /* RecipeAidTests */ = {
 			isa = PBXGroup;
 			children = (
+				5038051B22B917E000C6B456 /* repoMocks */,
+				50022D3F22AA81080001B2D1 /* exampleJson */,
+				5038050F22B8EFB900C6B456 /* Search */,
 				503804F522B8B33100C6B456 /* RepoTests */,
 				50DB79FF22AF86C300DEEB7B /* Menu */,
 				50022D3722AA6D970001B2D1 /* Info.plist */,
@@ -326,7 +339,6 @@
 			isa = PBXGroup;
 			children = (
 				50022D3522AA6D970001B2D1 /* EdamamRecipeAPIRepositoryGetRecipeTests.swift */,
-				50022D3F22AA81080001B2D1 /* exampleJson */,
 				5038050D22B8ED3C00C6B456 /* EdamamRecipeAPIRepositorySearchTests.swift */,
 			);
 			path = RepoTests;
@@ -343,6 +355,49 @@
 				5038050C22B8D89300C6B456 /* SwiftyJSON.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		5038050F22B8EFB900C6B456 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				5038051E22B91BC500C6B456 /* Mocks */,
+				5038051822B9107B00C6B456 /* ViewModels */,
+				5038051122B9107400C6B456 /* Models */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		5038051122B9107400C6B456 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5038051922B910AA00C6B456 /* SearchResultsModelTests.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5038051822B9107B00C6B456 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				5038052322B9FE0800C6B456 /* SearchResultsViewModelTests.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		5038051B22B917E000C6B456 /* repoMocks */ = {
+			isa = PBXGroup;
+			children = (
+				5038051C22B917FC00C6B456 /* EdamamAPIRepositoryMock.swift */,
+			);
+			path = repoMocks;
+			sourceTree = "<group>";
+		};
+		5038051E22B91BC500C6B456 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				5038051F22B91BDB00C6B456 /* SearchResultsModelMock.swift */,
+				5038052122B91E2C00C6B456 /* SearchResultsViewModelMock.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		507BA4D022A939AD0064B415 /* Models */ = {
@@ -912,11 +967,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5038051A22B910AA00C6B456 /* SearchResultsModelTests.swift in Sources */,
+				5038052022B91BDB00C6B456 /* SearchResultsModelMock.swift in Sources */,
+				5038051D22B917FC00C6B456 /* EdamamAPIRepositoryMock.swift in Sources */,
 				503804F722B8B71200C6B456 /* exampleObjects.swift in Sources */,
+				5038052422B9FE0800C6B456 /* SearchResultsViewModelTests.swift in Sources */,
 				50022D3622AA6D970001B2D1 /* EdamamRecipeAPIRepositoryGetRecipeTests.swift in Sources */,
 				50DB7A0522AF94DB00DEEB7B /* MenuDisplayViewModelTests.swift in Sources */,
 				5038050E22B8ED3C00C6B456 /* EdamamRecipeAPIRepositorySearchTests.swift in Sources */,
 				50DB7A0222AF870400DEEB7B /* MenuForDayTests.swift in Sources */,
+				5038052222B91E2C00C6B456 /* SearchResultsViewModelMock.swift in Sources */,
 				50DB7A0722AFA2A700DEEB7B /* Mocks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

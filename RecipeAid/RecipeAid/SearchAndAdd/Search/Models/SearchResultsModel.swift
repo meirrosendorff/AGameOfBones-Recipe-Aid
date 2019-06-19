@@ -13,6 +13,7 @@ class SearchResultsModel: SearchResultsModelProtocol {
   var numResults: Int {
     return resultSet.count
   }
+
   private var resultSet: [Recipe]
 
   init () {
