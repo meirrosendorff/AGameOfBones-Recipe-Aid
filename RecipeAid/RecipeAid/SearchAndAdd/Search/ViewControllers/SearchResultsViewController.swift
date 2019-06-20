@@ -38,7 +38,7 @@ class SearchResultsViewController: UIViewController {
       self.formatForUpdating(isUpdating: false)
       self.formatWhenSearchResultsRecieved(hasResults: hasResults)
     })
-    addAccessibilityLabels()
+    addAccessibilityIdentifiers()
   }
 
   override func viewWillLayoutSubviews() {
@@ -49,7 +49,7 @@ class SearchResultsViewController: UIViewController {
     }
   }
 
-  func addAccessibilityLabels() {
+  func addAccessibilityIdentifiers() {
     searchBar.accessibilityIdentifier = Identifiers.searchBar.rawValue
     noResultsLabel.accessibilityIdentifier = Identifiers.noResultsLabel.rawValue
   }

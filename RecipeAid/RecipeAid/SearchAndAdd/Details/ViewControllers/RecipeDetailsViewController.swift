@@ -30,7 +30,7 @@ class RecipeDetailsViewController: UIViewController {
     navigationItem.setRightBarButtonItems(barButtonArray, animated: false)
     formatViews()
     setTextFromViewModel()
-    addAccessibilityLabels()
+    addAccessibilityIdentifiers()
   }
 
   func setTextFromViewModel() {
@@ -42,7 +42,7 @@ class RecipeDetailsViewController: UIViewController {
 
   }
 
-  func addAccessibilityLabels() {
+  func addAccessibilityIdentifiers() {
     recipeNameLabel.accessibilityIdentifier = Identifiers.recipeName.rawValue
     servingsLabel.accessibilityIdentifier = Identifiers.servingsLabel.rawValue
     caloriesLabel.accessibilityIdentifier = Identifiers.caloriesLabel.rawValue
