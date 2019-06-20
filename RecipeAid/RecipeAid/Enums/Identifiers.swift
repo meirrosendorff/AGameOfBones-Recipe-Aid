@@ -14,4 +14,9 @@ enum Identifiers: String {
   case ingredientsLabel = "Ingredients Label"
   case ingredientTableView = "Ingredient Tableview"
   case noRecipeLabel = "No Ingredients Label"
+  case searchBar = "SearchBar"
+  case noResultsLabel = "No Results"
+  case tableViewCell = "TableViewCell"
+  case servingsLabel = "Number of Servings"
+  case caloriesLabel = "Number of Calories"
 }

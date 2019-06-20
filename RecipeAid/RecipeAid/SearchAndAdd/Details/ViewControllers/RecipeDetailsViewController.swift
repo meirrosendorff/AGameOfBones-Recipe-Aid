@@ -30,6 +30,7 @@ class RecipeDetailsViewController: UIViewController {
     navigationItem.setRightBarButtonItems(barButtonArray, animated: false)
     formatViews()
     setTextFromViewModel()
+    addAccessibilityLabels()
   }
 
   func setTextFromViewModel() {
@@ -39,6 +40,13 @@ class RecipeDetailsViewController: UIViewController {
     self.caloriesLabel.text = viewModel.calories
     self.backgroundImageView.image = backgroundImage
 
+  }
+
+  func addAccessibilityLabels() {
+    recipeNameLabel.accessibilityIdentifier = Identifiers.recipeName.rawValue
+    servingsLabel.accessibilityIdentifier = Identifiers.servingsLabel.rawValue
+    caloriesLabel.accessibilityIdentifier = Identifiers.caloriesLabel.rawValue
+    ingredientsTableView.accessibilityIdentifier = Identifiers.ingredientTableView.rawValue
   }
 
   func formatViews() {
@@ -77,6 +85,8 @@ extension RecipeDetailsViewController: UITableViewDelegate, UITableViewDataSourc
     guard let cell = tableView.dequeueReusableCell(withIdentifier: "ingredientCell") as? IngredientsTableViewCell else {
       return UITableViewCell()
     }
+    cell.isAccessibilityElement = true
+    cell.accessibilityIdentifier = Identifiers.tableViewCell.rawValue
     cell.ingredient.text = viewModel.getIngredient(at: indexPath.row)
     return cell
   }

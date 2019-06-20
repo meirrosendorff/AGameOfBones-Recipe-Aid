@@ -156,8 +156,8 @@ class SearchResultsViewModelTests: XCTestCase {
 
   func testGetNextSearchResultCorrectlyUpdatesSearchRangeWhenTwoCallsForSameQueryMade() {
 
-    let firstRange = (1, 10)
-    let secondRange = (11, 20)
+    let firstRange = (0, 10)
+    let secondRange = (10, 20)
 
     let firstExpectation = self.expectation(description: "Should Perform Search")
 
@@ -182,7 +182,7 @@ class SearchResultsViewModelTests: XCTestCase {
 
   func testGetNextSearchResultCorrectlyUpdatesSearchRangeWhenNewSearchMade() {
 
-    let range = (1, 10)
+    let range = (0, 10)
 
     let firstExpectation = self.expectation(description: "Should Perform Search")
 
