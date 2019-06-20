@@ -9,6 +9,8 @@ target 'RecipeAid' do
   pod 'Alamofire'
   pod 'SwiftyJSON'
   pod 'Hippolyte'
+  pod 'AppCenter'
+  pod 'AppCenter/Distribute'
 
 end
 

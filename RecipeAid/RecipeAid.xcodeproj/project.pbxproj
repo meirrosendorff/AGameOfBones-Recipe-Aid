@@ -786,6 +786,7 @@
 				5009277B22889DE500FB2CE6 /* Resources */,
 				5017CE642297DC7D00163163 /* ShellScript */,
 				7B89FC9226D1D45EB67FC1F7 /* [CP] Embed Pods Frameworks */,
+				91726EF59514F306FF1CEDAE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -979,6 +980,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RecipeAid/Pods-RecipeAid-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		91726EF59514F306FF1CEDAE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RecipeAid/Pods-RecipeAid-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RecipeAid/Pods-RecipeAid-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RecipeAid/Pods-RecipeAid-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CD35449DE2BFBB6F73185283 /* [CP] Check Pods Manifest.lock */ = {

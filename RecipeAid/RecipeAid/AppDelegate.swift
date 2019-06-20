@@ -8,6 +8,8 @@
 
 import UIKit
 import Hippolyte
+import AppCenter
+import AppCenterDistribute
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,7 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       _ application: UIApplication,
       didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
       stubNetworkCallsIfNeeded()
-        // Override point for customization after application launch.
+      MSAppCenter.start("0e5bf45c-000a-43fd-98f2-6c35684e2df7", withServices: [MSDistribute.self])
+      MSDistribute.setEnabled(false)
         return true
     }
 
