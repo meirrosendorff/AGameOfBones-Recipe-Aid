@@ -1144,7 +1144,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = NO;
-				DEVELOPMENT_TEAM = 248XUAAJP7;
+				DEVELOPMENT_TEAM = GLK7J5PP82;
 				ENABLE_TESTABILITY = YES;
 				INFOPLIST_FILE = RecipeAidTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1167,7 +1167,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = NO;
-				DEVELOPMENT_TEAM = 248XUAAJP7;
+				DEVELOPMENT_TEAM = GLK7J5PP82;
 				ENABLE_TESTABILITY = YES;
 				INFOPLIST_FILE = RecipeAidTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1308,13 +1308,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 248XUAAJP7;
+				DEVELOPMENT_TEAM = GLK7J5PP82;
 				INFOPLIST_FILE = RecipeAid/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = mrosendorfff.RecipeAid;
+				PRODUCT_BUNDLE_IDENTIFIER = za.co.dvt.jhb.RecipeAid;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1328,14 +1328,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 248XUAAJP7;
+				DEVELOPMENT_TEAM = GLK7J5PP82;
 				ENABLE_TESTABILITY = YES;
 				INFOPLIST_FILE = RecipeAid/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = mrosendorfff.RecipeAid;
+				PRODUCT_BUNDLE_IDENTIFIER = za.co.dvt.jhb.RecipeAid;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1346,7 +1346,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 248XUAAJP7;
+				DEVELOPMENT_TEAM = GLK7J5PP82;
 				INFOPLIST_FILE = RecipeAidUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1365,7 +1365,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 248XUAAJP7;
+				DEVELOPMENT_TEAM = GLK7J5PP82;
 				INFOPLIST_FILE = RecipeAidUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
