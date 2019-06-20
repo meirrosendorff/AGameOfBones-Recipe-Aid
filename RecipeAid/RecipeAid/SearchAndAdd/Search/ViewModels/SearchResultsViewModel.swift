@@ -75,7 +75,7 @@ class SearchResultsViewModel: SearchResultsViewModelProtocol {
   }
 
   private func getNextResultRange() -> (Int, Int) {
-    let nextRange = (lastResultIndex + 1, lastResultIndex + resultSetSize)
+    let nextRange = (lastResultIndex, lastResultIndex + resultSetSize)
     self.lastResultIndex += resultSetSize
     return nextRange
   }

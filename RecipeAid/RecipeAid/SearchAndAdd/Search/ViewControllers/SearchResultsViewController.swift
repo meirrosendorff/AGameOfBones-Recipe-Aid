@@ -38,6 +38,7 @@ class SearchResultsViewController: UIViewController {
       self.formatForUpdating(isUpdating: false)
       self.formatWhenSearchResultsRecieved(hasResults: hasResults)
     })
+    addAccessibilityIdentifiers()
   }
 
   override func viewWillLayoutSubviews() {
@@ -46,6 +47,11 @@ class SearchResultsViewController: UIViewController {
     if let gradientLayer = gradientLayer {
       gradientLayer.updateBounds()
     }
+  }
+
+  func addAccessibilityIdentifiers() {
+    searchBar.accessibilityIdentifier = Identifiers.searchBar.rawValue
+    noResultsLabel.accessibilityIdentifier = Identifiers.noResultsLabel.rawValue
   }
 
   func formatViews() {
@@ -127,6 +133,8 @@ extension SearchResultsViewController: UITableViewDelegate, UITableViewDataSourc
     guard let cell = tableView.dequeueReusableCell(withIdentifier: "protoCell") as? RecipeListTableViewCell else {
       return UITableViewCell()
     }
+    cell.isAccessibilityElement = true
+    cell.accessibilityIdentifier = Identifiers.tableViewCell.rawValue
 
     cell.foodImage.image = nil
     viewModel.getResultImage(forPos: indexPath.row, onComplete: { data in

@@ -20,6 +20,7 @@ class SearchBarViewController: UIViewController, UISearchBarDelegate {
     gradientLayer?.addGradientToView()
     searchBar.delegate = self
     self.title = "Recipe Aid"
+    addAccessibilityIdentifiers()
   }
 
   override func viewWillLayoutSubviews() {
@@ -28,6 +29,10 @@ class SearchBarViewController: UIViewController, UISearchBarDelegate {
     if let gradientLayer = gradientLayer {
       gradientLayer.updateBounds()
     }
+  }
+
+  func addAccessibilityIdentifiers() {
+    searchBar.accessibilityIdentifier = Identifiers.searchBar.rawValue
   }
 
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
