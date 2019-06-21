@@ -10,6 +10,7 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
+  @IBOutlet weak var scrollViewBottom: NSLayoutConstraint!
   @IBOutlet weak var collectionView: UICollectionView!
   @IBOutlet weak var maxTimeTextBox: UITextField!
   @IBOutlet weak var minTimeTextBox: UITextField!
@@ -47,6 +48,14 @@ class SettingsViewController: UIViewController {
     setUserDetails()
     addUsersCurrentSettings()
     setUpSavedAlert()
+    addKeyboardObservers()
+  }
+
+  private func addKeyboardObservers() {
+    NotificationCenter.default.addObserver(
+      self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+    NotificationCenter.default.addObserver(
+      self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
   }
 
   private func setUpSavedAlert() {
@@ -54,9 +63,34 @@ class SettingsViewController: UIViewController {
       title: "Saved", message: "Settings Succesfully Saved", preferredStyle: UIAlertController.Style.alert)
   }
 
-  @objc
-  private func dismissAlert() {
+  @objc private func dismissAlert() {
     self.savedAlert.dismiss(animated: true, completion: nil)
+  }
+
+  @objc func keyboardWillShow(notification: NSNotification) {
+    let userInfo = notification.userInfo!
+
+    guard let animationDuration = (userInfo[UIResponder.keyboardAnimationDurationUserInfoKey]
+      as? NSNumber)?.doubleValue else { return }
+    guard let keyboardEndFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey]
+      as? NSValue)?.cgRectValue else { return }
+    let convertedKeyboardEndFrame = view.convert(keyboardEndFrame, from: view.window)
+    self.scrollViewBottom.constant = view.bounds.maxY - convertedKeyboardEndFrame.minY
+
+    UIView.animate(withDuration: animationDuration, delay: 0.0, options: .beginFromCurrentState, animations: {
+      self.view.layoutIfNeeded()
+    }, completion: nil)
+  }
+
+  @objc func keyboardWillHide(notification: NSNotification) {
+
+    let userInfo = notification.userInfo!
+    guard let animationDuration = (userInfo[UIResponder.keyboardAnimationDurationUserInfoKey]
+      as? NSNumber)?.doubleValue else { return }
+    self.scrollViewBottom.constant = 0
+    UIView.animate(withDuration: animationDuration, delay: 0.0, options: .beginFromCurrentState, animations: {
+      self.view.layoutIfNeeded()
+    }, completion: nil)
   }
 
   private func loadSettingsToView() {

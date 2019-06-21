@@ -900,6 +900,7 @@
                         <outlet property="minTimeTextBox" destination="4CL-p9-OmE" id="eUT-YP-iqX"/>
                         <outlet property="profilePicImageView" destination="O0G-dp-mH4" id="8jN-QA-NJ6"/>
                         <outlet property="saveButton" destination="uC4-HG-ChS" id="0aB-4j-OI8"/>
+                        <outlet property="scrollViewBottom" destination="mA6-69-9ge" id="4sL-JU-jlh"/>
                         <outlet property="timeColonLabel" destination="xIE-l8-9ev" id="OQh-hR-dVH"/>
                         <outlet property="timeDashLabel" destination="S74-hi-i4X" id="biy-DV-M4H"/>
                         <outlet property="timeLabel" destination="9CB-c5-gMe" id="9cY-6N-Sgd"/>
