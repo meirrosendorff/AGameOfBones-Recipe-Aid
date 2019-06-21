@@ -10,43 +10,29 @@ import Foundation
 
 class SettingsViewModel: SettingsViewModelProtocol {
 
-  var profilePic: String
-  var userName: String
-  var emailAddress: String
-  var minCalories: String { return minCaloriesInt > 0 ? String(minCaloriesInt) : "" }
-  var maxCalories: String { return maxCaloriesInt > 0 ? String(maxCaloriesInt) : ""  }
-  var minTime: String { return minTimeInt > 0 ? String(minTimeInt) : "" }
-  var maxTime: String { return maxTimeInt > 0 ? String(maxTimeInt) : "" }
-  var unwantedFoods: String
-  var restrictions: [(String, Bool)]
-  private var minCaloriesInt: Int
-  private var maxCaloriesInt: Int
-  private var minTimeInt: Int
-  private var maxTimeInt: Int
+  private let model: SettingsModel
+  var profilePic: String { return model.profilePic }
+  var userName: String { return model.userName }
+  var emailAddress: String { return model.emailAddress }
+  var minCalories: String { return model.minCalories > 0 ? String(model.minCalories) : "" }
+  var maxCalories: String { return model.maxCalories > 0 ? String(model.maxCalories) : ""  }
+  var minTime: String { return model.minTime > 0 ? String(model.minTime) : "" }
+  var maxTime: String { return model.maxTime > 0 ? String(model.maxTime) : "" }
+  var unwantedFoods: String { return model.unwantedFoods.joined(separator: ", ") }
 
-  var numRestrictions: Int { return restrictions.count }
+  var numRestrictions: Int { return model.numRestrictions }
 
   init() {
-
-    profilePic = ""
-    userName = ""
-    emailAddress = ""
-    minCaloriesInt = 0
-    maxCaloriesInt = 0
-    minTimeInt = 0
-    maxTimeInt = 0
-    unwantedFoods = ""
-    restrictions = []
-
+    model = SettingsModel()
     setProfileData()
     updateSettingsFromUserDefaults()
   }
 
   private func setProfileData() {
     //not sure where this data will be fetched from yet
-    profilePic = "background"
-    userName = "User Name"
-    emailAddress = "user.name@emailadress.com"
+    model.profilePic = "background"
+    model.userName = "User Name"
+    model.emailAddress = "user.name@emailadress.com"
   }
 
   private func getRestrictionsFromUserDefaults() {
@@ -54,46 +40,47 @@ class SettingsViewModel: SettingsViewModelProtocol {
     let dict =
       UserDefaults.standard.object(forKey: "restrictionOptionsArray") as? [String: Bool] ?? [String: Bool]()
 
-    restrictions = []
+    var restrictions: [(String, Bool)] = []
     for (name, isSelected) in dict {
       restrictions.append((name, isSelected))
     }
-    restrictions.sort {$0.0 > $1.0}
+
+    model.setRestrictions(restrictions: restrictions)
   }
 
   private func getCaloriesFromUserDefaults() {
 
-    minCaloriesInt = UserDefaults.standard.integer(forKey: "minCalories")
-    maxCaloriesInt = UserDefaults.standard.integer(forKey: "maxCalories")
+    model.minCalories = UserDefaults.standard.integer(forKey: "minCalories")
+    model.maxCalories = UserDefaults.standard.integer(forKey: "maxCalories")
   }
 
   private func getTimesFromUserDefaults() {
 
-    minTimeInt = UserDefaults.standard.integer(forKey: "minTime")
-    maxTimeInt = UserDefaults.standard.integer(forKey: "maxTime")
+    model.minTime = UserDefaults.standard.integer(forKey: "minTime")
+    model.maxTime = UserDefaults.standard.integer(forKey: "maxTime")
   }
 
   private func getUnwantedFoodsFromUserDefaults() {
 
     let foodArray = UserDefaults.standard.object(forKey: "excludedFoodsArray") as? [String] ?? []
 
-    unwantedFoods = foodArray.joined(separator: ", ")
+    model.unwantedFoods = foodArray
   }
 
   func restrictionName(at pos: Int) -> String {
-    return restrictions[pos].0
+    return model.restrictionName(at: pos)
   }
 
   func restrictionIsSelected(at pos: Int) -> Bool {
-    return restrictions[pos].1
+    return model.restrictionIsSelected(at: pos)
   }
 
   func selectRestriction(at pos: Int) {
-    restrictions[pos].1 = true
+    model.selectRestriction(at: pos)
   }
 
   func deselectRestriction(at pos: Int) {
-    restrictions[pos].1 = false
+    model.deselectRestriction(at: pos)
   }
 
   private func getValidNumbers(min: String, max: String) throws -> (Int, Int) {
@@ -117,31 +104,33 @@ class SettingsViewModel: SettingsViewModelProtocol {
 
     let values = try getValidNumbers(min: min, max: max)
 
-    minCaloriesInt = values.0
-    maxCaloriesInt = values.1
+    model.minCalories = values.0
+    model.maxCalories = values.1
   }
 
   func setTimes(min: String, max: String) throws {
 
     let values = try getValidNumbers(min: min, max: max)
 
-    minTimeInt = values.0
-    maxTimeInt = values.1
+    model.minTime = values.0
+    model.maxTime = values.1
   }
 
   func setUnwatedFoods(foods: String) {
-    unwantedFoods = foods
+    model.unwantedFoods = foods.split(separator: ",").map {
+      $0.trimmingCharacters(in: .whitespaces)
+    }
   }
 
   func save() {
 
-    let restrictionsToSave = restrictions.reduce(into: [:]) { $0[$1.0] = $1.1 }
+    let restrictionsToSave = model.restrictions.reduce(into: [:]) { $0[$1.0] = $1.1 }
     UserDefaults.standard.set(restrictionsToSave, forKey: "restrictionOptionsArray")
 
-    UserDefaults.standard.set(minCaloriesInt, forKey: "minCalories")
-    UserDefaults.standard.set(maxCaloriesInt, forKey: "maxCalories")
-    UserDefaults.standard.set(minTimeInt, forKey: "minTime")
-    UserDefaults.standard.set(maxTimeInt, forKey: "maxTime")
+    UserDefaults.standard.set(model.minCalories, forKey: "minCalories")
+    UserDefaults.standard.set(model.maxCalories, forKey: "maxCalories")
+    UserDefaults.standard.set(model.minTime, forKey: "minTime")
+    UserDefaults.standard.set(model.maxTime, forKey: "maxTime")
 
     let excludedFoodsArray = unwantedFoods.split(separator: ",").map {
       $0.trimmingCharacters(in: .whitespaces)
