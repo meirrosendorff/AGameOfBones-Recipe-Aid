@@ -19,4 +19,6 @@ enum RecipeError: Error {
   case unableToBuildRecipeMissingValues(String)
   case emptyJSONRecieved(String)
   case unableToFetchImage(String)
+  case invalidNumberString(String)
+  case minMaxError(String)
 }

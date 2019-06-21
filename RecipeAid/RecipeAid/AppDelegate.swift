@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       _ application: UIApplication,
       didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
       stubNetworkCallsIfNeeded()
+      setUpUserDefaults()
         // Override point for customization after application launch.
         return true
     }
@@ -54,6 +55,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 extension AppDelegate {
+
   func stubNetworkCallsIfNeeded() {
     guard let networkStubs = UserDefaults.standard.string(forKey: "networkStubs") else { return }
     let stubSet = networkStubs.components(separatedBy: " ")
@@ -77,5 +79,26 @@ extension AppDelegate {
       Hippolyte.shared.add(stubbedRequest: stub)
     }
     Hippolyte.shared.start()
+  }
+
+  func setUpUserDefaults() {
+
+    if UserDefaults.standard.bool(forKey: "defaultsAlreadySetUp") {
+      return
+    }
+
+    UserDefaults.standard.set(true, forKey: "defaultsAlreadySetUp")
+
+    let restrictionOptions = ["High Protein": false, "Low Fat": false,
+                              "Low Carb": false, "Low Suger": false,
+                              "Vegetarian": false, "Vegan": false,
+                              "Alcohol Free": false, "Nut Free": false]
+
+    UserDefaults.standard.set(restrictionOptions, forKey: "restrictionOptionsArray")
+    UserDefaults.standard.set(0, forKey: "minCalories")
+    UserDefaults.standard.set(0, forKey: "maxCalories")
+    UserDefaults.standard.set(0, forKey: "minTime")
+    UserDefaults.standard.set(0, forKey: "maxTime")
+    UserDefaults.standard.set([""], forKey: "excludedFoodsArray")
   }
 }

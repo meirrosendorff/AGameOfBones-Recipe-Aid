@@ -18,6 +18,10 @@
 		500FE37D228EE76200157F77 /* RecipeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500FE37C228EE76200157F77 /* RecipeDetailsViewController.swift */; };
 		500FE37F228EEE8B00157F77 /* RecipeListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500FE37E228EEE8B00157F77 /* RecipeListTableViewCell.swift */; };
 		500FE3862292A63900157F77 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500FE3852292A63900157F77 /* AddViewController.swift */; };
+		502F6CF722BCA42200C931B0 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502F6CF622BCA42200C931B0 /* SettingsViewModel.swift */; };
+		502F6CFA22BCA44900C931B0 /* SettingsViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502F6CF922BCA44900C931B0 /* SettingsViewModelProtocol.swift */; };
+		502F6CFD22BCEC0700C931B0 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502F6CFC22BCEC0700C931B0 /* UIViewController.swift */; };
+		502F6D0022BCF4A500C931B0 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502F6CFF22BCF4A500C931B0 /* SettingsModel.swift */; };
 		503804F422B8B30400C6B456 /* exampleSearchResult.json in Resources */ = {isa = PBXBuildFile; fileRef = 503804F322B8B30400C6B456 /* exampleSearchResult.json */; };
 		503804F722B8B71200C6B456 /* exampleObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503804F622B8B71200C6B456 /* exampleObjects.swift */; };
 		5038050E22B8ED3C00C6B456 /* EdamamRecipeAPIRepositorySearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038050D22B8ED3C00C6B456 /* EdamamRecipeAPIRepositorySearchTests.swift */; };
@@ -155,6 +159,10 @@
 		500FE37C228EE76200157F77 /* RecipeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsViewController.swift; sourceTree = "<group>"; };
 		500FE37E228EEE8B00157F77 /* RecipeListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListTableViewCell.swift; sourceTree = "<group>"; };
 		500FE3852292A63900157F77 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		502F6CF622BCA42200C931B0 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		502F6CF922BCA44900C931B0 /* SettingsViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModelProtocol.swift; sourceTree = "<group>"; };
+		502F6CFC22BCEC0700C931B0 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		502F6CFF22BCF4A500C931B0 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
 		503804F322B8B30400C6B456 /* exampleSearchResult.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = exampleSearchResult.json; sourceTree = "<group>"; };
 		503804F622B8B71200C6B456 /* exampleObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = exampleObjects.swift; sourceTree = "<group>"; };
 		503804F822B8D89300C6B456 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = ../Pods/Pods.xcodeproj; sourceTree = "<group>"; };
@@ -300,6 +308,7 @@
 		5009277F22889DE500FB2CE6 /* RecipeAid */ = {
 			isa = PBXGroup;
 			children = (
+				502F6CFB22BCEBEF00C931B0 /* Extensions */,
 				50A1121722A90D11003AD301 /* Enums */,
 				5009278022889DE500FB2CE6 /* AppDelegate.swift */,
 				504FF7EE228DFF2D00681272 /* Assets.xcassets */,
@@ -339,10 +348,53 @@
 		5017CE612297BEE200163163 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				502F6CFE22BCF48E00C931B0 /* Models */,
+				502F6CF822BCA42C00C931B0 /* Protocols */,
+				502F6CF522BCA3C100C931B0 /* ViewModels */,
+				502F6CEE22BCA3A800C931B0 /* ViewControllers */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		502F6CEE22BCA3A800C931B0 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
 				508D1CEA22A123FD008DA723 /* SettingsViewController.swift */,
 				508D1CEC22A1383A008DA723 /* DietryRestrictionsCollectionViewCell.swift */,
 			);
-			path = Settings;
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		502F6CF522BCA3C100C931B0 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				502F6CF622BCA42200C931B0 /* SettingsViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		502F6CF822BCA42C00C931B0 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				502F6CF922BCA44900C931B0 /* SettingsViewModelProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		502F6CFB22BCEBEF00C931B0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				502F6CFC22BCEC0700C931B0 /* UIViewController.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		502F6CFE22BCF48E00C931B0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				502F6CFF22BCF4A500C931B0 /* SettingsModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		503804F522B8B33100C6B456 /* RepoTests */ = {
@@ -1056,6 +1108,7 @@
 				508D1CDD229E5799008DA723 /* Colors.swift in Sources */,
 				5009278322889DE500FB2CE6 /* SearchResultsViewController.swift in Sources */,
 				508D1CE4229FA358008DA723 /* WebViewController.swift in Sources */,
+				502F6CF722BCA42200C931B0 /* SettingsViewModel.swift in Sources */,
 				509CD62222A6702E008FCFAC /* Recipe.swift in Sources */,
 				50A1121622A90CC1003AD301 /* Errors.swift in Sources */,
 				50A1120D22A7E402003AD301 /* EdamamRecipeAPIRepository.swift in Sources */,
@@ -1063,6 +1116,8 @@
 				509CD62D22A67EDA008FCFAC /* MenuDisplayViewModelProtocol.swift in Sources */,
 				508D1CE922A10944008DA723 /* MenuIngredientsTableViewCell.swift in Sources */,
 				508D1CDB229D6E24008DA723 /* GradientLayer.swift in Sources */,
+				502F6CFA22BCA44900C931B0 /* SettingsViewModelProtocol.swift in Sources */,
+				502F6CFD22BCEC0700C931B0 /* UIViewController.swift in Sources */,
 				50DB7A3022B365B800DEEB7B /* SearchResultsModel.swift in Sources */,
 				50AE4C5A2295865900467ADE /* ShoppingListItemTableViewCell.swift in Sources */,
 				508D1CEB22A123FD008DA723 /* SettingsViewController.swift in Sources */,
@@ -1072,6 +1127,7 @@
 				507BA4D622A93B780064B415 /* EdamamRecipeAPIRepositoryProtocal.swift in Sources */,
 				509CD62422A67250008FCFAC /* MenuForDay.swift in Sources */,
 				50DB7A4022B3CB6B00DEEB7B /* AddViewModel.swift in Sources */,
+				502F6D0022BCF4A500C931B0 /* SettingsModel.swift in Sources */,
 				50DB7A2E22B2852300DEEB7B /* SearchResultsViewModelProtocol.swift in Sources */,
 				50AE4C5F229675BC00467ADE /* MenuDatePickerViewController.swift in Sources */,
 				50A1120F22A80FF6003AD301 /* ImageFetcher.swift in Sources */,

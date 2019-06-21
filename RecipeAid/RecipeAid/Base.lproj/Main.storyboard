@@ -592,13 +592,13 @@
                                         <rect key="frame" x="89" y="82" width="124" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="max" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tw4-xe-i2J" userLabel="maxCalories">
                                         <rect key="frame" x="241" y="82" width="124" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="waF-mz-suy">
                                         <rect key="frame" x="223" y="82" width="8" height="30"/>
@@ -622,13 +622,13 @@
                                         <rect key="frame" x="89" y="122" width="124" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="max" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BYd-Lt-tOa" userLabel="maxTime">
                                         <rect key="frame" x="241" y="122" width="124" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S74-hi-i4X">
                                         <rect key="frame" x="223" y="122" width="8" height="30"/>
@@ -681,6 +681,9 @@
                                                 <integer key="value" value="10"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="saveSettings:" destination="Hfq-ak-lmi" eventType="touchUpInside" id="KVP-Nt-6w5"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="seL-SD-DXf">
                                         <rect key="frame" x="197.5" y="500" width="167.5" height="35"/>
@@ -742,7 +745,6 @@
                                                                         <constraint firstAttribute="width" constant="40" id="gJA-hu-4al"/>
                                                                     </constraints>
                                                                     <userDefinedRuntimeAttributes>
-                                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
                                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
                                                                             <integer key="value" value="0"/>
                                                                         </userDefinedRuntimeAttribute>
@@ -890,7 +892,7 @@
                         <outlet property="dietryRestrictionsInstructionLabel" destination="2L8-Jw-Zx6" id="3mh-dB-UY5"/>
                         <outlet property="dietryRestrictionsLabel" destination="XUr-Yr-iis" id="zez-0E-CEJ"/>
                         <outlet property="dietryRestrictionsTextBox" destination="u1C-nt-7QY" id="eyw-E2-taF"/>
-                        <outlet property="emailAdressLabel" destination="5Yi-Lc-eMs" id="85l-y1-YsW"/>
+                        <outlet property="emailAddressLabel" destination="5Yi-Lc-eMs" id="qjW-8s-kqi"/>
                         <outlet property="logoutButton" destination="seL-SD-DXf" id="jEu-6E-eih"/>
                         <outlet property="maxCaloriesTextBox" destination="Tw4-xe-i2J" id="MuA-MG-Jcy"/>
                         <outlet property="maxTimeTextBox" destination="BYd-Lt-tOa" id="IDw-mh-2GO"/>
@@ -898,6 +900,7 @@
                         <outlet property="minTimeTextBox" destination="4CL-p9-OmE" id="eUT-YP-iqX"/>
                         <outlet property="profilePicImageView" destination="O0G-dp-mH4" id="8jN-QA-NJ6"/>
                         <outlet property="saveButton" destination="uC4-HG-ChS" id="0aB-4j-OI8"/>
+                        <outlet property="scrollViewBottom" destination="mA6-69-9ge" id="4sL-JU-jlh"/>
                         <outlet property="timeColonLabel" destination="xIE-l8-9ev" id="OQh-hR-dVH"/>
                         <outlet property="timeDashLabel" destination="S74-hi-i4X" id="biy-DV-M4H"/>
                         <outlet property="timeLabel" destination="9CB-c5-gMe" id="9cY-6N-Sgd"/>
