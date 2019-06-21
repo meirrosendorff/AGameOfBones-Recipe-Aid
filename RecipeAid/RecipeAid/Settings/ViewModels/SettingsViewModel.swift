@@ -54,9 +54,11 @@ class SettingsViewModel: SettingsViewModelProtocol {
     let dict =
       UserDefaults.standard.object(forKey: "restrictionOptionsArray") as? [String: Bool] ?? [String: Bool]()
 
+    restrictions = []
     for (name, isSelected) in dict {
       restrictions.append((name, isSelected))
     }
+    restrictions.sort {$0.0 > $1.0}
   }
 
   private func getCaloriesFromUserDefaults() {
