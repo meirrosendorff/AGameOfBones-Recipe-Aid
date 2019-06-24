@@ -34,6 +34,15 @@
 		5038053F22BA63F700C6B456 /* SearchAndAddUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038053E22BA63F700C6B456 /* SearchAndAddUITests.swift */; };
 		5038054122BA65E000C6B456 /* exampleSearchResultFirstTen.json in Resources */ = {isa = PBXBuildFile; fileRef = 5038054022BA65E000C6B456 /* exampleSearchResultFirstTen.json */; };
 		5038054322BA660F00C6B456 /* exampleSearchResultSecondTen.json in Sources */ = {isa = PBXBuildFile; fileRef = 5038054222BA660F00C6B456 /* exampleSearchResultSecondTen.json */; };
+		503E7F0522C0968600CD860E /* SettingsModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503E7F0422C0968600CD860E /* SettingsModelTests.swift */; };
+		503E7F0722C09CB400CD860E /* SettingsViewModelModelInteractionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503E7F0622C09CB400CD860E /* SettingsViewModelModelInteractionTests.swift */; };
+		503E7F0A22C0A49400CD860E /* UserDefaultsMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503E7F0922C0A49400CD860E /* UserDefaultsMock.swift */; };
+		503E7F1722C0A98000CD860E /* SettingsRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503E7F1622C0A98000CD860E /* SettingsRepo.swift */; };
+		503E7F1922C0A9AE00CD860E /* SettingsRepoProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503E7F1822C0A9AE00CD860E /* SettingsRepoProtocol.swift */; };
+		503E7F2222C0B8B000CD860E /* SettingsRepoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503E7F2122C0B8B000CD860E /* SettingsRepoTests.swift */; };
+		503E7F2F22C0CE7200CD860E /* GeneratedMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503E7F2E22C0CE7200CD860E /* GeneratedMocks.swift */; };
+		503E7F3522C0FD7600CD860E /* SettingsViewModelRepoInteractionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503E7F3422C0FD7600CD860E /* SettingsViewModelRepoInteractionTests.swift */; };
+		503E7F3722C1008600CD860E /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503E7F3622C1008600CD860E /* Helpers.swift */; };
 		504FF7EF228DFF2D00681272 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 504FF7EE228DFF2D00681272 /* Assets.xcassets */; };
 		507BA4D222A939C30064B415 /* MenuForDayProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507BA4D122A939C30064B415 /* MenuForDayProtocol.swift */; };
 		507BA4D622A93B780064B415 /* EdamamRecipeAPIRepositoryProtocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507BA4D522A93B780064B415 /* EdamamRecipeAPIRepositoryProtocal.swift */; };
@@ -133,6 +142,13 @@
 			remoteGlobalIDString = 6535CD4A8663BD71D60C7B196901F458;
 			remoteInfo = SwiftyJSON;
 		};
+		503E7F2C22C0CD2300CD860E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 503804F822B8D89300C6B456 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0113DD315733C76E9B463C685BB8F92B;
+			remoteInfo = Cuckoo;
+		};
 		50DB7A1122B0DD5400DEEB7B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5009277522889DE500FB2CE6 /* Project object */;
@@ -176,6 +192,15 @@
 		5038053E22BA63F700C6B456 /* SearchAndAddUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAndAddUITests.swift; sourceTree = "<group>"; };
 		5038054022BA65E000C6B456 /* exampleSearchResultFirstTen.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = exampleSearchResultFirstTen.json; sourceTree = "<group>"; };
 		5038054222BA660F00C6B456 /* exampleSearchResultSecondTen.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = exampleSearchResultSecondTen.json; sourceTree = "<group>"; };
+		503E7F0422C0968600CD860E /* SettingsModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModelTests.swift; sourceTree = "<group>"; };
+		503E7F0622C09CB400CD860E /* SettingsViewModelModelInteractionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModelModelInteractionTests.swift; sourceTree = "<group>"; };
+		503E7F0922C0A49400CD860E /* UserDefaultsMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserDefaultsMock.swift; path = ../../repoMocks/UserDefaultsMock.swift; sourceTree = "<group>"; };
+		503E7F1622C0A98000CD860E /* SettingsRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRepo.swift; sourceTree = "<group>"; };
+		503E7F1822C0A9AE00CD860E /* SettingsRepoProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRepoProtocol.swift; sourceTree = "<group>"; };
+		503E7F2122C0B8B000CD860E /* SettingsRepoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRepoTests.swift; sourceTree = "<group>"; };
+		503E7F2E22C0CE7200CD860E /* GeneratedMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedMocks.swift; sourceTree = "<group>"; };
+		503E7F3422C0FD7600CD860E /* SettingsViewModelRepoInteractionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModelRepoInteractionTests.swift; sourceTree = "<group>"; };
+		503E7F3622C1008600CD860E /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		504FF7EE228DFF2D00681272 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		507BA4D122A939C30064B415 /* MenuForDayProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuForDayProtocol.swift; sourceTree = "<group>"; };
 		507BA4D522A93B780064B415 /* EdamamRecipeAPIRepositoryProtocal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdamamRecipeAPIRepositoryProtocal.swift; sourceTree = "<group>"; };
@@ -255,6 +280,8 @@
 		50022D3422AA6D970001B2D1 /* RecipeAidTests */ = {
 			isa = PBXGroup;
 			children = (
+				503E7F2E22C0CE7200CD860E /* GeneratedMocks.swift */,
+				503E7EFB22C0964A00CD860E /* Settings */,
 				5038052D22BA386D00C6B456 /* SearchAndAdd */,
 				5038051B22B917E000C6B456 /* repoMocks */,
 				50022D3F22AA81080001B2D1 /* exampleJson */,
@@ -400,8 +427,10 @@
 		503804F522B8B33100C6B456 /* RepoTests */ = {
 			isa = PBXGroup;
 			children = (
+				503E7F0822C0A46400CD860E /* Mocks */,
 				50022D3522AA6D970001B2D1 /* EdamamRecipeAPIRepositoryGetRecipeTests.swift */,
 				5038050D22B8ED3C00C6B456 /* EdamamRecipeAPIRepositorySearchTests.swift */,
+				503E7F2122C0B8B000CD860E /* SettingsRepoTests.swift */,
 			);
 			path = RepoTests;
 			sourceTree = "<group>";
@@ -410,6 +439,7 @@
 			isa = PBXGroup;
 			children = (
 				5038050222B8D89300C6B456 /* Alamofire.framework */,
+				503E7F2D22C0CD2300CD860E /* libCuckoo.a */,
 				5038050422B8D89300C6B456 /* Hippolyte.framework */,
 				5038050622B8D89300C6B456 /* libHippolyte-library.a */,
 				5038050822B8D89300C6B456 /* Pods_RecipeAid.framework */,
@@ -511,6 +541,41 @@
 			path = SearchAndAdd;
 			sourceTree = "<group>";
 		};
+		503E7EFB22C0964A00CD860E /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				503E7F0322C0966800CD860E /* Models */,
+				503E7F0222C0965C00CD860E /* ViewModels */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		503E7F0222C0965C00CD860E /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				503E7F0622C09CB400CD860E /* SettingsViewModelModelInteractionTests.swift */,
+				503E7F3422C0FD7600CD860E /* SettingsViewModelRepoInteractionTests.swift */,
+				503E7F3622C1008600CD860E /* Helpers.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		503E7F0322C0966800CD860E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				503E7F0422C0968600CD860E /* SettingsModelTests.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		503E7F0822C0A46400CD860E /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				503E7F0922C0A49400CD860E /* UserDefaultsMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		507BA4D022A939AD0064B415 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -524,6 +589,7 @@
 			children = (
 				50A1120C22A7E402003AD301 /* EdamamRecipeAPIRepository.swift */,
 				50A1120E22A80FF6003AD301 /* ImageFetcher.swift */,
+				503E7F1622C0A98000CD860E /* SettingsRepo.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -532,6 +598,7 @@
 			isa = PBXGroup;
 			children = (
 				507BA4D522A93B780064B415 /* EdamamRecipeAPIRepositoryProtocal.swift */,
+				503E7F1822C0A9AE00CD860E /* SettingsRepoProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -814,6 +881,7 @@
 			buildConfigurationList = 50022D3A22AA6D970001B2D1 /* Build configuration list for PBXNativeTarget "RecipeAidTests" */;
 			buildPhases = (
 				F386B3A2087424274AB799C4 /* [CP] Check Pods Manifest.lock */,
+				503E7F2422C0CD2300CD860E /* ShellScript */,
 				50022D2F22AA6D970001B2D1 /* Sources */,
 				50022D3022AA6D970001B2D1 /* Frameworks */,
 				50022D3122AA6D970001B2D1 /* Resources */,
@@ -958,6 +1026,13 @@
 			remoteRef = 5038050B22B8D89300C6B456 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		503E7F2D22C0CD2300CD860E /* libCuckoo.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libCuckoo.a;
+			remoteRef = 503E7F2C22C0CD2300CD860E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -1015,6 +1090,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		503E7F2422C0CD2300CD860E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "OUTPUT_FILE=\"${PROJECT_DIR}/${PROJECT_NAME}Tests/GeneratedMocks.swift\"\necho \"Generated Mocks File = ${OUTPUT_FILE}\"\nINPUT_DIR=\"${PROJECT_DIR}/${PROJECT_NAME}\"\necho \"Mocks Input Directory = ${INPUT_DIR}\"\n\"${PODS_ROOT}/Cuckoo/run\" generate --testable \"${PROJECT_NAME}\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"${INPUT_DIR}/Services/Services/SettingsRepo.swift\" \\\n\"${INPUT_DIR}/Settings/Models/SettingsModel.swift\" \\\n\"${INPUT_DIR}/Settings/ViewModels/SettingsViewModel.swift\"\n";
 		};
 		7B89FC9226D1D45EB67FC1F7 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1084,15 +1176,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				503E7F0A22C0A49400CD860E /* UserDefaultsMock.swift in Sources */,
+				503E7F3722C1008600CD860E /* Helpers.swift in Sources */,
 				5038051A22B910AA00C6B456 /* SearchResultsModelTests.swift in Sources */,
 				5038052022B91BDB00C6B456 /* SearchResultsModelMock.swift in Sources */,
 				5038051D22B917FC00C6B456 /* EdamamAPIRepositoryMock.swift in Sources */,
+				503E7F2F22C0CE7200CD860E /* GeneratedMocks.swift in Sources */,
+				503E7F3522C0FD7600CD860E /* SettingsViewModelRepoInteractionTests.swift in Sources */,
+				503E7F0722C09CB400CD860E /* SettingsViewModelModelInteractionTests.swift in Sources */,
 				503804F722B8B71200C6B456 /* exampleObjects.swift in Sources */,
 				5038052422B9FE0800C6B456 /* SearchResultsViewModelTests.swift in Sources */,
 				50022D3622AA6D970001B2D1 /* EdamamRecipeAPIRepositoryGetRecipeTests.swift in Sources */,
+				503E7F0522C0968600CD860E /* SettingsModelTests.swift in Sources */,
 				50DB7A0522AF94DB00DEEB7B /* MenuDisplayViewModelTests.swift in Sources */,
 				5038050E22B8ED3C00C6B456 /* EdamamRecipeAPIRepositorySearchTests.swift in Sources */,
 				50DB7A0222AF870400DEEB7B /* MenuForDayTests.swift in Sources */,
+				503E7F2222C0B8B000CD860E /* SettingsRepoTests.swift in Sources */,
 				50DB7A0722AFA2A700DEEB7B /* Mocks.swift in Sources */,
 				5038053022BA38A800C6B456 /* RecipeDetailsViewModelTests.swift in Sources */,
 				5038053422BA42C800C6B456 /* AddRecipeTests.swift in Sources */,
@@ -1109,6 +1208,7 @@
 				5009278322889DE500FB2CE6 /* SearchResultsViewController.swift in Sources */,
 				508D1CE4229FA358008DA723 /* WebViewController.swift in Sources */,
 				502F6CF722BCA42200C931B0 /* SettingsViewModel.swift in Sources */,
+				503E7F1722C0A98000CD860E /* SettingsRepo.swift in Sources */,
 				509CD62222A6702E008FCFAC /* Recipe.swift in Sources */,
 				50A1121622A90CC1003AD301 /* Errors.swift in Sources */,
 				50A1120D22A7E402003AD301 /* EdamamRecipeAPIRepository.swift in Sources */,
@@ -1118,6 +1218,7 @@
 				508D1CDB229D6E24008DA723 /* GradientLayer.swift in Sources */,
 				502F6CFA22BCA44900C931B0 /* SettingsViewModelProtocol.swift in Sources */,
 				502F6CFD22BCEC0700C931B0 /* UIViewController.swift in Sources */,
+				503E7F1922C0A9AE00CD860E /* SettingsRepoProtocol.swift in Sources */,
 				50DB7A3022B365B800DEEB7B /* SearchResultsModel.swift in Sources */,
 				50AE4C5A2295865900467ADE /* ShoppingListItemTableViewCell.swift in Sources */,
 				508D1CEB22A123FD008DA723 /* SettingsViewController.swift in Sources */,

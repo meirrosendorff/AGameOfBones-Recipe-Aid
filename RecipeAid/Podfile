@@ -15,5 +15,5 @@ end
 target 'RecipeAidTests' do
 
   pod 'Hippolyte'
-
+  pod 'Cuckoo'
 end

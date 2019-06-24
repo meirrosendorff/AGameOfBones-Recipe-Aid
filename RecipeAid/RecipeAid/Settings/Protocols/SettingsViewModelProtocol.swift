@@ -27,4 +27,5 @@ protocol SettingsViewModelProtocol {
   func setTimes(min: String, max: String) throws
   func setUnwatedFoods(foods: String)
   func save()
+  func updateSettings()
 }

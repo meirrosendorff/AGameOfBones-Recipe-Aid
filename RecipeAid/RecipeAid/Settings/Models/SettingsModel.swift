@@ -18,8 +18,18 @@ class SettingsModel {
   var minTime: Int
   var maxTime: Int
   var unwantedFoods: [String]
-  var restrictions: [(String, Bool)]
-  var numRestrictions: Int { return restrictions.count }
+  private var restrictionsSet: [(String, Bool)]
+  var restrictions: [(String, Bool)] {
+    set {
+      restrictionsSet = []
+      restrictionsSet = newValue
+      restrictionsSet.sort {$0.0 < $1.0}
+    }
+    get {
+      return restrictionsSet
+    }
+  }
+  var numRestrictions: Int { return restrictionsSet.count }
 
   init() {
     profilePic = ""
@@ -30,13 +40,7 @@ class SettingsModel {
     minTime = 0
     maxTime = 0
     unwantedFoods = []
-    restrictions = []
-  }
-
-  func setRestrictions(restrictions: [(String, Bool)]) {
-    self.restrictions = []
-    self.restrictions = restrictions
-    self.restrictions.sort {$0.0 > $1.0}
+    restrictionsSet = []
   }
 
   func restrictionName(at pos: Int) -> String {
