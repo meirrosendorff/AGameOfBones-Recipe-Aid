@@ -9,39 +9,54 @@
 import UIKit
 
 class ShoppingListItemTableViewCell: UITableViewCell {
+
   @IBOutlet weak var blackoutForeground: UIView!
   @IBOutlet weak var item: UILabel!
-  private var alreadyBought = false
   let formatter = Formatter()
-  @IBAction func itemBought(_ sender: UIButton) {
-    if alreadyBought {
-      blackoutForeground.backgroundColor = UIColor.black
-      item.textColor = formatter.getMainTextColor()
-      alreadyBought = false
-    } else {
-      blackoutForeground.backgroundColor = UIColor.clear
-      item.textColor = formatter.getMainTextColor().withAlphaComponent(0.5)
-      alreadyBought = true
-    }
+  var viewModel: ShoppingListViewModelProtocol!
+  var index: Int!
+
+  func setUp(viewModel: ShoppingListViewModelProtocol, index: Int) {
+
+    self.viewModel = viewModel
+    self.index = index
+    setState()
   }
+
+  @IBAction func itemBought(_ sender: UIButton) {
+
+    if viewModel.itemIsBaught(at: self.index) {
+
+      blackoutForeground.isHidden = false
+      item.textColor = formatter.getMainTextColor()
+
+    } else {
+
+      blackoutForeground.isHidden = true
+      item.textColor = formatter.getMainTextColor().withAlphaComponent(0.5)
+    }
+
+    viewModel.selectItem(at: self.index)
+  }
+
   override func awakeFromNib() {
+
     super.awakeFromNib()
     formatter.formatLabelAsMainText(item, ofSize: 20)
     self.backgroundColor = formatter.getFillColor()
+    blackoutForeground.backgroundColor = UIColor.black
   }
-  override func setSelected(_ selected: Bool, animated: Bool) {
-    super.setSelected(selected, animated: animated)
-    // Configure the view for the selected state
-  }
-  func setState(_ bought: Bool) {
-    if bought {
-      blackoutForeground.backgroundColor = UIColor.clear
+
+  func setState() {
+
+    if viewModel.itemIsBaught(at: self.index) {
+
+      blackoutForeground.isHidden = true
       item.textColor = formatter.getMainTextColor().withAlphaComponent(0.5)
-      alreadyBought = true
     } else {
-      blackoutForeground.backgroundColor = UIColor.black
+
+      blackoutForeground.isHidden = false
       item.textColor = formatter.getMainTextColor()
-      alreadyBought = false
     }
   }
 }

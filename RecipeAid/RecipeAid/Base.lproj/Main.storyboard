@@ -1264,6 +1264,18 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hxw-Iw-IZu" userLabel="blackoutBorder">
+                                                    <rect key="frame" x="10" y="9" width="44" height="44"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="0"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                            <integer key="value" value="2"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkbox" translatesAutoresizingMaskIntoConstraints="NO" id="aX5-95-beH">
                                                     <rect key="frame" x="12" y="11" width="40" height="40"/>
                                                     <constraints>
@@ -1271,7 +1283,6 @@
                                                         <constraint firstAttribute="height" constant="40" id="wvI-XK-XNZ"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
                                                             <integer key="value" value="0"/>
                                                         </userDefinedRuntimeAttribute>
@@ -1298,13 +1309,17 @@
                                                 <constraint firstItem="wGa-V8-M1j" firstAttribute="leading" secondItem="v2m-6Z-O5d" secondAttribute="leading" id="KaD-yU-Wvc"/>
                                                 <constraint firstItem="Dad-Yo-ZV7" firstAttribute="leading" secondItem="aX5-95-beH" secondAttribute="trailing" constant="8" symbolic="YES" id="LOn-Us-yHK"/>
                                                 <constraint firstItem="Dad-Yo-ZV7" firstAttribute="centerY" secondItem="aX5-95-beH" secondAttribute="centerY" id="LWm-nk-i32"/>
+                                                <constraint firstItem="hxw-Iw-IZu" firstAttribute="trailing" secondItem="5RP-rr-emb" secondAttribute="trailing" id="LuH-UF-Sz4"/>
                                                 <constraint firstItem="aX5-95-beH" firstAttribute="top" relation="greaterThanOrEqual" secondItem="v2m-6Z-O5d" secondAttribute="top" constant="10" id="Mpq-H8-sA2"/>
                                                 <constraint firstAttribute="trailing" secondItem="wGa-V8-M1j" secondAttribute="trailing" id="W3C-w6-Loq"/>
                                                 <constraint firstItem="5RP-rr-emb" firstAttribute="trailing" secondItem="aX5-95-beH" secondAttribute="trailing" constant="2" id="d1S-hz-St5"/>
                                                 <constraint firstItem="6LY-9I-AOW" firstAttribute="bottom" secondItem="aX5-95-beH" secondAttribute="bottom" constant="-10" id="fJs-ge-Wu3"/>
+                                                <constraint firstItem="hxw-Iw-IZu" firstAttribute="leading" secondItem="5RP-rr-emb" secondAttribute="leading" id="hc1-7U-H2d"/>
                                                 <constraint firstItem="5RP-rr-emb" firstAttribute="leading" secondItem="aX5-95-beH" secondAttribute="leading" constant="-2" id="hkz-gw-uhT"/>
+                                                <constraint firstItem="hxw-Iw-IZu" firstAttribute="top" secondItem="5RP-rr-emb" secondAttribute="top" id="jkW-wb-LBH"/>
                                                 <constraint firstItem="5RP-rr-emb" firstAttribute="bottom" secondItem="aX5-95-beH" secondAttribute="bottom" constant="2" id="mXv-1A-4oB"/>
                                                 <constraint firstItem="wGa-V8-M1j" firstAttribute="top" secondItem="v2m-6Z-O5d" secondAttribute="topMargin" id="sNh-cd-Uhx"/>
+                                                <constraint firstItem="hxw-Iw-IZu" firstAttribute="bottom" secondItem="5RP-rr-emb" secondAttribute="bottom" id="tW3-At-dm6"/>
                                                 <constraint firstItem="6LY-9I-AOW" firstAttribute="leading" secondItem="aX5-95-beH" secondAttribute="leading" constant="10" id="uQH-Qa-dN9"/>
                                                 <constraint firstItem="aX5-95-beH" firstAttribute="leading" secondItem="v2m-6Z-O5d" secondAttribute="leading" constant="12" id="xd0-qV-FH9"/>
                                             </constraints>
@@ -1335,6 +1350,9 @@
                                     <constraint firstAttribute="width" constant="30" id="nGm-CV-jHY"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="right-chevron"/>
+                                <connections>
+                                    <action selector="nextWeek:" destination="vBC-7S-dBo" eventType="touchUpInside" id="1Fn-ZX-zVP"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tHF-4G-Udu">
                                 <rect key="frame" x="10" y="79.5" width="30" height="30"/>
@@ -1343,6 +1361,9 @@
                                     <constraint firstAttribute="width" constant="30" id="SQu-6v-7fc"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="left-chevron"/>
+                                <connections>
+                                    <action selector="lastWeek:" destination="vBC-7S-dBo" eventType="touchUpInside" id="pne-E6-9Zp"/>
+                                </connections>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Shopping" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jl7-XP-boY" userLabel="No Items">
                                 <rect key="frame" x="109" y="318" width="157" height="31.5"/>
@@ -1372,6 +1393,7 @@
                     <navigationItem key="navigationItem" id="dsx-77-07e"/>
                     <connections>
                         <outlet property="dateLabel" destination="hOU-uq-rdo" id="6u1-f6-i0H"/>
+                        <outlet property="ingredientsTableView" destination="C0C-sf-RaS" id="kpb-XS-96U"/>
                         <outlet property="noShoppingLabel" destination="jl7-XP-boY" id="nIf-qF-3P3"/>
                     </connections>
                 </viewController>
