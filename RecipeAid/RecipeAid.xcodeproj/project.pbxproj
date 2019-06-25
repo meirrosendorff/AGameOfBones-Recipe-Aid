@@ -46,6 +46,11 @@
 		503E7F3A22C1F83300CD860E /* SettingsUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503E7F3922C1F83300CD860E /* SettingsUITest.swift */; };
 		503E7F3C22C21A2700CD860E /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503E7F3B22C21A2700CD860E /* UserDefaultsKeys.swift */; };
 		503E7F3E22C21CDE00CD860E /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503E7F3B22C21A2700CD860E /* UserDefaultsKeys.swift */; };
+		503E7F4D22C23CDA00CD860E /* ShoppingListViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503E7F4C22C23CDA00CD860E /* ShoppingListViewModelProtocol.swift */; };
+		503E7F4F22C23D1200CD860E /* ShoppingListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503E7F4E22C23D1200CD860E /* ShoppingListViewModel.swift */; };
+		503E7F5122C2526F00CD860E /* ShoppingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503E7F5022C2526F00CD860E /* ShoppingItem.swift */; };
+		503E7F5322C2563E00CD860E /* ShoppingListRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503E7F5222C2563E00CD860E /* ShoppingListRepo.swift */; };
+		503E7F5522C2565B00CD860E /* ShoppingListRepoProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503E7F5422C2565B00CD860E /* ShoppingListRepoProtocol.swift */; };
 		504FF7EF228DFF2D00681272 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 504FF7EE228DFF2D00681272 /* Assets.xcassets */; };
 		507BA4D222A939C30064B415 /* MenuForDayProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507BA4D122A939C30064B415 /* MenuForDayProtocol.swift */; };
 		507BA4D622A93B780064B415 /* EdamamRecipeAPIRepositoryProtocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507BA4D522A93B780064B415 /* EdamamRecipeAPIRepositoryProtocal.swift */; };
@@ -206,6 +211,11 @@
 		503E7F3622C1008600CD860E /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		503E7F3922C1F83300CD860E /* SettingsUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsUITest.swift; sourceTree = "<group>"; };
 		503E7F3B22C21A2700CD860E /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
+		503E7F4C22C23CDA00CD860E /* ShoppingListViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListViewModelProtocol.swift; sourceTree = "<group>"; };
+		503E7F4E22C23D1200CD860E /* ShoppingListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListViewModel.swift; sourceTree = "<group>"; };
+		503E7F5022C2526F00CD860E /* ShoppingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingItem.swift; sourceTree = "<group>"; };
+		503E7F5222C2563E00CD860E /* ShoppingListRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListRepo.swift; sourceTree = "<group>"; };
+		503E7F5422C2565B00CD860E /* ShoppingListRepoProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListRepoProtocol.swift; sourceTree = "<group>"; };
 		504FF7EE228DFF2D00681272 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		507BA4D122A939C30064B415 /* MenuForDayProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuForDayProtocol.swift; sourceTree = "<group>"; };
 		507BA4D522A93B780064B415 /* EdamamRecipeAPIRepositoryProtocal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdamamRecipeAPIRepositoryProtocal.swift; sourceTree = "<group>"; };
@@ -361,8 +371,10 @@
 		500D8D1B229561EC007E85A6 /* ShoppingList */ = {
 			isa = PBXGroup;
 			children = (
-				500D8D1C2295621D007E85A6 /* ShoppingListViewController.swift */,
-				50AE4C592295865900467ADE /* ShoppingListItemTableViewCell.swift */,
+				503E7F4B22C23CC200CD860E /* Prototypes */,
+				503E7F4A22C2391700CD860E /* Models */,
+				503E7F4922C2390B00CD860E /* ViewModels */,
+				503E7F4122C238EB00CD860E /* ViewControllers */,
 			);
 			path = ShoppingList;
 			sourceTree = "<group>";
@@ -589,6 +601,39 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		503E7F4122C238EB00CD860E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				500D8D1C2295621D007E85A6 /* ShoppingListViewController.swift */,
+				50AE4C592295865900467ADE /* ShoppingListItemTableViewCell.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		503E7F4922C2390B00CD860E /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				503E7F4E22C23D1200CD860E /* ShoppingListViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		503E7F4A22C2391700CD860E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				503E7F5022C2526F00CD860E /* ShoppingItem.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		503E7F4B22C23CC200CD860E /* Prototypes */ = {
+			isa = PBXGroup;
+			children = (
+				503E7F4C22C23CDA00CD860E /* ShoppingListViewModelProtocol.swift */,
+			);
+			path = Prototypes;
+			sourceTree = "<group>";
+		};
 		507BA4D022A939AD0064B415 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -603,6 +648,7 @@
 				50A1120C22A7E402003AD301 /* EdamamRecipeAPIRepository.swift */,
 				50A1120E22A80FF6003AD301 /* ImageFetcher.swift */,
 				503E7F1622C0A98000CD860E /* SettingsRepo.swift */,
+				503E7F5222C2563E00CD860E /* ShoppingListRepo.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -612,6 +658,7 @@
 			children = (
 				507BA4D522A93B780064B415 /* EdamamRecipeAPIRepositoryProtocal.swift */,
 				503E7F1822C0A9AE00CD860E /* SettingsRepoProtocol.swift */,
+				503E7F5422C2565B00CD860E /* ShoppingListRepoProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -1222,11 +1269,13 @@
 				508D1CED22A1383A008DA723 /* DietryRestrictionsCollectionViewCell.swift in Sources */,
 				508D1CDD229E5799008DA723 /* Colors.swift in Sources */,
 				5009278322889DE500FB2CE6 /* SearchResultsViewController.swift in Sources */,
+				503E7F4D22C23CDA00CD860E /* ShoppingListViewModelProtocol.swift in Sources */,
 				508D1CE4229FA358008DA723 /* WebViewController.swift in Sources */,
 				502F6CF722BCA42200C931B0 /* SettingsViewModel.swift in Sources */,
 				503E7F1722C0A98000CD860E /* SettingsRepo.swift in Sources */,
 				509CD62222A6702E008FCFAC /* Recipe.swift in Sources */,
 				50A1121622A90CC1003AD301 /* Errors.swift in Sources */,
+				503E7F4F22C23D1200CD860E /* ShoppingListViewModel.swift in Sources */,
 				50A1120D22A7E402003AD301 /* EdamamRecipeAPIRepository.swift in Sources */,
 				507BA4D222A939C30064B415 /* MenuForDayProtocol.swift in Sources */,
 				509CD62D22A67EDA008FCFAC /* MenuDisplayViewModelProtocol.swift in Sources */,
@@ -1238,9 +1287,11 @@
 				50DB7A3022B365B800DEEB7B /* SearchResultsModel.swift in Sources */,
 				50AE4C5A2295865900467ADE /* ShoppingListItemTableViewCell.swift in Sources */,
 				508D1CEB22A123FD008DA723 /* SettingsViewController.swift in Sources */,
+				503E7F5522C2565B00CD860E /* ShoppingListRepoProtocol.swift in Sources */,
 				508D1CD8229D6D4A008DA723 /* SearchBarViewController.swift in Sources */,
 				509CD62922A674EC008FCFAC /* MenuDisplayViewModel.swift in Sources */,
 				503E7F3C22C21A2700CD860E /* UserDefaultsKeys.swift in Sources */,
+				503E7F5122C2526F00CD860E /* ShoppingItem.swift in Sources */,
 				50DB7A3222B365D500DEEB7B /* SearchResultsModelProtocol.swift in Sources */,
 				507BA4D622A93B780064B415 /* EdamamRecipeAPIRepositoryProtocal.swift in Sources */,
 				509CD62422A67250008FCFAC /* MenuForDay.swift in Sources */,
@@ -1258,6 +1309,7 @@
 				5009278122889DE500FB2CE6 /* AppDelegate.swift in Sources */,
 				50DB7A1C22B238D600DEEB7B /* Identifiers.swift in Sources */,
 				509CD61B22A4F041008FCFAC /* FormatterProtocal.swift in Sources */,
+				503E7F5322C2563E00CD860E /* ShoppingListRepo.swift in Sources */,
 				50DB7A3E22B3CB5D00DEEB7B /* AddViewModelProtocol.swift in Sources */,
 				50DB7A3722B3BA6300DEEB7B /* RecipeDetailsViewModelProtocol.swift in Sources */,
 				500FE37F228EEE8B00157F77 /* RecipeListTableViewCell.swift in Sources */,
