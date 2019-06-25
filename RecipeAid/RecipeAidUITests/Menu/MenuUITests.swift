@@ -8,7 +8,7 @@
 
 import XCTest
 
-class RecipeAidUITests: XCTestCase {
+class MenuUITests: XCTestCase {
 
   var app: XCUIApplication!
   override func setUp() {
@@ -67,6 +67,9 @@ class RecipeAidUITests: XCTestCase {
     setDatePickerTo(app, day: "14", month: "June", year: "2019")
 
     app.buttons["Confirm"].tap()
+
+    sleep(1)
+
     XCTAssertFalse(app.staticTexts[Identifiers.noRecipeLabel.rawValue].exists)
     XCTAssertTrue(app.otherElements[Identifiers.recipeDetailsContainer.rawValue].exists)
   }

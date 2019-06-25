@@ -1,4 +1,4 @@
-// MARK: - Mocks generated from file: RecipeAid/Services/Services/SettingsRepo.swift at 2019-06-25 09:36:27 +0000
+// MARK: - Mocks generated from file: RecipeAid/Services/Services/SettingsRepo.swift at 2019-06-25 10:39:13 +0000
 
 //
 //  SettingsRepo.swift
@@ -358,7 +358,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: RecipeAid/Settings/Models/SettingsModel.swift at 2019-06-25 09:36:27 +0000
+// MARK: - Mocks generated from file: RecipeAid/Settings/Models/SettingsModel.swift at 2019-06-25 10:39:13 +0000
 
 //
 //  SettingsModel.swift
@@ -982,7 +982,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: RecipeAid/Settings/ViewModels/SettingsViewModel.swift at 2019-06-25 09:36:27 +0000
+// MARK: - Mocks generated from file: RecipeAid/Settings/ViewModels/SettingsViewModel.swift at 2019-06-25 10:39:13 +0000
 
 //
 //  SettingsViewModel.swift
