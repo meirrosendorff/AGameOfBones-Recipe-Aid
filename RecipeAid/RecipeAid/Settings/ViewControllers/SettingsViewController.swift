@@ -49,6 +49,7 @@ class SettingsViewController: UIViewController {
     addUsersCurrentSettings()
     setUpSavedAlert()
     addKeyboardObservers()
+    addAccessibilityIdentifiers()
   }
 
   private func addKeyboardObservers() {
@@ -56,6 +57,14 @@ class SettingsViewController: UIViewController {
       self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
     NotificationCenter.default.addObserver(
       self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+  }
+
+  private func addAccessibilityIdentifiers() {
+    minCaloriesTextBox.accessibilityIdentifier = Identifiers.minCalories.rawValue
+    maxCaloriesTextBox.accessibilityIdentifier = Identifiers.maxCalories.rawValue
+    minTimeTextBox.accessibilityIdentifier = Identifiers.minTime.rawValue
+    maxTimeTextBox.accessibilityIdentifier = Identifiers.maxTime.rawValue
+    dietryRestrictionsTextBox.accessibilityIdentifier = Identifiers.unwantedFoods.rawValue
   }
 
   private func setUpSavedAlert() {

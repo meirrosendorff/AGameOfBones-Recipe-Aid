@@ -738,6 +738,18 @@
                                                                         </userDefinedRuntimeAttribute>
                                                                     </userDefinedRuntimeAttributes>
                                                                 </view>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LUy-jT-Y0l" userLabel="BoarderView">
+                                                                    <rect key="frame" x="-2" y="-2" width="44" height="44"/>
+                                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                            <integer key="value" value="0"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                                            <integer key="value" value="2"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </view>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkbox" translatesAutoresizingMaskIntoConstraints="NO" id="c8z-XI-Va0">
                                                                     <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
                                                                     <constraints>
@@ -762,7 +774,11 @@
                                                                 <constraint firstItem="ZAL-c1-1oO" firstAttribute="bottom" secondItem="c8z-XI-Va0" secondAttribute="bottom" constant="2" id="3FR-ul-mXf"/>
                                                                 <constraint firstItem="ZAL-c1-1oO" firstAttribute="leading" secondItem="c8z-XI-Va0" secondAttribute="leading" constant="-2" id="A3i-fx-L8n"/>
                                                                 <constraint firstItem="c8z-XI-Va0" firstAttribute="centerX" secondItem="4mo-vI-U8E" secondAttribute="centerX" id="E4X-Dy-DOM"/>
+                                                                <constraint firstItem="LUy-jT-Y0l" firstAttribute="top" secondItem="ZAL-c1-1oO" secondAttribute="top" id="NMr-Ap-H6x"/>
+                                                                <constraint firstItem="LUy-jT-Y0l" firstAttribute="bottom" secondItem="ZAL-c1-1oO" secondAttribute="bottom" id="eVh-up-Ihj"/>
+                                                                <constraint firstItem="LUy-jT-Y0l" firstAttribute="trailing" secondItem="ZAL-c1-1oO" secondAttribute="trailing" id="hcS-hM-6G8"/>
                                                                 <constraint firstAttribute="width" constant="40" id="iDi-7j-QXp"/>
+                                                                <constraint firstItem="LUy-jT-Y0l" firstAttribute="leading" secondItem="ZAL-c1-1oO" secondAttribute="leading" id="pou-rh-WgD"/>
                                                                 <constraint firstItem="ZAL-c1-1oO" firstAttribute="top" secondItem="c8z-XI-Va0" secondAttribute="top" constant="-2" id="t2I-CV-Ilu"/>
                                                             </constraints>
                                                         </view>

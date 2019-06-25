@@ -173,14 +173,12 @@ class SearchAndAddUITests: XCTestCase {
 
     app.navigationBars["Details"].buttons["Soup"].tap()
 
-    table.element.swipeUp()
-
-    table.staticTexts["Tortilla Soup"].tap()
+    app.tables.cells["Matzo Ball Soup, Servings: 4, Calories: 648, Martha Stewart"].staticTexts["Matzo Ball Soup"].tap()
 
     assertDetailsPageIsCorrect(app,
-                               recipeName: "Tortilla Soup",
+                               recipeName: "Matzo Ball Soup",
                                servings: 4,
-                               calories: 1337)
+                               calories: 648)
   }
 
   func testAddButtonTakesToAddPageAndConfirmReturnsToDetailsPage() {

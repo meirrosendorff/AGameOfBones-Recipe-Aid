@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
       stubNetworkCallsIfNeeded()
       setUpUserDefaults()
+      resetUserSettingsIfNeeded()
         // Override point for customization after application launch.
         return true
     }
@@ -83,22 +84,34 @@ extension AppDelegate {
 
   func setUpUserDefaults() {
 
-    if UserDefaults.standard.bool(forKey: "defaultsAlreadySetUp") {
+    if UserDefaults.standard.bool(forKey: UserDefaultsKeys.alreadySetUp.rawValue) {
       return
     }
 
-    UserDefaults.standard.set(true, forKey: "defaultsAlreadySetUp")
+    resetUserSettings()
+  }
+
+  func resetUserSettingsIfNeeded() {
+
+    guard CommandLine.arguments.contains("-resetUserSetting") else { return }
+
+    resetUserSettings()
+  }
+
+  func resetUserSettings() {
+
+    UserDefaults.standard.set(true, forKey: UserDefaultsKeys.alreadySetUp.rawValue)
 
     let restrictionOptions = ["High Protein": false, "Low Fat": false,
                               "Low Carb": false, "Low Suger": false,
                               "Vegetarian": false, "Vegan": false,
                               "Alcohol Free": false, "Nut Free": false]
 
-    UserDefaults.standard.set(restrictionOptions, forKey: "restrictionOptionsArray")
-    UserDefaults.standard.set(0, forKey: "minCalories")
-    UserDefaults.standard.set(0, forKey: "maxCalories")
-    UserDefaults.standard.set(0, forKey: "minTime")
-    UserDefaults.standard.set(0, forKey: "maxTime")
-    UserDefaults.standard.set([""], forKey: "excludedFoodsArray")
+    UserDefaults.standard.set(restrictionOptions, forKey: UserDefaultsKeys.dietryRestrictionsDict.rawValue)
+    UserDefaults.standard.set(0, forKey: UserDefaultsKeys.minCalories.rawValue)
+    UserDefaults.standard.set(0, forKey: UserDefaultsKeys.maxCalories.rawValue)
+    UserDefaults.standard.set(0, forKey: UserDefaultsKeys.minTime.rawValue)
+    UserDefaults.standard.set(0, forKey: UserDefaultsKeys.maxTime.rawValue)
+    UserDefaults.standard.set([""], forKey: UserDefaultsKeys.unwantedFoodsArray.rawValue)
   }
 }
