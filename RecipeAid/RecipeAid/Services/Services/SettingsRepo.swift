@@ -16,16 +16,16 @@ class SettingsRepo: SettingsRepoProtocol {
   private let maxCaloriesKey: String
   private let minTimesKey: String
   private let maxTimesKey: String
-  private let excludedFoodsKey: String
+  private let unwantedFoodsKey: String
 
   init() {
     userDefaults = UserDefaults.standard
-    restrictionsKey = "restrictionOptionsArray"
-    minCaloriesKey = "minCalories"
-    maxCaloriesKey = "maxCalories"
-    minTimesKey = "minTimes"
-    maxTimesKey = "maxTimes"
-    excludedFoodsKey = "excludedFoodsArray"
+    restrictionsKey = UserDefaultsKeys.dietryRestrictionsDict.rawValue
+    minCaloriesKey = UserDefaultsKeys.minCalories.rawValue
+    maxCaloriesKey = UserDefaultsKeys.maxCalories.rawValue
+    minTimesKey = UserDefaultsKeys.minTime.rawValue
+    maxTimesKey = UserDefaultsKeys.maxTime.rawValue
+    unwantedFoodsKey = UserDefaultsKeys.unwantedFoodsArray.rawValue
   }
 
   func getRestrictions() -> [(String, Bool)] {
@@ -76,12 +76,12 @@ class SettingsRepo: SettingsRepoProtocol {
 
   func getUnwantedFoods() -> [String] {
 
-    let foods = userDefaults.object(forKey: excludedFoodsKey) as? [String] ?? []
+    let foods = userDefaults.object(forKey: unwantedFoodsKey) as? [String] ?? []
     return foods
   }
 
   func setUnwatedFoods(foods: [String]) {
 
-    userDefaults.set(foods, forKey: excludedFoodsKey)
+    userDefaults.set(foods, forKey: unwantedFoodsKey)
   }
 }

@@ -83,15 +83,15 @@ class SettingsViewModel: SettingsViewModelProtocol {
   private func getValidNumbers(min: String, max: String) throws -> (Int, Int) {
 
     guard let minAttempt = Double(min != "" ? min : "0") else {
-      throw RecipeError.invalidNumberString("min Calories not a number")
+      throw RecipeError.invalidNumberString("min not a number")
     }
 
     guard let maxAttempt = Double(max != "" ? max : "0") else {
-      throw RecipeError.invalidNumberString("max Calories not a number")
+      throw RecipeError.invalidNumberString("max not a number")
     }
 
     if minAttempt > maxAttempt {
-      throw RecipeError.minMaxError("min calories greater than max calories")
+      throw RecipeError.minMaxError("min greater than max")
     }
 
     return (Int(minAttempt), Int(maxAttempt))

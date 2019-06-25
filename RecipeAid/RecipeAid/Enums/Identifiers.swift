@@ -19,4 +19,10 @@ enum Identifiers: String {
   case tableViewCell = "TableViewCell"
   case servingsLabel = "Number of Servings"
   case caloriesLabel = "Number of Calories"
+  case textBoxBlackout = "TextBox Blackout"
+  case minCalories = "Minimum Calories"
+  case maxCalories = "Maximum Calories"
+  case minTime = "Minimum Time"
+  case maxTime = "Maximum Time"
+  case unwantedFoods = "Unwanted Foods"
 }

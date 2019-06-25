@@ -21,7 +21,9 @@ class DietryRestrictionsCollectionViewCell: UICollectionViewCell {
 
     self.viewModel = viewModel
     self.index = index
-
+    self.blackoutView.backgroundColor = UIColor.black
+    self.blackoutView.accessibilityIdentifier =
+      viewModel.restrictionName(at: self.index) + "-\(Identifiers.textBoxBlackout.rawValue)"
     setInitialState()
   }
 
@@ -48,14 +50,14 @@ class DietryRestrictionsCollectionViewCell: UICollectionViewCell {
 
   func setSelectedState() {
 
-    blackoutView.backgroundColor = UIColor.clear
+    blackoutView.isHidden = true
     settingLabel.textColor = formatter.getMainTextColor()
     viewModel.selectRestriction(at: self.index)
   }
 
   func setUnselectedState() {
 
-    blackoutView.backgroundColor = UIColor.black
+    blackoutView.isHidden = false
     settingLabel.textColor = formatter.getMainTextColor().withAlphaComponent(0.5)
     viewModel.deselectRestriction(at: self.index)
   }
