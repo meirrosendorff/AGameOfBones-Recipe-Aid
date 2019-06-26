@@ -1,4 +1,4 @@
-// MARK: - Mocks generated from file: RecipeAid/Services/Services/SettingsRepo.swift at 2019-06-26 08:01:19 +0000
+// MARK: - Mocks generated from file: RecipeAid/Services/Services/SettingsRepo.swift at 2019-06-26 09:07:36 +0000
 
 //
 //  SettingsRepo.swift
@@ -358,7 +358,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: RecipeAid/Services/Services/ShoppingListRepo.swift at 2019-06-26 08:01:19 +0000
+// MARK: - Mocks generated from file: RecipeAid/Services/Services/ShoppingListRepo.swift at 2019-06-26 09:07:36 +0000
 
 //let gregorian = Calendar(identifier: .gregorian)
 //  ShoppingListRepo.swift
@@ -494,7 +494,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: RecipeAid/Settings/Models/SettingsModel.swift at 2019-06-26 08:01:19 +0000
+// MARK: - Mocks generated from file: RecipeAid/Settings/Models/SettingsModel.swift at 2019-06-26 09:07:36 +0000
 
 //
 //  SettingsModel.swift
@@ -1118,7 +1118,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: RecipeAid/Settings/ViewModels/SettingsViewModel.swift at 2019-06-26 08:01:19 +0000
+// MARK: - Mocks generated from file: RecipeAid/Settings/ViewModels/SettingsViewModel.swift at 2019-06-26 09:07:36 +0000
 
 //
 //  SettingsViewModel.swift
