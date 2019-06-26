@@ -13,13 +13,15 @@ class ShoppingListViewModel: ShoppingListViewModelProtocol {
   var dateRangeText: String
   var hasShopping: Bool { return shoppingItems.count > 0 }
   var shoppingListSize: Int { return shoppingItems.count }
+  var baseDate: Date
   private var weekOffset: Int
   private var weekSize: Int
   private var currentWeek: Date
   private var shoppingItems: [ShoppingItem]
-  private var repo: ShoppingListRepoProtocol
+  var repo: ShoppingListRepoProtocol
 
   init() {
+    baseDate = Date()
     dateRangeText = ""
     weekOffset = 0
     weekSize = 7
@@ -32,7 +34,7 @@ class ShoppingListViewModel: ShoppingListViewModelProtocol {
 
     let gregorian = Calendar(identifier: .gregorian)
     guard let currSunday =
-      gregorian.date(from: gregorian.dateComponents([.yearForWeekOfYear, .weekOfYear], from: Date())) else { return }
+      gregorian.date(from: gregorian.dateComponents([.yearForWeekOfYear, .weekOfYear], from: baseDate)) else { return }
     guard let sunday = gregorian.date(byAdding: .day, value: weekSize * offSet, to: currSunday) else { return }
     guard let saterday = gregorian.date(byAdding: .day, value: weekSize - 1, to: sunday) else { return }
 
@@ -67,7 +69,7 @@ class ShoppingListViewModel: ShoppingListViewModelProtocol {
     fetchShopping(onComplete: onComplete)
   }
 
-  func fetchShopping(onComplete: @escaping (ShoppingListViewModelProtocol) -> Void) {
+  private func fetchShopping(onComplete: @escaping (ShoppingListViewModelProtocol) -> Void) {
 
     repo.getShoppingList(from: currentWeek, forDays: weekSize, onComplete: { list in
       self.shoppingItems = list

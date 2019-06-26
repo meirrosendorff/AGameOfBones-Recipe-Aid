@@ -1,4 +1,4 @@
-// MARK: - Mocks generated from file: RecipeAid/Services/Services/SettingsRepo.swift at 2019-06-25 13:47:09 +0000
+// MARK: - Mocks generated from file: RecipeAid/Services/Services/SettingsRepo.swift at 2019-06-26 08:01:19 +0000
 
 //
 //  SettingsRepo.swift
@@ -358,7 +358,143 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: RecipeAid/Settings/Models/SettingsModel.swift at 2019-06-25 13:47:09 +0000
+// MARK: - Mocks generated from file: RecipeAid/Services/Services/ShoppingListRepo.swift at 2019-06-26 08:01:19 +0000
+
+//let gregorian = Calendar(identifier: .gregorian)
+//  ShoppingListRepo.swift
+//  RecipeAid
+//
+//  Created by Meir Rosendorff on 2019/06/25.
+//  Copyright © 2019 Meir Rosendorff. All rights reserved.
+//
+
+import Cuckoo
+@testable import RecipeAid
+
+import Foundation
+
+
+ class MockShoppingListRepo: ShoppingListRepo, Cuckoo.ClassMock {
+    
+     typealias MocksType = ShoppingListRepo
+    
+     typealias Stubbing = __StubbingProxy_ShoppingListRepo
+     typealias Verification = __VerificationProxy_ShoppingListRepo
+
+     let cuckoo_manager = Cuckoo.MockManager.preconfiguredManager ?? Cuckoo.MockManager(hasParent: true)
+
+    
+    private var __defaultImplStub: ShoppingListRepo?
+
+     func enableDefaultImplementation(_ stub: ShoppingListRepo) {
+        __defaultImplStub = stub
+        cuckoo_manager.enableDefaultStubImplementation()
+    }
+    
+
+    
+
+    
+
+    
+    
+    
+     override func getShoppingList(from: Date, forDays: Int, onComplete: @escaping ([ShoppingItem]) -> Void)  {
+        
+    return cuckoo_manager.call("getShoppingList(from: Date, forDays: Int, onComplete: @escaping ([ShoppingItem]) -> Void)",
+            parameters: (from, forDays, onComplete),
+            escapingParameters: (from, forDays, onComplete),
+            superclassCall:
+                
+                super.getShoppingList(from: from, forDays: forDays, onComplete: onComplete)
+                ,
+            defaultCall: __defaultImplStub!.getShoppingList(from: from, forDays: forDays, onComplete: onComplete))
+        
+    }
+    
+    
+    
+     override func saveItem(item: ShoppingItem)  {
+        
+    return cuckoo_manager.call("saveItem(item: ShoppingItem)",
+            parameters: (item),
+            escapingParameters: (item),
+            superclassCall:
+                
+                super.saveItem(item: item)
+                ,
+            defaultCall: __defaultImplStub!.saveItem(item: item))
+        
+    }
+    
+
+	 struct __StubbingProxy_ShoppingListRepo: Cuckoo.StubbingProxy {
+	    private let cuckoo_manager: Cuckoo.MockManager
+	
+	     init(manager: Cuckoo.MockManager) {
+	        self.cuckoo_manager = manager
+	    }
+	    
+	    
+	    func getShoppingList<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable, M3: Cuckoo.Matchable>(from: M1, forDays: M2, onComplete: M3) -> Cuckoo.ClassStubNoReturnFunction<(Date, Int, ([ShoppingItem]) -> Void)> where M1.MatchedType == Date, M2.MatchedType == Int, M3.MatchedType == ([ShoppingItem]) -> Void {
+	        let matchers: [Cuckoo.ParameterMatcher<(Date, Int, ([ShoppingItem]) -> Void)>] = [wrap(matchable: from) { $0.0 }, wrap(matchable: forDays) { $0.1 }, wrap(matchable: onComplete) { $0.2 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockShoppingListRepo.self, method: "getShoppingList(from: Date, forDays: Int, onComplete: @escaping ([ShoppingItem]) -> Void)", parameterMatchers: matchers))
+	    }
+	    
+	    func saveItem<M1: Cuckoo.Matchable>(item: M1) -> Cuckoo.ClassStubNoReturnFunction<(ShoppingItem)> where M1.MatchedType == ShoppingItem {
+	        let matchers: [Cuckoo.ParameterMatcher<(ShoppingItem)>] = [wrap(matchable: item) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockShoppingListRepo.self, method: "saveItem(item: ShoppingItem)", parameterMatchers: matchers))
+	    }
+	    
+	}
+
+	 struct __VerificationProxy_ShoppingListRepo: Cuckoo.VerificationProxy {
+	    private let cuckoo_manager: Cuckoo.MockManager
+	    private let callMatcher: Cuckoo.CallMatcher
+	    private let sourceLocation: Cuckoo.SourceLocation
+	
+	     init(manager: Cuckoo.MockManager, callMatcher: Cuckoo.CallMatcher, sourceLocation: Cuckoo.SourceLocation) {
+	        self.cuckoo_manager = manager
+	        self.callMatcher = callMatcher
+	        self.sourceLocation = sourceLocation
+	    }
+	
+	    
+	
+	    
+	    @discardableResult
+	    func getShoppingList<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable, M3: Cuckoo.Matchable>(from: M1, forDays: M2, onComplete: M3) -> Cuckoo.__DoNotUse<(Date, Int, ([ShoppingItem]) -> Void), Void> where M1.MatchedType == Date, M2.MatchedType == Int, M3.MatchedType == ([ShoppingItem]) -> Void {
+	        let matchers: [Cuckoo.ParameterMatcher<(Date, Int, ([ShoppingItem]) -> Void)>] = [wrap(matchable: from) { $0.0 }, wrap(matchable: forDays) { $0.1 }, wrap(matchable: onComplete) { $0.2 }]
+	        return cuckoo_manager.verify("getShoppingList(from: Date, forDays: Int, onComplete: @escaping ([ShoppingItem]) -> Void)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
+	    func saveItem<M1: Cuckoo.Matchable>(item: M1) -> Cuckoo.__DoNotUse<(ShoppingItem), Void> where M1.MatchedType == ShoppingItem {
+	        let matchers: [Cuckoo.ParameterMatcher<(ShoppingItem)>] = [wrap(matchable: item) { $0 }]
+	        return cuckoo_manager.verify("saveItem(item: ShoppingItem)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	}
+}
+
+ class ShoppingListRepoStub: ShoppingListRepo {
+    
+
+    
+
+    
+     override func getShoppingList(from: Date, forDays: Int, onComplete: @escaping ([ShoppingItem]) -> Void)   {
+        return DefaultValueRegistry.defaultValue(for: (Void).self)
+    }
+    
+     override func saveItem(item: ShoppingItem)   {
+        return DefaultValueRegistry.defaultValue(for: (Void).self)
+    }
+    
+}
+
+
+// MARK: - Mocks generated from file: RecipeAid/Settings/Models/SettingsModel.swift at 2019-06-26 08:01:19 +0000
 
 //
 //  SettingsModel.swift
@@ -982,7 +1118,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: RecipeAid/Settings/ViewModels/SettingsViewModel.swift at 2019-06-25 13:47:09 +0000
+// MARK: - Mocks generated from file: RecipeAid/Settings/ViewModels/SettingsViewModel.swift at 2019-06-26 08:01:19 +0000
 
 //
 //  SettingsViewModel.swift
