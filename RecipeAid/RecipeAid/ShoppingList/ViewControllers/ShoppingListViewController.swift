@@ -26,6 +26,7 @@ class ShoppingListViewController: UIViewController {
     formatViews()
     self.title = "Shopping List"
     setUpScreen()
+    addAccessibilityIdentifiers()
   }
 
   @IBAction func nextWeek(_ sender: Any) {
@@ -42,6 +43,12 @@ class ShoppingListViewController: UIViewController {
 
       self.updateScreen(viewModel: viewModel)
     })
+  }
+
+  func addAccessibilityIdentifiers() {
+
+    dateLabel.accessibilityIdentifier = Identifiers.shoppingDateRange.rawValue
+    noShoppingLabel.accessibilityIdentifier = Identifiers.noShopping.rawValue
   }
 
   func setUpScreen() {

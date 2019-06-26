@@ -20,7 +20,9 @@ class ShoppingListItemTableViewCell: UITableViewCell {
 
     self.viewModel = viewModel
     self.index = index
+    item.text = viewModel.getItemName(at: self.index)
     setState()
+    addAccessibilityIdentifiers()
   }
 
   @IBAction func itemBought(_ sender: UIButton) {
@@ -39,10 +41,16 @@ class ShoppingListItemTableViewCell: UITableViewCell {
     viewModel.selectItem(at: self.index)
   }
 
+  private func addAccessibilityIdentifiers() {
+
+    blackoutForeground.accessibilityIdentifier =
+      "\(Identifiers.textBoxBlackout.rawValue)-\(viewModel.itemIsBaught(at: self.index))"
+  }
+
   override func awakeFromNib() {
 
     super.awakeFromNib()
-    formatter.formatLabelAsMainText(item, ofSize: 20)
+    formatter.formatLabelAsMainText(item, ofSize: 17)
     self.backgroundColor = formatter.getFillColor()
     blackoutForeground.backgroundColor = UIColor.black
   }

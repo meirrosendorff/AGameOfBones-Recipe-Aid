@@ -25,4 +25,6 @@ enum Identifiers: String {
   case minTime = "Minimum Time"
   case maxTime = "Maximum Time"
   case unwantedFoods = "Unwanted Foods"
+  case shoppingDateRange = "Shopping List Date Range"
+  case noShopping = "No Shopping"
 }

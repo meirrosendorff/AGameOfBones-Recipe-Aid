@@ -12,26 +12,20 @@ class ShoppingListRepo: ShoppingListRepoProtocol {
 
   func getShoppingList(from: Date, forDays: Int, onComplete: @escaping ([ShoppingItem]) -> Void) {
 
-    let gregorian = Calendar(identifier: .gregorian)
-    let startDate = gregorian.date(bySettingHour: 0, minute: 0, second: 0, of: from) ?? from
-    let fakeItemList = [
-      ShoppingItem(mealID: 1, itemName: "Item", isBought: false),
-      ShoppingItem(mealID: 1, itemName: "Item", isBought: false),
-      ShoppingItem(mealID: 1, itemName: "Item", isBought: true),
-      ShoppingItem(mealID: 1, itemName: "Item", isBought: true),
-      ShoppingItem(mealID: 1, itemName: "Item", isBought: false),
-      ShoppingItem(mealID: 1, itemName: "Item", isBought: true),
-      ShoppingItem(mealID: 1, itemName: "Item", isBought: false),
-      ShoppingItem(mealID: 1, itemName: "Item", isBought: false)
-    ]
-
-    if Int(startDate.timeIntervalSinceNow)/1000 % 2 == 0 {
-      onComplete([])
-      return
+    if CommandLine.arguments.contains("-testing") {
+      if CommandLine.arguments.contains("-forceEmptyReturns") {
+        onComplete([])
+        return
+      } else {
+        let fakeItemList = [ShoppingItem(mealID: 1, itemName: "Item Bought", isBought: false),
+                            ShoppingItem(mealID: 1, itemName: "Item NotBought", isBought: true)]
+        onComplete(fakeItemList)
+        return
+      }
     }
-    onComplete(fakeItemList)
   }
 
   func saveItem(item: ShoppingItem) {
+    if CommandLine.arguments.contains("-testing") { return }
   }
 }
