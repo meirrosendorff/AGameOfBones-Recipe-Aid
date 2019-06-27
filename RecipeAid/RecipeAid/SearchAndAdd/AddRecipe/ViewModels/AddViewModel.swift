@@ -10,13 +10,19 @@ import Foundation
 
 class AddViewModel: AddViewModelProtocol {
   var mealTypes: [String]
+  var repo: PersistantStorageRepoProtocol
 
   init() {
-    mealTypes = ["Breakfast", "Lunch", "Dinner"]
+
+    repo = CoreDataStorageRepo()
+    mealTypes = MealTypes.allCases.map({ $0.description() })
   }
 
-  func addMeal(recipeID: String, mealType: String, date: Date) {
-    //Add recipe to persistant storage once it is set up.
-    print("Adding Recipe for meal: \(mealType), for recipe: \(recipeID), on date: \(date.description)")
+  func addMeal(recipe: Recipe, mealType: String, date: Date) {
+
+    for meal in MealTypes.allCases where meal.description() == mealType {
+      repo.saveMeal(withRecipe: recipe, forDate: date, forMeal: meal)
+      break
+    }
   }
 }

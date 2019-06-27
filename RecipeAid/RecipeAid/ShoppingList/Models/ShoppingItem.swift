@@ -10,13 +10,13 @@ import Foundation
 
 class ShoppingItem {
 
-  var mealID: Int
-  var itemName: String
+  let itemID: String
+  let itemName: String
   var isBought: Bool
 
-  init(mealID: Int, itemName: String, isBought: Bool) {
+  init(itemID: String, itemName: String, isBought: Bool) {
 
-    self.mealID = mealID
+    self.itemID = itemID
     self.itemName = itemName
     self.isBought = isBought
   }

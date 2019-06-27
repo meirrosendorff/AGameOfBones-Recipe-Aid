@@ -11,5 +11,5 @@ import Foundation
 protocol AddViewModelProtocol {
 
   var mealTypes: [String] { get }
-  func addMeal(recipeID: String, mealType: String, date: Date)
+  func addMeal(recipe: Recipe, mealType: String, date: Date)
 }

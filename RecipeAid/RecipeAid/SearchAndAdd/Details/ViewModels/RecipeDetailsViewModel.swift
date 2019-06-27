@@ -25,4 +25,8 @@ class RecipeDetailsViewModel: RecipeDetailsViewModelProtocol {
   func getIngredient(at pos: Int) -> String {
     return recipe.ingredientLines[pos]
   }
+
+  func getRecipe() -> Recipe {
+    return self.recipe
+  }
 }

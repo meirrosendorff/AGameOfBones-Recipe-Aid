@@ -212,7 +212,7 @@ class EdamamRecipeAPIRepositoryGetRecipeTests: XCTestCase {
 
     stub(url: url, result: data)
 
-    let validID = "dc0bd9f18c68a5710d0fc3fda6512b7b"
+    let validID = "http://www.edamam.com/ontologies/edamam.owl#recipe_dc0bd9f18c68a5710d0fc3fda6512b7b"
 
     let expectation = self.expectation(description: "Feching Recipe Details")
 
@@ -243,7 +243,7 @@ class EdamamRecipeAPIRepositoryGetRecipeTests: XCTestCase {
 
     stub(url: url, result: "[]".data(using: .utf8)!)
 
-    let invalidID = "invalidID"
+    let invalidID = "http://www.edamam.com/ontologies/edamam.owl#recipe_invalidID"
 
     let expectation = self.expectation(description: "Feching Recipe Details should fail")
 

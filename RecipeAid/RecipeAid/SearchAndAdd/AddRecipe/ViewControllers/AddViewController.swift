@@ -18,7 +18,7 @@ class AddViewController: UIViewController {
   var gradientLayer: GradientLayer?
   let formatter = Formatter()
   var viewModel: AddViewModelProtocol!
-  var recipeID: String!
+  var recipe: Recipe!
 
   override func viewDidLoad() {
 
@@ -56,10 +56,7 @@ class AddViewController: UIViewController {
       mealType = mealSegmentControll.titleForSegment(at: mealSegmentControll.selectedSegmentIndex)
       else { return }
 
-    let cal: Calendar = Calendar(identifier: .gregorian)
-    guard let date = cal.date(bySettingHour: 0, minute: 0, second: 0, of: datePicker.date) else { return }
-
-    viewModel.addMeal(recipeID: recipeID, mealType: mealType, date: date)
+    viewModel.addMeal(recipe: recipe, mealType: mealType, date: datePicker.date)
   }
 
   func configureSegmentControll(segments: [String]) {
