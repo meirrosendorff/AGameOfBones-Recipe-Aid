@@ -71,7 +71,7 @@ class EdamamRecipeAPIRepository: EdamamRecipeAPIRepositoryProtocol {
       return
     }
 
-    let recipeID = "http%3A%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl%23recipe_\(recipeID)"
+    let recipeID = recipeID.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? ""
     let requestURL = "\(baseURL)?app_id=\(appId)&app_key=\(appKey)&r=\(recipeID)"
 
     getJsonResponse(for: requestURL, onComplete: { result in

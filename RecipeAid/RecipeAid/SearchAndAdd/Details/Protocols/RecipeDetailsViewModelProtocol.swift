@@ -17,5 +17,6 @@ protocol RecipeDetailsViewModelProtocol {
   var sourceURL: String { get }
   var recipeID: String { get }
   func getIngredient(at pos: Int) -> String
+  func getRecipe() -> Recipe
   init(recipe: Recipe)
 }

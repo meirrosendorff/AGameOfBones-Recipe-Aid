@@ -29,6 +29,7 @@ class MenuUITests: XCTestCase {
       " " + breakfastURL + " " + breakfastFileName
     app.launchArguments.append("-networkStubs")
     app.launchArguments.append(stub)
+    app.launchArguments.append("-testing")
     app.launch()
   }
 

@@ -15,7 +15,7 @@ class MenuForDay: MenuForDayProtocol {
   init() {
 
     meals = [:]
-    validMealTypes = ["Breakfast", "Lunch", "Dinner"]
+    validMealTypes = MealTypes.allCases.map({ $0.description() })
     setupMeals()
   }
 

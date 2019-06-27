@@ -10,6 +10,12 @@ import Foundation
 
 class ShoppingListRepo: ShoppingListRepoProtocol {
 
+  var repo: PersistantStorageRepoProtocol
+
+  init() {
+    repo = CoreDataStorageRepo()
+  }
+
   func getShoppingList(from: Date, forDays: Int, onComplete: @escaping ([ShoppingItem]) -> Void) {
 
     if CommandLine.arguments.contains("-testing") {
@@ -17,15 +23,21 @@ class ShoppingListRepo: ShoppingListRepoProtocol {
         onComplete([])
         return
       } else {
-        let fakeItemList = [ShoppingItem(mealID: 1, itemName: "Item Bought", isBought: false),
-                            ShoppingItem(mealID: 1, itemName: "Item NotBought", isBought: true)]
+        let fakeItemList = [ShoppingItem(itemID: "", itemName: "Item Bought", isBought: false),
+                            ShoppingItem(itemID: "", itemName: "Item NotBought", isBought: true)]
         onComplete(fakeItemList)
         return
       }
     }
+
+    repo.getShoppingItems(forDate: from, forDays: forDays, onComplete: { shoppingList in
+      onComplete(shoppingList)
+    })
   }
 
   func saveItem(item: ShoppingItem) {
     if CommandLine.arguments.contains("-testing") { return }
+
+    repo.updateShoppingItem(item)
   }
 }

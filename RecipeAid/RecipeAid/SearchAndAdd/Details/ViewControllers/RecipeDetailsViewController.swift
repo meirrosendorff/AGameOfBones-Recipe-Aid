@@ -70,7 +70,7 @@ class RecipeDetailsViewController: UIViewController {
     } else if segue.destination is AddViewController {
 
       let next = segue.destination as? AddViewController
-      next?.recipeID = self.viewModel.recipeID
+      next?.recipe = self.viewModel.getRecipe()
     }
   }
 }

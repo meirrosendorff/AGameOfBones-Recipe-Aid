@@ -34,10 +34,10 @@ class ShoppingListViewModelTests: XCTestCase {
     viewModel = ShoppingListViewModel()
     viewModel.baseDate = baseDate
     viewModel.repo = repo
-    thisWeekList = [ShoppingItem(mealID: 42, itemName: self.thisWeek, isBought: true),
-                    ShoppingItem(mealID: 42, itemName: "Second Item", isBought: false)]
-    nextWeekList = [ShoppingItem(mealID: 42, itemName: self.nextWeek, isBought: true)]
-    lastWeekList = [ShoppingItem(mealID: 42, itemName: self.lastWeek, isBought: true)]
+    thisWeekList = [ShoppingItem(itemID: "", itemName: self.thisWeek, isBought: true),
+                    ShoppingItem(itemID: "", itemName: "Second Item", isBought: false)]
+    nextWeekList = [ShoppingItem(itemID: "", itemName: self.nextWeek, isBought: true)]
+    lastWeekList = [ShoppingItem(itemID: "", itemName: self.lastWeek, isBought: true)]
     stubSaveItem()
     stubGetShoppingList()
   }

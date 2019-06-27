@@ -1,4 +1,4 @@
-// MARK: - Mocks generated from file: RecipeAid/Services/Services/SettingsRepo.swift at 2019-06-26 09:07:36 +0000
+// MARK: - Mocks generated from file: RecipeAid/Services/Services/SettingsRepo.swift at 2019-06-27 17:38:01 +0000
 
 //
 //  SettingsRepo.swift
@@ -358,7 +358,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: RecipeAid/Services/Services/ShoppingListRepo.swift at 2019-06-26 09:07:36 +0000
+// MARK: - Mocks generated from file: RecipeAid/Services/Services/ShoppingListRepo.swift at 2019-06-27 17:38:01 +0000
 
 //let gregorian = Calendar(identifier: .gregorian)
 //  ShoppingListRepo.swift
@@ -392,6 +392,30 @@ import Foundation
     }
     
 
+    
+    
+    
+     override var repo: PersistantStorageRepoProtocol {
+        get {
+            return cuckoo_manager.getter("repo",
+                superclassCall:
+                    
+                    super.repo
+                    ,
+                defaultCall: __defaultImplStub!.repo)
+        }
+        
+        set {
+            cuckoo_manager.setter("repo",
+                value: newValue,
+                superclassCall:
+                    
+                    super.repo = newValue
+                    ,
+                defaultCall: __defaultImplStub!.repo = newValue)
+        }
+        
+    }
     
 
     
@@ -436,6 +460,11 @@ import Foundation
 	    }
 	    
 	    
+	    var repo: Cuckoo.ClassToBeStubbedProperty<MockShoppingListRepo, PersistantStorageRepoProtocol> {
+	        return .init(manager: cuckoo_manager, name: "repo")
+	    }
+	    
+	    
 	    func getShoppingList<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable, M3: Cuckoo.Matchable>(from: M1, forDays: M2, onComplete: M3) -> Cuckoo.ClassStubNoReturnFunction<(Date, Int, ([ShoppingItem]) -> Void)> where M1.MatchedType == Date, M2.MatchedType == Int, M3.MatchedType == ([ShoppingItem]) -> Void {
 	        let matchers: [Cuckoo.ParameterMatcher<(Date, Int, ([ShoppingItem]) -> Void)>] = [wrap(matchable: from) { $0.0 }, wrap(matchable: forDays) { $0.1 }, wrap(matchable: onComplete) { $0.2 }]
 	        return .init(stub: cuckoo_manager.createStub(for: MockShoppingListRepo.self, method: "getShoppingList(from: Date, forDays: Int, onComplete: @escaping ([ShoppingItem]) -> Void)", parameterMatchers: matchers))
@@ -460,6 +489,11 @@ import Foundation
 	    }
 	
 	    
+	    
+	    var repo: Cuckoo.VerifyProperty<PersistantStorageRepoProtocol> {
+	        return .init(manager: cuckoo_manager, name: "repo", callMatcher: callMatcher, sourceLocation: sourceLocation)
+	    }
+	    
 	
 	    
 	    @discardableResult
@@ -479,6 +513,16 @@ import Foundation
 
  class ShoppingListRepoStub: ShoppingListRepo {
     
+    
+     override var repo: PersistantStorageRepoProtocol {
+        get {
+            return DefaultValueRegistry.defaultValue(for: (PersistantStorageRepoProtocol).self)
+        }
+        
+        set { }
+        
+    }
+    
 
     
 
@@ -494,7 +538,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: RecipeAid/Settings/Models/SettingsModel.swift at 2019-06-26 09:07:36 +0000
+// MARK: - Mocks generated from file: RecipeAid/Settings/Models/SettingsModel.swift at 2019-06-27 17:38:01 +0000
 
 //
 //  SettingsModel.swift
@@ -1118,7 +1162,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: RecipeAid/Settings/ViewModels/SettingsViewModel.swift at 2019-06-26 09:07:36 +0000
+// MARK: - Mocks generated from file: RecipeAid/Settings/ViewModels/SettingsViewModel.swift at 2019-06-27 17:38:01 +0000
 
 //
 //  SettingsViewModel.swift

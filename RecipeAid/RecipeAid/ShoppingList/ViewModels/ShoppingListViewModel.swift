@@ -72,7 +72,7 @@ class ShoppingListViewModel: ShoppingListViewModelProtocol {
   private func fetchShopping(onComplete: @escaping (ShoppingListViewModelProtocol) -> Void) {
 
     repo.getShoppingList(from: currentWeek, forDays: weekSize, onComplete: { list in
-      self.shoppingItems = list
+      self.shoppingItems = list.sorted(by: { $0.itemName < $1.itemName })
       onComplete(self)
     })
   }

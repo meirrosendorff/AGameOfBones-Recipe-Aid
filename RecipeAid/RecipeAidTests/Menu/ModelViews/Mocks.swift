@@ -49,11 +49,11 @@ class MenuDisplayViewModelMock: MenueDisplayViewModel {
 
   init(forDate date: Date, repo: EdamamRecipeAPIRepositoryProtocol, menu: MenuForDayProtocol) {
     super.init(forDate: date)
-    self.repo = repo
+    self.networkRepo = repo
     self.menu = menu
   }
 
-  override func getRecipeIDToFetch(forMeal meal: String) -> Result<String, RecipeError> {
-    return .success(meal)
+  override func getRecipeIDToFetch(forMeal meal: String, onComplete: @escaping (Result<String, RecipeError>) -> Void) {
+    onComplete(.success(meal))
   }
 }
