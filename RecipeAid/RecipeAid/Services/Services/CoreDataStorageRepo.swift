@@ -12,17 +12,19 @@ import UIKit
 
 class CoreDataStorageRepo: PersistantStorageRepoProtocol {
 
-  var managedObjectContext: NSManagedObjectContext
+  var persistentContainer: NSPersistentContainer!
+  var managedObjectContext: NSManagedObjectContext! { return persistentContainer.viewContext }
   var managedContextSet: Bool
 
   init() {
-    managedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
-    managedContextSet = false
-    guard let context = getManagedContext() else {
-      return
+
+    persistentContainer = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer
+
+    if persistentContainer != nil {
+      managedContextSet = true
+    } else {
+      managedContextSet = true
     }
-    managedObjectContext = context
-    managedContextSet = true
   }
 
   func saveMeal(withRecipe: Recipe, forDate: Date, forMeal: MealTypes) {
@@ -179,13 +181,6 @@ class CoreDataStorageRepo: PersistantStorageRepoProtocol {
     } else {
       return nil
     }
-  }
-
-  private func getManagedContext() -> NSManagedObjectContext? {
-
-    guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return nil }
-
-    return appDelegate.persistentContainer.viewContext
   }
 
   private func formatDate(date: Date) -> Date? {

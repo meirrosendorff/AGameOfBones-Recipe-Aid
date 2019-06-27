@@ -60,6 +60,9 @@
 		503E7FBD22C3821700CD860E /* MealTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503E7FBC22C3821700CD860E /* MealTypes.swift */; };
 		503E7FBF22C39A0600CD860E /* Entities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503E7FBE22C39A0600CD860E /* Entities.swift */; };
 		503E7FC122C4C3C600CD860E /* CoreDataStorageRepoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503E7FC022C4C3C600CD860E /* CoreDataStorageRepoTests.swift */; };
+		503E7FC222C4E72A00CD860E /* RecipeAid.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 503E7FB322C37D0600CD860E /* RecipeAid.xcdatamodeld */; };
+		503E7FC322C4E7C500CD860E /* Entities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503E7FBE22C39A0600CD860E /* Entities.swift */; };
+		503E7FC622C5321B00CD860E /* CoreDataMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503E7FC522C5321B00CD860E /* CoreDataMock.swift */; };
 		504FF7EF228DFF2D00681272 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 504FF7EE228DFF2D00681272 /* Assets.xcassets */; };
 		507BA4D222A939C30064B415 /* MenuForDayProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507BA4D122A939C30064B415 /* MenuForDayProtocol.swift */; };
 		507BA4D622A93B780064B415 /* EdamamRecipeAPIRepositoryProtocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507BA4D522A93B780064B415 /* EdamamRecipeAPIRepositoryProtocal.swift */; };
@@ -234,6 +237,7 @@
 		503E7FBC22C3821700CD860E /* MealTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealTypes.swift; sourceTree = "<group>"; };
 		503E7FBE22C39A0600CD860E /* Entities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entities.swift; sourceTree = "<group>"; };
 		503E7FC022C4C3C600CD860E /* CoreDataStorageRepoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorageRepoTests.swift; sourceTree = "<group>"; };
+		503E7FC522C5321B00CD860E /* CoreDataMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataMock.swift; sourceTree = "<group>"; };
 		504FF7EE228DFF2D00681272 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		507BA4D122A939C30064B415 /* MenuForDayProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuForDayProtocol.swift; sourceTree = "<group>"; };
 		507BA4D522A93B780064B415 /* EdamamRecipeAPIRepositoryProtocal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdamamRecipeAPIRepositoryProtocal.swift; sourceTree = "<group>"; };
@@ -610,6 +614,7 @@
 			isa = PBXGroup;
 			children = (
 				503E7F0922C0A49400CD860E /* UserDefaultsMock.swift */,
+				503E7FC522C5321B00CD860E /* CoreDataMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -1281,10 +1286,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				503E7FC322C4E7C500CD860E /* Entities.swift in Sources */,
 				503E7F0A22C0A49400CD860E /* UserDefaultsMock.swift in Sources */,
 				503E7F3722C1008600CD860E /* Helpers.swift in Sources */,
 				5038051A22B910AA00C6B456 /* SearchResultsModelTests.swift in Sources */,
 				5038052022B91BDB00C6B456 /* SearchResultsModelMock.swift in Sources */,
+				503E7FC222C4E72A00CD860E /* RecipeAid.xcdatamodeld in Sources */,
+				503E7FC622C5321B00CD860E /* CoreDataMock.swift in Sources */,
 				5038051D22B917FC00C6B456 /* EdamamAPIRepositoryMock.swift in Sources */,
 				503E7F2F22C0CE7200CD860E /* GeneratedMocks.swift in Sources */,
 				503E7F3522C0FD7600CD860E /* SettingsViewModelRepoInteractionTests.swift in Sources */,
