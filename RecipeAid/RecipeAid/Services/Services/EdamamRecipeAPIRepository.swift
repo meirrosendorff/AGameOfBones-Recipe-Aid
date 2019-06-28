@@ -15,6 +15,11 @@ class EdamamRecipeAPIRepository: EdamamRecipeAPIRepositoryProtocol {
   private let baseURL = "https://api.edamam.com/search"
   private let appId = "7eaa9edb"
   private let appKey = "7b82a875c1c90b7f360a2356f54f2dc1"
+  var settingsRepo: SettingsRepoProtocol
+
+  init() {
+    settingsRepo = SettingsRepo()
+  }
 
   func performSearch(
     forQuery query: String,
@@ -26,7 +31,8 @@ class EdamamRecipeAPIRepository: EdamamRecipeAPIRepositoryProtocol {
       return
     }
 
-    let requestURL = "\(baseURL)?app_id=\(appId)&app_key=\(appKey)&q=\(query)&from=\(resultRange.0)&to=\(resultRange.1)"
+    var requestURL = "\(baseURL)?app_id=\(appId)&app_key=\(appKey)&q=\(query)&from=\(resultRange.0)&to=\(resultRange.1)"
+    requestURL += buildQueryStringFromSettings()
 
     getJsonResponse(for: requestURL, onComplete: { result in
 
@@ -55,7 +61,7 @@ class EdamamRecipeAPIRepository: EdamamRecipeAPIRepositoryProtocol {
           }
         }
 
-        onComplete(.success(toReturn))
+        onComplete(.success(self.filterResultsFromSettings(toReturn)))
         return
       case .failure(let error):
         onComplete(.failure(error))
@@ -182,5 +188,49 @@ class EdamamRecipeAPIRepository: EdamamRecipeAPIRepositoryProtocol {
       calories: calories
     )
     return .success(recipe)
+  }
+
+  func buildQueryStringFromSettings() -> String {
+
+    let timesRange = settingsRepo.getTimesRange()
+    let dietryRestrictions = settingsRepo.getRestrictions().sorted(by: { $0.0 < $1.0 })
+
+    var queryString = ""
+
+    if timesRange != (0, 0) {
+      queryString += "$time=\(timesRange.0)-\(timesRange.1)"
+    }
+    for restriction in dietryRestrictions where restriction.1 {
+      if let restriction = DietaryRestrictions.getDietryRestriction(fromDescription: restriction.0)?.webKey() {
+        queryString += "&\(restriction)"
+      }
+    }
+
+    return queryString.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? ""
+  }
+
+  func filterResultsFromSettings(_ recipeSet: [Recipe]) -> [Recipe] {
+
+    let caloriesRange = settingsRepo.getCaloriesRange()
+    let unwantedFoods = settingsRepo.getUnwantedFoods()
+
+    let validRecipes = recipeSet.filter { recipe in
+
+      if caloriesRange != (0, 0) {
+        if recipe.calories < Double(caloriesRange.0) || recipe.calories > Double(caloriesRange.1) {
+          return false
+        }
+      }
+
+      for food in unwantedFoods {
+        for ingredient in recipe.ingredientLines where ingredient.lowercased().contains(food.lowercased()) {
+          return false
+        }
+      }
+
+      return true
+    }
+
+    return validRecipes
   }
 }

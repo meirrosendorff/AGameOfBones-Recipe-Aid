@@ -19,6 +19,8 @@ class SearchResultsViewModel: SearchResultsViewModelProtocol {
   private let imageFetcher: ImageFetcher
   private var lastResultIndex: Int
   private var resultSetSize: Int
+  private var resultSetSizeMax: Int
+  private let minResultSetSize: Int
   private var lastQuery: String
 
   init() {
@@ -28,6 +30,8 @@ class SearchResultsViewModel: SearchResultsViewModelProtocol {
     noResults = ""
     lastResultIndex = 0
     resultSetSize = 10
+    minResultSetSize = 10
+    resultSetSizeMax = 80
     lastQuery = ""
   }
 
@@ -80,6 +84,10 @@ class SearchResultsViewModel: SearchResultsViewModelProtocol {
     return nextRange
   }
 
+  private func revertToPreviousResultRange() {
+    self.lastResultIndex -= resultSetSize
+  }
+
   private func resetSearchRange() {
     lastResultIndex = 0
   }
@@ -98,7 +106,20 @@ class SearchResultsViewModel: SearchResultsViewModelProtocol {
       switch result {
       case .success(let recipeSet):
 
+        if recipeSet.count < self.minResultSetSize && self.resultSetSize < self.resultSetSizeMax {
+
+          self.revertToPreviousResultRange()
+          self.resultSetSize *= 2
+
+          self.getNextSearchResults(for: query, onComplete: onComplete)
+
+          return
+        }
+
+        self.resultSetSize = self.minResultSetSize
+
         if recipeSet.isEmpty {
+
           self.noResults = "No recipes found for \(query)"
           onComplete(false)
           return

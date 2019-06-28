@@ -150,16 +150,15 @@ extension AppDelegate {
 
     UserDefaults.standard.set(true, forKey: UserDefaultsKeys.alreadySetUp.rawValue)
 
-    let restrictionOptions = ["High Protein": false, "Low Fat": false,
-                              "Low Carb": false, "Low Suger": false,
-                              "Vegetarian": false, "Vegan": false,
-                              "Alcohol Free": false, "Nut Free": false]
+    let restrictionOptions = DietaryRestrictions.allCases.reduce(into: [String: Bool](), {
+      $0[$1.webKey()] = false
+    })
 
     UserDefaults.standard.set(restrictionOptions, forKey: UserDefaultsKeys.dietryRestrictionsDict.rawValue)
     UserDefaults.standard.set(0, forKey: UserDefaultsKeys.minCalories.rawValue)
     UserDefaults.standard.set(0, forKey: UserDefaultsKeys.maxCalories.rawValue)
     UserDefaults.standard.set(0, forKey: UserDefaultsKeys.minTime.rawValue)
     UserDefaults.standard.set(0, forKey: UserDefaultsKeys.maxTime.rawValue)
-    UserDefaults.standard.set([""], forKey: UserDefaultsKeys.unwantedFoodsArray.rawValue)
+    UserDefaults.standard.set([String](), forKey: UserDefaultsKeys.unwantedFoodsArray.rawValue)
   }
 }
