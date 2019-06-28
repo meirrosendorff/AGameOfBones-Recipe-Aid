@@ -8,12 +8,14 @@
 
 import XCTest
 import Hippolyte
+import Cuckoo
 @testable import RecipeAid
 
 class MenuDisplayViewModelTests: XCTestCase {
 
   var menu: MenuForDayMock!
   var repo: EdamamRecipeAPIRepositoryMock!
+  var storageRepoMock: MockCoreDataStorageRepo!
   var viewModel: MenuDisplayViewModelMock!
   var validMealTypes: [String]!
   var date: Date!
@@ -23,8 +25,10 @@ class MenuDisplayViewModelTests: XCTestCase {
     menu = MenuForDayMock()
     validMealTypes = menu.getMealOptions()
     repo = EdamamRecipeAPIRepositoryMock(returnsValidResponse: true)
+    storageRepoMock = MockCoreDataStorageRepo()
     date = Date()
     viewModel = MenuDisplayViewModelMock(forDate: date, repo: repo, menu: menu)
+    viewModel.storageRepo = storageRepoMock
     super.setUp()
   }
 
@@ -34,12 +38,29 @@ class MenuDisplayViewModelTests: XCTestCase {
     repo = nil
     viewModel = nil
     date = nil
+    storageRepoMock = nil
     Hippolyte.shared.stop()
     super.tearDown()
   }
 
+  func stubGetRecipeID(forMeal: String, toReturn: String) {
+
+    guard let mealType = MealTypes.getMealForDescription(description: forMeal) else {
+      return XCTFail("Invalid Meal Type")
+    }
+
+    stub(storageRepoMock) { stub in
+      when(stub.getRecipeID(
+        forDate: equal(to: date), forMeal: equal(to: mealType),
+        onComplete: anyClosure())).then({ _, _, onComplete in onComplete(toReturn) })
+    }
+  }
+
   func testUpdateMealChecksIfMealIsInModelAndWhenNotItThenFetchesFromRepo() {
+
     let validMealType = validMealTypes[0]
+    stubGetRecipeID(forMeal: validMealType, toReturn: validMealType)
+
     let expectation = self.expectation(description: "fetching Recipe Should Succeed")
 
     viewModel.updateMeal(meal: validMealType, onComplete: { _, resultsUpdated in
@@ -58,6 +79,8 @@ class MenuDisplayViewModelTests: XCTestCase {
   func testUpdateMealChecksIfMealIsInModelAndWhenIsDoesNotFetchFromRepoOrAddIt() {
 
     let validMealType = validMealTypes[0]
+    stubGetRecipeID(forMeal: validMealType, toReturn: validMealType)
+
     let firstExpectation = self.expectation(description: "Adding Recipe First Time to Model")
 
     viewModel.updateMeal(meal: validMealType, onComplete: { _, _ in
@@ -85,6 +108,9 @@ class MenuDisplayViewModelTests: XCTestCase {
   func testUpdateMealUpdatesDetailsWhenItRecievesMealFromRepo() {
 
     let validMealType = validMealTypes[0]
+
+    stubGetRecipeID(forMeal: validMealType, toReturn: validMealType)
+
     let expectation = self.expectation(description: "Adding Recipe To repo")
 
     viewModel.updateMeal(meal: validMealType, onComplete: { resultViewModel, _ in
@@ -104,6 +130,9 @@ class MenuDisplayViewModelTests: XCTestCase {
 
     let firstMeal = validMealTypes[0]
     let secondMeal = validMealTypes[1]
+
+    stubGetRecipeID(forMeal: firstMeal, toReturn: firstMeal)
+    stubGetRecipeID(forMeal: secondMeal, toReturn: secondMeal)
 
     let firstExpectation = self.expectation(description: "Adding Recipe First Time to Model")
 
@@ -145,6 +174,9 @@ class MenuDisplayViewModelTests: XCTestCase {
     let firstMeal = validMealTypes[0]
     let secondMeal = validMealTypes[1]
 
+    stubGetRecipeID(forMeal: firstMeal, toReturn: firstMeal)
+    stubGetRecipeID(forMeal: secondMeal, toReturn: secondMeal)
+
     let firstExpectation = self.expectation(description: "Adding Recipe First Time to Model")
 
     viewModel.updateMeal(meal: firstMeal, onComplete: { _, _ in
@@ -177,6 +209,9 @@ class MenuDisplayViewModelTests: XCTestCase {
     let firstMeal = validMealTypes[0]
     let secondMeal = validMealTypes[1]
 
+    stubGetRecipeID(forMeal: firstMeal, toReturn: firstMeal)
+    stubGetRecipeID(forMeal: secondMeal, toReturn: secondMeal)
+
     let firstExpectation = self.expectation(description: "Adding Recipe First Time to Model")
 
     viewModel.updateMeal(meal: firstMeal, onComplete: { _, _ in
@@ -207,6 +242,9 @@ class MenuDisplayViewModelTests: XCTestCase {
 
     let firstMeal = validMealTypes[0]
     let secondMeal = validMealTypes[1]
+
+    stubGetRecipeID(forMeal: firstMeal, toReturn: firstMeal)
+    stubGetRecipeID(forMeal: secondMeal, toReturn: secondMeal)
 
     let firstExpectation = self.expectation(description: "Adding Recipe First Time to Model")
 
@@ -293,5 +331,55 @@ class MenuDisplayViewModelTests: XCTestCase {
     })
 
     waitForExpectations(timeout: 2, handler: nil)
+  }
+
+  func testGetRecipeIDToFetchReturnsInvalidMealTypeIdentifierErrorForInvalidMealType() {
+
+    let expectation = self.expectation(description: "Should fail")
+    let invalidMeal = "Invalid Meal"
+
+    viewModel.getRecipeIDToFetch(forMeal: invalidMeal, onComplete: { result in
+      expectation.fulfill()
+
+      switch result {
+      case .success:
+        XCTFail("Should have returned error")
+      case .failure(let error):
+        switch error {
+        case .invalidMealTypeIdentifier:
+          return
+        default:
+          XCTFail("Returned error: \(String(describing: error)) rather than invalidMealTypeIdentifier")
+        }
+      }
+    })
+
+    waitForExpectations(timeout: 1, handler: nil)
+  }
+
+  func testGetRecipeIDToFetchReturnsNoMealExistsForGivenIdentifierWhenNoMealExists() {
+
+    let validMeal = MealTypes.breakfast.description()
+    stubGetRecipeID(forMeal: validMeal, toReturn: "")
+
+    let expectation = self.expectation(description: "Should fail")
+
+    viewModel.getRecipeIDToFetch(forMeal: validMeal, onComplete: { result in
+      expectation.fulfill()
+
+      switch result {
+      case .success:
+        XCTFail("Should have returned error")
+      case .failure(let error):
+        switch error {
+        case .noMealExistsForGivenIdentifier:
+          return
+        default:
+          XCTFail("Returned error: \(String(describing: error)) rather than noMealExistsForGivenIdentifier")
+        }
+      }
+    })
+
+    waitForExpectations(timeout: 1, handler: nil)
   }
 }

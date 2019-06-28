@@ -17,6 +17,7 @@ class ShoppingListUITest: XCTestCase {
 
     app = XCUIApplication()
     app.launchArguments.append("-testing")
+    app.launchArguments.append("-resetUserSetting")
     continueAfterFailure = false
   }
 

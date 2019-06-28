@@ -370,4 +370,27 @@ class SearchResultsViewModelTests: XCTestCase {
       Hippolyte.shared.stop()
     }
   }
+
+  func testWhenResultsSizeLessThanMinSearchRangeIncreasesAndANewSearchIsMadeUntillReachingAMax() {
+
+    let expectation = self.expectation(description: "Should make multiple calls")
+    let firstRange = (0, 10)
+    let secondRange = (0, 20)
+    let thirdRange = (0, 40)
+    let fourthRange = (0, 80)
+
+    repo.numResultsToReturn = 1
+
+    viewModel.getNextSearchResults(for: basicQuery, onComplete: { _ in
+      expectation.fulfill()
+    })
+
+    waitForExpectations(timeout: 2, handler: nil)
+
+    XCTAssertEqual(repo.numCallsforPerformSearchMethod, 4)
+    XCTAssertTrue(checkEqual(repo.searchRanges[0], firstRange))
+    XCTAssertTrue(checkEqual(repo.searchRanges[1], secondRange))
+    XCTAssertTrue(checkEqual(repo.searchRanges[2], thirdRange))
+    XCTAssertTrue(checkEqual(repo.searchRanges[3], fourthRange))
+  }
 }

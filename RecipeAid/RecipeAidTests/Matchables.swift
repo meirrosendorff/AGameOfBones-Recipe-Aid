@@ -24,9 +24,15 @@ func equal(to value: Date) -> ParameterMatcher<Date> {
   }
 }
 
-  func equal(to value: ShoppingItem) -> ParameterMatcher<ShoppingItem> {
+func equal(to value: ShoppingItem) -> ParameterMatcher<ShoppingItem> {
     return ParameterMatcher { tested in
 
       return value.itemName == tested.itemName
     }
+}
+
+func equal(to value: MealTypes) -> ParameterMatcher<MealTypes> {
+  return ParameterMatcher { tested in
+    return value.description() == tested.description()
+  }
 }

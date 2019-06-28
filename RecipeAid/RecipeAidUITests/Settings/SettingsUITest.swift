@@ -11,8 +11,7 @@ import XCTest
 class SettingsUITest: XCTestCase {
 
   var app: XCUIApplication!
-  let restrictionNames = ["Alcohol Free", "High Protein", "Low Carb", "Low Fat",
-                 "Low Suger", "Nut Free", "Vegan", "Vegetarian"]
+  let restrictionNames = DietaryRestrictions.allCases.map { $0.description() }
 
   override func setUp() {
     continueAfterFailure = false

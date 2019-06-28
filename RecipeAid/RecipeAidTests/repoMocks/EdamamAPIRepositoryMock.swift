@@ -9,14 +9,21 @@
 import Foundation
 @testable import RecipeAid
 
+func checkEqual(_ left: (Int, Int), _ right: (Int, Int)) -> Bool {
+  print("\(left) == \(right)")
+  return left.0 == right.0 && left.1 == right.1
+}
+
 class EdamamRecipeAPIRepositoryMock: EdamamRecipeAPIRepositoryProtocol {
 
   var recipeName = ""
 
   var numCallsForGetRecipeMethod = 0
   var numCallsforPerformSearchMethod = 0
+  var numResultsToReturn = 10
   var recipeSetToReturn: [Recipe]?
-  var lastSearchRange = (0, 0)
+  var searchRanges = [(Int, Int)]()
+  var lastSearchRange: (Int, Int) { return searchRanges.count > 0 ? searchRanges[searchRanges.count - 1] : (0, 0)}
 
   var returnsValidResponse: Bool
 
@@ -73,7 +80,7 @@ class EdamamRecipeAPIRepositoryMock: EdamamRecipeAPIRepositoryProtocol {
     onComplete: @escaping (Result<[Recipe], RecipeError>) -> Void) {
 
     numCallsforPerformSearchMethod += 1
-    lastSearchRange = resultRange
+    searchRanges.append(resultRange)
 
     if returnsValidResponse {
 
@@ -82,7 +89,7 @@ class EdamamRecipeAPIRepositoryMock: EdamamRecipeAPIRepositoryProtocol {
         return
       }
 
-      let recipe = [Recipe(
+      let toReturn = Recipe(
         uri: query,
         label: query,
         image: query,
@@ -90,7 +97,9 @@ class EdamamRecipeAPIRepositoryMock: EdamamRecipeAPIRepositoryProtocol {
         url: query,
         yield: 0,
         ingredientLines: [recipeName],
-        calories: 0)]
+        calories: 0)
+
+      let recipe = [Recipe] (repeating: toReturn, count: numResultsToReturn)
 
       onComplete(.success(recipe))
       return

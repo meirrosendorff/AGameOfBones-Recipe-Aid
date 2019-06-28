@@ -43,11 +43,21 @@ class SettingsRepo: SettingsRepoProtocol {
 
   func setRestrictions(restrictions: [(String, Bool)]) {
 
-    let restrictionsToSave = restrictions.reduce(into: [:]) {
+//    let restrictionsToSave = restrictions.reduce(into: [:]) {
+//
+//      guard let key = DietaryRestrictions.getDietryRestriction(fromDescription: $1.0).webKey() else { return }
+//      $0[key] = $1.1
+//    }
 
-      let key = DietaryRestrictions.getDietryRestriction(fromDescription: $1.0)?.webKey()
-      $0[key] = $1.1
+    var restrictionsToSave = [String: Bool]()
+
+    for set in restrictions {
+      if let restriction = DietaryRestrictions.getDietryRestriction(fromDescription: set.0)?.webKey() {
+        restrictionsToSave[restriction] = set.1
+      }
     }
+
+    print(restrictionsToSave)
     userDefaults.set(restrictionsToSave, forKey: restrictionsKey)
   }
 

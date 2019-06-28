@@ -90,6 +90,7 @@
 		50AE4C5A2295865900467ADE /* ShoppingListItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AE4C592295865900467ADE /* ShoppingListItemTableViewCell.swift */; };
 		50AE4C5F229675BC00467ADE /* MenuDatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AE4C5E229675BC00467ADE /* MenuDatePickerViewController.swift */; };
 		50AE4C6122968F2F00467ADE /* MenuDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AE4C6022968F2F00467ADE /* MenuDisplayViewController.swift */; };
+		50BD171222C64417006FB134 /* DietaryRestrictions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503E7FCA22C5ECBB00CD860E /* DietaryRestrictions.swift */; };
 		50DB7A0222AF870400DEEB7B /* MenuForDayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DB7A0122AF870400DEEB7B /* MenuForDayTests.swift */; };
 		50DB7A0522AF94DB00DEEB7B /* MenuDisplayViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DB7A0422AF94DA00DEEB7B /* MenuDisplayViewModelTests.swift */; };
 		50DB7A0722AFA2A700DEEB7B /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DB7A0622AFA2A700DEEB7B /* Mocks.swift */; };
@@ -319,6 +320,7 @@
 		50022D3422AA6D970001B2D1 /* RecipeAidTests */ = {
 			isa = PBXGroup;
 			children = (
+				503E7F6222C3415E00CD860E /* Matchables.swift */,
 				503E7F5F22C33ACD00CD860E /* ShoppingListTests */,
 				503E7F2E22C0CE7200CD860E /* GeneratedMocks.swift */,
 				503E7EFB22C0964A00CD860E /* Settings */,
@@ -666,7 +668,6 @@
 			isa = PBXGroup;
 			children = (
 				503E7F6022C33AF500CD860E /* ShoppingListViewModelTests.swift */,
-				503E7F6222C3415E00CD860E /* Matchables.swift */,
 			);
 			path = ShoppingListTests;
 			sourceTree = "<group>";
@@ -1219,7 +1220,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "OUTPUT_FILE=\"${PROJECT_DIR}/${PROJECT_NAME}Tests/GeneratedMocks.swift\"\necho \"Generated Mocks File = ${OUTPUT_FILE}\"\nINPUT_DIR=\"${PROJECT_DIR}/${PROJECT_NAME}\"\necho \"Mocks Input Directory = ${INPUT_DIR}\"\n\"${PODS_ROOT}/Cuckoo/run\" generate --testable \"${PROJECT_NAME}\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"${INPUT_DIR}/Services/Services/SettingsRepo.swift\" \\\n\"${INPUT_DIR}/Settings/Models/SettingsModel.swift\" \\\n\"${INPUT_DIR}/Settings/ViewModels/SettingsViewModel.swift\" \\\n\"${INPUT_DIR}/Services/Services/ShoppingListRepo.swift\"\n";
+			shellScript = "OUTPUT_FILE=\"${PROJECT_DIR}/${PROJECT_NAME}Tests/GeneratedMocks.swift\"\necho \"Generated Mocks File = ${OUTPUT_FILE}\"\nINPUT_DIR=\"${PROJECT_DIR}/${PROJECT_NAME}\"\necho \"Mocks Input Directory = ${INPUT_DIR}\"\n\"${PODS_ROOT}/Cuckoo/run\" generate --testable \"${PROJECT_NAME}\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"${INPUT_DIR}/Services/Services/SettingsRepo.swift\" \\\n\"${INPUT_DIR}/Settings/Models/SettingsModel.swift\" \\\n\"${INPUT_DIR}/Settings/ViewModels/SettingsViewModel.swift\" \\\n\"${INPUT_DIR}/Services/Services/ShoppingListRepo.swift\" \\\n\"${INPUT_DIR}/Services/Services/CoreDataStorageRepo.swift\"\n";
 		};
 		7B89FC9226D1D45EB67FC1F7 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1385,6 +1386,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				503E7F3A22C1F83300CD860E /* SettingsUITest.swift in Sources */,
+				50BD171222C64417006FB134 /* DietaryRestrictions.swift in Sources */,
 				5038053F22BA63F700C6B456 /* SearchAndAddUITests.swift in Sources */,
 				5038054322BA660F00C6B456 /* exampleSearchResultSecondTen.json in Sources */,
 				503E7F6622C360A700CD860E /* ShoppingListUITest.swift in Sources */,

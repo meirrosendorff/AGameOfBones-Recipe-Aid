@@ -198,7 +198,7 @@ class EdamamRecipeAPIRepository: EdamamRecipeAPIRepositoryProtocol {
     var queryString = ""
 
     if timesRange != (0, 0) {
-      queryString += "$time=\(timesRange.0)-\(timesRange.1)"
+      queryString += "&time=\(timesRange.0)-\(timesRange.1)"
     }
     for restriction in dietryRestrictions where restriction.1 {
       if let restriction = DietaryRestrictions.getDietryRestriction(fromDescription: restriction.0)?.webKey() {
