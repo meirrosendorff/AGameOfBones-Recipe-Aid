@@ -179,14 +179,19 @@ class SettingsRepoTests: XCTestCase {
 
   func testRestrictionsCorrectlyConvertedToDictionary() {
 
-    let restrictions = [("a", true), ("b", false), ("c", true)]
+    let firstRestriction = DietaryRestrictions.alcoholFree
+    let secondRestriction = DietaryRestrictions.lowFat
+    let thirdRestriction = DietaryRestrictions.lowCarb
+    let restrictions = [(firstRestriction.description(), true),
+                        (secondRestriction.description(), false),
+                        (thirdRestriction.description(), true)]
 
     repo.setRestrictions(restrictions: restrictions)
 
     let dict = userDefaultsMock.lastRestrictionsSaved
 
-    XCTAssertTrue(dict["a"] ?? false)
-    XCTAssertFalse(dict["b"] ?? true)
-    XCTAssertTrue(dict["c"] ?? false)
+    XCTAssertTrue(dict[firstRestriction.webKey()] ?? false)
+    XCTAssertFalse(dict[secondRestriction.webKey()] ?? true)
+    XCTAssertTrue(dict[thirdRestriction.webKey()] ?? false)
   }
 }

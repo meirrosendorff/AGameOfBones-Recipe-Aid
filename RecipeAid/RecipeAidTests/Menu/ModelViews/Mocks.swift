@@ -52,8 +52,4 @@ class MenuDisplayViewModelMock: MenueDisplayViewModel {
     self.networkRepo = repo
     self.menu = menu
   }
-
-  override func getRecipeIDToFetch(forMeal meal: String, onComplete: @escaping (Result<String, RecipeError>) -> Void) {
-    onComplete(.success(meal))
-  }
 }

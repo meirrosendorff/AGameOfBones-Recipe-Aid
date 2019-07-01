@@ -34,6 +34,7 @@ class SearchAndAddUITests: XCTestCase {
 
     app.launchArguments.append("-networkStubs")
     app.launchArguments.append(toStub)
+    app.launchArguments.append("-resetUserSetting")
     app.launch()
   }
 

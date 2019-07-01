@@ -1,4 +1,322 @@
-// MARK: - Mocks generated from file: RecipeAid/Services/Services/SettingsRepo.swift at 2019-06-27 17:38:01 +0000
+// MARK: - Mocks generated from file: RecipeAid/Services/Services/CoreDataStorageRepo.swift at 2019-07-01 06:14:01 +0000
+
+//
+//  CoreDataStorageRepo.swift
+//  RecipeAid
+//
+//  Created by Meir Rosendorff on 2019/06/26.
+//  Copyright © 2019 Meir Rosendorff. All rights reserved.
+//
+
+import Cuckoo
+@testable import RecipeAid
+
+import CoreData
+import Foundation
+import UIKit
+
+
+ class MockCoreDataStorageRepo: CoreDataStorageRepo, Cuckoo.ClassMock {
+    
+     typealias MocksType = CoreDataStorageRepo
+    
+     typealias Stubbing = __StubbingProxy_CoreDataStorageRepo
+     typealias Verification = __VerificationProxy_CoreDataStorageRepo
+
+     let cuckoo_manager = Cuckoo.MockManager.preconfiguredManager ?? Cuckoo.MockManager(hasParent: true)
+
+    
+    private var __defaultImplStub: CoreDataStorageRepo?
+
+     func enableDefaultImplementation(_ stub: CoreDataStorageRepo) {
+        __defaultImplStub = stub
+        cuckoo_manager.enableDefaultStubImplementation()
+    }
+    
+
+    
+    
+    
+     override var persistentContainer: NSPersistentContainer! {
+        get {
+            return cuckoo_manager.getter("persistentContainer",
+                superclassCall:
+                    
+                    super.persistentContainer
+                    ,
+                defaultCall: __defaultImplStub!.persistentContainer)
+        }
+        
+        set {
+            cuckoo_manager.setter("persistentContainer",
+                value: newValue,
+                superclassCall:
+                    
+                    super.persistentContainer = newValue
+                    ,
+                defaultCall: __defaultImplStub!.persistentContainer = newValue)
+        }
+        
+    }
+    
+    
+    
+     override var managedObjectContext: NSManagedObjectContext! {
+        get {
+            return cuckoo_manager.getter("managedObjectContext",
+                superclassCall:
+                    
+                    super.managedObjectContext
+                    ,
+                defaultCall: __defaultImplStub!.managedObjectContext)
+        }
+        
+    }
+    
+    
+    
+     override var managedContextSet: Bool {
+        get {
+            return cuckoo_manager.getter("managedContextSet",
+                superclassCall:
+                    
+                    super.managedContextSet
+                    ,
+                defaultCall: __defaultImplStub!.managedContextSet)
+        }
+        
+        set {
+            cuckoo_manager.setter("managedContextSet",
+                value: newValue,
+                superclassCall:
+                    
+                    super.managedContextSet = newValue
+                    ,
+                defaultCall: __defaultImplStub!.managedContextSet = newValue)
+        }
+        
+    }
+    
+
+    
+
+    
+    
+    
+     override func saveMeal(withRecipe: Recipe, forDate: Date, forMeal: MealTypes)  {
+        
+    return cuckoo_manager.call("saveMeal(withRecipe: Recipe, forDate: Date, forMeal: MealTypes)",
+            parameters: (withRecipe, forDate, forMeal),
+            escapingParameters: (withRecipe, forDate, forMeal),
+            superclassCall:
+                
+                super.saveMeal(withRecipe: withRecipe, forDate: forDate, forMeal: forMeal)
+                ,
+            defaultCall: __defaultImplStub!.saveMeal(withRecipe: withRecipe, forDate: forDate, forMeal: forMeal))
+        
+    }
+    
+    
+    
+     override func getRecipeID(forDate date: Date, forMeal meal: MealTypes, onComplete: @escaping (String) -> Void)  {
+        
+    return cuckoo_manager.call("getRecipeID(forDate: Date, forMeal: MealTypes, onComplete: @escaping (String) -> Void)",
+            parameters: (date, meal, onComplete),
+            escapingParameters: (date, meal, onComplete),
+            superclassCall:
+                
+                super.getRecipeID(forDate: date, forMeal: meal, onComplete: onComplete)
+                ,
+            defaultCall: __defaultImplStub!.getRecipeID(forDate: date, forMeal: meal, onComplete: onComplete))
+        
+    }
+    
+    
+    
+     override func getShoppingItems(forDate date: Date, forDays: Int, onComplete: @escaping ([ShoppingItem]) -> Void)  {
+        
+    return cuckoo_manager.call("getShoppingItems(forDate: Date, forDays: Int, onComplete: @escaping ([ShoppingItem]) -> Void)",
+            parameters: (date, forDays, onComplete),
+            escapingParameters: (date, forDays, onComplete),
+            superclassCall:
+                
+                super.getShoppingItems(forDate: date, forDays: forDays, onComplete: onComplete)
+                ,
+            defaultCall: __defaultImplStub!.getShoppingItems(forDate: date, forDays: forDays, onComplete: onComplete))
+        
+    }
+    
+    
+    
+     override func updateShoppingItem(_ item: ShoppingItem)  {
+        
+    return cuckoo_manager.call("updateShoppingItem(_: ShoppingItem)",
+            parameters: (item),
+            escapingParameters: (item),
+            superclassCall:
+                
+                super.updateShoppingItem(item)
+                ,
+            defaultCall: __defaultImplStub!.updateShoppingItem(item))
+        
+    }
+    
+
+	 struct __StubbingProxy_CoreDataStorageRepo: Cuckoo.StubbingProxy {
+	    private let cuckoo_manager: Cuckoo.MockManager
+	
+	     init(manager: Cuckoo.MockManager) {
+	        self.cuckoo_manager = manager
+	    }
+	    
+	    
+	    var persistentContainer: Cuckoo.ClassToBeStubbedOptionalProperty<MockCoreDataStorageRepo, NSPersistentContainer> {
+	        return .init(manager: cuckoo_manager, name: "persistentContainer")
+	    }
+	    
+	    
+	    var managedObjectContext: Cuckoo.ClassToBeStubbedReadOnlyProperty<MockCoreDataStorageRepo, NSManagedObjectContext?> {
+	        return .init(manager: cuckoo_manager, name: "managedObjectContext")
+	    }
+	    
+	    
+	    var managedContextSet: Cuckoo.ClassToBeStubbedProperty<MockCoreDataStorageRepo, Bool> {
+	        return .init(manager: cuckoo_manager, name: "managedContextSet")
+	    }
+	    
+	    
+	    func saveMeal<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable, M3: Cuckoo.Matchable>(withRecipe: M1, forDate: M2, forMeal: M3) -> Cuckoo.ClassStubNoReturnFunction<(Recipe, Date, MealTypes)> where M1.MatchedType == Recipe, M2.MatchedType == Date, M3.MatchedType == MealTypes {
+	        let matchers: [Cuckoo.ParameterMatcher<(Recipe, Date, MealTypes)>] = [wrap(matchable: withRecipe) { $0.0 }, wrap(matchable: forDate) { $0.1 }, wrap(matchable: forMeal) { $0.2 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockCoreDataStorageRepo.self, method: "saveMeal(withRecipe: Recipe, forDate: Date, forMeal: MealTypes)", parameterMatchers: matchers))
+	    }
+	    
+	    func getRecipeID<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable, M3: Cuckoo.Matchable>(forDate date: M1, forMeal meal: M2, onComplete: M3) -> Cuckoo.ClassStubNoReturnFunction<(Date, MealTypes, (String) -> Void)> where M1.MatchedType == Date, M2.MatchedType == MealTypes, M3.MatchedType == (String) -> Void {
+	        let matchers: [Cuckoo.ParameterMatcher<(Date, MealTypes, (String) -> Void)>] = [wrap(matchable: date) { $0.0 }, wrap(matchable: meal) { $0.1 }, wrap(matchable: onComplete) { $0.2 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockCoreDataStorageRepo.self, method: "getRecipeID(forDate: Date, forMeal: MealTypes, onComplete: @escaping (String) -> Void)", parameterMatchers: matchers))
+	    }
+	    
+	    func getShoppingItems<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable, M3: Cuckoo.Matchable>(forDate date: M1, forDays: M2, onComplete: M3) -> Cuckoo.ClassStubNoReturnFunction<(Date, Int, ([ShoppingItem]) -> Void)> where M1.MatchedType == Date, M2.MatchedType == Int, M3.MatchedType == ([ShoppingItem]) -> Void {
+	        let matchers: [Cuckoo.ParameterMatcher<(Date, Int, ([ShoppingItem]) -> Void)>] = [wrap(matchable: date) { $0.0 }, wrap(matchable: forDays) { $0.1 }, wrap(matchable: onComplete) { $0.2 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockCoreDataStorageRepo.self, method: "getShoppingItems(forDate: Date, forDays: Int, onComplete: @escaping ([ShoppingItem]) -> Void)", parameterMatchers: matchers))
+	    }
+	    
+	    func updateShoppingItem<M1: Cuckoo.Matchable>(_ item: M1) -> Cuckoo.ClassStubNoReturnFunction<(ShoppingItem)> where M1.MatchedType == ShoppingItem {
+	        let matchers: [Cuckoo.ParameterMatcher<(ShoppingItem)>] = [wrap(matchable: item) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockCoreDataStorageRepo.self, method: "updateShoppingItem(_: ShoppingItem)", parameterMatchers: matchers))
+	    }
+	    
+	}
+
+	 struct __VerificationProxy_CoreDataStorageRepo: Cuckoo.VerificationProxy {
+	    private let cuckoo_manager: Cuckoo.MockManager
+	    private let callMatcher: Cuckoo.CallMatcher
+	    private let sourceLocation: Cuckoo.SourceLocation
+	
+	     init(manager: Cuckoo.MockManager, callMatcher: Cuckoo.CallMatcher, sourceLocation: Cuckoo.SourceLocation) {
+	        self.cuckoo_manager = manager
+	        self.callMatcher = callMatcher
+	        self.sourceLocation = sourceLocation
+	    }
+	
+	    
+	    
+	    var persistentContainer: Cuckoo.VerifyOptionalProperty<NSPersistentContainer> {
+	        return .init(manager: cuckoo_manager, name: "persistentContainer", callMatcher: callMatcher, sourceLocation: sourceLocation)
+	    }
+	    
+	    
+	    var managedObjectContext: Cuckoo.VerifyReadOnlyProperty<NSManagedObjectContext?> {
+	        return .init(manager: cuckoo_manager, name: "managedObjectContext", callMatcher: callMatcher, sourceLocation: sourceLocation)
+	    }
+	    
+	    
+	    var managedContextSet: Cuckoo.VerifyProperty<Bool> {
+	        return .init(manager: cuckoo_manager, name: "managedContextSet", callMatcher: callMatcher, sourceLocation: sourceLocation)
+	    }
+	    
+	
+	    
+	    @discardableResult
+	    func saveMeal<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable, M3: Cuckoo.Matchable>(withRecipe: M1, forDate: M2, forMeal: M3) -> Cuckoo.__DoNotUse<(Recipe, Date, MealTypes), Void> where M1.MatchedType == Recipe, M2.MatchedType == Date, M3.MatchedType == MealTypes {
+	        let matchers: [Cuckoo.ParameterMatcher<(Recipe, Date, MealTypes)>] = [wrap(matchable: withRecipe) { $0.0 }, wrap(matchable: forDate) { $0.1 }, wrap(matchable: forMeal) { $0.2 }]
+	        return cuckoo_manager.verify("saveMeal(withRecipe: Recipe, forDate: Date, forMeal: MealTypes)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
+	    func getRecipeID<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable, M3: Cuckoo.Matchable>(forDate date: M1, forMeal meal: M2, onComplete: M3) -> Cuckoo.__DoNotUse<(Date, MealTypes, (String) -> Void), Void> where M1.MatchedType == Date, M2.MatchedType == MealTypes, M3.MatchedType == (String) -> Void {
+	        let matchers: [Cuckoo.ParameterMatcher<(Date, MealTypes, (String) -> Void)>] = [wrap(matchable: date) { $0.0 }, wrap(matchable: meal) { $0.1 }, wrap(matchable: onComplete) { $0.2 }]
+	        return cuckoo_manager.verify("getRecipeID(forDate: Date, forMeal: MealTypes, onComplete: @escaping (String) -> Void)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
+	    func getShoppingItems<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable, M3: Cuckoo.Matchable>(forDate date: M1, forDays: M2, onComplete: M3) -> Cuckoo.__DoNotUse<(Date, Int, ([ShoppingItem]) -> Void), Void> where M1.MatchedType == Date, M2.MatchedType == Int, M3.MatchedType == ([ShoppingItem]) -> Void {
+	        let matchers: [Cuckoo.ParameterMatcher<(Date, Int, ([ShoppingItem]) -> Void)>] = [wrap(matchable: date) { $0.0 }, wrap(matchable: forDays) { $0.1 }, wrap(matchable: onComplete) { $0.2 }]
+	        return cuckoo_manager.verify("getShoppingItems(forDate: Date, forDays: Int, onComplete: @escaping ([ShoppingItem]) -> Void)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
+	    func updateShoppingItem<M1: Cuckoo.Matchable>(_ item: M1) -> Cuckoo.__DoNotUse<(ShoppingItem), Void> where M1.MatchedType == ShoppingItem {
+	        let matchers: [Cuckoo.ParameterMatcher<(ShoppingItem)>] = [wrap(matchable: item) { $0 }]
+	        return cuckoo_manager.verify("updateShoppingItem(_: ShoppingItem)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	}
+}
+
+ class CoreDataStorageRepoStub: CoreDataStorageRepo {
+    
+    
+     override var persistentContainer: NSPersistentContainer! {
+        get {
+            return DefaultValueRegistry.defaultValue(for: (NSPersistentContainer?).self)
+        }
+        
+        set { }
+        
+    }
+    
+    
+     override var managedObjectContext: NSManagedObjectContext! {
+        get {
+            return DefaultValueRegistry.defaultValue(for: (NSManagedObjectContext?).self)
+        }
+        
+    }
+    
+    
+     override var managedContextSet: Bool {
+        get {
+            return DefaultValueRegistry.defaultValue(for: (Bool).self)
+        }
+        
+        set { }
+        
+    }
+    
+
+    
+
+    
+     override func saveMeal(withRecipe: Recipe, forDate: Date, forMeal: MealTypes)   {
+        return DefaultValueRegistry.defaultValue(for: (Void).self)
+    }
+    
+     override func getRecipeID(forDate date: Date, forMeal meal: MealTypes, onComplete: @escaping (String) -> Void)   {
+        return DefaultValueRegistry.defaultValue(for: (Void).self)
+    }
+    
+     override func getShoppingItems(forDate date: Date, forDays: Int, onComplete: @escaping ([ShoppingItem]) -> Void)   {
+        return DefaultValueRegistry.defaultValue(for: (Void).self)
+    }
+    
+     override func updateShoppingItem(_ item: ShoppingItem)   {
+        return DefaultValueRegistry.defaultValue(for: (Void).self)
+    }
+    
+}
+
+
+// MARK: - Mocks generated from file: RecipeAid/Services/Services/SettingsRepo.swift at 2019-07-01 06:14:01 +0000
 
 //
 //  SettingsRepo.swift
@@ -358,7 +676,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: RecipeAid/Services/Services/ShoppingListRepo.swift at 2019-06-27 17:38:01 +0000
+// MARK: - Mocks generated from file: RecipeAid/Services/Services/ShoppingListRepo.swift at 2019-07-01 06:14:01 +0000
 
 //let gregorian = Calendar(identifier: .gregorian)
 //  ShoppingListRepo.swift
@@ -538,7 +856,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: RecipeAid/Settings/Models/SettingsModel.swift at 2019-06-27 17:38:01 +0000
+// MARK: - Mocks generated from file: RecipeAid/Settings/Models/SettingsModel.swift at 2019-07-01 06:14:01 +0000
 
 //
 //  SettingsModel.swift
@@ -1162,7 +1480,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: RecipeAid/Settings/ViewModels/SettingsViewModel.swift at 2019-06-27 17:38:01 +0000
+// MARK: - Mocks generated from file: RecipeAid/Settings/ViewModels/SettingsViewModel.swift at 2019-07-01 06:14:01 +0000
 
 //
 //  SettingsViewModel.swift

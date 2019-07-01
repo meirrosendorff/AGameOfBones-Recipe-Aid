@@ -110,7 +110,7 @@ class CoreDataStorageRepoTests: XCTestCase {
     let secondRecipeToSave = iceCreamRecipe
     let firstDateToSave = Date()
     let cal = Calendar(identifier: .gregorian)
-    let secondDateToSave = cal.date(bySetting: .day, value: 1, of: firstDateToSave)!
+    let secondDateToSave = cal.date(byAdding: .day, value: 1, to: firstDateToSave)!
     let mealTypeToSave = MealTypes.breakfast
 
     repo.saveMeal(withRecipe: firstRecipeToSave, forDate: firstDateToSave, forMeal: mealTypeToSave)
