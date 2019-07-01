@@ -28,13 +28,16 @@ class SearchAndAddUITests: XCTestCase {
     let breadSearchURL = urlBase + "&q=Bread&from=0&to=10"
     let breadSearchFile = "exampleSearchResultSecondTen"
 
-    let toStub = soupSearchFirstTenURL + " " + soupSearchFirstTenFile +
-      " " + soupSearchSecondTenURL + " " + soupSearchSecondTenFile +
-      " " + breadSearchURL + " " + breadSearchFile
+    let jsonFileType = "json"
+
+    let toStub = soupSearchFirstTenURL + " " + soupSearchFirstTenFile + " " + jsonFileType +
+      " " + soupSearchSecondTenURL + " " + soupSearchSecondTenFile + " " + jsonFileType +
+      " " + breadSearchURL + " " + breadSearchFile + " " + jsonFileType
 
     app.launchArguments.append("-networkStubs")
     app.launchArguments.append(toStub)
     app.launchArguments.append("-resetUserSetting")
+    app.launchArguments.append("-testing")
     app.launch()
   }
 
@@ -200,5 +203,23 @@ class SearchAndAddUITests: XCTestCase {
     app.buttons["Confirm"].tap()
 
     XCTAssertTrue(app.navigationBars["Details"].exists)
+  }
+
+  func testSeeFullInstructionsButtonOpensWebViewWithInstructions() {
+
+    let app = XCUIApplication()
+    let search = "Soup"
+
+    performSearch(app, search: search)
+
+    let table = app.tables
+
+    table.staticTexts["Cleansing Ginger-Chicken Soup"].tap()
+
+    app.buttons[Identifiers.fullInstructionsLabel.rawValue].tap()
+
+    sleep(3)
+
+    XCTAssertTrue(app.navigationBars["TestTitle"].otherElements["TestTitle"].exists)
   }
 }

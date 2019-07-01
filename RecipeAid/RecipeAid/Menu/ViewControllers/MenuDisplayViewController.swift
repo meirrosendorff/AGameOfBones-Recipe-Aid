@@ -56,6 +56,7 @@ class MenuDisplayViewController: UIViewController {
     ingredientsLabel.accessibilityIdentifier = Identifiers.ingredientsLabel.rawValue
     ingredientsTableView.accessibilityIdentifier = Identifiers.ingredientTableView.rawValue
     noMealChosenLabel.accessibilityIdentifier = Identifiers.noRecipeLabel.rawValue
+    fullInstructionsButton.accessibilityIdentifier = Identifiers.fullInstructionsLabel.rawValue
   }
 
   func configureSegmentControll(segments: [String]) {
@@ -76,6 +77,15 @@ class MenuDisplayViewController: UIViewController {
 
     setupPageFromSelectedSegment()
 
+  }
+
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+    if segue.destination is WebViewController {
+
+      let next = segue.destination as? WebViewController
+      next?.sourceURL = menueDisplayViewModel?.recipeSource
+    }
   }
 
   func formatViews() {

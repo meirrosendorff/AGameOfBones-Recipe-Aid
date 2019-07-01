@@ -395,7 +395,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LAw-9i-Dde" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <barButtonItem systemItem="redo" id="jhU-mE-L8h" userLabel="refreshPage"/>
             </objects>
-            <point key="canvasLocation" x="3836" y="-725.48725637181417"/>
+            <point key="canvasLocation" x="3836" y="910"/>
         </scene>
         <!--AddViewController-->
         <scene sceneID="8Hs-wr-nmK">
@@ -1147,6 +1147,9 @@
                                                                 <integer key="value" value="10"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <segue destination="hTt-zs-FS7" kind="show" id="Cpf-as-3JT"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.27058823529999998" green="0.30196078430000001" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1489,4 +1492,7 @@
         <image name="settings" width="33" height="33"/>
         <image name="shopping-icon" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Cpf-as-3JT"/>
+    </inferredMetricsTieBreakers>
 </document>

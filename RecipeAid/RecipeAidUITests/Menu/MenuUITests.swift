@@ -23,10 +23,11 @@ class MenuUITests: XCTestCase {
     let lunchUrl = urlBase + "e9c30bda6b789283d22cff594d17ff73"
     let dinnerFileName = "dinnerJsonExample"
     let dinnerURL = urlBase + "b373d8987afb5808439ff243c16ccb63"
+    let jsonFileType = "json"
 
-    let stub = lunchUrl + " " + lunchFileName +
-      " " + dinnerURL + " " +  dinnerFileName +
-      " " + breakfastURL + " " + breakfastFileName
+    let stub = lunchUrl + " " + lunchFileName + " " + jsonFileType +
+      " " + dinnerURL + " " +  dinnerFileName + " " + jsonFileType +
+      " " + breakfastURL + " " + breakfastFileName + " " + jsonFileType
     app.launchArguments.append("-networkStubs")
     app.launchArguments.append(stub)
     app.launchArguments.append("-testing")
@@ -174,5 +175,20 @@ class MenuUITests: XCTestCase {
         "ingredient-lunch-\(index) does not exist"
       )
     }
+  }
+
+  func testSeeFullInstructionsButtonGosToWebviewWithFullInstructions() {
+
+    let app = XCUIApplication()
+    app.tabBars.buttons["Menu"].tap()
+    setDatePickerTo(app, day: "15", month: "June", year: "2019")
+    app.buttons["Confirm"].tap()
+    app.segmentedControls.buttons["Lunch"].tap()
+
+    app.buttons[Identifiers.fullInstructionsLabel.rawValue].tap()
+
+    sleep(3)
+
+    XCTAssertTrue(app.navigationBars["TestTitle"].otherElements["TestTitle"].exists)
   }
 }

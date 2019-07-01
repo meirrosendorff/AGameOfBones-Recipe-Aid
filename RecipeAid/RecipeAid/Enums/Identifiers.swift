@@ -27,4 +27,5 @@ enum Identifiers: String {
   case unwantedFoods = "Unwanted Foods"
   case shoppingDateRange = "Shopping List Date Range"
   case noShopping = "No Shopping"
+  case fullInstructionsLabel = "See Full Instructions"
 }
