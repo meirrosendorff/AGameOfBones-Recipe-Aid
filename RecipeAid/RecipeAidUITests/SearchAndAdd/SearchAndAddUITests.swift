@@ -222,4 +222,14 @@ class SearchAndAddUITests: XCTestCase {
 
     XCTAssertTrue(app.navigationBars["TestTitle"].otherElements["TestTitle"].exists)
   }
+
+  func testKeyboardDissapearsAfterTappingOnScreen() {
+
+    let app = XCUIApplication()
+    app.otherElements[Identifiers.searchBar.rawValue].tap()
+
+    app.children(matching: .window).element(boundBy: 0).tap()
+
+    XCTAssertFalse(app.keyboards.buttons["Search"].exists)
+  }
 }

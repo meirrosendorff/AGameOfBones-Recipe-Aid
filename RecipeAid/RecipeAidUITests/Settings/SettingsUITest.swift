@@ -208,4 +208,15 @@ class SettingsUITest: XCTestCase {
     XCTAssertEqual(maxTimeTextField.value as? String, maxTime)
     XCTAssertEqual(unwantedFoodsTextField.value as? String, unwantedFoods)
   }
+
+  func testKeyboardDissapearsAfterTappingOnScreen() {
+
+    let app = XCUIApplication()
+    app.tabBars.buttons["Settings"].tap()
+    app.textFields[Identifiers.maxCalories.rawValue].tap()
+
+    app.children(matching: .window).element(boundBy: 0).tap()
+
+    XCTAssertFalse(app.keys["0"].exists)
+  }
 }

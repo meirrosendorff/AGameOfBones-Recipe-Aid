@@ -28,3 +28,4 @@ comment:
 ignore:
   - "RecipeAid/RecipeAidTests"
   - "RecipeAid/RecipeAidUITests"
+  - "RecipeAid/RecipeAid/AppDelegate.swift"
