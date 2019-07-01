@@ -46,9 +46,4 @@ extension WebViewController: WKNavigationDelegate {
     spinner.startAnimating()
     title = ""
   }
-
-  func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
-
-    spinner.stopAnimating()
-  }
 }
