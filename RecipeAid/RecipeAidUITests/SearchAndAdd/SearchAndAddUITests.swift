@@ -218,7 +218,7 @@ class SearchAndAddUITests: XCTestCase {
 
     app.buttons[Identifiers.fullInstructionsLabel.rawValue].tap()
 
-    sleep(1)
+    sleep(3)
 
     XCTAssertTrue(app.navigationBars["TestTitle"].otherElements["TestTitle"].exists)
   }
