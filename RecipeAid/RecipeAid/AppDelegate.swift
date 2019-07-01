@@ -108,16 +108,16 @@ extension AppDelegate {
   func stubNetworkCallsIfNeeded() {
     guard let networkStubs = UserDefaults.standard.string(forKey: "networkStubs") else { return }
     let stubSet = networkStubs.components(separatedBy: " ")
-    if stubSet.count % 2 != 0 { return }
+    if stubSet.count % 3 != 0 { return }
 
-    for iterator in 0..<stubSet.count / 2 {
+    for iterator in 0..<stubSet.count / 3 {
 
-      let urlString = stubSet[2 * iterator]
-      print(urlString)
-      let responseFileName = stubSet[2 * iterator + 1]
-      print(responseFileName)
+      let urlString = stubSet[3 * iterator]
+      let responseFileName = stubSet[3 * iterator + 1]
+      let fileType = stubSet[3 * iterator + 2]
+
       let bundle = Bundle(for: type(of: self))
-      let path = bundle.path(forResource: responseFileName, ofType: "json")!
+      let path = bundle.path(forResource: responseFileName, ofType: fileType)!
       guard let responseData = try? Data(contentsOf: URL(fileURLWithPath: path), options: .alwaysMapped) else { return }
       guard let url = URL(string: urlString) else { return }
 

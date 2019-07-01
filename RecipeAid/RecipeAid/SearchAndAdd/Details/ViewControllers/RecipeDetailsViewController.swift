@@ -47,6 +47,7 @@ class RecipeDetailsViewController: UIViewController {
     servingsLabel.accessibilityIdentifier = Identifiers.servingsLabel.rawValue
     caloriesLabel.accessibilityIdentifier = Identifiers.caloriesLabel.rawValue
     ingredientsTableView.accessibilityIdentifier = Identifiers.ingredientTableView.rawValue
+    seeFullInstructionsButton.accessibilityIdentifier = Identifiers.fullInstructionsLabel.rawValue
   }
 
   func formatViews() {

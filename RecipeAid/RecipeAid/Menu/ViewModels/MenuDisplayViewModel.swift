@@ -125,7 +125,7 @@ class MenueDisplayViewModel: MenuDisplayViewModelProtocol {
 
     self.recipeName = recipe.label
     self.ingredients = recipe.ingredientLines
-    self.recipeSource = recipe.source
+    self.recipeSource = recipe.url
     self.recipeImageURL = recipe.image
   }
 

@@ -19,7 +19,13 @@ class WebViewController: UIViewController {
 
     super.viewDidLoad()
     webView.navigationDelegate = self
-    let url = URL(string: sourceURL)!
+    var url = URL(string: sourceURL)!
+
+    if CommandLine.arguments.contains("-testing") {
+      let bundle = Bundle(for: type(of: self))
+      url = bundle.url(forResource: sourceURL, withExtension: "html")!
+    }
+
     webView.load(URLRequest(url: url))
     refresh = UIBarButtonItem(barButtonSystemItem: .refresh, target: webView, action: #selector(webView.reload))
     let barButtonArray: [UIBarButtonItem] = [refresh]
