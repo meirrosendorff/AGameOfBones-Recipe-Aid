@@ -230,6 +230,8 @@ class SearchAndAddUITests: XCTestCase {
 
     app.children(matching: .window).element(boundBy: 0).tap()
 
+    sleep(2)
+
     XCTAssertFalse(app.keyboards.buttons["Search"].exists)
   }
 }

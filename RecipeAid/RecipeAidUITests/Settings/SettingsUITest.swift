@@ -217,6 +217,7 @@ class SettingsUITest: XCTestCase {
 
     app.children(matching: .window).element(boundBy: 0).tap()
 
+    sleep(2)
     XCTAssertFalse(app.keys["0"].exists)
   }
 }

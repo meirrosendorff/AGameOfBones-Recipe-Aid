@@ -1,2 +1,5 @@
 RecipeAid/RecipeAid.xcodeproj/xcuserdata/MRosendorff.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist
 RecipeAid/Pods/*
+RecipeAid/fastlane/xcov/*
+RecipeAid/screenshots/*
+RecipeAid/fastlane/report.xml
