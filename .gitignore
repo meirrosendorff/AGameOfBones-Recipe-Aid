@@ -2,3 +2,4 @@ RecipeAid/RecipeAid.xcodeproj/xcuserdata/MRosendorff.xcuserdatad/xcdebugger/Brea
 RecipeAid/Pods/*
 RecipeAid/fastlane/xcov/*
 RecipeAid/screenshots/*
+RecipeAid/fastlane/report.xml
