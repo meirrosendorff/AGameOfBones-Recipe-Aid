@@ -1,0 +1,53 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+ROOTDIR = Dir.pwd
+
+default_platform(:ios)
+
+platform :ios do
+
+  desc "Runs All Tests"
+  lane :allTests do
+    run_tests(
+      scheme: "RecipeAid",
+      devices: ["iPhone 6s"],
+    )  
+  end
+  
+  lane :codecov do |options|
+    if options[:runtests]
+      allTests
+    end
+    timeStamp = Time.now.strftime('%Y-%m-%d_%H-%M-%S')
+    OUTDIR = "#{ROOTDIR}/xcov/#{timeStamp}_output"
+    xcov(
+      workspace: "RecipeAid.xcworkspace",
+      scheme: "RecipeAid",
+      output_directory: "#{OUTDIR}",
+      slack_url: "https://hooks.slack.com/services/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",
+      slack_channel: "#codecov",
+      slack_message: "*Results for run #{ Time.now.strftime('%d/%m/%Y at %H:%M:%S') }*"
+    )
+   sh("cd #{OUTDIR}; zip -r #{OUTDIR}/#{timeStamp}_codecov.zip .")
+   sh("curl -F file=@#{OUTDIR}/#{timeStamp}_codecov.zip -F \"initial_comment=Output file:\" -F channels=codecov -F token=xoxp-5059437377-612903012994-684020705815-29f16ea8be1fc51440e92d8bd25a80a6 https://slack.com/api/files.upload >> /dev/null")
+   sh("rm -r #{OUTDIR}")
+  end
+
+ lane :screenshots do
+  capture_screenshots
+  frame_screenshots(white: true)
+ end
+end
