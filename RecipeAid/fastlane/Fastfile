@@ -42,7 +42,7 @@ platform :ios do
       slack_message: "*Results for run #{ Time.now.strftime('%d/%m/%Y at %H:%M:%S') }*"
     )
    sh("cd #{OUTDIR}; zip -r #{OUTDIR}/#{timeStamp}_codecov.zip .")
-   sh("curl -F file=@#{OUTDIR}/#{timeStamp}_codecov.zip -F \"initial_comment=Output file:\" -F channels=codecov -F token=xoxp-5059437377-612903012994-684020705815-29f16ea8be1fc51440e92d8bd25a80a6 https://slack.com/api/files.upload >> /dev/null")
+   sh("curl -F file=@#{OUTDIR}/#{timeStamp}_codecov.zip -F \"initial_comment=Output file:\" -F channels=codecov -F token=#{ENV['SLACK_API_KEY']} https://slack.com/api/files.upload >> /dev/null")
    sh("rm -r #{OUTDIR}")
   end
 

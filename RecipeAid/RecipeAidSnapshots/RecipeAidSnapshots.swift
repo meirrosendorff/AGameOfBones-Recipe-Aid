@@ -38,11 +38,11 @@ class RecipeAidSnapshots: XCTestCase {
 
     snapshot("2: Search Results")
     app.tables.staticTexts["Breakfast Sausage Puffs recipes"].tap()
-    sleep(15)
+    sleep(30)
     snapshot("3: Recipe Details")
     app.buttons["See Full Instructions"].tap()
 
-    sleep(15)
+    sleep(30)
     snapshot("4: Full Instructions")
 
     app.navigationBars.buttons["Details"].tap()
