@@ -96,6 +96,13 @@
 		50D516F922CB426A006859F8 /* RecipeAidSnapshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D516F822CB426A006859F8 /* RecipeAidSnapshots.swift */; };
 		50D5170822CB428C006859F8 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D5170722CB428C006859F8 /* SnapshotHelper.swift */; };
 		50D5170922CB454E006859F8 /* Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DB7A1B22B238D600DEEB7B /* Identifiers.swift */; };
+		50D5241722CCEED6006859F8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D5241622CCEED6006859F8 /* LoginViewController.swift */; };
+		50D5241E22CDCC25006859F8 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D5241D22CDCC25006859F8 /* LoginViewModel.swift */; };
+		50D5242022CDCC37006859F8 /* LoginViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D5241F22CDCC37006859F8 /* LoginViewModelProtocol.swift */; };
+		50D5242222CDD587006859F8 /* UserServicesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D5242122CDD587006859F8 /* UserServicesProtocol.swift */; };
+		50D5242422CDD5A5006859F8 /* UserServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D5242322CDD5A5006859F8 /* UserServices.swift */; };
+		50D5242622CDD811006859F8 /* AuthenticatedUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D5242522CDD811006859F8 /* AuthenticatedUser.swift */; };
+		50D5267422CDEF16006859F8 /* UserDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D5267322CDEF16006859F8 /* UserDetails.swift */; };
 		50DB7A0222AF870400DEEB7B /* MenuForDayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DB7A0122AF870400DEEB7B /* MenuForDayTests.swift */; };
 		50DB7A0522AF94DB00DEEB7B /* MenuDisplayViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DB7A0422AF94DA00DEEB7B /* MenuDisplayViewModelTests.swift */; };
 		50DB7A0722AFA2A700DEEB7B /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DB7A0622AFA2A700DEEB7B /* Mocks.swift */; };
@@ -282,6 +289,13 @@
 		50D516F822CB426A006859F8 /* RecipeAidSnapshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeAidSnapshots.swift; sourceTree = "<group>"; };
 		50D516FA22CB426A006859F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50D5170722CB428C006859F8 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
+		50D5241622CCEED6006859F8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		50D5241D22CDCC25006859F8 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		50D5241F22CDCC37006859F8 /* LoginViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelProtocol.swift; sourceTree = "<group>"; };
+		50D5242122CDD587006859F8 /* UserServicesProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServicesProtocol.swift; sourceTree = "<group>"; };
+		50D5242322CDD5A5006859F8 /* UserServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServices.swift; sourceTree = "<group>"; };
+		50D5242522CDD811006859F8 /* AuthenticatedUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatedUser.swift; sourceTree = "<group>"; };
+		50D5267322CDEF16006859F8 /* UserDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetails.swift; sourceTree = "<group>"; };
 		50DB7A0122AF870400DEEB7B /* MenuForDayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuForDayTests.swift; sourceTree = "<group>"; };
 		50DB7A0422AF94DA00DEEB7B /* MenuDisplayViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDisplayViewModelTests.swift; sourceTree = "<group>"; };
 		50DB7A0622AFA2A700DEEB7B /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
@@ -403,6 +417,7 @@
 		5009277F22889DE500FB2CE6 /* RecipeAid */ = {
 			isa = PBXGroup;
 			children = (
+				50D5240D22CCEEA5006859F8 /* Login */,
 				502F6CFB22BCEBEF00C931B0 /* Extensions */,
 				50A1121722A90D11003AD301 /* Enums */,
 				5009278022889DE500FB2CE6 /* AppDelegate.swift */,
@@ -709,7 +724,9 @@
 		507BA4D022A939AD0064B415 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				50D5242522CDD811006859F8 /* AuthenticatedUser.swift */,
 				509CD62122A6702E008FCFAC /* Recipe.swift */,
+				50D5267322CDEF16006859F8 /* UserDetails.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -722,6 +739,7 @@
 				503E7F1622C0A98000CD860E /* SettingsRepo.swift */,
 				503E7F5222C2563E00CD860E /* ShoppingListRepo.swift */,
 				503E7FB722C381BA00CD860E /* CoreDataStorageRepo.swift */,
+				50D5242322CDD5A5006859F8 /* UserServices.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -733,6 +751,7 @@
 				503E7F1822C0A9AE00CD860E /* SettingsRepoProtocol.swift */,
 				503E7F5422C2565B00CD860E /* ShoppingListRepoProtocol.swift */,
 				503E7FB922C381D200CD860E /* PersistantStorageRepoProtocol.swift */,
+				50D5242122CDD587006859F8 /* UserServicesProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -865,6 +884,40 @@
 				50D516FA22CB426A006859F8 /* Info.plist */,
 			);
 			path = RecipeAidSnapshots;
+			sourceTree = "<group>";
+		};
+		50D5240D22CCEEA5006859F8 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				50D5241C22CDCC12006859F8 /* Protocols */,
+				50D5241A22CDCC02006859F8 /* ViewModels */,
+				50D5241522CCEEB3006859F8 /* ViewControllers */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		50D5241522CCEEB3006859F8 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				50D5241622CCEED6006859F8 /* LoginViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		50D5241A22CDCC02006859F8 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				50D5241D22CDCC25006859F8 /* LoginViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		50D5241C22CDCC12006859F8 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				50D5241F22CDCC37006859F8 /* LoginViewModelProtocol.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		50DB79FF22AF86C300DEEB7B /* Menu */ = {
@@ -1408,24 +1461,29 @@
 				50A1120D22A7E402003AD301 /* EdamamRecipeAPIRepository.swift in Sources */,
 				507BA4D222A939C30064B415 /* MenuForDayProtocol.swift in Sources */,
 				509CD62D22A67EDA008FCFAC /* MenuDisplayViewModelProtocol.swift in Sources */,
+				50D5242022CDCC37006859F8 /* LoginViewModelProtocol.swift in Sources */,
 				508D1CE922A10944008DA723 /* MenuIngredientsTableViewCell.swift in Sources */,
+				50D5241E22CDCC25006859F8 /* LoginViewModel.swift in Sources */,
 				508D1CDB229D6E24008DA723 /* GradientLayer.swift in Sources */,
 				502F6CFA22BCA44900C931B0 /* SettingsViewModelProtocol.swift in Sources */,
 				502F6CFD22BCEC0700C931B0 /* UIViewController.swift in Sources */,
 				503E7F1922C0A9AE00CD860E /* SettingsRepoProtocol.swift in Sources */,
 				50DB7A3022B365B800DEEB7B /* SearchResultsModel.swift in Sources */,
 				50AE4C5A2295865900467ADE /* ShoppingListItemTableViewCell.swift in Sources */,
+				50D5267422CDEF16006859F8 /* UserDetails.swift in Sources */,
 				508D1CEB22A123FD008DA723 /* SettingsViewController.swift in Sources */,
 				503E7FBF22C39A0600CD860E /* Entities.swift in Sources */,
 				503E7F5522C2565B00CD860E /* ShoppingListRepoProtocol.swift in Sources */,
 				508D1CD8229D6D4A008DA723 /* SearchBarViewController.swift in Sources */,
 				509CD62922A674EC008FCFAC /* MenuDisplayViewModel.swift in Sources */,
+				50D5241722CCEED6006859F8 /* LoginViewController.swift in Sources */,
 				503E7F3C22C21A2700CD860E /* UserDefaultsKeys.swift in Sources */,
 				503E7F5122C2526F00CD860E /* ShoppingItem.swift in Sources */,
 				50DB7A3222B365D500DEEB7B /* SearchResultsModelProtocol.swift in Sources */,
 				507BA4D622A93B780064B415 /* EdamamRecipeAPIRepositoryProtocal.swift in Sources */,
 				509CD62422A67250008FCFAC /* MenuForDay.swift in Sources */,
 				50DB7A4022B3CB6B00DEEB7B /* AddViewModel.swift in Sources */,
+				50D5242222CDD587006859F8 /* UserServicesProtocol.swift in Sources */,
 				502F6D0022BCF4A500C931B0 /* SettingsModel.swift in Sources */,
 				50DB7A2E22B2852300DEEB7B /* SearchResultsViewModelProtocol.swift in Sources */,
 				50AE4C5F229675BC00467ADE /* MenuDatePickerViewController.swift in Sources */,
@@ -1435,11 +1493,13 @@
 				500D8D1D2295621D007E85A6 /* ShoppingListViewController.swift in Sources */,
 				50DB7A3922B3BA9F00DEEB7B /* RecipeDetailsViewModel.swift in Sources */,
 				503E7FBA22C381D200CD860E /* PersistantStorageRepoProtocol.swift in Sources */,
+				50D5242622CDD811006859F8 /* AuthenticatedUser.swift in Sources */,
 				50AE4C6122968F2F00467ADE /* MenuDisplayViewController.swift in Sources */,
 				503E7FB822C381BA00CD860E /* CoreDataStorageRepo.swift in Sources */,
 				500FE37D228EE76200157F77 /* RecipeDetailsViewController.swift in Sources */,
 				5009278122889DE500FB2CE6 /* AppDelegate.swift in Sources */,
 				50DB7A1C22B238D600DEEB7B /* Identifiers.swift in Sources */,
+				50D5242422CDD5A5006859F8 /* UserServices.swift in Sources */,
 				503E7FCB22C5ECBB00CD860E /* DietaryRestrictions.swift in Sources */,
 				509CD61B22A4F041008FCFAC /* FormatterProtocal.swift in Sources */,
 				503E7F5322C2563E00CD860E /* ShoppingListRepo.swift in Sources */,
