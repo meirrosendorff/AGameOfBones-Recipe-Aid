@@ -30,7 +30,7 @@ class SettingsViewModel: SettingsViewModelProtocol {
     updateSettings()
   }
 
-  private func setProfileData() {
+  func setProfileData() {
 
     guard let details = userServices.getUserDetails() else { return }
 

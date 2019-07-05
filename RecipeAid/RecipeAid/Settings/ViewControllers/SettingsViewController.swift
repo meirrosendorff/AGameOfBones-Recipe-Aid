@@ -80,6 +80,7 @@ class SettingsViewController: UIViewController {
     minTimeTextBox.accessibilityIdentifier = Identifiers.minTime.rawValue
     maxTimeTextBox.accessibilityIdentifier = Identifiers.maxTime.rawValue
     dietryRestrictionsTextBox.accessibilityIdentifier = Identifiers.unwantedFoods.rawValue
+    logoutButton.accessibilityIdentifier = Identifiers.logout.rawValue
   }
 
   private func setUpSavedAlert() {

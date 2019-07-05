@@ -36,7 +36,7 @@ class LoginViewModel: LoginViewModelProtocol {
 
       case .success(let user):
 
-        self.loginService.getUserDetails(token: user.token, onComplete:{ result in
+        self.loginService.getUserDetails(token: user.token, onComplete: { result in
 
           switch result {
 

@@ -36,3 +36,18 @@ func equal(to value: MealTypes) -> ParameterMatcher<MealTypes> {
     return value.description() == tested.description()
   }
 }
+
+func equal(to value: AuthenticatedUser) -> ParameterMatcher<AuthenticatedUser> {
+  return ParameterMatcher { tested in
+    return value.token == tested.token && value.userID == tested.userID
+  }
+}
+
+func equal(to value: UserDetails) -> ParameterMatcher<UserDetails> {
+  return ParameterMatcher { tested in
+    return value.isAdmin == tested.isAdmin &&
+            value.email == tested.email &&
+            value.userID == tested.userID &&
+            value.username == tested.username
+  }
+}

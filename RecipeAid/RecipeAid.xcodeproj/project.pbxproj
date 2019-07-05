@@ -103,6 +103,15 @@
 		50D5242422CDD5A5006859F8 /* UserServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D5242322CDD5A5006859F8 /* UserServices.swift */; };
 		50D5242622CDD811006859F8 /* AuthenticatedUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D5242522CDD811006859F8 /* AuthenticatedUser.swift */; };
 		50D5267422CDEF16006859F8 /* UserDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D5267322CDEF16006859F8 /* UserDetails.swift */; };
+		50D5267622CE1F1A006859F8 /* UserServicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D5267522CE1F1A006859F8 /* UserServicesTests.swift */; };
+		50D5268322CF1F75006859F8 /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D5268222CF1F75006859F8 /* LoginViewModelTests.swift */; };
+		50D5268522CF2B09006859F8 /* SettingsViewModelUserServicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D5268422CF2B09006859F8 /* SettingsViewModelUserServicesTests.swift */; };
+		50D5268822CF3763006859F8 /* LoginUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D5268722CF3763006859F8 /* LoginUITests.swift */; };
+		50D5268A22CF3B4A006859F8 /* login.json in Resources */ = {isa = PBXBuildFile; fileRef = 50D5268922CF3B4A006859F8 /* login.json */; };
+		50D5268C22CF3B5F006859F8 /* details.json in Resources */ = {isa = PBXBuildFile; fileRef = 50D5268B22CF3B5F006859F8 /* details.json */; };
+		50D5268D22CF3D72006859F8 /* login.json in Resources */ = {isa = PBXBuildFile; fileRef = 50D5268922CF3B4A006859F8 /* login.json */; };
+		50D5268E22CF3D75006859F8 /* details.json in Resources */ = {isa = PBXBuildFile; fileRef = 50D5268B22CF3B5F006859F8 /* details.json */; };
+		50D5269022CF437C006859F8 /* ShoppingListRepoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D5268F22CF437C006859F8 /* ShoppingListRepoTests.swift */; };
 		50DB7A0222AF870400DEEB7B /* MenuForDayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DB7A0122AF870400DEEB7B /* MenuForDayTests.swift */; };
 		50DB7A0522AF94DB00DEEB7B /* MenuDisplayViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DB7A0422AF94DA00DEEB7B /* MenuDisplayViewModelTests.swift */; };
 		50DB7A0722AFA2A700DEEB7B /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DB7A0622AFA2A700DEEB7B /* Mocks.swift */; };
@@ -296,6 +305,13 @@
 		50D5242322CDD5A5006859F8 /* UserServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServices.swift; sourceTree = "<group>"; };
 		50D5242522CDD811006859F8 /* AuthenticatedUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatedUser.swift; sourceTree = "<group>"; };
 		50D5267322CDEF16006859F8 /* UserDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetails.swift; sourceTree = "<group>"; };
+		50D5267522CE1F1A006859F8 /* UserServicesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServicesTests.swift; sourceTree = "<group>"; };
+		50D5268222CF1F75006859F8 /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
+		50D5268422CF2B09006859F8 /* SettingsViewModelUserServicesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModelUserServicesTests.swift; sourceTree = "<group>"; };
+		50D5268722CF3763006859F8 /* LoginUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUITests.swift; sourceTree = "<group>"; };
+		50D5268922CF3B4A006859F8 /* login.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = login.json; sourceTree = "<group>"; };
+		50D5268B22CF3B5F006859F8 /* details.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = details.json; sourceTree = "<group>"; };
+		50D5268F22CF437C006859F8 /* ShoppingListRepoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListRepoTests.swift; sourceTree = "<group>"; };
 		50DB7A0122AF870400DEEB7B /* MenuForDayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuForDayTests.swift; sourceTree = "<group>"; };
 		50DB7A0422AF94DA00DEEB7B /* MenuDisplayViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDisplayViewModelTests.swift; sourceTree = "<group>"; };
 		50DB7A0622AFA2A700DEEB7B /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
@@ -358,6 +374,7 @@
 		50022D3422AA6D970001B2D1 /* RecipeAidTests */ = {
 			isa = PBXGroup;
 			children = (
+				50D5267922CF1F30006859F8 /* Login */,
 				503E7F6222C3415E00CD860E /* Matchables.swift */,
 				503E7F5F22C33ACD00CD860E /* ShoppingListTests */,
 				503E7F2E22C0CE7200CD860E /* GeneratedMocks.swift */,
@@ -518,6 +535,8 @@
 				5038050D22B8ED3C00C6B456 /* EdamamRecipeAPIRepositorySearchTests.swift */,
 				503E7F2122C0B8B000CD860E /* SettingsRepoTests.swift */,
 				503E7FC022C4C3C600CD860E /* CoreDataStorageRepoTests.swift */,
+				50D5267522CE1F1A006859F8 /* UserServicesTests.swift */,
+				50D5268F22CF437C006859F8 /* ShoppingListRepoTests.swift */,
 			);
 			path = RepoTests;
 			sourceTree = "<group>";
@@ -643,6 +662,7 @@
 				503E7F0622C09CB400CD860E /* SettingsViewModelModelInteractionTests.swift */,
 				503E7F3422C0FD7600CD860E /* SettingsViewModelRepoInteractionTests.swift */,
 				503E7F3622C1008600CD860E /* Helpers.swift */,
+				50D5268422CF2B09006859F8 /* SettingsViewModelUserServicesTests.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -920,6 +940,22 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		50D5267922CF1F30006859F8 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				50D5268222CF1F75006859F8 /* LoginViewModelTests.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		50D5268622CF3751006859F8 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				50D5268722CF3763006859F8 /* LoginUITests.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		50DB79FF22AF86C300DEEB7B /* Menu */ = {
 			isa = PBXGroup;
 			children = (
@@ -949,6 +985,7 @@
 		50DB7A0D22B0DD5400DEEB7B /* RecipeAidUITests */ = {
 			isa = PBXGroup;
 			children = (
+				50D5268622CF3751006859F8 /* Login */,
 				503E7F6422C3600B00CD860E /* ShoppingList */,
 				503E7F3822C1F5B300CD860E /* Settings */,
 				5038053D22BA639500C6B456 /* SearchAndAdd */,
@@ -969,6 +1006,8 @@
 				5038054022BA65E000C6B456 /* exampleSearchResultFirstTen.json */,
 				5038054222BA660F00C6B456 /* exampleSearchResultSecondTen.json */,
 				50211A6A22C9EE2B00605A2A /* instructions.html */,
+				50D5268922CF3B4A006859F8 /* login.json */,
+				50D5268B22CF3B5F006859F8 /* details.json */,
 			);
 			path = exampleJson;
 			sourceTree = "<group>";
@@ -1283,7 +1322,9 @@
 				504FF7EF228DFF2D00681272 /* Assets.xcassets in Resources */,
 				50DB7A2422B24F5300DEEB7B /* dinnerJsonExample.json in Resources */,
 				5094CCF022BA696900A40E99 /* exampleSearchResultFirstTen.json in Resources */,
+				50D5268D22CF3D72006859F8 /* login.json in Resources */,
 				5009278622889DE500FB2CE6 /* Main.storyboard in Resources */,
+				50D5268E22CF3D75006859F8 /* details.json in Resources */,
 				5094CCF722BA696D00A40E99 /* exampleSearchResultSecondTen.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1304,6 +1345,8 @@
 				50211A6B22C9EE2B00605A2A /* instructions.html in Resources */,
 				50DB7A2222B24DD400DEEB7B /* breakfastJsonExample.json in Resources */,
 				50DB7A1722B21CA700DEEB7B /* lunchJsonExample.json in Resources */,
+				50D5268A22CF3B4A006859F8 /* login.json in Resources */,
+				50D5268C22CF3B5F006859F8 /* details.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1342,7 +1385,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "OUTPUT_FILE=\"${PROJECT_DIR}/${PROJECT_NAME}Tests/GeneratedMocks.swift\"\necho \"Generated Mocks File = ${OUTPUT_FILE}\"\nINPUT_DIR=\"${PROJECT_DIR}/${PROJECT_NAME}\"\necho \"Mocks Input Directory = ${INPUT_DIR}\"\n\"${PODS_ROOT}/Cuckoo/run\" generate --testable \"${PROJECT_NAME}\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"${INPUT_DIR}/Services/Services/SettingsRepo.swift\" \\\n\"${INPUT_DIR}/Settings/Models/SettingsModel.swift\" \\\n\"${INPUT_DIR}/Settings/ViewModels/SettingsViewModel.swift\" \\\n\"${INPUT_DIR}/Services/Services/ShoppingListRepo.swift\" \\\n\"${INPUT_DIR}/Services/Services/CoreDataStorageRepo.swift\"\n";
+			shellScript = "OUTPUT_FILE=\"${PROJECT_DIR}/${PROJECT_NAME}Tests/GeneratedMocks.swift\"\necho \"Generated Mocks File = ${OUTPUT_FILE}\"\nINPUT_DIR=\"${PROJECT_DIR}/${PROJECT_NAME}\"\necho \"Mocks Input Directory = ${INPUT_DIR}\"\n\"${PODS_ROOT}/Cuckoo/run\" generate --testable \"${PROJECT_NAME}\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"${INPUT_DIR}/Services/Services/SettingsRepo.swift\" \\\n\"${INPUT_DIR}/Settings/Models/SettingsModel.swift\" \\\n\"${INPUT_DIR}/Settings/ViewModels/SettingsViewModel.swift\" \\\n\"${INPUT_DIR}/Services/Services/ShoppingListRepo.swift\" \\\n\"${INPUT_DIR}/Services/Services/CoreDataStorageRepo.swift\" \\\n\"${INPUT_DIR}/Services/Protocols/UserServicesProtocol.swift\"\n";
 		};
 		7B89FC9226D1D45EB67FC1F7 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1417,12 +1460,16 @@
 				503E7F3722C1008600CD860E /* Helpers.swift in Sources */,
 				5038051A22B910AA00C6B456 /* SearchResultsModelTests.swift in Sources */,
 				5038052022B91BDB00C6B456 /* SearchResultsModelMock.swift in Sources */,
+				50D5268522CF2B09006859F8 /* SettingsViewModelUserServicesTests.swift in Sources */,
+				50D5267622CE1F1A006859F8 /* UserServicesTests.swift in Sources */,
 				503E7FC222C4E72A00CD860E /* RecipeAid.xcdatamodeld in Sources */,
 				503E7FC622C5321B00CD860E /* CoreDataMock.swift in Sources */,
 				5038051D22B917FC00C6B456 /* EdamamAPIRepositoryMock.swift in Sources */,
 				503E7F2F22C0CE7200CD860E /* GeneratedMocks.swift in Sources */,
+				50D5269022CF437C006859F8 /* ShoppingListRepoTests.swift in Sources */,
 				503E7F3522C0FD7600CD860E /* SettingsViewModelRepoInteractionTests.swift in Sources */,
 				503E7F0722C09CB400CD860E /* SettingsViewModelModelInteractionTests.swift in Sources */,
+				50D5268322CF1F75006859F8 /* LoginViewModelTests.swift in Sources */,
 				503E7FC122C4C3C600CD860E /* CoreDataStorageRepoTests.swift in Sources */,
 				503804F722B8B71200C6B456 /* exampleObjects.swift in Sources */,
 				5038052422B9FE0800C6B456 /* SearchResultsViewModelTests.swift in Sources */,
@@ -1531,6 +1578,7 @@
 				503E7F6622C360A700CD860E /* ShoppingListUITest.swift in Sources */,
 				50DB7A1D22B2402A00DEEB7B /* Identifiers.swift in Sources */,
 				50DB7A0F22B0DD5400DEEB7B /* MenuUITests.swift in Sources */,
+				50D5268822CF3763006859F8 /* LoginUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

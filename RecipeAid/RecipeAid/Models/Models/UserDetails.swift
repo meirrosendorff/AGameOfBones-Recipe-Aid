@@ -11,7 +11,11 @@ import Foundation
 struct UserDetails: Codable {
 
   let username: String
-  let id: String
+  let userID: String
   let email: String
   let isAdmin: Bool
+
+  private enum CodingKeys: String, CodingKey {
+    case username, userID = "id", email, isAdmin
+  }
 }

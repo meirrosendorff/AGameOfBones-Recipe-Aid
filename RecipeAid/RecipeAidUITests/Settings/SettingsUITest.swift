@@ -17,6 +17,7 @@ class SettingsUITest: XCTestCase {
     continueAfterFailure = false
     app = XCUIApplication()
     app.launchArguments.append("-resetUserSetting")
+    app.launchArguments.append("-testing")
     app.launch()
   }
 
@@ -219,5 +220,14 @@ class SettingsUITest: XCTestCase {
 
     sleep(2)
     XCTAssertFalse(app.keys["0"].exists)
+  }
+
+  func testLogoutLogsOut() {
+
+    let app = XCUIApplication()
+    app.tabBars.buttons["Settings"].tap()
+    app.buttons[Identifiers.logout.rawValue].tap()
+
+    XCTAssertFalse(app.navigationBars["Settings"].exists)
   }
 }

@@ -2,4 +2,4 @@ excluded:
 - RecipeAidTests/exampleJson
 - Pods
 - RecipeAidTests/GeneratedMocks.swift 
-- RecipeAid/RecipeAidSnapshots/SnapshotHelper.swift
+- fastlane

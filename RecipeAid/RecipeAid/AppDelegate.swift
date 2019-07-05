@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     stubNetworkCallsIfNeeded()
     setUpUserDefaults()
     resetUserSettingsIfNeeded()
+    logUserOutIfNeeded()
     return true
   }
 
@@ -72,11 +73,14 @@ extension AppDelegate {
       guard let responseData = try? Data(contentsOf: URL(fileURLWithPath: path), options: .alwaysMapped) else { return }
       guard let url = URL(string: urlString) else { return }
 
-      var stub = StubRequest(method: .GET, url: url)
-      var response = StubResponse()
-      response.body = responseData
-      stub.response = response
-      Hippolyte.shared.add(stubbedRequest: stub)
+      for method in [HTTPMethod.GET, HTTPMethod.POST] {
+
+        var stub = StubRequest(method: method, url: url)
+        var response = StubResponse()
+        response.body = responseData
+        stub.response = response
+        Hippolyte.shared.add(stubbedRequest: stub)
+      }
     }
     Hippolyte.shared.start()
   }
@@ -111,5 +115,12 @@ extension AppDelegate {
     UserDefaults.standard.set(0, forKey: UserDefaultsKeys.minTime.rawValue)
     UserDefaults.standard.set(0, forKey: UserDefaultsKeys.maxTime.rawValue)
     UserDefaults.standard.set([String](), forKey: UserDefaultsKeys.unwantedFoodsArray.rawValue)
+  }
+
+  func logUserOutIfNeeded() {
+    if CommandLine.arguments.contains("-logout") {
+      let service = UserServices()
+      service.logUserOut()
+    }
   }
 }

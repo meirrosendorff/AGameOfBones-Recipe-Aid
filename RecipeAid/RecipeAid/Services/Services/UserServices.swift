@@ -27,28 +27,7 @@ struct UserServices: UserServicesProtocol {
 
     let url = baseURL + "/login"
 
-    Alamofire.request(url, method: .post, headers: headers).responseJSON { response in
-
-      switch response.result {
-
-      case .failure(let error):
-        return onComplete(
-          .failure(RecipeError.invalidCredentialsError("for user: \(username) with password: \(password)" +
-            "with error: \(String(describing: error))")))
-
-      case .success:
-        let decoder = JSONDecoder()
-        guard let data = response.data else {
-          return onComplete(.failure(.invalidJsonObjectRecieved("No Data")))
-        }
-
-        if let user = try? decoder.decode(AuthenticatedUser.self, from: data) {
-          return onComplete(.success(user))
-        } else {
-          return onComplete(.failure(.invalidJsonObjectRecieved("Unable to Convert to User")))
-        }
-      }
-    }
+    fetchJason(url: url, headers: headers, method: .post, onComplete: onComplete)
   }
 
   func setUserToLoggedIn(_ user: AuthenticatedUser) {
@@ -63,32 +42,12 @@ struct UserServices: UserServicesProtocol {
 
     let url = baseURL + "/details"
 
-    Alamofire.request(url, method: .get, headers: headers).responseJSON { response in
-
-      switch response.result {
-
-      case .failure(let error):
-        return onComplete(
-          .failure(RecipeError.invalidCredentialsError(String(describing: error))))
-
-      case .success:
-        let decoder = JSONDecoder()
-        guard let data = response.data else {
-          return onComplete(.failure(.invalidJsonObjectRecieved("No Data")))
-        }
-
-        if let details = try? decoder.decode(UserDetails.self, from: data) {
-          return onComplete(.success(details))
-        } else {
-          return onComplete(.failure(.invalidJsonObjectRecieved("Unable to Convert to User")))
-        }
-      }
-    }
+    fetchJason(url: url, headers: headers, method: .get, onComplete: onComplete)
   }
 
   func setUserDetails(details: UserDetails) {
 
-    UserDefaults.standard.set(details.id, forKey: UserDefaultsKeys.userID.rawValue)
+    UserDefaults.standard.set(details.userID, forKey: UserDefaultsKeys.userID.rawValue)
     UserDefaults.standard.set(details.email, forKey: UserDefaultsKeys.userEmail.rawValue)
     UserDefaults.standard.set(details.username, forKey: UserDefaultsKeys.username.rawValue)
     UserDefaults.standard.set(details.isAdmin, forKey: UserDefaultsKeys.isAdmin.rawValue)
@@ -99,6 +58,7 @@ struct UserServices: UserServicesProtocol {
     UserDefaults.standard.set("", forKey: UserDefaultsKeys.userID.rawValue)
     UserDefaults.standard.set("", forKey: UserDefaultsKeys.userEmail.rawValue)
     UserDefaults.standard.set("", forKey: UserDefaultsKeys.username.rawValue)
+    UserDefaults.standard.set("", forKey: UserDefaultsKeys.userToken.rawValue)
     UserDefaults.standard.set(false, forKey: UserDefaultsKeys.isAdmin.rawValue)
     UserDefaults.standard.set(false, forKey: UserDefaultsKeys.isLoggedIn.rawValue)
   }
@@ -119,7 +79,7 @@ struct UserServices: UserServicesProtocol {
 
    let isAdmin = UserDefaults.standard.bool(forKey: UserDefaultsKeys.isAdmin.rawValue)
 
-    return UserDetails(username: username, id: userID, email: email, isAdmin: isAdmin)
+    return UserDetails(username: username, userID: userID, email: email, isAdmin: isAdmin)
   }
 
   func getProfilePic(onComplete: @escaping (Swift.Result<Data, RecipeError>) -> Void) {
@@ -139,6 +99,34 @@ struct UserServices: UserServicesProtocol {
         return onComplete(.success(data))
       } else {
         return onComplete(.failure(.unableToFetchImage(String(describing: response.error))))
+      }
+    }
+  }
+
+  private func fetchJason<T: Decodable>(url: String,
+                                        headers: HTTPHeaders,
+                                        method: HTTPMethod,
+                                        onComplete: @escaping (Swift.Result<T, RecipeError>) -> Void) {
+
+    Alamofire.request(url, method: method, headers: headers).responseJSON { response in
+
+      switch response.result {
+
+      case .failure(let error):
+        return onComplete(
+          .failure(RecipeError.invalidCredentialsError(String(describing: error))))
+
+      case .success:
+        let decoder = JSONDecoder()
+        guard let data = response.data else {
+          return onComplete(.failure(.invalidJsonObjectRecieved("No Data")))
+        }
+
+        if let decoded = try? decoder.decode(T.self, from: data) {
+          return onComplete(.success(decoded))
+        } else {
+          return onComplete(.failure(.invalidJsonObjectRecieved("Unable to Convert to User")))
+        }
       }
     }
   }

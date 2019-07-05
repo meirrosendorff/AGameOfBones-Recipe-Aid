@@ -26,12 +26,21 @@ class LoginViewController: UIViewController {
 
     viewModel = LoginViewModel()
     if viewModel.isLoggedIn { self.userIsLoggedIn() }
+    if CommandLine.arguments.contains("-testing") { self.userIsLoggedIn() }
     gradientLayer = GradientLayer(view: view)
     gradientLayer?.addGradientToView()
     formatViews()
     self.hideKeyboardWhenTappedAround()
+    addAccessibilityIdentifiers()
   }
 
+  private func addAccessibilityIdentifiers() {
+
+    usernameTextBox.accessibilityIdentifier = Identifiers.usernameTextField.rawValue
+    passwordTextBox.accessibilityIdentifier = Identifiers.passwordTextField.rawValue
+    invalidLogin.accessibilityIdentifier = Identifiers.errorLogingIn.rawValue
+    loginButton.accessibilityIdentifier = Identifiers.login.rawValue
+  }
   override func viewWillLayoutSubviews() {
 
     super.viewWillLayoutSubviews()
