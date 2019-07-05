@@ -11,7 +11,6 @@ import Foundation
 protocol SettingsViewModelProtocol {
 
   var numRestrictions: Int { get }
-  var profilePic: String { get }
   var userName: String { get }
   var emailAddress: String { get }
   var minCalories: String { get }
@@ -28,4 +27,6 @@ protocol SettingsViewModelProtocol {
   func setUnwatedFoods(foods: String)
   func save()
   func updateSettings()
+  func logout()
+  func getProfilePic(onComplete: @escaping (Data?) -> Void)
 }

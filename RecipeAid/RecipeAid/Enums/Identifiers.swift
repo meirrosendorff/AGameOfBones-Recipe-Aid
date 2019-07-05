@@ -28,4 +28,9 @@ enum Identifiers: String {
   case shoppingDateRange = "Shopping List Date Range"
   case noShopping = "No Shopping"
   case fullInstructionsLabel = "See Full Instructions"
+  case logout = "Logout Button"
+  case usernameTextField = "username Text Field"
+  case passwordTextField = "password text field"
+  case login = "Login Button"
+  case errorLogingIn = "Error loging in label"
 }

@@ -17,4 +17,10 @@ enum UserDefaultsKeys: String {
   case maxTime = "maxTime"
   case dietryRestrictionsDict = "dietryRestrictionsDict"
   case unwantedFoodsArray = "unwantedFoodsArray"
+  case userToken = "userLoginToken"
+  case isLoggedIn = "isLoggedIn"
+  case userID = "userid"
+  case userEmail = "userEmail"
+  case username = "username"
+  case isAdmin = "userIsAdmin"
 }

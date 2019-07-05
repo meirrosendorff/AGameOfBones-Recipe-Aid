@@ -50,6 +50,21 @@ class SettingsViewController: UIViewController {
     setUpSavedAlert()
     addKeyboardObservers()
     addAccessibilityIdentifiers()
+    setProfilePic()
+  }
+
+  private func setProfilePic() {
+
+    profilePicImageView.isHidden = true
+    viewModel.getProfilePic { data in
+
+      guard let imageData = data else { return }
+
+      DispatchQueue.main.async {
+        self.profilePicImageView.image = UIImage(data: imageData)
+        self.profilePicImageView.isHidden = false
+      }
+    }
   }
 
   private func addKeyboardObservers() {
@@ -65,6 +80,7 @@ class SettingsViewController: UIViewController {
     minTimeTextBox.accessibilityIdentifier = Identifiers.minTime.rawValue
     maxTimeTextBox.accessibilityIdentifier = Identifiers.maxTime.rawValue
     dietryRestrictionsTextBox.accessibilityIdentifier = Identifiers.unwantedFoods.rawValue
+    logoutButton.accessibilityIdentifier = Identifiers.logout.rawValue
   }
 
   private func setUpSavedAlert() {
@@ -111,7 +127,6 @@ class SettingsViewController: UIViewController {
 
   private func setUserDetails() {
 
-    profilePicImageView.image = UIImage(named: viewModel.profilePic)
     usernameLabel.text = viewModel.userName
     emailAddressLabel.text = viewModel.emailAddress
   }
@@ -198,6 +213,12 @@ class SettingsViewController: UIViewController {
     }
     alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
     self.present(alert, animated: true, completion: nil)
+  }
+
+  @IBAction func logoutPressed(_ sender: Any) {
+
+    viewModel.logout()
+    userIsLoggedOut()
   }
 }
 

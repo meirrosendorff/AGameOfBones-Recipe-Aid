@@ -12,7 +12,7 @@ class SettingsViewModel: SettingsViewModelProtocol {
 
   var model: SettingsModel
   var repo: SettingsRepoProtocol
-  var profilePic: String { return model.profilePic }
+  var userServices: UserServicesProtocol
   var userName: String { return model.userName }
   var emailAddress: String { return model.emailAddress }
   var minCalories: String { return model.minCalories > 0 ? String(model.minCalories) : "" }
@@ -25,15 +25,17 @@ class SettingsViewModel: SettingsViewModelProtocol {
   init() {
     repo = SettingsRepo()
     model = SettingsModel()
+    userServices = UserServices()
     setProfileData()
     updateSettings()
   }
 
-  private func setProfileData() {
-    //not sure where this data will be fetched from yet
-    model.profilePic = "background"
-    model.userName = "User Name"
-    model.emailAddress = "user.name@emailadress.com"
+  func setProfileData() {
+
+    guard let details = userServices.getUserDetails() else { return }
+
+    model.emailAddress = details.email
+    model.userName = details.username
   }
 
   private func fetchRestrictions() {
@@ -62,6 +64,25 @@ class SettingsViewModel: SettingsViewModelProtocol {
     let foodArray = repo.getUnwantedFoods()
 
     model.unwantedFoods = foodArray
+  }
+
+  func getProfilePic(onComplete: @escaping (Data?) -> Void) {
+
+    if model.profilePic != "" {
+      return onComplete(Data(base64Encoded: model.profilePic))
+    }
+
+    userServices.getProfilePic { result in
+
+      switch result {
+      case .failure(let error):
+        print(String(describing: error))
+        onComplete(nil)
+      case .success(let image):
+        self.model.profilePic = image.base64EncodedString()
+        onComplete(image)
+      }
+    }
   }
 
   func restrictionName(at pos: Int) -> String {
@@ -138,5 +159,9 @@ class SettingsViewModel: SettingsViewModelProtocol {
     fetchCalories()
     fetchTimes()
     fetchUnwantedFoods()
+  }
+
+  func logout() {
+    UserDefaults.standard.set(false, forKey: UserDefaultsKeys.isLoggedIn.rawValue)
   }
 }

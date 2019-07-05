@@ -21,4 +21,6 @@ enum RecipeError: Error {
   case unableToFetchImage(String)
   case invalidNumberString(String)
   case minMaxError(String)
+  case emptyContentError(String)
+  case invalidCredentialsError(String)
 }

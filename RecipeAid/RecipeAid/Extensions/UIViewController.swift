@@ -18,4 +18,20 @@ extension UIViewController {
   @objc func hideKeyboard() {
     view.endEditing(true)
   }
+
+  func userIsLoggedIn() {
+
+    let appDelegate = UIApplication.shared.delegate
+    if let root = self.storyboard?.instantiateViewController(withIdentifier: "startController") {
+      appDelegate?.window??.rootViewController = root
+    }
+  }
+
+  func userIsLoggedOut() {
+
+    let appDelegate = UIApplication.shared.delegate
+    if let root = self.storyboard?.instantiateViewController(withIdentifier: "loginController") {
+      appDelegate?.window??.rootViewController = root
+    }
+  }
 }
