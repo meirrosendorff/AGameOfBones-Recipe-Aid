@@ -8,6 +8,7 @@
 
 import XCTest
 import Cuckoo
+import When
 @testable import RecipeAid
 
 class LoginViewModelTests: XCTestCase {
@@ -65,17 +66,25 @@ class LoginViewModelTests: XCTestCase {
 
     let username = "name"
     let password = "password"
+    let expectation = self.expectation(description: "Should fail")
 
     stub(userService) { stub in
-      when(stub.attemptLogin(username: username, password: password, onComplete: anyClosure()))
-        .then({ _, _, onCpmplete in
-        onCpmplete(.failure(RecipeError.emptyContentError("")))
+
+      when(stub.FPAttemptLogin(username: username, password: password)).then({ _ in
+        let promise = Promise<AuthenticatedUser>()
+        promise.reject(RecipeError.emptyContentError(""))
+        return promise
       })
+
+      when(stub.logUserOut()).thenDoNothing()
     }
 
     sut.login(username: username, password: password, onComplete: { result in
+      expectation.fulfill()
       XCTAssertFalse(result)
     })
+
+    waitForExpectations(timeout: 1, handler: nil)
   }
 
   func testLoginReturnsFalseWhenFetchUserDetailsFails() {
@@ -84,20 +93,36 @@ class LoginViewModelTests: XCTestCase {
     let password = "password"
     let token = "token"
 
-    stub(userService) { stub in
-      when(stub.attemptLogin(username: username, password: password, onComplete: anyClosure()))
-        .then({ _, _, onComplete in
-          onComplete(.success(AuthenticatedUser(userID: "username", token: token)))
-        })
+    let authUser = AuthenticatedUser(userID: username, token: token)
 
-      when(stub.getUserDetails(token: token, onComplete: anyClosure())).then({ _, onComplete in
-        onComplete(.failure(RecipeError.emptyContentError("")))
+    let expectation = self.expectation(description: "Should Fail")
+
+    stub(userService) { stub in
+      when(stub.FPAttemptLogin(username: username, password: password)).then({ _ in
+        let promise = Promise<AuthenticatedUser>()
+        promise.resolve(authUser)
+        return promise
       })
+
+      when(stub.FPGetUserDetails(token: token)).then({ _ in
+        let promise = Promise<UserDetails>()
+        promise.reject(RecipeError.emptyContentError(""))
+        return promise
+      })
+
+      when(stub.setUserToLoggedIn(equal(to: authUser))).thenDoNothing()
+      when(stub.logUserOut()).thenDoNothing()
     }
 
     sut.login(username: username, password: password, onComplete: { result in
+      expectation.fulfill()
       XCTAssertFalse(result)
     })
+
+    waitForExpectations(timeout: 1, handler: nil)
+
+    verify(userService, times(1)).setUserToLoggedIn(equal(to: authUser))
+    verify(userService, times(1)).logUserOut()
   }
 
   func testLoginSetsUserToLoggedInAndDetailsWhenSuccesful() {
@@ -109,14 +134,19 @@ class LoginViewModelTests: XCTestCase {
     let authUser = AuthenticatedUser(userID: username, token: token)
     let userDetails = UserDetails(username: username, userID: "id", email: "email", isAdmin: true)
 
-    stub(userService) { stub in
-      when(stub.attemptLogin(username: username, password: password, onComplete: anyClosure()))
-        .then({ _, _, onComplete in
-          onComplete(.success(authUser))
-        })
+    let expectation = self.expectation(description: "Should Succeed")
 
-      when(stub.getUserDetails(token: token, onComplete: anyClosure())).then({ _, onComplete in
-        onComplete(Result.success(userDetails))
+    stub(userService) { stub in
+      when(stub.FPAttemptLogin(username: username, password: password)).then({ _ in
+        let promise = Promise<AuthenticatedUser>()
+        promise.resolve(authUser)
+        return promise
+      })
+
+      when(stub.FPGetUserDetails(token: token)).then({ _ in
+        let promise = Promise<UserDetails>()
+        promise.resolve(userDetails)
+        return promise
       })
 
       when(stub.setUserToLoggedIn(equal(to: authUser))).thenDoNothing()
@@ -124,10 +154,14 @@ class LoginViewModelTests: XCTestCase {
     }
 
     sut.login(username: username, password: password, onComplete: { result in
+      expectation.fulfill()
       XCTAssertTrue(result)
     })
 
+    waitForExpectations(timeout: 1, handler: nil)
+
     verify(userService, times(1)).setUserDetails(details: equal(to: userDetails))
     verify(userService, times(1)).setUserToLoggedIn(equal(to: authUser))
+    verify(userService, times(0)).logUserOut()
   }
 }

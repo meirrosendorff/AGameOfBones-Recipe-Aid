@@ -9,6 +9,7 @@ target 'RecipeAid' do
   pod 'Alamofire'
   pod 'SwiftyJSON'
   pod 'Hippolyte'
+  pod 'When'
 
 end
 
@@ -16,4 +17,5 @@ target 'RecipeAidTests' do
 
   pod 'Hippolyte'
   pod 'Cuckoo'
+  pod 'When'
 end

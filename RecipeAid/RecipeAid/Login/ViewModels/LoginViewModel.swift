@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import When
 
 class LoginViewModel: LoginViewModelProtocol {
 
@@ -26,32 +27,24 @@ class LoginViewModel: LoginViewModelProtocol {
       return onComplete(false)
     }
 
-    loginService.attemptLogin(username: username, password: password, onComplete: { result in
+    let promise = loginService.FPAttemptLogin(username: username, password: password)
 
-      switch result {
+    promise
+      .then({ user -> Promise<UserDetails> in
 
-      case .failure(let error):
+        self.loginService.setUserToLoggedIn(user)
+        return self.loginService.FPGetUserDetails(token: user.token)
+      })
+      .done({ details in
+
+        self.loginService.setUserDetails(details: details)
+        return onComplete(true)
+      })
+      .fail({ error in
+
+        self.loginService.logUserOut()
         print(String(describing: error))
         return onComplete(false)
-
-      case .success(let user):
-
-        self.loginService.getUserDetails(token: user.token, onComplete: { result in
-
-          switch result {
-
-          case .failure(let error):
-            print(String(describing: error))
-            return onComplete(false)
-
-          case .success(let details):
-
-            self.loginService.setUserDetails(details: details)
-            self.loginService.setUserToLoggedIn(user)
-            return onComplete(true)
-          }
-        })
-      }
-    })
+      })
   }
 }

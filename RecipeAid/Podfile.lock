@@ -3,12 +3,14 @@ PODS:
   - Cuckoo (1.0.6)
   - Hippolyte (0.7.1)
   - SwiftyJSON (5.0.0)
+  - When (4.0.0)
 
 DEPENDENCIES:
   - Alamofire
   - Cuckoo
   - Hippolyte
   - SwiftyJSON
+  - When
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -16,13 +18,15 @@ SPEC REPOS:
     - Cuckoo
     - Hippolyte
     - SwiftyJSON
+    - When
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   Cuckoo: 8074fc309159c4862665b83798f5ad03e061e8bd
   Hippolyte: 811df5756a74ff55b2b1313d4663f93b916f85b1
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+  When: 4ffc88d535a094ad4bd5eaf2fd187de747e716d1
 
-PODFILE CHECKSUM: 0a477742d289854a50296878cacec50efae7a820
+PODFILE CHECKSUM: 8541d96067190f6ae7ca7484d152b6133742d665
 
 COCOAPODS: 1.7.0.rc.1

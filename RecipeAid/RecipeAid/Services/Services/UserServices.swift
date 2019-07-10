@@ -9,8 +9,25 @@
 import Foundation
 import Alamofire
 import SwiftyJSON
+import When
 
 struct UserServices: UserServicesProtocol {
+
+  var fpService: FPUserService
+
+  init() {
+    fpService = FPUserService()
+  }
+
+  func FPAttemptLogin(username: String, password: String) -> Promise<AuthenticatedUser> {
+
+    return fpService.attemptLogin(userName: username, password: password)
+  }
+
+  func FPGetUserDetails(token: String) -> Promise<UserDetails> {
+
+    return fpService.getUserDetails(token: token)
+  }
 
   let baseURL: String = "https://recipeaid-server.vapor.cloud/auth/users"
 
