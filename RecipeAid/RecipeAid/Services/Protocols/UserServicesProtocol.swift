@@ -7,14 +7,17 @@
 //
 
 import Foundation
+import When
 
 protocol UserServicesProtocol {
   func attemptLogin(username: String, password: String,
-                    onComplete: @escaping (Result<AuthenticatedUser, RecipeError>) -> Void)
-  func getUserDetails(token: String, onComplete: @escaping (Result<UserDetails, RecipeError>) -> Void)
+                    onComplete: @escaping (Swift.Result<AuthenticatedUser, RecipeError>) -> Void)
+  func getUserDetails(token: String, onComplete: @escaping (Swift.Result<UserDetails, RecipeError>) -> Void)
   func logUserOut()
   func setUserToLoggedIn(_ user: AuthenticatedUser)
   func setUserDetails(details: UserDetails)
   func getUserDetails() -> UserDetails?
-  func getProfilePic(onComplete: @escaping (Result<Data, RecipeError>) -> Void)
+  func getProfilePic(onComplete: @escaping (Swift.Result<Data, RecipeError>) -> Void)
+  func FPAttemptLogin(username: String, password: String) -> Promise<AuthenticatedUser>
+  func FPGetUserDetails(token: String) -> Promise<UserDetails>
 }

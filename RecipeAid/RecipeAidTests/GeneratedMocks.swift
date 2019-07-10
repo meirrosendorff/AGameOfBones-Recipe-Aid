@@ -1,4 +1,4 @@
-// MARK: - Mocks generated from file: RecipeAid/Services/Protocols/UserServicesProtocol.swift at 2019-07-05 08:51:31 +0000
+// MARK: - Mocks generated from file: RecipeAid/Services/Protocols/UserServicesProtocol.swift at 2019-07-10 12:15:25 +0000
 
 //
 //  UserServicesProtocol.swift
@@ -12,6 +12,7 @@ import Cuckoo
 @testable import RecipeAid
 
 import Foundation
+import When
 
 
  class MockUserServicesProtocol: UserServicesProtocol, Cuckoo.ProtocolMock {
@@ -39,9 +40,9 @@ import Foundation
     
     
     
-     func attemptLogin(username: String, password: String, onComplete: @escaping (Result<AuthenticatedUser, RecipeError>) -> Void)  {
+     func attemptLogin(username: String, password: String, onComplete: @escaping (Swift.Result<AuthenticatedUser, RecipeError>) -> Void)  {
         
-    return cuckoo_manager.call("attemptLogin(username: String, password: String, onComplete: @escaping (Result<AuthenticatedUser, RecipeError>) -> Void)",
+    return cuckoo_manager.call("attemptLogin(username: String, password: String, onComplete: @escaping (Swift.Result<AuthenticatedUser, RecipeError>) -> Void)",
             parameters: (username, password, onComplete),
             escapingParameters: (username, password, onComplete),
             superclassCall:
@@ -54,9 +55,9 @@ import Foundation
     
     
     
-     func getUserDetails(token: String, onComplete: @escaping (Result<UserDetails, RecipeError>) -> Void)  {
+     func getUserDetails(token: String, onComplete: @escaping (Swift.Result<UserDetails, RecipeError>) -> Void)  {
         
-    return cuckoo_manager.call("getUserDetails(token: String, onComplete: @escaping (Result<UserDetails, RecipeError>) -> Void)",
+    return cuckoo_manager.call("getUserDetails(token: String, onComplete: @escaping (Swift.Result<UserDetails, RecipeError>) -> Void)",
             parameters: (token, onComplete),
             escapingParameters: (token, onComplete),
             superclassCall:
@@ -129,9 +130,9 @@ import Foundation
     
     
     
-     func getProfilePic(onComplete: @escaping (Result<Data, RecipeError>) -> Void)  {
+     func getProfilePic(onComplete: @escaping (Swift.Result<Data, RecipeError>) -> Void)  {
         
-    return cuckoo_manager.call("getProfilePic(onComplete: @escaping (Result<Data, RecipeError>) -> Void)",
+    return cuckoo_manager.call("getProfilePic(onComplete: @escaping (Swift.Result<Data, RecipeError>) -> Void)",
             parameters: (onComplete),
             escapingParameters: (onComplete),
             superclassCall:
@@ -139,6 +140,36 @@ import Foundation
                 Cuckoo.MockManager.crashOnProtocolSuperclassCall()
                 ,
             defaultCall: __defaultImplStub!.getProfilePic(onComplete: onComplete))
+        
+    }
+    
+    
+    
+     func FPAttemptLogin(username: String, password: String) -> Promise<AuthenticatedUser> {
+        
+    return cuckoo_manager.call("FPAttemptLogin(username: String, password: String) -> Promise<AuthenticatedUser>",
+            parameters: (username, password),
+            escapingParameters: (username, password),
+            superclassCall:
+                
+                Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                ,
+            defaultCall: __defaultImplStub!.FPAttemptLogin(username: username, password: password))
+        
+    }
+    
+    
+    
+     func FPGetUserDetails(token: String) -> Promise<UserDetails> {
+        
+    return cuckoo_manager.call("FPGetUserDetails(token: String) -> Promise<UserDetails>",
+            parameters: (token),
+            escapingParameters: (token),
+            superclassCall:
+                
+                Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                ,
+            defaultCall: __defaultImplStub!.FPGetUserDetails(token: token))
         
     }
     
@@ -151,14 +182,14 @@ import Foundation
 	    }
 	    
 	    
-	    func attemptLogin<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable, M3: Cuckoo.Matchable>(username: M1, password: M2, onComplete: M3) -> Cuckoo.ProtocolStubNoReturnFunction<(String, String, (Result<AuthenticatedUser, RecipeError>) -> Void)> where M1.MatchedType == String, M2.MatchedType == String, M3.MatchedType == (Result<AuthenticatedUser, RecipeError>) -> Void {
-	        let matchers: [Cuckoo.ParameterMatcher<(String, String, (Result<AuthenticatedUser, RecipeError>) -> Void)>] = [wrap(matchable: username) { $0.0 }, wrap(matchable: password) { $0.1 }, wrap(matchable: onComplete) { $0.2 }]
-	        return .init(stub: cuckoo_manager.createStub(for: MockUserServicesProtocol.self, method: "attemptLogin(username: String, password: String, onComplete: @escaping (Result<AuthenticatedUser, RecipeError>) -> Void)", parameterMatchers: matchers))
+	    func attemptLogin<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable, M3: Cuckoo.Matchable>(username: M1, password: M2, onComplete: M3) -> Cuckoo.ProtocolStubNoReturnFunction<(String, String, (Swift.Result<AuthenticatedUser, RecipeError>) -> Void)> where M1.MatchedType == String, M2.MatchedType == String, M3.MatchedType == (Swift.Result<AuthenticatedUser, RecipeError>) -> Void {
+	        let matchers: [Cuckoo.ParameterMatcher<(String, String, (Swift.Result<AuthenticatedUser, RecipeError>) -> Void)>] = [wrap(matchable: username) { $0.0 }, wrap(matchable: password) { $0.1 }, wrap(matchable: onComplete) { $0.2 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockUserServicesProtocol.self, method: "attemptLogin(username: String, password: String, onComplete: @escaping (Swift.Result<AuthenticatedUser, RecipeError>) -> Void)", parameterMatchers: matchers))
 	    }
 	    
-	    func getUserDetails<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(token: M1, onComplete: M2) -> Cuckoo.ProtocolStubNoReturnFunction<(String, (Result<UserDetails, RecipeError>) -> Void)> where M1.MatchedType == String, M2.MatchedType == (Result<UserDetails, RecipeError>) -> Void {
-	        let matchers: [Cuckoo.ParameterMatcher<(String, (Result<UserDetails, RecipeError>) -> Void)>] = [wrap(matchable: token) { $0.0 }, wrap(matchable: onComplete) { $0.1 }]
-	        return .init(stub: cuckoo_manager.createStub(for: MockUserServicesProtocol.self, method: "getUserDetails(token: String, onComplete: @escaping (Result<UserDetails, RecipeError>) -> Void)", parameterMatchers: matchers))
+	    func getUserDetails<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(token: M1, onComplete: M2) -> Cuckoo.ProtocolStubNoReturnFunction<(String, (Swift.Result<UserDetails, RecipeError>) -> Void)> where M1.MatchedType == String, M2.MatchedType == (Swift.Result<UserDetails, RecipeError>) -> Void {
+	        let matchers: [Cuckoo.ParameterMatcher<(String, (Swift.Result<UserDetails, RecipeError>) -> Void)>] = [wrap(matchable: token) { $0.0 }, wrap(matchable: onComplete) { $0.1 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockUserServicesProtocol.self, method: "getUserDetails(token: String, onComplete: @escaping (Swift.Result<UserDetails, RecipeError>) -> Void)", parameterMatchers: matchers))
 	    }
 	    
 	    func logUserOut() -> Cuckoo.ProtocolStubNoReturnFunction<()> {
@@ -181,9 +212,19 @@ import Foundation
 	        return .init(stub: cuckoo_manager.createStub(for: MockUserServicesProtocol.self, method: "getUserDetails() -> UserDetails?", parameterMatchers: matchers))
 	    }
 	    
-	    func getProfilePic<M1: Cuckoo.Matchable>(onComplete: M1) -> Cuckoo.ProtocolStubNoReturnFunction<((Result<Data, RecipeError>) -> Void)> where M1.MatchedType == (Result<Data, RecipeError>) -> Void {
-	        let matchers: [Cuckoo.ParameterMatcher<((Result<Data, RecipeError>) -> Void)>] = [wrap(matchable: onComplete) { $0 }]
-	        return .init(stub: cuckoo_manager.createStub(for: MockUserServicesProtocol.self, method: "getProfilePic(onComplete: @escaping (Result<Data, RecipeError>) -> Void)", parameterMatchers: matchers))
+	    func getProfilePic<M1: Cuckoo.Matchable>(onComplete: M1) -> Cuckoo.ProtocolStubNoReturnFunction<((Swift.Result<Data, RecipeError>) -> Void)> where M1.MatchedType == (Swift.Result<Data, RecipeError>) -> Void {
+	        let matchers: [Cuckoo.ParameterMatcher<((Swift.Result<Data, RecipeError>) -> Void)>] = [wrap(matchable: onComplete) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockUserServicesProtocol.self, method: "getProfilePic(onComplete: @escaping (Swift.Result<Data, RecipeError>) -> Void)", parameterMatchers: matchers))
+	    }
+	    
+	    func FPAttemptLogin<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(username: M1, password: M2) -> Cuckoo.ProtocolStubFunction<(String, String), Promise<AuthenticatedUser>> where M1.MatchedType == String, M2.MatchedType == String {
+	        let matchers: [Cuckoo.ParameterMatcher<(String, String)>] = [wrap(matchable: username) { $0.0 }, wrap(matchable: password) { $0.1 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockUserServicesProtocol.self, method: "FPAttemptLogin(username: String, password: String) -> Promise<AuthenticatedUser>", parameterMatchers: matchers))
+	    }
+	    
+	    func FPGetUserDetails<M1: Cuckoo.Matchable>(token: M1) -> Cuckoo.ProtocolStubFunction<(String), Promise<UserDetails>> where M1.MatchedType == String {
+	        let matchers: [Cuckoo.ParameterMatcher<(String)>] = [wrap(matchable: token) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockUserServicesProtocol.self, method: "FPGetUserDetails(token: String) -> Promise<UserDetails>", parameterMatchers: matchers))
 	    }
 	    
 	}
@@ -203,15 +244,15 @@ import Foundation
 	
 	    
 	    @discardableResult
-	    func attemptLogin<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable, M3: Cuckoo.Matchable>(username: M1, password: M2, onComplete: M3) -> Cuckoo.__DoNotUse<(String, String, (Result<AuthenticatedUser, RecipeError>) -> Void), Void> where M1.MatchedType == String, M2.MatchedType == String, M3.MatchedType == (Result<AuthenticatedUser, RecipeError>) -> Void {
-	        let matchers: [Cuckoo.ParameterMatcher<(String, String, (Result<AuthenticatedUser, RecipeError>) -> Void)>] = [wrap(matchable: username) { $0.0 }, wrap(matchable: password) { $0.1 }, wrap(matchable: onComplete) { $0.2 }]
-	        return cuckoo_manager.verify("attemptLogin(username: String, password: String, onComplete: @escaping (Result<AuthenticatedUser, RecipeError>) -> Void)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    func attemptLogin<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable, M3: Cuckoo.Matchable>(username: M1, password: M2, onComplete: M3) -> Cuckoo.__DoNotUse<(String, String, (Swift.Result<AuthenticatedUser, RecipeError>) -> Void), Void> where M1.MatchedType == String, M2.MatchedType == String, M3.MatchedType == (Swift.Result<AuthenticatedUser, RecipeError>) -> Void {
+	        let matchers: [Cuckoo.ParameterMatcher<(String, String, (Swift.Result<AuthenticatedUser, RecipeError>) -> Void)>] = [wrap(matchable: username) { $0.0 }, wrap(matchable: password) { $0.1 }, wrap(matchable: onComplete) { $0.2 }]
+	        return cuckoo_manager.verify("attemptLogin(username: String, password: String, onComplete: @escaping (Swift.Result<AuthenticatedUser, RecipeError>) -> Void)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
 	    }
 	    
 	    @discardableResult
-	    func getUserDetails<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(token: M1, onComplete: M2) -> Cuckoo.__DoNotUse<(String, (Result<UserDetails, RecipeError>) -> Void), Void> where M1.MatchedType == String, M2.MatchedType == (Result<UserDetails, RecipeError>) -> Void {
-	        let matchers: [Cuckoo.ParameterMatcher<(String, (Result<UserDetails, RecipeError>) -> Void)>] = [wrap(matchable: token) { $0.0 }, wrap(matchable: onComplete) { $0.1 }]
-	        return cuckoo_manager.verify("getUserDetails(token: String, onComplete: @escaping (Result<UserDetails, RecipeError>) -> Void)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    func getUserDetails<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(token: M1, onComplete: M2) -> Cuckoo.__DoNotUse<(String, (Swift.Result<UserDetails, RecipeError>) -> Void), Void> where M1.MatchedType == String, M2.MatchedType == (Swift.Result<UserDetails, RecipeError>) -> Void {
+	        let matchers: [Cuckoo.ParameterMatcher<(String, (Swift.Result<UserDetails, RecipeError>) -> Void)>] = [wrap(matchable: token) { $0.0 }, wrap(matchable: onComplete) { $0.1 }]
+	        return cuckoo_manager.verify("getUserDetails(token: String, onComplete: @escaping (Swift.Result<UserDetails, RecipeError>) -> Void)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
 	    }
 	    
 	    @discardableResult
@@ -239,9 +280,21 @@ import Foundation
 	    }
 	    
 	    @discardableResult
-	    func getProfilePic<M1: Cuckoo.Matchable>(onComplete: M1) -> Cuckoo.__DoNotUse<((Result<Data, RecipeError>) -> Void), Void> where M1.MatchedType == (Result<Data, RecipeError>) -> Void {
-	        let matchers: [Cuckoo.ParameterMatcher<((Result<Data, RecipeError>) -> Void)>] = [wrap(matchable: onComplete) { $0 }]
-	        return cuckoo_manager.verify("getProfilePic(onComplete: @escaping (Result<Data, RecipeError>) -> Void)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    func getProfilePic<M1: Cuckoo.Matchable>(onComplete: M1) -> Cuckoo.__DoNotUse<((Swift.Result<Data, RecipeError>) -> Void), Void> where M1.MatchedType == (Swift.Result<Data, RecipeError>) -> Void {
+	        let matchers: [Cuckoo.ParameterMatcher<((Swift.Result<Data, RecipeError>) -> Void)>] = [wrap(matchable: onComplete) { $0 }]
+	        return cuckoo_manager.verify("getProfilePic(onComplete: @escaping (Swift.Result<Data, RecipeError>) -> Void)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
+	    func FPAttemptLogin<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(username: M1, password: M2) -> Cuckoo.__DoNotUse<(String, String), Promise<AuthenticatedUser>> where M1.MatchedType == String, M2.MatchedType == String {
+	        let matchers: [Cuckoo.ParameterMatcher<(String, String)>] = [wrap(matchable: username) { $0.0 }, wrap(matchable: password) { $0.1 }]
+	        return cuckoo_manager.verify("FPAttemptLogin(username: String, password: String) -> Promise<AuthenticatedUser>", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
+	    func FPGetUserDetails<M1: Cuckoo.Matchable>(token: M1) -> Cuckoo.__DoNotUse<(String), Promise<UserDetails>> where M1.MatchedType == String {
+	        let matchers: [Cuckoo.ParameterMatcher<(String)>] = [wrap(matchable: token) { $0 }]
+	        return cuckoo_manager.verify("FPGetUserDetails(token: String) -> Promise<UserDetails>", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
 	    }
 	    
 	}
@@ -253,11 +306,11 @@ import Foundation
     
 
     
-     func attemptLogin(username: String, password: String, onComplete: @escaping (Result<AuthenticatedUser, RecipeError>) -> Void)   {
+     func attemptLogin(username: String, password: String, onComplete: @escaping (Swift.Result<AuthenticatedUser, RecipeError>) -> Void)   {
         return DefaultValueRegistry.defaultValue(for: (Void).self)
     }
     
-     func getUserDetails(token: String, onComplete: @escaping (Result<UserDetails, RecipeError>) -> Void)   {
+     func getUserDetails(token: String, onComplete: @escaping (Swift.Result<UserDetails, RecipeError>) -> Void)   {
         return DefaultValueRegistry.defaultValue(for: (Void).self)
     }
     
@@ -277,14 +330,22 @@ import Foundation
         return DefaultValueRegistry.defaultValue(for: (UserDetails?).self)
     }
     
-     func getProfilePic(onComplete: @escaping (Result<Data, RecipeError>) -> Void)   {
+     func getProfilePic(onComplete: @escaping (Swift.Result<Data, RecipeError>) -> Void)   {
         return DefaultValueRegistry.defaultValue(for: (Void).self)
+    }
+    
+     func FPAttemptLogin(username: String, password: String) -> Promise<AuthenticatedUser>  {
+        return DefaultValueRegistry.defaultValue(for: (Promise<AuthenticatedUser>).self)
+    }
+    
+     func FPGetUserDetails(token: String) -> Promise<UserDetails>  {
+        return DefaultValueRegistry.defaultValue(for: (Promise<UserDetails>).self)
     }
     
 }
 
 
-// MARK: - Mocks generated from file: RecipeAid/Services/Services/CoreDataStorageRepo.swift at 2019-07-05 08:51:31 +0000
+// MARK: - Mocks generated from file: RecipeAid/Services/Services/CoreDataStorageRepo.swift at 2019-07-10 12:15:25 +0000
 
 //
 //  CoreDataStorageRepo.swift
@@ -602,7 +663,7 @@ import UIKit
 }
 
 
-// MARK: - Mocks generated from file: RecipeAid/Services/Services/SettingsRepo.swift at 2019-07-05 08:51:31 +0000
+// MARK: - Mocks generated from file: RecipeAid/Services/Services/SettingsRepo.swift at 2019-07-10 12:15:25 +0000
 
 //
 //  SettingsRepo.swift
@@ -962,7 +1023,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: RecipeAid/Services/Services/ShoppingListRepo.swift at 2019-07-05 08:51:31 +0000
+// MARK: - Mocks generated from file: RecipeAid/Services/Services/ShoppingListRepo.swift at 2019-07-10 12:15:25 +0000
 
 //let gregorian = Calendar(identifier: .gregorian)
 //  ShoppingListRepo.swift
@@ -1142,7 +1203,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: RecipeAid/Settings/Models/SettingsModel.swift at 2019-07-05 08:51:31 +0000
+// MARK: - Mocks generated from file: RecipeAid/Settings/Models/SettingsModel.swift at 2019-07-10 12:15:25 +0000
 
 //
 //  SettingsModel.swift
@@ -1766,7 +1827,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: RecipeAid/Settings/ViewModels/SettingsViewModel.swift at 2019-07-05 08:51:31 +0000
+// MARK: - Mocks generated from file: RecipeAid/Settings/ViewModels/SettingsViewModel.swift at 2019-07-10 12:15:25 +0000
 
 //
 //  SettingsViewModel.swift

@@ -112,6 +112,9 @@
 		50D5268D22CF3D72006859F8 /* login.json in Resources */ = {isa = PBXBuildFile; fileRef = 50D5268922CF3B4A006859F8 /* login.json */; };
 		50D5268E22CF3D75006859F8 /* details.json in Resources */ = {isa = PBXBuildFile; fileRef = 50D5268B22CF3B5F006859F8 /* details.json */; };
 		50D5269022CF437C006859F8 /* ShoppingListRepoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D5268F22CF437C006859F8 /* ShoppingListRepoTests.swift */; };
+		50D52B9522D5AE04006859F8 /* FPUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D52B9422D5AE04006859F8 /* FPUserService.swift */; };
+		50D52B9E22D5AEFC006859F8 /* URLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D52B9D22D5AEFC006859F8 /* URLSession.swift */; };
+		50D52BAD22D606C4006859F8 /* FPUserServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D52BAC22D606C4006859F8 /* FPUserServiceTests.swift */; };
 		50DB7A0222AF870400DEEB7B /* MenuForDayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DB7A0122AF870400DEEB7B /* MenuForDayTests.swift */; };
 		50DB7A0522AF94DB00DEEB7B /* MenuDisplayViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DB7A0422AF94DA00DEEB7B /* MenuDisplayViewModelTests.swift */; };
 		50DB7A0722AFA2A700DEEB7B /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DB7A0622AFA2A700DEEB7B /* Mocks.swift */; };
@@ -198,6 +201,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 5009277C22889DE500FB2CE6;
 			remoteInfo = RecipeAid;
+		};
+		50D52BB722D606C5006859F8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 503804F822B8D89300C6B456 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C32218293AE8AEAC58C3E098B06220A7;
+			remoteInfo = "When-framework";
+		};
+		50D52BB922D606C5006859F8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 503804F822B8D89300C6B456 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BAFDFC0922C1D1979B8A8CEF086BEE1F;
+			remoteInfo = "When-library";
 		};
 		50DB7A1122B0DD5400DEEB7B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -312,6 +329,9 @@
 		50D5268922CF3B4A006859F8 /* login.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = login.json; sourceTree = "<group>"; };
 		50D5268B22CF3B5F006859F8 /* details.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = details.json; sourceTree = "<group>"; };
 		50D5268F22CF437C006859F8 /* ShoppingListRepoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListRepoTests.swift; sourceTree = "<group>"; };
+		50D52B9422D5AE04006859F8 /* FPUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPUserService.swift; sourceTree = "<group>"; };
+		50D52B9D22D5AEFC006859F8 /* URLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSession.swift; sourceTree = "<group>"; };
+		50D52BAC22D606C4006859F8 /* FPUserServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPUserServiceTests.swift; sourceTree = "<group>"; };
 		50DB7A0122AF870400DEEB7B /* MenuForDayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuForDayTests.swift; sourceTree = "<group>"; };
 		50DB7A0422AF94DA00DEEB7B /* MenuDisplayViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDisplayViewModelTests.swift; sourceTree = "<group>"; };
 		50DB7A0622AFA2A700DEEB7B /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
@@ -515,6 +535,7 @@
 			isa = PBXGroup;
 			children = (
 				502F6CFC22BCEC0700C931B0 /* UIViewController.swift */,
+				50D52B9D22D5AEFC006859F8 /* URLSession.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -537,6 +558,7 @@
 				503E7FC022C4C3C600CD860E /* CoreDataStorageRepoTests.swift */,
 				50D5267522CE1F1A006859F8 /* UserServicesTests.swift */,
 				50D5268F22CF437C006859F8 /* ShoppingListRepoTests.swift */,
+				50D52BAC22D606C4006859F8 /* FPUserServiceTests.swift */,
 			);
 			path = RepoTests;
 			sourceTree = "<group>";
@@ -551,6 +573,8 @@
 				5038050822B8D89300C6B456 /* Pods_RecipeAid.framework */,
 				5038050A22B8D89300C6B456 /* libPods-RecipeAidTests.a */,
 				5038050C22B8D89300C6B456 /* SwiftyJSON.framework */,
+				50D52BB822D606C5006859F8 /* When.framework */,
+				50D52BBA22D606C5006859F8 /* libWhen-library.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -760,6 +784,7 @@
 				503E7F5222C2563E00CD860E /* ShoppingListRepo.swift */,
 				503E7FB722C381BA00CD860E /* CoreDataStorageRepo.swift */,
 				50D5242322CDD5A5006859F8 /* UserServices.swift */,
+				50D52B9422D5AE04006859F8 /* FPUserService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1299,6 +1324,20 @@
 			remoteRef = 503E7F2C22C0CD2300CD860E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		50D52BB822D606C5006859F8 /* When.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = When.framework;
+			remoteRef = 50D52BB722D606C5006859F8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		50D52BBA22D606C5006859F8 /* libWhen-library.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libWhen-library.a";
+			remoteRef = 50D52BB922D606C5006859F8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -1482,6 +1521,7 @@
 				503E7F2222C0B8B000CD860E /* SettingsRepoTests.swift in Sources */,
 				50DB7A0722AFA2A700DEEB7B /* Mocks.swift in Sources */,
 				5038053022BA38A800C6B456 /* RecipeDetailsViewModelTests.swift in Sources */,
+				50D52BAD22D606C4006859F8 /* FPUserServiceTests.swift in Sources */,
 				503E7F6322C3415E00CD860E /* Matchables.swift in Sources */,
 				503E7F6122C33AF500CD860E /* ShoppingListViewModelTests.swift in Sources */,
 				5038053422BA42C800C6B456 /* AddRecipeTests.swift in Sources */,
@@ -1494,6 +1534,7 @@
 			files = (
 				503E7FB522C37D0600CD860E /* RecipeAid.xcdatamodeld in Sources */,
 				500FE3862292A63900157F77 /* AddViewController.swift in Sources */,
+				50D52B9E22D5AEFC006859F8 /* URLSession.swift in Sources */,
 				508D1CED22A1383A008DA723 /* DietryRestrictionsCollectionViewCell.swift in Sources */,
 				508D1CDD229E5799008DA723 /* Colors.swift in Sources */,
 				5009278322889DE500FB2CE6 /* SearchResultsViewController.swift in Sources */,
@@ -1534,6 +1575,7 @@
 				502F6D0022BCF4A500C931B0 /* SettingsModel.swift in Sources */,
 				50DB7A2E22B2852300DEEB7B /* SearchResultsViewModelProtocol.swift in Sources */,
 				50AE4C5F229675BC00467ADE /* MenuDatePickerViewController.swift in Sources */,
+				50D52B9522D5AE04006859F8 /* FPUserService.swift in Sources */,
 				50A1120F22A80FF6003AD301 /* ImageFetcher.swift in Sources */,
 				508D1CDF229EB0CC008DA723 /* IngredientsTableViewCell.swift in Sources */,
 				509CD61922A4F025008FCFAC /* Formatter.swift in Sources */,
