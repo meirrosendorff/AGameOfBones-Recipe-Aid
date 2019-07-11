@@ -11,5 +11,5 @@
 @protocol LoginViewModelProtocol
   @required
   @property(nonatomic, readonly) Boolean isLoggedIn;
-- (void) loginForUser:(NSString*)username withPassword:(NSString*)password onComplete:(void (^)(Boolean))onComplete;
+  - (void) loginForUser:(NSString*)username withPassword:(NSString*)password onComplete:(void (^)(Boolean))onComplete;
 @end
