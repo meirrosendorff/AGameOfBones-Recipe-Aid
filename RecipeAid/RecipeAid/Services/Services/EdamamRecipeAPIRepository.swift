@@ -31,7 +31,13 @@ class EdamamRecipeAPIRepository: EdamamRecipeAPIRepositoryProtocol {
       return
     }
 
-    var requestURL = "\(baseURL)?app_id=\(appId)&app_key=\(appKey)&q=\(query)&from=\(resultRange.0)&to=\(resultRange.1)"
+    guard let safeQuery = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
+      onComplete(.failure(RecipeError.urlBuildError("Invalid query string for query: \(query)")))
+      return
+    }
+
+    var requestURL =
+      "\(baseURL)?app_id=\(appId)&app_key=\(appKey)&q=\(safeQuery)&from=\(resultRange.0)&to=\(resultRange.1)"
     requestURL += buildQueryStringFromSettings()
 
     getJsonResponse(for: requestURL, onComplete: { result in
