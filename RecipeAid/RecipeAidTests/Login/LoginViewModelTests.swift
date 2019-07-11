@@ -42,7 +42,7 @@ class LoginViewModelTests: XCTestCase {
 
     let expectation = self.expectation(description: "Should Fail To Login")
 
-    sut.login(username: "", password: "password", onComplete: { result in
+    sut.login(forUser: "", withPassword: "password", onComplete: { result in
       expectation.fulfill()
       XCTAssertFalse(result)
     })
@@ -54,7 +54,7 @@ class LoginViewModelTests: XCTestCase {
 
     let expectation = self.expectation(description: "Should Fail To Login")
 
-    sut.login(username: "username", password: "", onComplete: { result in
+    sut.login(forUser: "username", withPassword: "", onComplete: { result in
       expectation.fulfill()
       XCTAssertFalse(result)
     })
@@ -79,7 +79,7 @@ class LoginViewModelTests: XCTestCase {
       when(stub.logUserOut()).thenDoNothing()
     }
 
-    sut.login(username: username, password: password, onComplete: { result in
+    sut.login(forUser: username, withPassword: password, onComplete: { result in
       expectation.fulfill()
       XCTAssertFalse(result)
     })
@@ -114,7 +114,7 @@ class LoginViewModelTests: XCTestCase {
       when(stub.logUserOut()).thenDoNothing()
     }
 
-    sut.login(username: username, password: password, onComplete: { result in
+    sut.login(forUser: username, withPassword: password, onComplete: { result in
       expectation.fulfill()
       XCTAssertFalse(result)
     })
@@ -153,7 +153,7 @@ class LoginViewModelTests: XCTestCase {
       when(stub.setUserDetails(details: equal(to: userDetails))).thenDoNothing()
     }
 
-    sut.login(username: username, password: password, onComplete: { result in
+    sut.login(forUser: username, withPassword: password, onComplete: { result in
       expectation.fulfill()
       XCTAssertTrue(result)
     })

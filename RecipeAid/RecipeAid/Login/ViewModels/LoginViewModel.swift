@@ -21,7 +21,7 @@ class LoginViewModel: LoginViewModelProtocol {
     return UserDefaults.standard.bool(forKey: UserDefaultsKeys.isLoggedIn.rawValue)
   }
 
-  func login(username: String, password: String, onComplete: @escaping (Bool) -> Void) {
+  func login(forUser username: String, withPassword password: String, onComplete: @escaping (Bool) -> Void) {
 
     if username == "" || password == "" {
       return onComplete(false)

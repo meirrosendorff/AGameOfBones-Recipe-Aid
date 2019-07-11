@@ -72,7 +72,7 @@ class LoginViewController: UIViewController {
     let username = usernameTextBox.text ?? ""
     let password = passwordTextBox.text ?? ""
 
-    viewModel.login(username: username, password: password, onComplete: { isSuccessful in
+    viewModel.login(forUser: username, withPassword: password, onComplete: { isSuccessful in
 
       self.loginLoading.stopAnimating()
       if isSuccessful {

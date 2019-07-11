@@ -18,6 +18,7 @@
 		500FE37D228EE76200157F77 /* RecipeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500FE37C228EE76200157F77 /* RecipeDetailsViewController.swift */; };
 		500FE37F228EEE8B00157F77 /* RecipeListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500FE37E228EEE8B00157F77 /* RecipeListTableViewCell.swift */; };
 		500FE3862292A63900157F77 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500FE3852292A63900157F77 /* AddViewController.swift */; };
+		5015802322D702500004F6CF /* LoginViewModelProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 5015802222D702500004F6CF /* LoginViewModelProtocol.m */; };
 		50211A6B22C9EE2B00605A2A /* instructions.html in Resources */ = {isa = PBXBuildFile; fileRef = 50211A6A22C9EE2B00605A2A /* instructions.html */; };
 		50211A6C22C9EF1300605A2A /* instructions.html in Resources */ = {isa = PBXBuildFile; fileRef = 50211A6A22C9EE2B00605A2A /* instructions.html */; };
 		502F6CF722BCA42200C931B0 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502F6CF622BCA42200C931B0 /* SettingsViewModel.swift */; };
@@ -98,7 +99,6 @@
 		50D5170922CB454E006859F8 /* Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DB7A1B22B238D600DEEB7B /* Identifiers.swift */; };
 		50D5241722CCEED6006859F8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D5241622CCEED6006859F8 /* LoginViewController.swift */; };
 		50D5241E22CDCC25006859F8 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D5241D22CDCC25006859F8 /* LoginViewModel.swift */; };
-		50D5242022CDCC37006859F8 /* LoginViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D5241F22CDCC37006859F8 /* LoginViewModelProtocol.swift */; };
 		50D5242222CDD587006859F8 /* UserServicesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D5242122CDD587006859F8 /* UserServicesProtocol.swift */; };
 		50D5242422CDD5A5006859F8 /* UserServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D5242322CDD5A5006859F8 /* UserServices.swift */; };
 		50D5242622CDD811006859F8 /* AuthenticatedUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D5242522CDD811006859F8 /* AuthenticatedUser.swift */; };
@@ -242,6 +242,8 @@
 		500FE37C228EE76200157F77 /* RecipeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsViewController.swift; sourceTree = "<group>"; };
 		500FE37E228EEE8B00157F77 /* RecipeListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListTableViewCell.swift; sourceTree = "<group>"; };
 		500FE3852292A63900157F77 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		5015802222D702500004F6CF /* LoginViewModelProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewModelProtocol.m; sourceTree = "<group>"; };
+		5015802422D702950004F6CF /* RecipeAid-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RecipeAid-Bridging-Header.h"; sourceTree = "<group>"; };
 		50211A6A22C9EE2B00605A2A /* instructions.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = instructions.html; sourceTree = "<group>"; };
 		502F6CF622BCA42200C931B0 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		502F6CF922BCA44900C931B0 /* SettingsViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModelProtocol.swift; sourceTree = "<group>"; };
@@ -317,7 +319,6 @@
 		50D5170722CB428C006859F8 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		50D5241622CCEED6006859F8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		50D5241D22CDCC25006859F8 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		50D5241F22CDCC37006859F8 /* LoginViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelProtocol.swift; sourceTree = "<group>"; };
 		50D5242122CDD587006859F8 /* UserServicesProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServicesProtocol.swift; sourceTree = "<group>"; };
 		50D5242322CDD5A5006859F8 /* UserServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServices.swift; sourceTree = "<group>"; };
 		50D5242522CDD811006859F8 /* AuthenticatedUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatedUser.swift; sourceTree = "<group>"; };
@@ -960,7 +961,8 @@
 		50D5241C22CDCC12006859F8 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				50D5241F22CDCC37006859F8 /* LoginViewModelProtocol.swift */,
+				5015802422D702950004F6CF /* RecipeAid-Bridging-Header.h */,
+				5015802222D702500004F6CF /* LoginViewModelProtocol.m */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -1236,6 +1238,7 @@
 					};
 					5009277C22889DE500FB2CE6 = {
 						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1020;
 					};
 					50D516F522CB426A006859F8 = {
 						CreatedOnToolsVersion = 10.2.1;
@@ -1549,7 +1552,6 @@
 				50A1120D22A7E402003AD301 /* EdamamRecipeAPIRepository.swift in Sources */,
 				507BA4D222A939C30064B415 /* MenuForDayProtocol.swift in Sources */,
 				509CD62D22A67EDA008FCFAC /* MenuDisplayViewModelProtocol.swift in Sources */,
-				50D5242022CDCC37006859F8 /* LoginViewModelProtocol.swift in Sources */,
 				508D1CE922A10944008DA723 /* MenuIngredientsTableViewCell.swift in Sources */,
 				50D5241E22CDCC25006859F8 /* LoginViewModel.swift in Sources */,
 				508D1CDB229D6E24008DA723 /* GradientLayer.swift in Sources */,
@@ -1572,6 +1574,7 @@
 				509CD62422A67250008FCFAC /* MenuForDay.swift in Sources */,
 				50DB7A4022B3CB6B00DEEB7B /* AddViewModel.swift in Sources */,
 				50D5242222CDD587006859F8 /* UserServicesProtocol.swift in Sources */,
+				5015802322D702500004F6CF /* LoginViewModelProtocol.m in Sources */,
 				502F6D0022BCF4A500C931B0 /* SettingsModel.swift in Sources */,
 				50DB7A2E22B2852300DEEB7B /* SearchResultsViewModelProtocol.swift in Sources */,
 				50AE4C5F229675BC00467ADE /* MenuDatePickerViewController.swift in Sources */,
@@ -1833,6 +1836,7 @@
 			baseConfigurationReference = EAB7936D8D01C7043306D87B /* Pods-RecipeAid.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = GLK7J5PP82;
@@ -1843,6 +1847,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = za.co.dvt.jhb.RecipeAid;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "RecipeAid/Login/Protocols/RecipeAid-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1853,6 +1859,7 @@
 			baseConfigurationReference = C9541CFAB080918AB2F39D34 /* Pods-RecipeAid.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = GLK7J5PP82;
@@ -1864,6 +1871,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = za.co.dvt.jhb.RecipeAid;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "RecipeAid/Login/Protocols/RecipeAid-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
