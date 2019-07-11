@@ -19,6 +19,7 @@
 		500FE37F228EEE8B00157F77 /* RecipeListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500FE37E228EEE8B00157F77 /* RecipeListTableViewCell.swift */; };
 		500FE3862292A63900157F77 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500FE3852292A63900157F77 /* AddViewController.swift */; };
 		5015802322D702500004F6CF /* LoginViewModelProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 5015802222D702500004F6CF /* LoginViewModelProtocol.m */; };
+		5015804D22D728D80004F6CF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5015802822D728D80004F6CF /* GoogleService-Info.plist */; };
 		50211A6B22C9EE2B00605A2A /* instructions.html in Resources */ = {isa = PBXBuildFile; fileRef = 50211A6A22C9EE2B00605A2A /* instructions.html */; };
 		50211A6C22C9EF1300605A2A /* instructions.html in Resources */ = {isa = PBXBuildFile; fileRef = 50211A6A22C9EE2B00605A2A /* instructions.html */; };
 		502F6CF722BCA42200C931B0 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502F6CF622BCA42200C931B0 /* SettingsViewModel.swift */; };
@@ -146,6 +147,55 @@
 			remoteGlobalIDString = 5009277C22889DE500FB2CE6;
 			remoteInfo = RecipeAid;
 		};
+		5015803F22D728D80004F6CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 503804F822B8D89300C6B456 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 55AEEB6A315149FDA23BB9A29F457592;
+			remoteInfo = FirebaseCore;
+		};
+		5015804122D728D80004F6CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 503804F822B8D89300C6B456 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9785176C36DEAD761647943325087655;
+			remoteInfo = FirebaseInstanceID;
+		};
+		5015804322D728D80004F6CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 503804F822B8D89300C6B456 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3CD15EE97A5E6A0605FF9D148B171ED0;
+			remoteInfo = GoogleToolboxForMac;
+		};
+		5015804522D728D80004F6CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 503804F822B8D89300C6B456 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4EA1854C497698E9B072E4E812C8527B;
+			remoteInfo = GoogleUtilities;
+		};
+		5015804722D728D80004F6CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 503804F822B8D89300C6B456 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = CC3C84E4068E90DC0F83796949ED37CF;
+			remoteInfo = GTMSessionFetcher;
+		};
+		5015804922D728D80004F6CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 503804F822B8D89300C6B456 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C2E9E49CB5EB10E07A427889EBEB9DA9;
+			remoteInfo = nanopb;
+		};
+		5015804B22D728D80004F6CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 503804F822B8D89300C6B456 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1177AA901CE809DDA0410BFAA715F351;
+			remoteInfo = Protobuf;
+		};
 		5038050122B8D89300C6B456 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 503804F822B8D89300C6B456 /* Pods.xcodeproj */;
@@ -244,6 +294,7 @@
 		500FE3852292A63900157F77 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		5015802222D702500004F6CF /* LoginViewModelProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewModelProtocol.m; sourceTree = "<group>"; };
 		5015802422D702950004F6CF /* RecipeAid-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RecipeAid-Bridging-Header.h"; sourceTree = "<group>"; };
+		5015802822D728D80004F6CF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		50211A6A22C9EE2B00605A2A /* instructions.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = instructions.html; sourceTree = "<group>"; };
 		502F6CF622BCA42200C931B0 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		502F6CF922BCA44900C931B0 /* SettingsViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModelProtocol.swift; sourceTree = "<group>"; };
@@ -455,6 +506,7 @@
 		5009277F22889DE500FB2CE6 /* RecipeAid */ = {
 			isa = PBXGroup;
 			children = (
+				5015802822D728D80004F6CF /* GoogleService-Info.plist */,
 				50D5240D22CCEEA5006859F8 /* Login */,
 				502F6CFB22BCEBEF00C931B0 /* Extensions */,
 				50A1121722A90D11003AD301 /* Enums */,
@@ -569,10 +621,17 @@
 			children = (
 				5038050222B8D89300C6B456 /* Alamofire.framework */,
 				503E7F2D22C0CD2300CD860E /* libCuckoo.a */,
+				5015804022D728D80004F6CF /* FirebaseCore.framework */,
+				5015804222D728D80004F6CF /* FirebaseInstanceID.framework */,
+				5015804422D728D80004F6CF /* GoogleToolboxForMac.framework */,
+				5015804622D728D80004F6CF /* GoogleUtilities.framework */,
+				5015804822D728D80004F6CF /* GTMSessionFetcher.framework */,
 				5038050422B8D89300C6B456 /* Hippolyte.framework */,
 				5038050622B8D89300C6B456 /* libHippolyte-library.a */,
+				5015804A22D728D80004F6CF /* nanopb.framework */,
 				5038050822B8D89300C6B456 /* Pods_RecipeAid.framework */,
 				5038050A22B8D89300C6B456 /* libPods-RecipeAidTests.a */,
+				5015804C22D728D80004F6CF /* Protobuf.framework */,
 				5038050C22B8D89300C6B456 /* SwiftyJSON.framework */,
 				50D52BB822D606C5006859F8 /* When.framework */,
 				50D52BBA22D606C5006859F8 /* libWhen-library.a */,
@@ -1176,6 +1235,7 @@
 				5009277B22889DE500FB2CE6 /* Resources */,
 				5017CE642297DC7D00163163 /* ShellScript */,
 				7B89FC9226D1D45EB67FC1F7 /* [CP] Embed Pods Frameworks */,
+				5015805122D72BB20004F6CF /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1278,6 +1338,55 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		5015804022D728D80004F6CF /* FirebaseCore.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FirebaseCore.framework;
+			remoteRef = 5015803F22D728D80004F6CF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5015804222D728D80004F6CF /* FirebaseInstanceID.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FirebaseInstanceID.framework;
+			remoteRef = 5015804122D728D80004F6CF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5015804422D728D80004F6CF /* GoogleToolboxForMac.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = GoogleToolboxForMac.framework;
+			remoteRef = 5015804322D728D80004F6CF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5015804622D728D80004F6CF /* GoogleUtilities.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = GoogleUtilities.framework;
+			remoteRef = 5015804522D728D80004F6CF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5015804822D728D80004F6CF /* GTMSessionFetcher.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = GTMSessionFetcher.framework;
+			remoteRef = 5015804722D728D80004F6CF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5015804A22D728D80004F6CF /* nanopb.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = nanopb.framework;
+			remoteRef = 5015804922D728D80004F6CF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5015804C22D728D80004F6CF /* Protobuf.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Protobuf.framework;
+			remoteRef = 5015804B22D728D80004F6CF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		5038050222B8D89300C6B456 /* Alamofire.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -1359,6 +1468,7 @@
 			files = (
 				5009278B22889DE600FB2CE6 /* LaunchScreen.storyboard in Resources */,
 				50211A6C22C9EF1300605A2A /* instructions.html in Resources */,
+				5015804D22D728D80004F6CF /* GoogleService-Info.plist in Resources */,
 				50DB7A2322B24F4C00DEEB7B /* breakfastJsonExample.json in Resources */,
 				50DB7A1822B2276200DEEB7B /* lunchJsonExample.json in Resources */,
 				504FF7EF228DFF2D00681272 /* Assets.xcassets in Resources */,
@@ -1395,6 +1505,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		5015805122D72BB20004F6CF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\"\n";
+		};
 		5017CE642297DC7D00163163 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1676,6 +1804,11 @@
 				DEFINES_MODULE = NO;
 				DEVELOPMENT_TEAM = GLK7J5PP82;
 				ENABLE_TESTABILITY = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/Firebase\"",
+				);
 				INFOPLIST_FILE = RecipeAidTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1699,6 +1832,11 @@
 				DEFINES_MODULE = NO;
 				DEVELOPMENT_TEAM = GLK7J5PP82;
 				ENABLE_TESTABILITY = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/Firebase\"",
+				);
 				INFOPLIST_FILE = RecipeAidTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
