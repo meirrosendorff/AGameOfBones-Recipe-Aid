@@ -99,7 +99,6 @@
 		50D5170922CB454E006859F8 /* Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DB7A1B22B238D600DEEB7B /* Identifiers.swift */; };
 		50D5241722CCEED6006859F8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D5241622CCEED6006859F8 /* LoginViewController.swift */; };
 		50D5241E22CDCC25006859F8 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D5241D22CDCC25006859F8 /* LoginViewModel.swift */; };
-		50D5242022CDCC37006859F8 /* LoginViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D5241F22CDCC37006859F8 /* LoginViewModelProtocol.swift */; };
 		50D5242222CDD587006859F8 /* UserServicesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D5242122CDD587006859F8 /* UserServicesProtocol.swift */; };
 		50D5242422CDD5A5006859F8 /* UserServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D5242322CDD5A5006859F8 /* UserServices.swift */; };
 		50D5242622CDD811006859F8 /* AuthenticatedUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D5242522CDD811006859F8 /* AuthenticatedUser.swift */; };
@@ -320,7 +319,6 @@
 		50D5170722CB428C006859F8 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		50D5241622CCEED6006859F8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		50D5241D22CDCC25006859F8 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		50D5241F22CDCC37006859F8 /* LoginViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelProtocol.swift; sourceTree = "<group>"; };
 		50D5242122CDD587006859F8 /* UserServicesProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServicesProtocol.swift; sourceTree = "<group>"; };
 		50D5242322CDD5A5006859F8 /* UserServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServices.swift; sourceTree = "<group>"; };
 		50D5242522CDD811006859F8 /* AuthenticatedUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatedUser.swift; sourceTree = "<group>"; };
@@ -965,7 +963,6 @@
 			children = (
 				5015802422D702950004F6CF /* RecipeAid-Bridging-Header.h */,
 				5015802222D702500004F6CF /* LoginViewModelProtocol.m */,
-				50D5241F22CDCC37006859F8 /* LoginViewModelProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -1555,7 +1552,6 @@
 				50A1120D22A7E402003AD301 /* EdamamRecipeAPIRepository.swift in Sources */,
 				507BA4D222A939C30064B415 /* MenuForDayProtocol.swift in Sources */,
 				509CD62D22A67EDA008FCFAC /* MenuDisplayViewModelProtocol.swift in Sources */,
-				50D5242022CDCC37006859F8 /* LoginViewModelProtocol.swift in Sources */,
 				508D1CE922A10944008DA723 /* MenuIngredientsTableViewCell.swift in Sources */,
 				50D5241E22CDCC25006859F8 /* LoginViewModel.swift in Sources */,
 				508D1CDB229D6E24008DA723 /* GradientLayer.swift in Sources */,
