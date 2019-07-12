@@ -12,7 +12,17 @@
 		<key>RecipeAidSnapshots.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>8</integer>
+			<integer>1</integer>
+		</dict>
+		<key>RecipeAidWatch (Notification).xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>34</integer>
+		</dict>
+		<key>RecipeAidWatch.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>33</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>

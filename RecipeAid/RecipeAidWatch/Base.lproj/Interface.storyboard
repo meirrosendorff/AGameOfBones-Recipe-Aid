@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14490.70" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14490.21"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="RecipeAidWatch" customModuleProvider="target">
+                    <items>
+                        <group width="1" alignment="left" id="ixP-lr-4Ns">
+                            <items>
+                                <label alignment="left" text="Next Meal:" textAlignment="left" minimumScaleFactor="0.5" id="pVw-FB-rXh">
+                                    <color key="textColor" red="0.85098039219999999" green="0.84705882349999995" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                                </label>
+                                <label alignment="left" textAlignment="left" minimumScaleFactor="0.29999999999999999" id="DO2-aS-TK8">
+                                    <color key="textColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
+                                </label>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" layout="vertical" id="K4c-k9-SOr">
+                            <items>
+                                <separator width="1" widthAdjustment="-4" alignment="left" id="wV0-We-3jP">
+                                    <color key="color" red="0.85098039219999999" green="0.84705882349999995" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </separator>
+                                <label width="1" alignment="left" text="Loading..." textAlignment="center" numberOfLines="0" id="zLg-3V-ScR" userLabel="Recipe Name">
+                                    <color key="textColor" red="0.85098039219999999" green="0.84705882349999995" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="font" style="UICTFontTextStyleTitle3"/>
+                                </label>
+                                <imageView alignment="left" id="Vb2-OC-Q0H"/>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="nextMeal" destination="DO2-aS-TK8" id="JeP-O3-i5Q"/>
+                        <outlet property="recipeName" destination="zLg-3V-ScR" id="T4p-Se-1R3"/>
+                        <outlet property="recipePIC" destination="Vb2-OC-Q0H" id="YQw-Is-z5o"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="220" y="345"/>
+        </scene>
+    </scenes>
+</document>

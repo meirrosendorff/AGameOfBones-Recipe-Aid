@@ -26,6 +26,16 @@
 		502F6CFA22BCA44900C931B0 /* SettingsViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502F6CF922BCA44900C931B0 /* SettingsViewModelProtocol.swift */; };
 		502F6CFD22BCEC0700C931B0 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502F6CFC22BCEC0700C931B0 /* UIViewController.swift */; };
 		502F6D0022BCF4A500C931B0 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502F6CFF22BCF4A500C931B0 /* SettingsModel.swift */; };
+		50358BA822D7526F00AF24A2 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50358BA622D7526F00AF24A2 /* Interface.storyboard */; };
+		50358BAA22D7527000AF24A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50358BA922D7527000AF24A2 /* Assets.xcassets */; };
+		50358BB122D7527100AF24A2 /* RecipeAidWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 50358BB022D7527100AF24A2 /* RecipeAidWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		50358BB622D7527100AF24A2 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50358BB522D7527100AF24A2 /* InterfaceController.swift */; };
+		50358BB822D7527100AF24A2 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50358BB722D7527100AF24A2 /* ExtensionDelegate.swift */; };
+		50358BBC22D7527100AF24A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50358BBB22D7527100AF24A2 /* Assets.xcassets */; };
+		50358BC122D7527100AF24A2 /* RecipeAidWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 50358BA422D7526F00AF24A2 /* RecipeAidWatch.app */; };
+		50358BFE22D75ECD00AF24A2 /* MealTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503E7FBC22C3821700CD860E /* MealTypes.swift */; };
+		50358C6922D778C000AF24A2 /* MealSummaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50358C6822D778C000AF24A2 /* MealSummaryModel.swift */; };
+		50358C6A22D778FA00AF24A2 /* MealSummaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50358C6822D778C000AF24A2 /* MealSummaryModel.swift */; };
 		503804F422B8B30400C6B456 /* exampleSearchResult.json in Resources */ = {isa = PBXBuildFile; fileRef = 503804F322B8B30400C6B456 /* exampleSearchResult.json */; };
 		503804F722B8B71200C6B456 /* exampleObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503804F622B8B71200C6B456 /* exampleObjects.swift */; };
 		5038050E22B8ED3C00C6B456 /* EdamamRecipeAPIRepositorySearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038050D22B8ED3C00C6B456 /* EdamamRecipeAPIRepositorySearchTests.swift */; };
@@ -147,33 +157,12 @@
 			remoteGlobalIDString = 5009277C22889DE500FB2CE6;
 			remoteInfo = RecipeAid;
 		};
-		5015803F22D728D80004F6CF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 503804F822B8D89300C6B456 /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 55AEEB6A315149FDA23BB9A29F457592;
-			remoteInfo = FirebaseCore;
-		};
-		5015804122D728D80004F6CF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 503804F822B8D89300C6B456 /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 9785176C36DEAD761647943325087655;
-			remoteInfo = FirebaseInstanceID;
-		};
 		5015804322D728D80004F6CF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 503804F822B8D89300C6B456 /* Pods.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 3CD15EE97A5E6A0605FF9D148B171ED0;
 			remoteInfo = GoogleToolboxForMac;
-		};
-		5015804522D728D80004F6CF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 503804F822B8D89300C6B456 /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4EA1854C497698E9B072E4E812C8527B;
-			remoteInfo = GoogleUtilities;
 		};
 		5015804722D728D80004F6CF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -182,13 +171,6 @@
 			remoteGlobalIDString = CC3C84E4068E90DC0F83796949ED37CF;
 			remoteInfo = GTMSessionFetcher;
 		};
-		5015804922D728D80004F6CF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 503804F822B8D89300C6B456 /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = C2E9E49CB5EB10E07A427889EBEB9DA9;
-			remoteInfo = nanopb;
-		};
 		5015804B22D728D80004F6CF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 503804F822B8D89300C6B456 /* Pods.xcodeproj */;
@@ -196,12 +178,89 @@
 			remoteGlobalIDString = 1177AA901CE809DDA0410BFAA715F351;
 			remoteInfo = Protobuf;
 		};
-		5038050122B8D89300C6B456 /* PBXContainerItemProxy */ = {
+		50358BB222D7527100AF24A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5009277522889DE500FB2CE6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 50358BAF22D7527100AF24A2;
+			remoteInfo = "RecipeAidWatch Extension";
+		};
+		50358BBF22D7527100AF24A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5009277522889DE500FB2CE6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 50358BA322D7526F00AF24A2;
+			remoteInfo = RecipeAidWatch;
+		};
+		50358BE522D7527100AF24A2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 503804F822B8D89300C6B456 /* Pods.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = C772D3A4CC9B877B927592092259F161;
+			remoteGlobalIDString = C4531ABD6D298076C2C7ACF84D80702F;
+			remoteInfo = "FirebaseCore-framework";
+		};
+		50358BE722D7527100AF24A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 503804F822B8D89300C6B456 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B0064B96C82BB5873D61F4FB17E402EB;
+			remoteInfo = "FirebaseCore-library";
+		};
+		50358BE922D7527100AF24A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 503804F822B8D89300C6B456 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 705D88822D46F2CC4040D0CD9DCCCEDB;
+			remoteInfo = "FirebaseInstanceID-framework";
+		};
+		50358BEB22D7527100AF24A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 503804F822B8D89300C6B456 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E05B09AFC18D38C240BFD79913731809;
+			remoteInfo = "FirebaseInstanceID-library";
+		};
+		50358BED22D7527100AF24A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 503804F822B8D89300C6B456 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 22080DAC59423F6A1BF5DD0E29E8BDB0;
+			remoteInfo = "GoogleUtilities-00567490";
+		};
+		50358BEF22D7527100AF24A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 503804F822B8D89300C6B456 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6EFA00484C649EB6F8A2A9C9A714C037;
+			remoteInfo = "GoogleUtilities-ac14cd06";
+		};
+		50358BF122D7527100AF24A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 503804F822B8D89300C6B456 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9B9646801D0A17F214FCEEE5088A778D;
+			remoteInfo = "nanopb-framework";
+		};
+		50358BF322D7527100AF24A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 503804F822B8D89300C6B456 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9705CD03D0A6EF1A8C673CC053AAB6A4;
+			remoteInfo = "nanopb-library";
+		};
+		50358C6022D76FF300AF24A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 503804F822B8D89300C6B456 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F35C9EC3F86302DFDFCAB4648BF6B240;
 			remoteInfo = Alamofire;
+		};
+		50358C6222D76FF300AF24A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 503804F822B8D89300C6B456 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 871644FB88560D94A168A4B9DCAA63CC;
+			remoteInfo = SwiftyJSON;
 		};
 		5038050322B8D89300C6B456 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -230,13 +289,6 @@
 			proxyType = 2;
 			remoteGlobalIDString = 467230C1ACCE510060756A8245FE1816;
 			remoteInfo = "Pods-RecipeAidTests";
-		};
-		5038050B22B8D89300C6B456 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 503804F822B8D89300C6B456 /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 6535CD4A8663BD71D60C7B196901F458;
-			remoteInfo = SwiftyJSON;
 		};
 		503E7F2C22C0CD2300CD860E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -275,6 +327,31 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		50358BF622D7527100AF24A2 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				50358BB122D7527100AF24A2 /* RecipeAidWatch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50358BF822D7527100AF24A2 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				50358BC122D7527100AF24A2 /* RecipeAidWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		1728F1401FB924B1AD76EC36 /* Pods_RecipeAid.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecipeAid.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3573C11FB7596CCD33676812 /* Pods-RecipeAidTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipeAidTests.debug.xcconfig"; path = "Target Support Files/Pods-RecipeAidTests/Pods-RecipeAidTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -300,6 +377,16 @@
 		502F6CF922BCA44900C931B0 /* SettingsViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModelProtocol.swift; sourceTree = "<group>"; };
 		502F6CFC22BCEC0700C931B0 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		502F6CFF22BCF4A500C931B0 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
+		50358BA422D7526F00AF24A2 /* RecipeAidWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecipeAidWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		50358BA722D7526F00AF24A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		50358BA922D7527000AF24A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		50358BAB22D7527000AF24A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50358BB022D7527100AF24A2 /* RecipeAidWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "RecipeAidWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		50358BB522D7527100AF24A2 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		50358BB722D7527100AF24A2 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		50358BBB22D7527100AF24A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		50358BBD22D7527100AF24A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50358C6822D778C000AF24A2 /* MealSummaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealSummaryModel.swift; sourceTree = "<group>"; };
 		503804F322B8B30400C6B456 /* exampleSearchResult.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = exampleSearchResult.json; sourceTree = "<group>"; };
 		503804F622B8B71200C6B456 /* exampleObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = exampleObjects.swift; sourceTree = "<group>"; };
 		503804F822B8D89300C6B456 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = ../Pods/Pods.xcodeproj; sourceTree = "<group>"; };
@@ -426,6 +513,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		50358BAD22D7527100AF24A2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		50D516F322CB426A006859F8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -434,6 +528,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		50DB7A0922B0DD5400DEEB7B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C5D6D60E9504F78649D8C41 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -483,6 +584,8 @@
 			isa = PBXGroup;
 			children = (
 				50D516F722CB426A006859F8 /* RecipeAidSnapshots */,
+				50358BA522D7526F00AF24A2 /* RecipeAidWatch */,
+				50358BB422D7527100AF24A2 /* RecipeAidWatch Extension */,
 				508D1CE5229FCB40008DA723 /* Frameworks */,
 				96CA57D0C589358D316FA704 /* Pods */,
 				5009277E22889DE500FB2CE6 /* Products */,
@@ -499,6 +602,8 @@
 				50022D3322AA6D970001B2D1 /* RecipeAidTests.xctest */,
 				50DB7A0C22B0DD5400DEEB7B /* RecipeAidUITests.xctest */,
 				50D516F622CB426A006859F8 /* RecipeAidSnapshots.xctest */,
+				50358BA422D7526F00AF24A2 /* RecipeAidWatch.app */,
+				50358BB022D7527100AF24A2 /* RecipeAidWatch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -601,6 +706,28 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		50358BA522D7526F00AF24A2 /* RecipeAidWatch */ = {
+			isa = PBXGroup;
+			children = (
+				50358BA622D7526F00AF24A2 /* Interface.storyboard */,
+				50358BA922D7527000AF24A2 /* Assets.xcassets */,
+				50358BAB22D7527000AF24A2 /* Info.plist */,
+			);
+			path = RecipeAidWatch;
+			sourceTree = "<group>";
+		};
+		50358BB422D7527100AF24A2 /* RecipeAidWatch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				50358BB522D7527100AF24A2 /* InterfaceController.swift */,
+				50358BB722D7527100AF24A2 /* ExtensionDelegate.swift */,
+				50358BBB22D7527100AF24A2 /* Assets.xcassets */,
+				50358BBD22D7527100AF24A2 /* Info.plist */,
+				50358C6822D778C000AF24A2 /* MealSummaryModel.swift */,
+			);
+			path = "RecipeAidWatch Extension";
+			sourceTree = "<group>";
+		};
 		503804F522B8B33100C6B456 /* RepoTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -619,20 +746,24 @@
 		503804F922B8D89300C6B456 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5038050222B8D89300C6B456 /* Alamofire.framework */,
+				50358C6122D76FF300AF24A2 /* Alamofire.framework */,
 				503E7F2D22C0CD2300CD860E /* libCuckoo.a */,
-				5015804022D728D80004F6CF /* FirebaseCore.framework */,
-				5015804222D728D80004F6CF /* FirebaseInstanceID.framework */,
+				50358BE622D7527100AF24A2 /* FirebaseCore.framework */,
+				50358BE822D7527100AF24A2 /* libFirebaseCore-library.a */,
+				50358BEA22D7527100AF24A2 /* FirebaseInstanceID.framework */,
+				50358BEC22D7527100AF24A2 /* libFirebaseInstanceID-library.a */,
 				5015804422D728D80004F6CF /* GoogleToolboxForMac.framework */,
-				5015804622D728D80004F6CF /* GoogleUtilities.framework */,
+				50358BEE22D7527100AF24A2 /* libGoogleUtilities-00567490.a */,
+				50358BF022D7527100AF24A2 /* GoogleUtilities.framework */,
 				5015804822D728D80004F6CF /* GTMSessionFetcher.framework */,
 				5038050422B8D89300C6B456 /* Hippolyte.framework */,
 				5038050622B8D89300C6B456 /* libHippolyte-library.a */,
-				5015804A22D728D80004F6CF /* nanopb.framework */,
+				50358BF222D7527100AF24A2 /* nanopb.framework */,
+				50358BF422D7527100AF24A2 /* libnanopb-library.a */,
 				5038050822B8D89300C6B456 /* Pods_RecipeAid.framework */,
 				5038050A22B8D89300C6B456 /* libPods-RecipeAidTests.a */,
 				5015804C22D728D80004F6CF /* Protobuf.framework */,
-				5038050C22B8D89300C6B456 /* SwiftyJSON.framework */,
+				50358C6322D76FF300AF24A2 /* SwiftyJSON.framework */,
 				50D52BB822D606C5006859F8 /* When.framework */,
 				50D52BBA22D606C5006859F8 /* libWhen-library.a */,
 			);
@@ -1236,15 +1367,52 @@
 				5017CE642297DC7D00163163 /* ShellScript */,
 				7B89FC9226D1D45EB67FC1F7 /* [CP] Embed Pods Frameworks */,
 				5015805122D72BB20004F6CF /* ShellScript */,
+				50358BF822D7527100AF24A2 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				50358BC022D7527100AF24A2 /* PBXTargetDependency */,
 			);
 			name = RecipeAid;
 			productName = "AGameOfBones-Recipe-Aid";
 			productReference = 5009277D22889DE500FB2CE6 /* RecipeAid.app */;
 			productType = "com.apple.product-type.application";
+		};
+		50358BA322D7526F00AF24A2 /* RecipeAidWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 50358BF722D7527100AF24A2 /* Build configuration list for PBXNativeTarget "RecipeAidWatch" */;
+			buildPhases = (
+				50358BA222D7526F00AF24A2 /* Resources */,
+				50358BF622D7527100AF24A2 /* Embed App Extensions */,
+				6C5D6D60E9504F78649D8C41 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				50358BB322D7527100AF24A2 /* PBXTargetDependency */,
+			);
+			name = RecipeAidWatch;
+			productName = RecipeAidWatch;
+			productReference = 50358BA422D7526F00AF24A2 /* RecipeAidWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		50358BAF22D7527100AF24A2 /* RecipeAidWatch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 50358BF522D7527100AF24A2 /* Build configuration list for PBXNativeTarget "RecipeAidWatch Extension" */;
+			buildPhases = (
+				50358BAC22D7527100AF24A2 /* Sources */,
+				50358BAD22D7527100AF24A2 /* Frameworks */,
+				50358BAE22D7527100AF24A2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "RecipeAidWatch Extension";
+			productName = "RecipeAidWatch Extension";
+			productReference = 50358BB022D7527100AF24A2 /* RecipeAidWatch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
 		};
 		50D516F522CB426A006859F8 /* RecipeAidSnapshots */ = {
 			isa = PBXNativeTarget;
@@ -1299,6 +1467,22 @@
 					5009277C22889DE500FB2CE6 = {
 						CreatedOnToolsVersion = 10.2.1;
 						LastSwiftMigration = 1020;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
+						};
+					};
+					50358BA322D7526F00AF24A2 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+					50358BAF22D7527100AF24A2 = {
+						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 					50D516F522CB426A006859F8 = {
 						CreatedOnToolsVersion = 10.2.1;
@@ -1333,37 +1517,18 @@
 				50022D3222AA6D970001B2D1 /* RecipeAidTests */,
 				50DB7A0B22B0DD5400DEEB7B /* RecipeAidUITests */,
 				50D516F522CB426A006859F8 /* RecipeAidSnapshots */,
+				50358BA322D7526F00AF24A2 /* RecipeAidWatch */,
+				50358BAF22D7527100AF24A2 /* RecipeAidWatch Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		5015804022D728D80004F6CF /* FirebaseCore.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = FirebaseCore.framework;
-			remoteRef = 5015803F22D728D80004F6CF /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5015804222D728D80004F6CF /* FirebaseInstanceID.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = FirebaseInstanceID.framework;
-			remoteRef = 5015804122D728D80004F6CF /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		5015804422D728D80004F6CF /* GoogleToolboxForMac.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = GoogleToolboxForMac.framework;
 			remoteRef = 5015804322D728D80004F6CF /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5015804622D728D80004F6CF /* GoogleUtilities.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = GoogleUtilities.framework;
-			remoteRef = 5015804522D728D80004F6CF /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		5015804822D728D80004F6CF /* GTMSessionFetcher.framework */ = {
@@ -1373,13 +1538,6 @@
 			remoteRef = 5015804722D728D80004F6CF /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		5015804A22D728D80004F6CF /* nanopb.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = nanopb.framework;
-			remoteRef = 5015804922D728D80004F6CF /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		5015804C22D728D80004F6CF /* Protobuf.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -1387,11 +1545,74 @@
 			remoteRef = 5015804B22D728D80004F6CF /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		5038050222B8D89300C6B456 /* Alamofire.framework */ = {
+		50358BE622D7527100AF24A2 /* FirebaseCore.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FirebaseCore.framework;
+			remoteRef = 50358BE522D7527100AF24A2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		50358BE822D7527100AF24A2 /* libFirebaseCore-library.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libFirebaseCore-library.a";
+			remoteRef = 50358BE722D7527100AF24A2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		50358BEA22D7527100AF24A2 /* FirebaseInstanceID.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FirebaseInstanceID.framework;
+			remoteRef = 50358BE922D7527100AF24A2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		50358BEC22D7527100AF24A2 /* libFirebaseInstanceID-library.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libFirebaseInstanceID-library.a";
+			remoteRef = 50358BEB22D7527100AF24A2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		50358BEE22D7527100AF24A2 /* libGoogleUtilities-00567490.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libGoogleUtilities-00567490.a";
+			remoteRef = 50358BED22D7527100AF24A2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		50358BF022D7527100AF24A2 /* GoogleUtilities.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = GoogleUtilities.framework;
+			remoteRef = 50358BEF22D7527100AF24A2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		50358BF222D7527100AF24A2 /* nanopb.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = nanopb.framework;
+			remoteRef = 50358BF122D7527100AF24A2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		50358BF422D7527100AF24A2 /* libnanopb-library.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libnanopb-library.a";
+			remoteRef = 50358BF322D7527100AF24A2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		50358C6122D76FF300AF24A2 /* Alamofire.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = Alamofire.framework;
-			remoteRef = 5038050122B8D89300C6B456 /* PBXContainerItemProxy */;
+			remoteRef = 50358C6022D76FF300AF24A2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		50358C6322D76FF300AF24A2 /* SwiftyJSON.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftyJSON.framework;
+			remoteRef = 50358C6222D76FF300AF24A2 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		5038050422B8D89300C6B456 /* Hippolyte.framework */ = {
@@ -1420,13 +1641,6 @@
 			fileType = archive.ar;
 			path = "libPods-RecipeAidTests.a";
 			remoteRef = 5038050922B8D89300C6B456 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5038050C22B8D89300C6B456 /* SwiftyJSON.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = SwiftyJSON.framework;
-			remoteRef = 5038050B22B8D89300C6B456 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		503E7F2D22C0CD2300CD860E /* libCuckoo.a */ = {
@@ -1478,6 +1692,23 @@
 				5009278622889DE500FB2CE6 /* Main.storyboard in Resources */,
 				50D5268E22CF3D75006859F8 /* details.json in Resources */,
 				5094CCF722BA696D00A40E99 /* exampleSearchResultSecondTen.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50358BA222D7526F00AF24A2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50358BAA22D7527000AF24A2 /* Assets.xcassets in Resources */,
+				50358BA822D7526F00AF24A2 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50358BAE22D7527100AF24A2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50358BBC22D7527100AF24A2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1677,6 +1908,7 @@
 				509CD62222A6702E008FCFAC /* Recipe.swift in Sources */,
 				50A1121622A90CC1003AD301 /* Errors.swift in Sources */,
 				503E7F4F22C23D1200CD860E /* ShoppingListViewModel.swift in Sources */,
+				50358C6A22D778FA00AF24A2 /* MealSummaryModel.swift in Sources */,
 				50A1120D22A7E402003AD301 /* EdamamRecipeAPIRepository.swift in Sources */,
 				507BA4D222A939C30064B415 /* MenuForDayProtocol.swift in Sources */,
 				509CD62D22A67EDA008FCFAC /* MenuDisplayViewModelProtocol.swift in Sources */,
@@ -1730,6 +1962,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		50358BAC22D7527100AF24A2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50358BB822D7527100AF24A2 /* ExtensionDelegate.swift in Sources */,
+				50358BFE22D75ECD00AF24A2 /* MealTypes.swift in Sources */,
+				50358C6922D778C000AF24A2 /* MealSummaryModel.swift in Sources */,
+				50358BB622D7527100AF24A2 /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		50D516F222CB426A006859F8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1763,6 +2006,16 @@
 			target = 5009277C22889DE500FB2CE6 /* RecipeAid */;
 			targetProxy = 50022D3822AA6D970001B2D1 /* PBXContainerItemProxy */;
 		};
+		50358BB322D7527100AF24A2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 50358BAF22D7527100AF24A2 /* RecipeAidWatch Extension */;
+			targetProxy = 50358BB222D7527100AF24A2 /* PBXContainerItemProxy */;
+		};
+		50358BC022D7527100AF24A2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 50358BA322D7526F00AF24A2 /* RecipeAidWatch */;
+			targetProxy = 50358BBF22D7527100AF24A2 /* PBXContainerItemProxy */;
+		};
 		50D516FC22CB426A006859F8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 5009277C22889DE500FB2CE6 /* RecipeAid */;
@@ -1790,6 +2043,14 @@
 				5009278A22889DE600FB2CE6 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		50358BA622D7526F00AF24A2 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				50358BA722D7526F00AF24A2 /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -2015,6 +2276,88 @@
 			};
 			name = Release;
 		};
+		50358BC222D7527100AF24A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GLK7J5PP82;
+				IBSC_MODULE = RecipeAidWatch_Extension;
+				INFOPLIST_FILE = RecipeAidWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = za.co.dvt.jhb.RecipeAid.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.2;
+			};
+			name = Debug;
+		};
+		50358BC322D7527100AF24A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GLK7J5PP82;
+				IBSC_MODULE = RecipeAidWatch_Extension;
+				INFOPLIST_FILE = RecipeAidWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = za.co.dvt.jhb.RecipeAid.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.2;
+			};
+			name = Release;
+		};
+		50358BC422D7527100AF24A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GLK7J5PP82;
+				INFOPLIST_FILE = "RecipeAidWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = za.co.dvt.jhb.RecipeAid.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.2;
+			};
+			name = Debug;
+		};
+		50358BC522D7527100AF24A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GLK7J5PP82;
+				INFOPLIST_FILE = "RecipeAidWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = za.co.dvt.jhb.RecipeAid.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.2;
+			};
+			name = Release;
+		};
 		50D516FD22CB426A006859F8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -2117,6 +2460,24 @@
 			buildConfigurations = (
 				5009279022889DE700FB2CE6 /* Debug */,
 				5009279122889DE700FB2CE6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		50358BF522D7527100AF24A2 /* Build configuration list for PBXNativeTarget "RecipeAidWatch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50358BC422D7527100AF24A2 /* Debug */,
+				50358BC522D7527100AF24A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		50358BF722D7527100AF24A2 /* Build configuration list for PBXNativeTarget "RecipeAidWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50358BC222D7527100AF24A2 /* Debug */,
+				50358BC322D7527100AF24A2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

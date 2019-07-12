@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 import Hippolyte
 import Firebase
+import WatchConnectivity
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -24,6 +25,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     setUpUserDefaults()
     resetUserSettingsIfNeeded()
     logUserOutIfNeeded()
+
+    if WCSession.isSupported() {
+      let session = WCSession.default
+      session.delegate = self
+      session.activate()
+    }
     return true
   }
 
@@ -123,6 +130,44 @@ extension AppDelegate {
     if CommandLine.arguments.contains("-logout") {
       let service = UserServices()
       service.logUserOut()
+    }
+  }
+}
+
+extension AppDelegate: WCSessionDelegate {
+  func session(_ session: WCSession,
+               activationDidCompleteWith activationState: WCSessionActivationState,
+               error: Error?) {}
+
+  func sessionDidBecomeInactive(_ session: WCSession) {}
+
+  func sessionDidDeactivate(_ session: WCSession) {}
+
+  func session(_ session: WCSession,
+               didReceiveMessage message: [String: Any],
+               replyHandler: @escaping ([String: Any]) -> Void) {
+
+    guard let mealType = message["meal"] as? String else {
+      return replyHandler([:])
+    }
+
+    let viewModel = MenueDisplayViewModel(forDate: Date())
+
+    viewModel.updateMeal(meal: mealType) { viewModel, hasMeal in
+      if hasMeal {
+
+        viewModel.getImageFromURL(viewModel.recipeImageURL, onComplete: { data in
+
+          let meal = MealSummaryModel(mealPic: data,
+                                      foodName: viewModel.recipeName,
+                                      mealType: mealType)
+          let encoder = JSONEncoder()
+          guard let mealString = try? encoder.encode(meal) else { return replyHandler([:]) }
+          replyHandler(["meal": mealString])
+        })
+      } else {
+        replyHandler([:])
+      }
     }
   }
 }
