@@ -66,7 +66,7 @@ class SettingsViewModelUserServicesTests: XCTestCase {
       XCTAssertEqual(data?.base64EncodedString(), toReturn)
     })
 
-    verify(self.modelMock, times(1)).profilePic.get
+    verify(self.modelMock, times(1)).profilePic.get()
   }
 
   func testNilReturnedWhenServiceFailsToFetchImage() {

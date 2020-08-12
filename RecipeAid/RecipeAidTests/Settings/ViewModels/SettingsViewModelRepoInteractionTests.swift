@@ -147,11 +147,11 @@ class SettingsViewModelRepoInteractionTests: XCTestCase {
 
   func verifyModelGets() {
 
-    verify(modelMock, times(1)).minCalories.get
-    verify(modelMock, times(1)).maxCalories.get
-    verify(modelMock, times(1)).minTime.get
-    verify(modelMock, times(1)).maxTime.get
-    verify(modelMock, times(1)).unwantedFoods.get
+    verify(modelMock, times(1)).minCalories.get()
+    verify(modelMock, times(1)).maxCalories.get()
+    verify(modelMock, times(1)).minTime.get()
+    verify(modelMock, times(1)).maxTime.get()
+    verify(modelMock, times(1)).unwantedFoods.get()
   }
 
   func verifyRepoSets() {
