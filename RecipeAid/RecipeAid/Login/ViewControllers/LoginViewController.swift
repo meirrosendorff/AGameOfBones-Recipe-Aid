@@ -71,15 +71,16 @@ class LoginViewController: UIViewController {
 
     let username = usernameTextBox.text ?? ""
     let password = passwordTextBox.text ?? ""
-
-    viewModel.login(forUser: username, withPassword: password, onComplete: { isSuccessful in
-
-      self.loginLoading.stopAnimating()
-      if isSuccessful {
-        self.userIsLoggedIn()
-      } else {
-        self.setInvalidResponse(isInvalid: true)
-      }
-    })
+    // MARK: Bypass login
+    self.userIsLoggedIn()
+//    viewModel.login(forUser: username, withPassword: password, onComplete: { isSuccessful in
+//
+//      self.loginLoading.stopAnimating()
+//      if isSuccessful {
+//        self.userIsLoggedIn()
+//      } else {
+//        self.setInvalidResponse(isInvalid: true)
+//      }
+//    })
   }
 }
