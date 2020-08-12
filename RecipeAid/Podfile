@@ -6,7 +6,7 @@ target 'RecipeAid' do
   use_frameworks!
 
   # Pods for RecipeAid
-  pod 'Alamofire'
+  pod 'Alamofire', '~> 4.8.2'
   pod 'SwiftyJSON'
   pod 'Hippolyte'
   pod 'When'
